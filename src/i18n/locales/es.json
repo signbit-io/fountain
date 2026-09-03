@@ -1,0 +1,703 @@
+{
+  "common": {
+    "brand": "SignBit",
+    "brandTagline": "Fountain",
+    "close": "Cerrar",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "copyFailed": "Error al copiar",
+    "cancel": "Cancelar",
+    "loading": "Cargando…",
+    "show": "Mostrar",
+    "hide": "Ocultar"
+  },
+  "shell": {
+    "lock": "Bloquear",
+    "appearance": "Apariencia: {{mode}}",
+    "moreControls": "Más controles",
+    "tabs": {
+      "keys": "claves",
+      "sign": "firmar",
+      "vaults": "bóvedas",
+      "settings": "ajustes",
+      "help": "ayuda"
+    }
+  },
+  "unlock": {
+    "createTitle": "Crea tu contraseña",
+    "unlockTitle": "Desbloquea tus claves",
+    "createSubtitle": "Esto cifra tus claves en este dispositivo. No hay forma de recuperarla, así que anótala.",
+    "unlockSubtitle": "Introduce la contraseña del keystore de este dispositivo.",
+    "passphrase": "Contraseña",
+    "confirmPassphrase": "Confirma la contraseña",
+    "working": "Procesando…",
+    "createKeystore": "Crear almacén",
+    "unlockButton": "Desbloquear",
+    "alreadyHaveKeystore": "¿Ya tienes un almacén?",
+    "restoreIt": "Restaurarlo",
+    "forgotPassphrase": "¿Olvidaste tu contraseña?",
+    "resetDevice": "Restablecer este dispositivo",
+    "errorMismatch": "Las contraseñas no coinciden.",
+    "errorTooShort": "Usa al menos 8 caracteres.",
+    "strength": {
+      "tooShort": "Demasiado corta",
+      "weak": "Débil",
+      "fair": "Aceptable",
+      "good": "Buena",
+      "strong": "Fuerte"
+    },
+    "strengthHint": {
+      "longer": "Más larga es mejor que más complicada. Prueba con varias palabras.",
+      "variety": "Añade una mayúscula, un número o un símbolo.",
+      "avoidPattern": "Evite palabras comunes, repeticiones y secuencias de teclado."
+    }
+  },
+  "restore": {
+    "title": "Restaura tus claves",
+    "subtitle": "Recupera un almacén existente desde una copia de seguridad o una instalación anterior, luego desbloquéalo con su contraseña.",
+    "autoTitle": "Restaurar tu almacén anterior",
+    "chooseFile": "Elegir archivo de almacén…",
+    "restoringFrom": "Restaurando desde",
+    "passphrase": "Contraseña",
+    "passphraseHint": "Introduce la contraseña de este almacén (no una nueva).",
+    "restoring": "Restaurando…",
+    "restoreAndUnlock": "Restaurar y desbloquear",
+    "pickDifferentFile": "Elegir otro archivo",
+    "backToCreate": "Volver",
+    "errorReadFile": "No se pudo leer ese archivo de almacén.",
+    "errorOpenPicker": "No se pudo abrir el selector de archivos.",
+    "errorWrongPassphrase": "Esa contraseña no desbloquea este almacén.",
+    "autoFromAppData": "Se encontró un keystore anterior en la carpeta de datos de este equipo, de antes de que esta aplicación se ejecutara como copia portátil.",
+    "autoFromPortable": "Se encontró un keystore en la carpeta portátil junto a la aplicación.",
+    "autoPassphraseNote": "Este archivo está cifrado, así que la aplicación no puede saber qué claves contiene. Puede necesitar una frase de contraseña anterior, no necesariamente la más reciente.",
+    "searchHint": "¿La copia está en otro sitio? Todos los archivos que escribe esta aplicación empiezan por «signbit-». Busca ese término en tu equipo y en cualquier memoria USB para encontrar copias que no se ven desde aquí."
+  },
+  "keys": {
+    "title": "Tus claves",
+    "subtitle": "Cada clave es un cofirmante. Exporta su clave pública ({{prefix}} + huella) para inscribirla en una bóveda.",
+    "emptyTitle": "Aún no hay claves",
+    "emptySubtitle": "Crea una clave para obtener una clave pública que puedas inscribir como cofirmante en una bóveda.",
+    "label": "Etiqueta",
+    "seedPhraseLabel": "Frase semilla (12–24 palabras)",
+    "labelPlaceholder": "p. ej. Mi clave de cofirmante",
+    "seedPlaceholder": "palabra palabra palabra…",
+    "seedWordCount": "{{count}} palabras",
+    "seedInvalidWord": "No es una palabra BIP-39",
+    "seedValid": "Frase semilla válida",
+    "seedOrderSuspect": "Todas las palabras son válidas, pero el orden parece incorrecto",
+    "seedDuplicate": "Esta frase semilla ya está importada como «{{label}}».",
+    "newKeyLabelPlaceholder": "Nueva etiqueta de clave",
+    "import": "Importar",
+    "createKey": "Crear clave",
+    "showPublicKey": "Mostrar clave pública ({{network}})",
+    "publicKeyModalTitle": "Clave pública · {{label}}",
+    "fingerprint": "Huella maestra",
+    "accountTpub": "Clave pública de la cuenta",
+    "guideTitle": "Guía de configuración de claves",
+    "guideIntro": "Cada clave que crees o importes aquí ya usa estos ajustes. Piensa en esto como una referencia de lo que se genera, y de qué darle a la plataforma al inscribirla.",
+    "guideScript": "Tipo de script: Multisig SegWit nativo (P2WSH)",
+    "guidePath": "Ruta de derivación: m/{{path}}",
+    "guideNetwork": "Red: {{network}} — exporta un {{prefix}}",
+    "guideExport": "Dale a la plataforma: tu {{prefix}} y la huella maestra (Mostrar clave pública en una tarjeta de clave)",
+    "exportFilePublicNote": "Solo clave pública — inscríbela como tu clave Fountain al crear una bóveda.",
+    "exportFileSaving": "Guardando…",
+    "exportFileJson": "Exportar archivo (.json)",
+    "addedOn": "Añadida el {{date}}",
+    "revealSeed": "Revelar semilla",
+    "rename": "Renombrar",
+    "renameSave": "Guardar",
+    "renameCancel": "Cancelar",
+    "remove": "Eliminar",
+    "errorSaveFile": "No se pudo guardar el archivo.",
+    "backupTitle": "Respaldar “{{label}}”",
+    "backupWarningStrong": "Anótala ahora.",
+    "backupWarningRest": "Esta frase de 24 palabras es la única forma de recuperar esta clave. Anótala en papel y asegúrate de que nadie esté mirando tu pantalla.",
+    "backedUp": "La he respaldado",
+    "revealModalTitle": "Frase semilla · {{label}}",
+    "revealWarningShown": "Quien vea estas 24 palabras controla esta clave. Asegúrate de que nadie esté mirando tu pantalla.",
+    "revealWarningPrompt": "Vuelve a introducir tu contraseña para revelar la frase semilla de 24 palabras de esta clave.",
+    "done": "Listo",
+    "checking": "Comprobando…",
+    "revealSeedButton": "Revelar semilla",
+    "revealIncorrectPassphrase": "Contraseña incorrecta. Queda {{count}} intento antes de que la aplicación se bloquee.",
+    "removeModalTitle": "Eliminar clave",
+    "removeWarningPrefix": "Esto elimina",
+    "removeWarningMiddle": "solo de este dispositivo. Si su frase de 24 palabras está respaldada, podrás reimportarla más tarde;",
+    "removeWarningStrong": "si no lo está, esto es permanente.",
+    "removeWarningSuffix": "Respalda primero la semilla si aún no lo has hecho.",
+    "removeConfirmLabelFingerprint": "Escribe la huella de la clave para confirmar",
+    "removeConfirmLabelName": "Escribe el nombre de la clave para confirmar",
+    "removeKeyButton": "Eliminar clave",
+    "removeKeyButtonCountdown": "Eliminar clave ({{seconds}}s)",
+    "keyFallbackName": "Clave",
+    "createOnMainnet": "Las claves nuevas serán claves de mainnet. Esto no se puede cambiar después.",
+    "offNetwork": "no es la red actual de la aplicación",
+    "derivationPath": "Ruta de derivación",
+    "revealIncorrectPassphrasePlural": "Contraseña incorrecta. Quedan {{count}} intentos antes de que la aplicación se bloquee.",
+    "exportAllAction": "Exportar todas las claves públicas ({{count}})",
+    "exportAllTitle": "Exportar todas las claves públicas",
+    "exportAllBody": "Elige una carpeta y obtendrás {{count}} archivos, uno por cada clave. Cada uno lleva el nombre y la huella de su clave, para que puedas distinguirlos después.",
+    "exportAllConfirm": "Elegir carpeta",
+    "exportAllSaved": "Se guardaron {{count}} claves en tu carpeta.",
+    "exportAllSkipped": "No se pudieron exportar estas, así que quedaron fuera: {{names}}.",
+    "exportAllPublicNote": "Son solo claves públicas, sin frases de recuperación. Es lo que le das a la plataforma cuando añades un cofirmante a una bóveda."
+  },
+  "vaults": {
+    "title": "Copias de bóvedas",
+    "subtitle": "Añade el descriptor de una bóveda para poder seguir verificando direcciones o gastar mediante una herramienta de terceros (p. ej. Sparrow) si la plataforma alguna vez queda inaccesible. Los descriptores son datos públicos — sin secretos aquí.",
+    "addTitle": "Añadir un descriptor de bóveda",
+    "importFile": "Importar archivo",
+    "label": "Etiqueta",
+    "labelPlaceholder": "p. ej. Familia 3-de-5",
+    "descriptorLabel": "Descriptor de recepción",
+    "descriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/0/*,…))#checksum",
+    "changeDescriptorLabel": "Descriptor de cambio (opcional)",
+    "changeDescriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/1/*,…))#checksum",
+    "save": "Añadir copia de seguridad",
+    "addChangeDescriptor": "+ Añadir descriptor de cambio",
+    "addChangeDescriptorHint": "A esta copia le falta el descriptor de cambio, que necesita la pantalla Firmar para distinguir el cambio de un destinatario real al decodificar un gasto. Cópialo desde la vista del descriptor de la bóveda en la plataforma.",
+    "addChangeDescriptorSave": "Añadir",
+    "errorRequired": "Introduce un descriptor para guardar.",
+    "importSaved": "Se guardó «{{label}}» en sus copias de seguridad de bóvedas.",
+    "importSavedCopy": "Guardado como «{{label}}». Ya tenía guardada esta misma bóveda, así que esta es una segunda copia. Elimine la que no quiera.",
+    "errorFileTooLarge": "El archivo es demasiado grande para ser una copia de bóveda.",
+    "errorReadFile": "No se pudo leer ese archivo.",
+    "emptyTitle": "Aún no hay copias de bóvedas",
+    "emptySubtitle": "Pega el descriptor de una bóveda desde la página de la bóveda en la plataforma para guardar aquí una copia sin conexión.",
+    "savedOn": "Guardado el {{date}}",
+    "changeDescriptor": "Descriptor de cambio",
+    "remove": "Eliminar",
+    "summaryQuorum": "Multisig {{threshold}}-de-{{total}}",
+    "summarySigner": "Firmante {{index}}",
+    "summaryThisDevice": "Clave de este dispositivo",
+    "summaryFingerprint": "Huella",
+    "copyFingerprint": "Copiar la huella",
+    "copyXpub": "Copiar la clave pública extendida",
+    "rename": "Cambiar el nombre de esta bóveda",
+    "renameSave": "Guardar",
+    "renameCancel": "Cancelar",
+    "nameSigner": "Nombrar a este cofirmante",
+    "summaryReceiveBranch": "Direcciones de recepción",
+    "summaryChangeBranch": "Direcciones de cambio",
+    "summaryChecksum": "Suma de verificación",
+    "showRawDescriptor": "Mostrar descriptor sin procesar",
+    "hideRawDescriptor": "Ocultar descriptor sin procesar",
+    "rawDescriptorNote": "El texto exacto necesario para reconstruir esta bóveda en una herramienta de terceros. Guarda esta copia a buen recaudo.",
+    "showDerive": "Derivar una dirección",
+    "hideDerive": "Ocultar derivación de dirección",
+    "deriveSubtitle": "Calcula la dirección Bitcoin real en cualquier índice, totalmente sin conexión. Compárala con lo que muestra la plataforma para verificarla de forma independiente.",
+    "deriveBranchReceive": "Recepción",
+    "deriveBranchChange": "Cambio",
+    "deriveIndexLabel": "Índice",
+    "derivePrevIndex": "Índice anterior",
+    "deriveNextIndex": "Índice siguiente",
+    "deriveResultLabel": "Dirección de {{branch}} n.º {{index}}",
+    "deriveCompareHint": "Compara esto con lo que muestra la página de la bóveda en el mismo índice.",
+    "deriveErrorNoChangeDescriptor": "A esta copia aún le falta un descriptor de cambio; añade uno arriba primero.",
+    "deriveErrorGeneric": "No se pudo derivar una dirección a partir de este descriptor.",
+    "removeModalTitle": "Eliminar copia de la bóveda",
+    "removeWarning": "Esto elimina el descriptor guardado de {{label}} de este dispositivo. No afecta a la bóveda en sí — siempre puedes volver a guardarlo desde la plataforma.",
+    "removeConfirmLabel": "Escribe el nombre de la copia de seguridad para confirmar",
+    "removeConfirm": "Eliminar copia",
+    "removeConfirmCountdown": "Eliminar copia de seguridad ({{seconds}}s)",
+    "cancel": "Cancelar",
+    "modePaste": "Pegar un descriptor",
+    "modeBuild": "Construir uno sin conexión",
+    "buildTitle": "Construir un descriptor de bóveda sin conexión",
+    "buildSubtitle": "Introduce la clave pública de cada tenedor (xpub + huella, incluida la de la plataforma si esta bóveda alguna vez se sincronizará con ella) para construir exactamente el mismo descriptor que construiría la plataforma; no hace falta implicación de la plataforma. Funciona de forma independiente en cualquier herramienta multifirma de terceros.",
+    "buildKeyN": "Clave {{n}}",
+    "buildKeyLabelPlaceholder": "Etiqueta (opcional, ej. «Alice»)",
+    "buildKeyXpubPlaceholder": "tpub… / xpub…",
+    "buildKeyFingerprintPlaceholder": "Huella digital de 8 caracteres hex (opcional)",
+    "buildAddKey": "+ Agregar otra clave",
+    "buildThreshold": "Firmas requeridas (m)",
+    "buildThresholdSummary": "{{m}} de {{n}} titulares de clave deben firmar para gastar",
+    "buildThresholdNoRedundancy": "Se necesitarán las {{n}} claves, todas. No hay margen: si se pierde una sola clave, nadie podrá recuperar los fondos. Reduce este número si quieres que la bóveda sobreviva a la pérdida de una clave.",
+    "buildAction": "Crear y guardar la bóveda",
+    "buildSavedCompare": "Guardado en sus copias de seguridad de bóvedas. Cada titular de clave que construya esta bóveda con las mismas claves debería obtener exactamente este descriptor, así que vale la pena compararlo mientras están todos juntos.",
+    "buildSavedCopy": "Guardado como «{{label}}». Ya tenía guardada esta misma bóveda, así que esta es una segunda copia. Elimine la que no quiera.",
+    "draftRestored": "Continuamos donde lo dejó. Estas claves se editaron por última vez el {{date}} y se conservan en este dispositivo hasta que las guarde o las descarte.",
+    "draftKept": "Sus entradas se guardan en este dispositivo mientras escribe, así que puede salir de esta pantalla y volver. No se añade nada a sus copias de seguridad hasta que guarde.",
+    "draftDiscard": "Descartar entradas",
+    "buildErrorMinKeys": "Ingresa al menos 2 claves.",
+    "buildErrorThreshold": "Las firmas requeridas deben estar entre {{min}} y {{max}}. Una bóveda necesita una mayoría para gastar: por debajo de {{min}}, una minoría de titulares de clave podría mover los fondos por su cuenta.",
+    "buildErrorGeneric": "No se pudo construir un descriptor con estas claves.",
+    "buildKeyImportFile": "Importar desde un archivo de clave",
+    "keyFileErrorNetwork": "Esa clave es una clave de {{keyNetwork}}, pero esta bóveda se está construyendo en {{formNetwork}}. Todas las claves de una misma bóveda deben estar en la misma red.",
+    "keyFileError": {
+      "not_json": "Ese no es un archivo de clave de SignBit: no es JSON válido. Elige un archivo signbit-key-….json exportado desde la pantalla Claves.",
+      "not_key_file": "Ese no es un archivo de clave de SignBit. Elige un archivo signbit-key-….json exportado desde la pantalla Claves.",
+      "private_material": "Rechazado: ese archivo contiene material de clave privada. Un archivo de clave solo debe llevar claves públicas; aquí nada necesita tu frase de recuperación. Borra esa copia y exporta de nuevo la clave pública.",
+      "missing_field": "Ese archivo de clave no contiene ninguna clave pública extendida.",
+      "bad_fingerprint": "Ese archivo de clave tiene una huella maestra mal formada: debe tener 8 caracteres hexadecimales.",
+      "bad_path": "Ese archivo de clave no indica qué ruta de derivación usa su clave, así que no hay forma de saber a qué red pertenece.",
+      "bad_xpub": "La clave pública extendida de ese archivo no es válida: su suma de comprobación o su red no cuadran. Vuelve a exportarla en lugar de editar el archivo."
+    }
+  },
+  "sign": {
+    "title": "Firmar",
+    "subtitle": "Cofirma un gasto de bóveda (PSBT), o firma un mensaje: aprobar un cambio de política, demostrar una clave, adoptar una bóveda. Todo totalmente sin conexión.",
+    "modePsbt": "PSBT (gasto)",
+    "modeApproval": "Aprobación de política",
+    "signingKey": "Clave de firma",
+    "noKeysOption": "Sin claves — crea una primero",
+    "psbtLabel": "PSBT sin firmar (base64)",
+    "approvalLabel": "Carga útil del cambio de política",
+    "importFile": "Importar archivo",
+    "psbtPlaceholder": "cHNidP8B…",
+    "approvalPlaceholder": "SIGNBIT-POLICY-CHANGE\nvault:…\nchange:…\nversion:…\ndiff:…\nexpires:…",
+    "signPsbtButton": "Firmar PSBT",
+    "signApprovalButton": "Firmar aprobación",
+    "messageKind": {
+      "policyChange": "Aprobación de un cambio de política. Esto respalda una modificación de las reglas de gasto de la bóveda.",
+      "healthCheck": "Comprobación del estado de la clave. Esto demuestra que puede firmar con esta clave. No se mueven fondos.",
+      "vaultImport": "Importación de bóveda. Esto demuestra que posee una clave en la bóveda que se está adoptando. No se mueven fondos.",
+      "ownerTransfer": "Cambio de propietario de la bóveda. Esto respalda el traspaso del puesto de propietario de la bóveda a otro titular de clave. No se mueven fondos.",
+      "unknownSignbit": "Un mensaje de SignBit que esta versión no reconoce, probablemente más reciente que esta aplicación. Léalo a continuación antes de firmar.",
+      "unknown": "Este no es un mensaje de SignBit reconocido. Léalo con atención antes de firmar, y firme únicamente texto que comprenda y esperara."
+    },
+    "resultPsbt": "Cofirmado. Envía este PSBT de vuelta a la plataforma para que cuente hacia el umbral.",
+    "resultPsbtWithKey": "Cofirmado con «{{key}}». Envía este PSBT de vuelta a la plataforma para que cuente para el umbral.",
+    "resultApproval": "Firma lista; pégala en el cuadro de aprobación de política de la plataforma.",
+    "resultApprovalWithKey": "Firmado con «{{key}}». Envía esta firma de vuelta a la plataforma.",
+    "outputPsbtLabel": "PSBT cofirmado (base64)",
+    "outputApprovalLabel": "Firma (base64)",
+    "exportFileSaving": "Guardando…",
+    "exportFile": "Exportar archivo",
+    "errorNoKey": "Crea o importa primero una clave.",
+    "errorSaveFile": "No se pudo guardar el archivo.",
+    "errorFileTooLarge": "El archivo es demasiado grande para ser un PSBT o una aprobación.",
+    "errorReadFile": "No se pudo leer ese archivo.",
+    "scanQr": "Escanear QR",
+    "showQr": "Mostrar QR",
+    "decodeTitle": "Qué hace este PSBT",
+    "decodeFee": "Comisión de red",
+    "decodeChange": "Cambio",
+    "decodeRecipient": "Destinatario",
+    "decodeUnknown": "Desconocido",
+    "decodeNoChangeInfo": "Esta app no tiene en caché el descriptor de esta bóveda, así que no puede distinguir destinatario de cambio; solo se muestran los importes.",
+    "decodeGoToVaults": "Guardar el descriptor de esta bóveda →",
+    "chooseKeyOption": "Elige una clave…",
+    "keyOffNetwork": "Esta clave es una clave de {{keyNetwork}}; la aplicación está en {{appNetwork}}. Firmará como clave de {{keyNetwork}}."
+  },
+  "qr": {
+    "displayTitle": "Mostrar código QR",
+    "scanTitle": "Escanear código QR",
+    "prevFrame": "Anterior",
+    "nextFrame": "Siguiente",
+    "frameOf": "Fotograma {{index}} de {{total}}",
+    "multiFrameHint": "Estos datos necesitan varios códigos QR. Escanéalos uno a uno en el otro dispositivo y luego pulsa Siguiente aquí para mostrar el próximo.",
+    "scanHint": "Apunta la cámara al código QR del otro dispositivo. Si abarca varios códigos, sigue escaneando hasta capturar todas las imágenes.",
+    "scanProgress": "{{have}} de {{total}} fotogramas capturados",
+    "errorCamera": "No se pudo acceder a la cámara. Verifica los permisos de cámara para esta aplicación.",
+    "errorMismatch": "Ese código QR pertenece a una secuencia diferente. Escanea códigos de una sola fuente a la vez.",
+    "errorIncomplete": "Faltan algunas imágenes. Intenta escanear de nuevo.",
+    "errorPermissionDenied": "El acceso a la cámara está bloqueado para esta app. Una vez bloqueado, la app no puede volver a pedirlo automáticamente; tendrás que reactivarlo en los ajustes de tu dispositivo.",
+    "retryCamera": "Reintentar",
+    "permissionSteps": {
+      "windows": "Windows: Configuración → Privacidad y seguridad → Cámara → vuelve a activar esta aplicación (o revisa la entrada de WebView2), luego inténtalo de nuevo.",
+      "macos": "macOS: Ajustes del Sistema → Privacidad y Seguridad → Cámara → vuelve a activar esta aplicación, luego inténtalo de nuevo. Puede que debas reiniciar la aplicación.",
+      "linux": "Linux: revisa la configuración de privacidad/cámara de tu entorno de escritorio (varía según la distribución), o los permisos de sitio de tu navegador si usas una pestaña del navegador.",
+      "ios": "iOS: Ajustes → [esta aplicación] → Cámara → actívala, luego vuelve aquí e inténtalo de nuevo.",
+      "android": "Android: Configuración → Aplicaciones → [esta aplicación] → Permisos → Cámara → permitir, luego vuelve aquí e inténtalo de nuevo."
+    },
+    "scanStillNeed": "Faltan los fotogramas: {{frames}}"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "subtitle": "Configuración de la aplicación para este dispositivo.",
+    "network": {
+      "label": "Red",
+      "onMainnet": "Estás en mainnet, la red real de Bitcoin. Las claves que crees aquí funcionan con bitcoin real.",
+      "onTestnet": "Estás en testnet, una red de práctica. Las monedas no valen nada, así que es un buen sitio para hacer pruebas.",
+      "keysUnaffected": "Sus claves actuales no cambian. Cada una permanece en la red para la que fue creada.",
+      "corrupted": "No se pudieron leer tus ajustes guardados, así que la red se restableció a testnet. Elige una red abajo para guardar un ajuste nuevo.",
+      "confirmTitle": "¿Cambiar a mainnet?",
+      "confirmReal": "Mainnet es bitcoin real. Las firmas que hagas aquí pueden contribuir a mover fondos de verdad, y una vez difundida la transacción ya no hay vuelta atrás.",
+      "confirmKeystore": "Tus claves se guardan en un almacén de software en este dispositivo, protegido por tu frase de contraseña, en lugar de en hardware de firma dedicado. Alguien que consiguiera el archivo y la frase de contraseña tendría las claves guardadas aquí. En una bóveda multifirma eso por sí solo no basta para gastar: necesitaría claves suficientes para alcanzar el umbral de firma de la bóveda.",
+      "confirmStamp": "Puedes volver a testnet cuando quieras. Lo único que no cambia son las claves: una clave que crees estando en mainnet será una clave de mainnet para siempre, y volver a cambiar la app más tarde no la modificará. Las claves que ya tienes se quedan igual.",
+      "confirmAction": "Cambiar a mainnet"
+    },
+    "appearance": {
+      "label": "Apariencia",
+      "hint": "Tema para este dispositivo. “Sistema” sigue la configuración de tu sistema operativo.",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    },
+    "autoLock": {
+      "label": "Bloqueo automático",
+      "hint": "Bloquea la aplicación tras un período de inactividad. Recomendado para un dispositivo que contiene claves.",
+      "min1": "1 min",
+      "min5": "5 min",
+      "min15": "15 min",
+      "min30": "30 min",
+      "never": "Nunca",
+      "offWarning": "El bloqueo automático está desactivado. La aplicación permanece desbloqueada hasta que la bloquees manualmente o salgas."
+    },
+    "language": {
+      "label": "Idioma",
+      "hint": "Idioma de la interfaz para este dispositivo."
+    },
+    "storage": {
+      "label": "Almacenamiento",
+      "hint": "Dónde guarda este dispositivo su keystore cifrado. Una versión portátil lo guarda junto a la app, para que tus claves viajen con ella (por ejemplo, en una memoria USB).",
+      "unavailablePrefix": "La ubicación de almacenamiento solo está disponible en la aplicación de escritorio (ejecuta",
+      "unavailableSuffix": ").",
+      "checking": "Comprobando…",
+      "portable": "Portátil",
+      "default": "Predeterminado (por usuario)",
+      "portableNote": "Las claves se almacenan junto a la aplicación.",
+      "defaultNote": "Las claves se almacenan en tu perfil del sistema operativo.",
+      "portableWarningPrefix": "Las claves están en esta carpeta. Eliminarla (o perder la unidad) elimina esta copia del almacén — tu",
+      "portableWarningStrong": "frase semilla de 24 palabras",
+      "portableWarningSuffix": "es la copia de seguridad real."
+    },
+    "offlineStatus": {
+      "title": "Estado de aislamiento (air-gap)",
+      "subtitle": "Esta aplicación nunca realiza llamadas de red. Confirma que este dispositivo está sin conexión.",
+      "check": "Comprobar",
+      "onlineWarning": "Este dispositivo reporta una conexión de red. La aplicación sigue sin hacer solicitudes, pero para un verdadero aislamiento, desactiva el Wi-Fi / la red en esta máquina mientras firmas.",
+      "offlineOk": "Sin conexión confirmado. Este dispositivo no tiene conexión de red — completamente aislado.",
+      "checking": "Comprobando…"
+    },
+    "version": {
+      "publisher": "Hecho con ❤️ por SignBit",
+      "domain": "signbit.io"
+    },
+    "backup": {
+      "label": "Copia de seguridad",
+      "hint": "Guarda todo tu firmante (claves, descriptores de bóvedas y preferencias) en un único archivo cifrado que podrás restaurar en otro dispositivo.",
+      "action": "Exportar copia de seguridad",
+      "warning": "El archivo se cifra con su frase de contraseña. Cualquiera que consiga el archivo y su frase de contraseña obtiene sus claves, así que guárdelo en un lugar de confianza y use una frase de contraseña fuerte.",
+      "noKeys": "Añade una clave antes de crear una copia de seguridad.",
+      "modalTitle": "Exportar copia de seguridad",
+      "modalBody": "Esto guarda una copia cifrada de sus claves, los descriptores de bóvedas guardados y sus preferencias. Restáurela en cualquier dispositivo (Windows, macOS, Linux o Android) desde la pantalla de restauración.",
+      "filenameLabel": "Nombre del archivo",
+      "filenameHint": "Conserve la fecha para que las copias no se sobrescriban entre sí. Puede renombrarlo como quiera.",
+      "passphraseLabel": "Tu frase de contraseña",
+      "passphraseHint": "Esto cifra la copia de seguridad. Es la misma frase de contraseña con la que desbloquea la aplicación.",
+      "confirm": "Guardar copia de seguridad",
+      "saving": "Guardando…",
+      "wrongPassphrase": "Esa frase de contraseña es incorrecta.",
+      "saved": "Copia de seguridad guardada. {{count}} clave(s) incluida(s).",
+      "importAction": "Importar copia de seguridad",
+      "compareAction": "Comparar copia de seguridad",
+      "transferHint": "Importar reemplaza todo lo que hay en este dispositivo por un archivo de copia de seguridad. Comparar solo muestra las diferencias y no cambia nada.",
+      "tooLargeToRestore": "Esta copia ocuparía {{mb}} MB, demasiado grande para restaurarse después, así que no se guardó. Elimine bóvedas o claves que ya no necesite y vuelva a intentarlo.",
+      "largeFileNote": "Esta copia ocupa {{mb}} MB: inusualmente grande, pero aún restaurable. Considere eliminar bóvedas guardadas que ya no necesite.",
+      "keyCount": "Claves:",
+      "vaultCount": "Bóvedas guardadas:",
+      "passphraseConfirmLabel": "Confirma la frase de contraseña",
+      "passphraseMismatch": "Las dos frases de contraseña no coinciden."
+    },
+    "changePass": {
+      "label": "Frase de contraseña",
+      "hint": "Cambia la frase de contraseña que desbloquea esta aplicación. Tus claves no se ven afectadas.",
+      "action": "Cambiar la frase de contraseña",
+      "modalTitle": "Cambiar la frase de contraseña",
+      "modalBody": "Sus claves permanecen exactamente igual. Solo cambia la frase de contraseña que las desbloquea.",
+      "backupWarning": "Los archivos de copia de seguridad que ya exportó seguirán necesitando la frase de contraseña ANTIGUA. Solo cambia este dispositivo. Después se le ofrecerá una copia nueva.",
+      "currentLabel": "Frase de contraseña actual",
+      "newLabel": "Nueva frase de contraseña",
+      "confirmLabel": "Confirma la nueva frase de contraseña",
+      "mismatch": "Las dos frases de contraseña no coinciden.",
+      "sameAsCurrent": "Esa es su frase de contraseña actual.",
+      "confirmAction": "Cambiar la frase de contraseña",
+      "changing": "Cambiando…",
+      "wrongCurrent": "Esa no es su frase de contraseña actual.",
+      "changed": "Frase de contraseña cambiada. Este dispositivo ahora se desbloquea con la nueva.",
+      "exportTitle": "Guardar una copia nueva",
+      "exportBody": "Tus archivos de copia de seguridad actuales siguen abriéndose con la frase de contraseña antigua. Guarda una copia nueva ahora para que tu archivo de recuperación y este dispositivo usen la misma.",
+      "exportAction": "Guardar copia ahora",
+      "exportLater": "Ahora no",
+      "exportSaved": "Copia nueva guardada. Sus archivos de copia anteriores siguen abriéndose con la frase de contraseña previa.",
+      "exportSkipped": "No se guardó ninguna copia nueva. Sus archivos de copia actuales siguen abriéndose con su frase de contraseña previa."
+    },
+    "offlineOk": "Sin conexión confirmado. Este dispositivo no tiene conexión de red y está totalmente aislado."
+  },
+  "help": {
+    "title": "Ayuda",
+    "subtitle": "Cómo funciona esta aplicación, en detalle. Incluida y con buscador, sin necesidad de red para leerla.",
+    "searchPlaceholder": "Buscar en la ayuda…",
+    "searchNoResults": "Ningún tema coincide con «{{query}}».",
+    "searchResultsCount": "{{count}} tema encontrado",
+    "crossRefLabel": "Ver también:",
+    "guideAction": "Abrir la guía de configuración de claves",
+    "backToTopics": "Volver a los temas",
+    "pickATopic": "Elige un tema a la izquierda para leerlo aquí.",
+    "topics": {
+      "gettingStarted": {
+        "title": "Primeros pasos"
+      },
+      "deviceSecurity": {
+        "title": "Tu contraseña y la seguridad del dispositivo"
+      },
+      "keys": {
+        "title": "Claves"
+      },
+      "vaults": {
+        "title": "Bóvedas y multifirma"
+      },
+      "signing": {
+        "title": "Firma y aprobaciones"
+      },
+      "trust": {
+        "title": "Confianza y funcionamiento"
+      }
+    },
+    "gettingStarted": {
+      "whatIsThis": {
+        "title": "¿Qué es Fountain?",
+        "body": "Fountain es esta aplicación: la que estás leyendo ahora mismo. Es un firmante sin conexión: guarda tu clave (o claves) de una bóveda de Bitcoin, las mantiene cifradas en este dispositivo y produce tu firma cuando hace falta.\n\nUna bóveda es una cuenta protegida por varias claves independientes, donde ningún titular puede mover fondos por su cuenta. Fountain se ocupa de tu parte, y de nada más.\n\nNo necesita nada más para ser útil. Puedes crear claves, construir el descriptor de una bóveda, derivar sus direcciones y firmar, todo aquí. Lo que te pida una firma llega a esta aplicación solo como texto plano o código QR, transportado a mano."
+      },
+      "airGap": {
+        "title": "La filosofía del air gap",
+        "body": "Esta aplicación nunca hace una llamada de red, a nadie. Tus claves privadas (las frases semilla de 24 palabras que hay detrás de cada una de tus claves) se generan aquí, se cifran aquí y nunca salen de este dispositivo. Lo único que exporta es una clave pública, una clave pública extendida y una huella, pensadas para compartirse; no pueden mover fondos ni revelar tu semilla.\n\nAsí que todo lo que tiene que llegar a esta aplicación, o salir de ella, se transporta a mano como texto plano o código QR: una transacción sin firmar para firmar, el resultado firmado, una solicitud de aprobación. Consulta «Mover datos: copiar y pegar, archivo o QR» en Firma y aprobaciones para comparar esos transportes.\n\nLo que de verdad te protege no es qué transporte elijas. Es que tu clave nunca sale de este dispositivo y que puedes leer exactamente lo que firmas antes de firmarlo."
+      },
+      "publicVsPrivate": {
+        "title": "Clave pública frente a privada, en cristiano",
+        "body": "Una clave pública (un tpub, o xpub en mainnet) es como una entrada de agenda: se puede entregar sin riesgo a quien esté armando la bóveda, para que la bóveda compartida pueda construirse. Por sí sola no puede gastar ni firmar nada.\n\nUna clave privada (tu frase de 24 palabras) es la clave de verdad. No la escribas en ningún sitio salvo aquí, no se la envíes a nadie, no la fotografíes ni la guardes en texto plano fuera del almacén cifrado de esta aplicación. Quien la tenga puede gastar todo lo que esa clave controle."
+      },
+      "testnetOnly": {
+        "title": "Mainnet frente a testnet",
+        "body": "Mainnet es Bitcoin real, y es donde arranca una instalación nueva. Las monedas de testnet no valen nada y existen para practicar, así que es el lugar seguro para ensayar este flujo antes de que haya dinero real de por medio. Esta aplicación firma en cualquiera de las dos: elígelo en Ajustes.\n\nLa red es una propiedad de cada CLAVE, no de la aplicación: una clave queda marcada con la red en la que se creó y siempre deriva ahí. Cambiar el ajuste decide para qué red se crean las claves nuevas y qué muestra la pantalla; nunca cambia una clave que ya tienes."
+      },
+      "verifyingThisApp": {
+        "title": "Comprueba que tienes la aplicación auténtica",
+        "body": "Esta es la aplicación a la que vas a confiar tus claves, así que vale la pena dedicar un minuto a confirmar que la copia que tienes es la que publicamos. Hazlo antes de crear una clave, mientras todavía no hay nada que perder.\n\nCada versión lleva una suma SHA-256 publicada en signbit.io. Calcula la suma del archivo que descargaste y compárala con la publicada allí, carácter por carácter. Si no coinciden, no lo ejecutes.\n\nEsto importa sobre todo cuando la aplicación no vino directamente de nosotros. Una copia que te pasaron en un USB o que compartió un compañero ha estado fuera de nuestras manos y de las tuyas, y la suma de verificación es lo único que puede decirte que llegó sin cambios.\n\nAjustes muestra quién publicó esta aplicación y dónde encontrarla. Léelo como una indicación de dónde viven las sumas reales, no como una prueba en sí misma: una copia manipulada mostraría exactamente las mismas palabras. Solo la comparación demuestra algo.\n\nUna cosa que esperar en Windows: esta aplicación aún no está firmada digitalmente, así que SmartScreen te avisará al ejecutarla. Ese aviso es por un certificado que todavía no hemos comprado, no por algo detectado en el archivo, y seguirá apareciendo hasta que eso cambie."
+      }
+    },
+    "deviceSecurity": {
+      "createUnlock": {
+        "title": "Crear tu keystore frente a desbloquearlo",
+        "body": "La primera vez que abres esta app, eliges una contraseña que cifra todo lo que guardará. Tus claves no viven en ningún otro sitio. A partir de ahí, desbloqueas con esa misma contraseña. No hay forma de restablecerla: si la olvidas, la única vía de vuelta es restaurar desde una copia del archivo keystore (ver Restaurar un keystore) o reimportar cada clave desde su propia frase semilla de 24 palabras."
+      },
+      "restore": {
+        "title": "Restaurar un keystore",
+        "body": "Si esta app encuentra un keystore en una ubicación distinta a la que está usando (lo habitual justo después de cambiar a una copia portátil/USB), se ofrece a restaurarlo automáticamente: un clic, y luego desbloqueas con la contraseña de ese keystore.\n\nTambién puedes restaurarlo manualmente eligiendo tú mismo un archivo. En ambos casos, la contraseña se verifica contra el archivo antes de sobrescribir nada, así que una contraseña equivocada o el archivo incorrecto nunca destruyen tus claves actuales."
+      },
+      "threeBackupArtifacts": {
+        "title": "Tus palabras semilla, el keystore y el archivo de copia de seguridad",
+        "body": "Aquí hay tres cosas distintas que se llaman «mi copia de seguridad», y cada una recupera una parte diferente de tu configuración. Saber cuál tienes en realidad marca la diferencia entre una tarde molesta y perder monedas.\n\nTus 24 palabras en papel son la clave misma. Recuperan una clave, en esta aplicación o en cualquier otra cartera compatible, y no necesitan ninguna frase de contraseña porque nada en ellas está cifrado. Sobreviven a un disco muerto, a un teléfono perdido y a una frase de contraseña olvidada. Esta es la copia que siempre debería existir.\n\nEl keystore es el archivo de trabajo donde esta aplicación guarda tus claves en este dispositivo. Contiene todas las claves que hay aquí y se abre con la frase de contraseña con la que desbloqueas ahora. Viaja contigo si copias la carpeta de la aplicación, pero no sabe nada de tus bóvedas.\n\nEl archivo de copia que exportas desde Ajustes es la imagen más completa: tus claves, más los descriptores de bóveda que has guardado, los nombres de cofirmantes que has puesto y tus preferencias. Es el que hay que usar para pasar a un dispositivo nuevo o a otro sistema operativo. Se abre con la frase de contraseña que estuviera vigente en el momento en que lo guardaste, que no es necesariamente la que usas hoy.\n\nDe ahí se siguen tres cosas fáciles de pasar por alto hasta que muerden:\n\nSi tu frase de contraseña se pierde, los dos archivos se pierden con ella. Están cifrados y nadie puede abrirlos por ti. Solo las palabras en papel te traen de vuelta de ahí.\n\nSolo la copia exportada recuerda tus bóvedas. Restaura un keystore a secas y tus claves vuelven mientras que tus descriptores guardados no, que es la razón por la que entonces la pantalla de firma no distingue el cambio de un destinatario real.\n\nUna copia exportada es una fotografía, no un espejo. Contiene lo que existía el día que la guardaste. Añade una clave después y ningún archivo anterior la tiene, así que vuelve a exportar cada vez que añadas algo que odiarías perder."
+      },
+      "changingYourPassphrase": {
+        "title": "Cambiar tu frase de contraseña no cambia tus copias antiguas",
+        "body": "Cambiar tu frase de contraseña vuelve a cifrar las claves de este dispositivo y nada más. Tus claves en sí quedan intactas. Cada archivo de copia que ya has exportado conserva la frase de contraseña con la que se escribió.\n\nEsto pilla a la gente en ambos sentidos.\n\nSi la cambias y más tarde vas a buscar una copia antigua, la nueva frase no abrirá ese archivo. No está dañado. Pide la frase de contraseña que estaba vigente el día que lo guardaste, así que conviene anotar en el archivo a qué época pertenece.\n\nSi la cambiaste porque creías que alguien había averiguado la anterior, ten claro qué has arreglado y qué no. Este dispositivo ya está a salvo. Cualquier archivo de copia escrito con la frase antigua sigue ahí fuera, y sigue abriéndose con esa misma frase que te preocupa. Cambiarla aquí no revoca nada allá fuera.\n\nAsí que exporta una copia nueva justo después de cambiarla. La aplicación te lo ofrece en ese momento; acéptalo. Después ocúpate de los archivos antiguos a conciencia: destrúyelos, o guárdalos sabiendo que solo están tan protegidos como lo estuviera aquella frase antigua."
+      },
+      "androidStorage": {
+        "title": "En un teléfono, tu frase de contraseña es toda la defensa",
+        "body": "Si estás usando esto en Android, hay algo que conviene saber, porque funciona de forma distinta a lo que razonablemente esperarías.\n\nLa mayoría de las aplicaciones de móvil que guardan algo secreto se apoyan en el propio teléfono: tu huella o tu cara para desbloquear, y hardware dentro del teléfono construido para custodiar claves. Esta aplicación todavía no hace eso. Tus claves están cifradas con la frase de contraseña que escribiste en esta aplicación, y ya está. El bloqueo de pantalla de tu teléfono no las está protegiendo.\n\nLa consecuencia práctica es que tu frase de contraseña carga con todo el peso justo en el dispositivo que es más probable que te dejes en un taxi. Quien coja tu teléfono y pase el bloqueo de pantalla llega a un keystore cifrado, y lo único entre esa persona y tus claves es lo larga e inusual que sea esa frase. Una corta, elegida porque se teclea rápido con el pulgar, está haciendo un trabajo para el que nunca se pensó.\n\nAsí que elige aquí una larga, aunque escribirla sea un fastidio. Usa un bloqueo automático corto para que la aplicación no se quede desbloqueada en tu bolsillo. Guarda tus palabras semilla en algún sitio que no sea el teléfono.\n\nEl almacenamiento respaldado por hardware y el desbloqueo biométrico están en desarrollo. Hasta que lleguen, trata la frase de contraseña como la única cerradura de la puerta."
+      },
+      "autoLock": {
+        "title": "Bloqueo automático por inactividad",
+        "body": "La app puede bloquearse sola tras un periodo elegido sin actividad de ratón, teclado o pantalla táctil, reduciendo la ventana en la que un dispositivo comprometido y sin vigilancia queda desbloqueado. Puedes elegir «Nunca», pero la app te avisa cuando lo haces."
+      },
+      "storageLocation": {
+        "title": "Dónde se guardan realmente tus claves",
+        "body": "Una copia portátil de esta aplicación (por ejemplo, ejecutada desde una unidad USB) guarda su keystore cifrado en una carpeta justo al lado de sí misma, así que tus claves viajan con la aplicación. Una copia instalada recurre en su lugar a la carpeta de perfil de usuario de tu sistema operativo.\n\nEn cualquiera de los dos casos, perder ese almacenamiento pierde esa copia de tus claves, ya sea la unidad USB o la carpeta misma. Ten una copia de seguridad que no viva en este dispositivo: tus frases semilla escritas, un export cifrado desde Ajustes, o ambas cosas. Volver a importar una frase semilla recupera una clave pase lo que pase con el archivo keystore.\n\nSi has usado esta aplicación de las dos formas en un mismo ordenador, tienes dos keystores separados, y son archivos realmente distintos. Pueden contener claves diferentes y pueden depender de frases de contraseña diferentes. Así que cuando esta aplicación te ofrezca restaurar un keystore que ha encontrado en otro sitio, puede ser perfectamente tuyo y aun así rechazar la frase que estás escribiendo: eso normalmente significa que se escribió en una época en la que tu frase era otra, no que el archivo esté dañado."
+      }
+    },
+    "keys": {
+      "whatIsAKey": {
+        "title": "Qué es una clave",
+        "body": "Una clave aquí es una identidad de cofirmante en una bóveda: una sola frase de 24 palabras y todo lo que se deriva de ella. Una bóveda necesita varias claves independientes —la tuya y las de otros tenedores— antes de poder hacer nada. Consulta Bóvedas y multifirma para ver cómo se combinan."
+      },
+      "creating": {
+        "title": "Crear una clave nueva",
+        "body": "Genera una frase semilla nueva y aleatoria de 24 palabras, mostrada una sola vez, de inmediato. Anótala antes de hacer nada más. Esta app puede volver a mostrártela más tarde (ver Volver a ver la semilla), pero el momento de la creación sigue siendo tu única oportunidad garantizada de anotarla con calma en papel."
+      },
+      "importing": {
+        "title": "Importar una clave existente",
+        "body": "Si ya tienes una frase semilla de 24 palabras de otro sitio, pégala o escríbela con una etiqueta. Esta app comprueba que sea una lista válida de palabras estándar (BIP-39) y te avisa si las palabras parecen estar en el orden equivocado."
+      },
+      "seedBackup": {
+        "title": "Copia de seguridad de tu frase semilla",
+        "body": "La frase semilla de 24 palabras es la única forma de recuperar una clave. No hay cuenta, ni restablecimiento por correo, ni ticket de soporte que la devuelva. Si las palabras se pierden y todas las copias se pierden también, lo que esa clave controla se ha ido para siempre.\n\nEscribe las palabras en papel. Esa es la copia que sobrevive a un disco muerto, a un teléfono perdido y a una frase de contraseña olvidada, y siempre debería existir.\n\nEsta aplicación también puede hacer una copia digital: un export cifrado desde Ajustes, con tus claves y tus bóvedas guardadas en un solo archivo. Puedes tenerlo en un USB o en la nube, y para eso está, pero ten claro qué lo protege. Cualquiera que copie ese archivo puede probar contraseñas contra él en su propia máquina, durante todo el tiempo que quiera, sin que nada de aquí lo frene ni lo bloquee. Tu frase de contraseña es lo único que se interpone, así que hazla larga y nunca la guardes junto al archivo.\n\nHay una regla que merece la pena seguir: no dejes que una sola aplicación ni un solo archivo de copia contengan todas las claves de una bóveda. Una bóveda necesita varias claves independientes precisamente para que perder o exponer una sea superable; tenerlas todas en el mismo sitio deshace eso en silencio. Repártelas entre dispositivos y personas, y haz copia de cada una por separado.\n\nCualquiera que lea las 24 palabras en el orden correcto puede gastar lo que esa clave controla. No les hagas capturas, no las guardes en una aplicación de notas, no te las envíes por correo. Trátalas exactamente como dinero en efectivo en la mano."
+      },
+      "revealSeedAgain": {
+        "title": "Volver a ver tu semilla más adelante",
+        "body": "A diferencia de una cartera de hardware, este es un firmante por software, así que tiene que seguir guardando tu frase semilla para poder seguir firmando con ella. Eso hace que «revelar la semilla» sea aquí una acción real y repetible, no una ceremonia de una sola vez: útil si necesitas volver a anotar las palabras o llevar una clave a otro dispositivo.\n\nEstá protegida por la reintroducción de tu contraseña cada vez, incluso con la aplicación ya desbloqueada, y solo permite 3 intentos fallidos antes de que toda la aplicación se bloquee como defensa ante la fuerza bruta.\n\nRevélala solo donde nadie pueda ver la pantalla, y prefiere la exportación cifrada de Ajustes si lo que quieres es una copia de seguridad: esa nunca muestra las palabras en pantalla."
+      },
+      "exportPublicKey": {
+        "title": "Exportar tu clave pública",
+        "body": "La exportación pública de una clave es su clave pública extendida (un tpub en testnet, un xpub en mainnet) más su huella maestra. Eso es lo que entregas para que la clave se inscriba en una bóveda: como cadena copiada o como archivo de clave guardado desde esta pantalla. Se puede copiar, guardar o leer en voz alta sin riesgo: no puede mover fondos ni reconvertirse en la frase de recuperación."
+      },
+      "removing": {
+        "title": "Quitar una clave",
+        "body": "Eliminar una clave solo la borra de este dispositivo. La pertenencia a la bóveda y los fondos viven en la blockchain y en el descriptor de la bóveda, no en esta aplicación, así que una clave que puedes volver a importar es una clave que no has perdido.\n\nAntes de eliminar una, ten claro dónde sigue existiendo. Las palabras semilla anotadas siempre la recuperan. Una copia cifrada solo la recupera si esa copia se hizo después de añadir esta clave y sabes con qué frase de contraseña se escribió: una copia del mes pasado no contiene una clave que creaste la semana pasada, y un archivo más antiguo sigue abriéndose con la frase que estuviera vigente cuando lo guardaste.\n\nSi la semilla no está anotada en ninguna parte y ninguna copia la contiene, eliminarla aquí la destruye para siempre."
+      },
+      "whereAreMyAddresses": {
+        "title": "¿Dónde están mis direcciones?",
+        "body": "Una clave en esta pantalla no tiene una dirección propia para recibir. Las direcciones pertenecen a la bóveda, no a una clave concreta: una dirección de bóveda se deriva de todas las claves inscritas junto con el umbral, y por eso no puede existir hasta que la bóveda esté completa.\n\nAsí que primero necesitas el descriptor de la bóveda. O lo construyes aquí —la pestaña Bóvedas tiene un constructor sin conexión donde introduces la clave pública de cada titular y eliges el umbral— o exportas la clave pública de esta clave, haces que se inscriba en una bóveda que esté montando otra persona y guardas aquí el descriptor final.\n\nUna vez guardado un descriptor, esta aplicación deriva por ti las direcciones de esa bóveda: ábrela en Bóvedas y elige cualquier índice de recepción o de cambio, totalmente sin conexión. Así también compruebas que una dirección que te han dado es realmente tuya: deriva el mismo índice aquí y compara."
+      }
+    },
+    "vaults": {
+      "whatIsAVault": {
+        "title": "Qué es una bóveda",
+        "body": "Una bóveda es una cuenta de Bitcoin protegida por varias claves independientes (multifirma): un esquema «m de n» donde cualesquiera m de las n claves inscritas deben coincidir para mover los fondos. Tú tienes una; las demás pertenecen a otros tenedores: otras personas, una clave de recuperación o un servicio de cofirma. Ninguna de ellas puede gastar por sí sola."
+      },
+      "whatIsADescriptor": {
+        "title": "Qué es realmente un descriptor de bóveda",
+        "body": "Un descriptor es el plano compartido que indica exactamente qué claves públicas hay en una bóveda y cuántas hacen falta para gastar. Son datos públicos, no un secreto, pensados para compartirse entre cofirmantes e incluso guardarse en un archivo de copia de seguridad. Es también lo único que se necesita para reconstruir las direcciones de la bóveda de forma independiente, sin preguntarle a nadie."
+      },
+      "enrolling": {
+        "title": "Inscribir tu clave en una bóveda",
+        "body": "Rellenar una ranura de clave en una bóveda consiste en entregar una clave pública: la clave pública extendida y la huella maestra que exportas desde la pantalla Claves. Eso es toda la entrega: una cadena copiada, un archivo de clave guardado o leída en voz alta. Tu frase de recuperación nunca tiene que salir de este dispositivo para que tu clave forme parte de una bóveda activa."
+      },
+      "rolesVsQuorum": {
+        "title": "Roles frente a quórum: qué cuenta de verdad",
+        "body": "Cada clave inscrita puede llevar una etiqueta de rol (la tuya, recuperación, cofirmante, etc.), pero el umbral de una bóveda cuenta CLAVES distintas, no roles. Cualesquiera m de las n claves inscritas pueden firmar, sea cual sea su etiqueta. Una etiqueta existe para ayudar a distinguir las claves; nunca concede ni retira la capacidad de firmar."
+      },
+      "savingADescriptor": {
+        "title": "Guardar el descriptor de una bóveda aquí",
+        "body": "Guarda una copia local y sin conexión del descriptor de una bóveda: pégalo, o importa un archivo de copia de seguridad guardado. Esa copia es lo que te permite más tarde verificar una dirección o construir un gasto en una herramienta de terceros, usando solo el descriptor y tu propia clave, sin nada ni nadie más a quien preguntar."
+      },
+      "buildingOffline": {
+        "title": "Construir un descriptor de bóveda totalmente sin conexión",
+        "body": "Para el escenario de «todos en la misma sala»: introduce la clave pública de cada tenedor, elige el umbral y la aplicación calcula el descriptor de la bóveda. Cero llamadas de red y nadie más implicado en originar la bóveda.\n\nMejor importa cada clave desde un archivo de clave exportado en vez de teclearla. Transcribir a mano una clave pública extendida es el punto más propenso a errores de todo este flujo, y un solo carácter equivocado produce una bóveda que parece correcta y que nadie podrá firmar jamás."
+      },
+      "derivingAnAddress": {
+        "title": "Derivar una dirección para verificarla",
+        "body": "A partir de un descriptor guardado, la aplicación puede calcular la dirección real de recepción o de cambio en cualquier índice, totalmente sin conexión. Úsala para comprobar de forma independiente una dirección que te hayan dado: elige el mismo índice en ambos sitios y compara el resultado."
+      }
+    },
+    "signing": {
+      "whatIsAPsbt": {
+        "title": "Qué es un PSBT",
+        "body": "Un PSBT («transacción de Bitcoin parcialmente firmada») no es más que una transacción sin firmar o firmada en parte, en un formato de archivo/texto estándar y compartible. Es lo que va pasando de un tenedor de clave a otro hasta que hay firmas suficientes para difundirla."
+      },
+      "signingATransaction": {
+        "title": "Firmar una transacción",
+        "body": "Pega, importa o escanea el PSBT que te dieron, elige cuál de tus claves debe firmarlo, revisa qué hace realmente (consulta Verificar antes de firmar) y firma. El resultado firmado sale igual que llegó: copia, archivo o QR."
+      },
+      "verifyingBeforeYouSign": {
+        "title": "Verificar antes de firmar",
+        "body": "Justo encima del botón de firmar, una transacción pegada se decodifica en términos claros: quién cobra, cuánto, y la comisión de red, calculado directamente a partir de los bytes de la transacción cada vez, nunca de ninguna etiqueta que ella misma diga tener. Si has guardado el descriptor de la bóveda, el cambio también se distingue de un destinatario real; sin uno, simplemente se muestra como «desconocido» en lugar de adivinarlo."
+      },
+      "policyApproval": {
+        "title": "Firmar una aprobación de cambio de política",
+        "body": "Una acción distinta de firmar una transacción. Algunas bóvedas llevan reglas de gasto: un límite diario, un máximo por transacción, una lista de destinatarios aprobados, un retardo antes de que salga una retirada. Esas reglas se suman al requisito de multifirma; nunca sustituyen la necesidad de suficientes firmas de titulares.\n\nCuando una de esas reglas se relaja, hace falta probar que un titular real estuvo de acuerdo, no solo quien lo pide. Esa prueba es una firma sobre el cambio exacto que se propone, hecha aquí con la misma clave de cuenta, solo que sobre otro tipo de mensaje.\n\nLee el mensaje antes de firmarlo. La firma se compromete con esas palabras exactas, así que lo que está en pantalla es lo que estás aceptando; y relajar una regla es la dirección que de verdad te cuesta seguridad, por eso hace falta tu clave."
+      },
+      "transports": {
+        "title": "Mover datos: copiar y pegar, archivo o QR",
+        "body": "Los tres transportes llevan exactamente el mismo texto en ambos sentidos: copiar y pegar, un archivo guardado o un código QR (mostrado en un dispositivo, escaneado por otro). Ninguno es más «seguro» que los demás: son solo tres formas de mover los mismos datos a mano. Lo que de verdad te protege es que puedes leer exactamente qué estás firmando antes de firmarlo, sea cual sea el transporte que lo trajo."
+      },
+      "qrFrameWontScan": {
+        "title": "Cuando un fotograma QR no se deja escanear",
+        "body": "No hay nada roto y no has perdido los fotogramas que ya capturaste. Una transacción suele ser demasiado grande para un solo código QR, así que cruza en varios, y atascarse en uno de ellos es normal. Esto es lo que está pasando en realidad.\n\nLos fotogramas son independientes. Puedes capturarlos en cualquier orden, y volver a escanear uno que ya tienes no hace ningún daño. El escáner lleva la cuenta y te dice exactamente qué números siguen pendientes, así que fíate de esa lista en lugar de empezar de nuevo: los fotogramas que ya has leído están guardados.\n\nVuelve al fotograma que falta en el dispositivo que muestra los códigos, ponlo otra vez en pantalla y escanea ese. No necesitas repasar los demás.\n\nCuando un fotograma concreto se resiste, casi siempre es algo físico y no un fallo en los datos. Haz el código más grande en la pantalla que lo muestra, que es con diferencia lo más eficaz. Después estabiliza la cámara, dale un momento para enfocar y dale más luz a la pantalla sin provocar reflejos. Limpiar la lente ayuda más veces de las que debería.\n\nSi llevas un rato peleándote, cancela y empieza la transferencia desde el principio. El contenido se regenera y solo pierdes el tiempo invertido: el resultado firmado sale de la propia transacción, no de un escaneo parcial."
+      }
+    },
+    "trust": {
+      "noSingleParty": {
+        "title": "Ninguna parte sola puede mover los fondos",
+        "body": "Esta es la promesa central de una bóveda multifirma: como gastar exige firmas de varias claves independientes, ningún tenedor por sí solo —ni tú solo, ni ningún servicio por su cuenta— puede mover los fondos jamás. Hace falta un quórum real, siempre."
+      },
+      "neverConnects": {
+        "title": "Por qué esta app nunca se conecta a internet",
+        "body": "Esta app está construida sin ningún código de red para nada relacionado con tus claves; no hay ningún servidor al que pudiera llamar aunque quisiera. Eso protege las claves en sí, tanto guardadas como en uso, pero no protege un dispositivo que ya esté comprometido mientras está desbloqueado. Una buena seguridad del dispositivo (contraseña, bloqueo automático, manejo físico cuidadoso) sigue importando."
+      }
+    },
+    "searchMatch": "coincidencia",
+    "searchResultsCountPlural": "{{count}} temas encontrados"
+  },
+  "backupTransfer": {
+    "back": "Volver a ajustes",
+    "importTitle": "Importar copia de seguridad",
+    "importSubtitle": "Reemplazar todo lo que hay en este dispositivo por el contenido de un archivo de copia de seguridad.",
+    "compareTitle": "Comparar copia de seguridad",
+    "compareSubtitle": "Vea en qué se diferencia un archivo de copia de seguridad de este dispositivo. No se cambia nada.",
+    "importWarning": "Importar sobrescribe este dispositivo: sus claves, bóvedas guardadas y preferencias se reemplazan por las del archivo. Verá exactamente qué cambia antes de que ocurra nada.",
+    "step1": "1. Elige un archivo de copia de seguridad",
+    "step2": "2. Introduce la frase de contraseña de ese archivo",
+    "chooseFile": "Elegir archivo…",
+    "passphraseHint": "Esta es la frase de contraseña con la que se guardó ese archivo, que puede no ser la que acaba de usar para desbloquear la aplicación.",
+    "openFile": "Abrir archivo",
+    "opening": "Abriendo…",
+    "errorTooLarge": "Ese archivo supera los {{mb}} MB, así que no puede ser una copia de seguridad de SignBit.",
+    "errorRead": "No se pudo leer ese archivo.",
+    "identical": "Esta copia de seguridad coincide exactamente con este dispositivo. No hay nada que cambiar.",
+    "destructiveWarning": "{{count}} clave(s) de este dispositivo no están en esta copia de seguridad. Importar las eliminará permanentemente. Si no tiene sus 24 palabras anotadas en otro sitio, no se podrán recuperar.",
+    "statKeysRemoved": "Claves perdidas",
+    "statKeysAdded": "Claves añadidas",
+    "statVaultsChanged": "Cambios en bóvedas",
+    "statSettings": "Cambios de ajustes",
+    "sectionKeys": "Claves",
+    "sectionVaults": "Bóvedas guardadas",
+    "sectionSettings": "Preferencias",
+    "noKeys": "No hay claves en ninguno de los dos lados.",
+    "noVaults": "No hay bóvedas guardadas en ninguno de los dos lados.",
+    "labelChange": "Renombrado: «{{from}}» → «{{to}}»",
+    "unreadableKey": "No se pudo leer la frase semilla de esta entrada.",
+    "keyWillBeLost": "Esta clave se eliminará permanentemente. Anota antes sus 24 palabras si todavía la necesitas.",
+    "status": {
+      "import": {
+        "removed": "Se eliminará",
+        "added": "Se añadirá",
+        "changed": "Cambiará",
+        "unchanged": "Sin cambios"
+      },
+      "compare": {
+        "removed": "Solo en este dispositivo",
+        "added": "Solo en la copia de seguridad",
+        "changed": "Difiere",
+        "unchanged": "Igual"
+      }
+    },
+    "changeDescriptor": {
+      "onlyDevice": "Solo este dispositivo tiene un descriptor de cambio para esta bóveda.",
+      "onlyBackup": "Solo la copia de seguridad tiene un descriptor de cambio para esta bóveda.",
+      "differs": "Los dos descriptores de cambio no coinciden."
+    },
+    "keyLabels": {
+      "onlyDevice": "Solo este dispositivo tiene nombres de cofirmantes para esta bóveda. Al restaurar se borrarán.",
+      "onlyBackup": "La copia de seguridad añade nombres de cofirmantes para esta bóveda.",
+      "differs": "Los nombres de cofirmantes difieren. Al restaurar se reemplazarán los de este dispositivo por los de la copia de seguridad."
+    },
+    "setting": {
+      "autoLockMinutes": "Bloqueo automático (minutos)",
+      "theme": "Apariencia",
+      "locale": "Idioma"
+    },
+    "applyTitle": "Aplicar esta copia de seguridad",
+    "applyBody": "Este dispositivo será reemplazado exactamente por lo que se muestra arriba.",
+    "passphraseChangeWarning": "Después de importar, desbloqueará esta aplicación con la frase de contraseña del archivo de copia de seguridad, no con la actual.",
+    "applyPassphraseLabel": "Vuelve a introducir la frase de contraseña del archivo de copia",
+    "typeToConfirmLabel": "Escribe {{word}} para confirmar",
+    "applyAction": "Sobrescribir este dispositivo",
+    "applying": "Importando…",
+    "compareReadOnly": "No se cambió nada. Comparar solo lee el archivo.",
+    "compareAnother": "Comparar otro archivo",
+    "doneTitle": "Copia de seguridad importada",
+    "doneBody": "Este dispositivo ahora contiene {{count}} clave(s) de la copia de seguridad. Recuerde que el desbloqueo ahora usa la frase de contraseña del archivo de copia.",
+    "comparingWith": "Archivo de copia de seguridad:",
+    "finalConfirmTitle": "¿Sobrescribir este dispositivo?",
+    "finalConfirmSeedWarning": "TODAS LAS FRASES SEMILLA DE ESTE DISPOSITIVO SERÁN REEMPLAZADAS. Cualquier clave que no esté en esta copia de seguridad y no esté anotada en otro sitio se perderá para siempre, junto con el acceso a los fondos que protege. No hay deshacer ni recuperación.",
+    "finalConfirmKeysHeading": "{{count}} clave(s) se eliminarán permanentemente:",
+    "finalConfirmBody": "Continúe solo si tiene guardada la frase de contraseña de esta copia y las 24 palabras de todo lo que aún necesite. Sus claves, bóvedas guardadas y preferencias se reemplazarán por las del archivo.",
+    "finalConfirmAction": "Sí, sobrescribir todo",
+    "overLimitNote": "Esta copia contiene más claves o bóvedas de las que este firmante permite normalmente. Aun así se restaurará por completo, sin descartar nada.",
+    "comparePassphraseNote": "Abierto con la frase de contraseña que acaba de introducir. Esta comparación mira las claves dentro de los archivos, no cómo están bloqueados, así que dos archivos pueden contener exactamente las mismas claves con frases de contraseña distintas.",
+    "identicalPassphraseNote": "Contenido idéntico, pero no necesariamente una frase de contraseña idéntica. Si ha cambiado su frase de contraseña desde que se escribió uno de estos archivos, el más antiguo solo se abre con la que estaba vigente entonces."
+  },
+  "reset": {
+    "title": "Restablecer este dispositivo",
+    "subtitle": "Borrar este firmante y empezar de nuevo.",
+    "warning": "Esto elimina las claves guardadas en este dispositivo. No se puede deshacer, ni revertir después con tu frase de contraseña. Como el keystore está cifrado, esta aplicación no puede mostrarte qué claves contiene. Solo tú sabes qué hay dentro.",
+    "tryRestoreTitle": "¿Tiene un archivo de copia de seguridad?",
+    "tryRestoreBody": "Si exportó una copia de seguridad, restáurela en su lugar. Necesitará la frase de contraseña que estaba vigente cuando se escribió ese archivo, que puede no ser la que ha olvidado.",
+    "tryRestoreAction": "Restaurar desde una copia en su lugar",
+    "typeToConfirm": "Escribe {{word}} para continuar",
+    "action": "Restablecer este dispositivo",
+    "finalTitle": "¿Borrar este dispositivo?",
+    "finalWarning": "Cualquier frase semilla que no haya anotado está a punto de desaparecer, y con ella los fondos que controla.",
+    "finalBody": "Se eliminarán todas las claves de este dispositivo, junto con sus descriptores de bóvedas guardados y sus ajustes. Después, una clave solo se puede recuperar desde su propia frase de 24 palabras o desde un archivo de copia de seguridad. No hay otra forma de volver.",
+    "finalConfirm": "Borrar todo",
+    "resetting": "Borrando…",
+    "locationPortable": "Esto borrará la carpeta portátil junto a la aplicación:",
+    "locationAppData": "Esto borrará la carpeta de datos de este equipo:",
+    "locationOtherNote": "Un keystore anterior en la carpeta de datos de este equipo no se toca. Si existe, es posible que se le ofrezca después. Es un archivo distinto y puede usar una frase de contraseña anterior.",
+    "cooldownNote": "Tómese un momento. Este botón se desbloquea en unos segundos. Si no está seguro, cancele ahora.",
+    "finalConfirmWaiting": "Borrar todo ({{seconds}} s)"
+  }
+}
