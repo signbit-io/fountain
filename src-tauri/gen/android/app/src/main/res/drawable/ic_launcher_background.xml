@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Android ADAPTIVE-ICON BACKGROUND for SignBit.
+
+  ⚠️ Replaces two generated defaults: this file was the Android Studio template (a green tile
+  with grid lines, unused), and mipmap-anydpi-v26/ic_launcher.xml pointed at a flat #fff colour
+  resource instead. That white showed at the icon's edges once the foreground artwork was
+  shrunk into Android's 66% safe zone (see scripts/fix-adaptive-foreground.ps1): the foreground
+  is transparent outside the mark, so whatever sits behind fills the rest — and a white tile
+  behind a dark-themed mark reads as "the icon didn't load".
+
+  Matches the full-bleed source icon's own backdrop (scripts/gen-icon.mjs): the app-surface
+  vertical gradient #16181f → #0b0c10, plus the brand-orange bloom at the top mirroring the
+  app's .bg-glow. Drawn full-bleed at 108x108 with NO border or edge detail — the launcher
+  masks this to a circle / squircle / rounded square, so anything near the edge gets sliced.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Base: the app-surface gradient, top to bottom. -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="0"
+                android:endX="54"
+                android:endY="108"
+                android:type="linear">
+                <item android:color="#FF16181F" android:offset="0.0" />
+                <item android:color="#FF0B0C10" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Brand-orange bloom near the top, mirroring the app's .bg-glow. Fades to fully
+         transparent before the edge so the launcher mask never clips a hard stop. -->
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="54"
+                android:centerY="9"
+                android:gradientRadius="97"
+                android:type="radial">
+                <item android:color="#4DF7931A" android:offset="0.0" />
+                <item android:color="#12F7931A" android:offset="0.55" />
+                <item android:color="#00F7931A" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

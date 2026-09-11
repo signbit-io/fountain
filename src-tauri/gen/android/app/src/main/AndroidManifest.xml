@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      CAMERA — required for the QR scanner (components/QrTransport.tsx → getUserMedia).
+
+      ⚠️ Android will NOT prompt for a permission the app never declared: without this line
+      getUserMedia fails instantly, no dialog appears, and no Camera toggle shows up in the
+      app's system settings — so the user has no way to grant it. (Desktop differs: there the
+      OS prompt alone gates access, which is why this was missed.)
+
+      `uses-feature required="false"` keeps the app installable on a device with no camera at
+      all — scanning is one of THREE transports (copy-paste and file both still work), so a
+      missing camera must never block installation.
+    -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
+    <!-- AndroidTV support -->
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Fountain"
+        android:usesCleartextTraffic="${usesCleartextTraffic}">
+        <!--
+          android:label is app_name ("SignBit"), NOT main_activity_title ("SignBit Companion
+          Signer") which Tauri generates here. The ACTIVITY label is what Android shows in the
+          recents / app-switcher, where the longer string truncated to "SignBit Com…". The
+          descriptive title stays in strings.xml for the DESKTOP window title, which has room.
+        -->
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+            android:launchMode="singleTask"
+            android:label="@string/app_name"
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- AndroidTV support -->
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+          android:name="androidx.core.content.FileProvider"
+          android:authorities="${applicationId}.fileprovider"
+          android:exported="false"
+          android:grantUriPermissions="true">
+          <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

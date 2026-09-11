@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SignBit Fountain",
+  "mainBinaryName": "fountain",
+  "version": "0.6.1",
+  "identifier": "io.signbit.fountain",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "SignBit Fountain",
+        "width": 800,
+        "height": 600,
+        "minWidth": 380,
+        "minHeight": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "SignBit",
+    "copyright": "Copyright © 2026 SignBit. GPL-3.0-or-later.",
+    "shortDescription": "SignBit Fountain — air-gapped Bitcoin multisig signer",
+    "longDescription": "SignBit Fountain is the offline signer for SignBit collaborative custody. Holds your keys on your device, generates them to the vault's descriptor spec, and signs PSBTs and policy approvals without ever touching a network.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
