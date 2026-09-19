@@ -1,0 +1,700 @@
+{
+  "common": {
+    "brand": "SignBit",
+    "brandTagline": "Fountain",
+    "close": "Schließen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyFailed": "Kopieren fehlgeschlagen",
+    "cancel": "Abbrechen",
+    "loading": "Wird geladen…",
+    "show": "Anzeigen",
+    "hide": "Verbergen"
+  },
+  "shell": {
+    "lock": "Sperren",
+    "appearance": "Erscheinungsbild: {{mode}}",
+    "moreControls": "Weitere Steuerelemente",
+    "tabs": {
+      "keys": "Schlüssel",
+      "sign": "signieren",
+      "vaults": "Tresore",
+      "settings": "Einstellungen",
+      "help": "hilfe"
+    }
+  },
+  "unlock": {
+    "createTitle": "Passphrase erstellen",
+    "unlockTitle": "Schlüssel entsperren",
+    "createSubtitle": "Das verschlüsselt deine Schlüssel auf diesem Gerät. Es gibt keine Wiederherstellung, also schreib sie auf.",
+    "unlockSubtitle": "Gib die Passphrase für den Keystore dieses Geräts ein.",
+    "passphrase": "Passphrase",
+    "confirmPassphrase": "Passphrase bestätigen",
+    "working": "Wird verarbeitet…",
+    "createKeystore": "Schlüsselspeicher erstellen",
+    "unlockButton": "Entsperren",
+    "alreadyHaveKeystore": "Haben Sie bereits einen Schlüsselspeicher?",
+    "restoreIt": "Wiederherstellen",
+    "forgotPassphrase": "Passphrase vergessen?",
+    "resetDevice": "Gerät zurücksetzen",
+    "errorMismatch": "Die Passphrasen stimmen nicht überein.",
+    "errorTooShort": "Verwenden Sie mindestens 8 Zeichen.",
+    "strength": {
+      "tooShort": "Zu kurz",
+      "weak": "Schwach",
+      "fair": "Mittel",
+      "good": "Gut",
+      "strong": "Stark"
+    },
+    "strengthHint": {
+      "longer": "Länge schlägt Komplexität. Versuchen Sie mehrere Wörter.",
+      "variety": "Fügen Sie einen Großbuchstaben, eine Zahl oder ein Symbol hinzu.",
+      "avoidPattern": "Vermeiden Sie gängige Wörter, Wiederholungen und Tastaturfolgen."
+    }
+  },
+  "restore": {
+    "title": "Schlüssel wiederherstellen",
+    "subtitle": "Stellen Sie einen vorhandenen Schlüsselspeicher aus einer Sicherung oder früheren Installation wieder her und entsperren Sie ihn dann mit seiner Passphrase.",
+    "autoTitle": "Vorherigen Schlüsselspeicher wiederherstellen",
+    "chooseFile": "Schlüsselspeicherdatei wählen…",
+    "restoringFrom": "Wiederherstellung von",
+    "passphrase": "Passphrase",
+    "passphraseHint": "Geben Sie die Passphrase für diesen Schlüsselspeicher ein (keine neue).",
+    "restoring": "Wird wiederhergestellt…",
+    "restoreAndUnlock": "Wiederherstellen und entsperren",
+    "pickDifferentFile": "Andere Datei wählen",
+    "backToCreate": "Zurück",
+    "errorReadFile": "Diese Schlüsselspeicherdatei konnte nicht gelesen werden.",
+    "errorOpenPicker": "Der Dateiauswahldialog konnte nicht geöffnet werden.",
+    "errorWrongPassphrase": "Diese Passphrase entsperrt diesen Schlüsselspeicher nicht.",
+    "autoFromAppData": "Ein älterer Keystore wurde im App-Datenordner dieses Computers gefunden, aus der Zeit vor der portablen Nutzung dieser App.",
+    "autoFromPortable": "Ein Keystore wurde im portablen Ordner neben der App gefunden.",
+    "autoPassphraseNote": "Diese Datei ist verschlüsselt, daher kann die App nicht wissen, welche Schlüssel sie enthält. Sie benötigt möglicherweise eine frühere Passphrase, nicht unbedingt Ihre neueste.",
+    "searchHint": "Sicherung woanders? Jede Datei, die diese App schreibt, beginnt mit „signbit-“. Suchen Sie auf Ihrem Computer und auf USB-Sticks danach, um Sicherungen zu finden, die hier nicht sichtbar sind."
+  },
+  "keys": {
+    "title": "Ihre Schlüssel",
+    "subtitle": "Jeder Schlüssel ist ein Mitunterzeichner. Exportieren Sie seinen öffentlichen Schlüssel ({{prefix}} + Fingerabdruck), um ihn in einem Tresor zu registrieren.",
+    "emptyTitle": "Noch keine Schlüssel",
+    "emptySubtitle": "Erstelle einen Schlüssel, um einen öffentlichen Schlüssel zu bekommen, den du als Cosigner in einem Tresor registrieren kannst.",
+    "label": "Bezeichnung",
+    "seedPhraseLabel": "Seed-Phrase (12–24 Wörter)",
+    "labelPlaceholder": "z. B. Mein Mitunterzeichner-Schlüssel",
+    "seedPlaceholder": "Wort Wort Wort…",
+    "seedWordCount": "{{count}} Wörter",
+    "seedInvalidWord": "Kein BIP-39-Wort",
+    "seedValid": "Gültige Seed-Phrase",
+    "seedOrderSuspect": "Alle Wörter sind gültig, aber die Reihenfolge scheint falsch zu sein",
+    "seedDuplicate": "Diese Seed-Phrase wurde bereits als „{{label}}“ importiert.",
+    "newKeyLabelPlaceholder": "Neue Schlüsselbezeichnung",
+    "import": "Importieren",
+    "createKey": "Schlüssel erstellen",
+    "showPublicKey": "Öffentlichen Schlüssel anzeigen ({{network}})",
+    "publicKeyModalTitle": "Öffentlicher Schlüssel · {{label}}",
+    "fingerprint": "Master-Fingerabdruck",
+    "accountTpub": "Öffentlicher Kontoschlüssel",
+    "guideTitle": "Schlüssel-Einrichtungsleitfaden",
+    "guideIntro": "Jeder Schlüssel, den du hier erstellst oder importierst, nutzt diese Einstellungen bereits. Betrachte dies als Referenz dafür, was erzeugt wird und was du der Plattform beim Eintragen geben musst.",
+    "guideScript": "Skripttyp: Natives SegWit-Multisig (P2WSH)",
+    "guidePath": "Ableitungspfad: m/{{path}}",
+    "guideNetwork": "Netzwerk: {{network}} — exportiert einen {{prefix}}",
+    "guideExport": "Geben Sie der Plattform: Ihren {{prefix}} und Master-Fingerabdruck (Öffentlichen Schlüssel anzeigen auf einer Schlüsselkarte)",
+    "exportFilePublicNote": "Nur öffentlicher Schlüssel — registrieren Sie ihn als Ihren Fountain-Schlüssel beim Erstellen eines Tresors.",
+    "exportFileSaving": "Wird gespeichert…",
+    "exportFileJson": "Datei exportieren (.json)",
+    "addedOn": "Hinzugefügt am {{date}}",
+    "revealSeed": "Seed anzeigen",
+    "rename": "Umbenennen",
+    "renameSave": "Speichern",
+    "renameCancel": "Abbrechen",
+    "remove": "Entfernen",
+    "errorSaveFile": "Datei konnte nicht gespeichert werden.",
+    "backupTitle": "„{{label}}“ sichern",
+    "backupWarningStrong": "Notieren Sie sie jetzt.",
+    "backupWarningRest": "Diese 24-Wort-Phrase ist der einzige Weg, diesen Schlüssel wiederherzustellen. Schreib sie auf Papier, und achte darauf, dass niemand auf deinen Bildschirm schaut.",
+    "backedUp": "Ich habe sie gesichert",
+    "revealModalTitle": "Seed-Phrase · {{label}}",
+    "revealWarningShown": "Wer diese 24 Wörter sieht, kontrolliert diesen Schlüssel. Achte darauf, dass niemand auf deinen Bildschirm schaut.",
+    "revealWarningPrompt": "Geben Sie Ihre Passphrase erneut ein, um die 24-Wort-Seed-Phrase dieses Schlüssels anzuzeigen.",
+    "done": "Fertig",
+    "checking": "Wird geprüft…",
+    "revealSeedButton": "Seed anzeigen",
+    "revealIncorrectPassphrase": "Falsche Passphrase. {{count}} Versuch übrig, bevor die App gesperrt wird.",
+    "removeModalTitle": "Schlüssel entfernen",
+    "removeWarningPrefix": "Dies entfernt",
+    "removeWarningMiddle": "nur von diesem Gerät. Wenn seine 24-Wort-Phrase gesichert ist, können Sie ihn später wieder importieren;",
+    "removeWarningStrong": "wenn nicht, ist dies endgültig.",
+    "removeWarningSuffix": "Sichern Sie zuerst die Seed-Phrase, falls noch nicht geschehen.",
+    "removeConfirmLabelFingerprint": "Geben Sie den Fingerabdruck des Schlüssels zur Bestätigung ein",
+    "removeConfirmLabelName": "Geben Sie den Namen des Schlüssels zur Bestätigung ein",
+    "removeKeyButton": "Schlüssel entfernen",
+    "removeKeyButtonCountdown": "Schlüssel entfernen ({{seconds}}s)",
+    "keyFallbackName": "Schlüssel",
+    "createOnMainnet": "Neue Schlüssel werden Mainnet-Schlüssel. Das lässt sich später nicht ändern.",
+    "offNetwork": "nicht das aktuelle Netzwerk der App",
+    "derivationPath": "Ableitungspfad",
+    "revealIncorrectPassphrasePlural": "Falsche Passphrase. {{count}} Versuche übrig, bevor die App gesperrt wird.",
+    "exportAllAction": "Alle öffentlichen Schlüssel exportieren ({{count}})",
+    "exportAllTitle": "Alle öffentlichen Schlüssel exportieren",
+    "exportAllBody": "Wählen Sie einen Ordner, und Sie erhalten {{count}} Dateien, eine je Schlüssel. Jede trägt Bezeichnung und Fingerabdruck ihres Schlüssels, damit Sie sie später auseinanderhalten können.",
+    "exportAllConfirm": "Ordner wählen",
+    "exportAllSaved": "{{count}} Schlüssel in Ihrem Ordner gespeichert.",
+    "exportAllSkipped": "Diese ließen sich nicht exportieren und wurden ausgelassen: {{names}}.",
+    "exportAllPublicNote": "Das sind ausschließlich öffentliche Schlüssel, keine Seed-Phrasen. Genau das geben Sie der Plattform, wenn Sie einem Tresor einen Mitunterzeichner hinzufügen."
+  },
+  "vaults": {
+    "title": "Tresor-Backups",
+    "subtitle": "Fügen Sie den Deskriptor eines Tresors hinzu, damit Sie weiterhin Adressen überprüfen oder über ein Drittanbieter-Tool (z. B. Sparrow) ausgeben können, falls die Plattform jemals unerreichbar ist. Deskriptoren sind öffentliche Daten — keine Geheimnisse hier.",
+    "addTitle": "Tresor-Deskriptor hinzufügen",
+    "importFile": "Datei importieren",
+    "label": "Bezeichnung",
+    "labelPlaceholder": "z. B. Familie 3-von-5",
+    "descriptorLabel": "Empfangsdeskriptor",
+    "descriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/0/*,…))#checksum",
+    "changeDescriptorLabel": "Wechselgeld-Deskriptor (optional)",
+    "changeDescriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/1/*,…))#checksum",
+    "save": "Sicherung hinzufügen",
+    "addChangeDescriptor": "+ Wechselgeld-Deskriptor hinzufügen",
+    "addChangeDescriptorHint": "Dieser Sicherung fehlt ihr Wechselgeld-Deskriptor, den der Signieren-Bildschirm braucht, um beim Entschlüsseln einer Ausgabe Wechselgeld von einem echten Empfänger zu unterscheiden. Kopiere ihn aus der Deskriptor-Ansicht des Tresors auf der Plattform.",
+    "addChangeDescriptorSave": "Hinzufügen",
+    "errorRequired": "Geben Sie einen Deskriptor zum Speichern ein.",
+    "importSaved": "„{{label}}“ wurde in Ihren Tresor-Sicherungen gespeichert.",
+    "importSavedCopy": "Als „{{label}}“ gespeichert. Sie hatten denselben Tresor bereits gespeichert, dies ist also eine zweite Kopie. Entfernen Sie die, die Sie nicht möchten.",
+    "errorFileTooLarge": "Die Datei ist zu groß für ein Tresor-Backup.",
+    "errorReadFile": "Diese Datei konnte nicht gelesen werden.",
+    "emptyTitle": "Noch keine Tresor-Backups",
+    "emptySubtitle": "Fügen Sie den Deskriptor eines Tresors von der Tresorseite der Plattform ein, um hier eine Offline-Kopie zu speichern.",
+    "savedOn": "Gespeichert am {{date}}",
+    "changeDescriptor": "Wechselgeld-Deskriptor",
+    "remove": "Entfernen",
+    "summaryQuorum": "{{threshold}}-von-{{total}} Multisig",
+    "summarySigner": "Unterzeichner {{index}}",
+    "summaryThisDevice": "Schlüssel dieses Geräts",
+    "summaryFingerprint": "Fingerabdruck",
+    "copyFingerprint": "Fingerabdruck kopieren",
+    "copyXpub": "Erweiterten öffentlichen Schlüssel kopieren",
+    "rename": "Diesen Tresor umbenennen",
+    "renameSave": "Speichern",
+    "renameCancel": "Abbrechen",
+    "nameSigner": "Diesen Mitunterzeichner benennen",
+    "summaryReceiveBranch": "Empfangsadressen",
+    "summaryChangeBranch": "Wechselgeldadressen",
+    "summaryChecksum": "Prüfsumme",
+    "showRawDescriptor": "Rohen Deskriptor anzeigen",
+    "hideRawDescriptor": "Rohen Deskriptor ausblenden",
+    "rawDescriptorNote": "Der genaue Text, der nötig ist, um diesen Tresor in einem Drittanbieter-Tool wiederherzustellen. Bewahre diese Sicherung gut auf.",
+    "showDerive": "Eine Adresse ableiten",
+    "hideDerive": "Adressableitung ausblenden",
+    "deriveSubtitle": "Berechnet die echte Bitcoin-Adresse an jedem beliebigen Index — komplett offline. Vergleiche sie mit dem, was die Plattform zeigt, um sie unabhängig zu prüfen.",
+    "deriveBranchReceive": "Empfang",
+    "deriveBranchChange": "Wechselgeld",
+    "deriveIndexLabel": "Index",
+    "derivePrevIndex": "Vorheriger Index",
+    "deriveNextIndex": "Nächster Index",
+    "deriveResultLabel": "{{branch}}-Adresse Nr. {{index}}",
+    "deriveCompareHint": "Vergleiche das mit dem, was die Tresorseite beim selben Index anzeigt.",
+    "deriveErrorNoChangeDescriptor": "Dieser Sicherung fehlt noch ein Wechselgeld-Deskriptor — füge oben zuerst einen hinzu.",
+    "deriveErrorGeneric": "Aus diesem Deskriptor konnte keine Adresse abgeleitet werden.",
+    "removeModalTitle": "Tresor-Backup entfernen",
+    "removeWarning": "Dies löscht den gespeicherten Deskriptor für {{label}} von diesem Gerät. Der Tresor selbst ist davon nicht betroffen — Sie können ihn jederzeit erneut von der Plattform speichern.",
+    "removeConfirmLabel": "Geben Sie den Namen der Sicherung ein, um zu bestätigen",
+    "removeConfirm": "Backup entfernen",
+    "removeConfirmCountdown": "Sicherung entfernen ({{seconds}}s)",
+    "cancel": "Abbrechen",
+    "modePaste": "Deskriptor einfügen",
+    "modeBuild": "Einen offline erstellen",
+    "buildTitle": "Einen Tresor-Deskriptor offline erstellen",
+    "buildSubtitle": "Gib den öffentlichen Schlüssel jedes Schlüsselinhabers ein (xpub + Fingerprint, einschließlich dem der Plattform, falls sich dieser Tresor je mit ihr synchronisieren soll), um genau denselben Deskriptor zu erstellen, den die Plattform bauen würde — keine Beteiligung der Plattform nötig. Funktioniert eigenständig in jedem Drittanbieter-Multisig-Tool.",
+    "buildKeyN": "Schlüssel {{n}}",
+    "buildKeyLabelPlaceholder": "Bezeichnung (optional, z. B. „Alice“)",
+    "buildKeyXpubPlaceholder": "tpub… / xpub…",
+    "buildKeyFingerprintPlaceholder": "8-stelliger Hex-Fingerabdruck (optional)",
+    "buildAddKey": "+ Weiteren Schlüssel hinzufügen",
+    "buildThreshold": "Erforderliche Signaturen (m)",
+    "buildThresholdSummary": "{{m}} von {{n}} Schlüsselinhabern müssen zum Ausgeben unterschreiben",
+    "buildThresholdNoRedundancy": "Alle {{n}} Schlüssel werden benötigt. Es gibt keine Reserve: Geht ein einzelner Schlüssel verloren, kann niemand mehr auf die Mittel zugreifen. Verringern Sie diese Zahl, wenn der Tresor den Verlust eines Schlüssels überstehen soll.",
+    "buildAction": "Tresor erstellen und speichern",
+    "buildSavedCompare": "In Ihren Tresor-Sicherungen gespeichert. Alle Schlüsselinhaber, die diesen Tresor aus denselben Schlüsseln erstellen, sollten genau diesen Deskriptor erhalten, weshalb sich ein kurzer Vergleich lohnt, solange Sie alle zusammen sind.",
+    "buildSavedCopy": "Als „{{label}}“ gespeichert. Sie hatten denselben Tresor bereits gespeichert, dies ist also eine zweite Kopie. Entfernen Sie die, die Sie nicht möchten.",
+    "draftRestored": "Dort fortgesetzt, wo Sie aufgehört haben. Diese Schlüssel wurden zuletzt am {{date}} bearbeitet und bleiben auf diesem Gerät, bis Sie sie speichern oder verwerfen.",
+    "draftKept": "Ihre Eingaben werden während des Tippens auf diesem Gerät gespeichert, Sie können diesen Bildschirm also verlassen und zurückkehren. Nichts wird Ihren Sicherungen hinzugefügt, bis Sie speichern.",
+    "draftDiscard": "Eingaben verwerfen",
+    "buildErrorMinKeys": "Geben Sie mindestens 2 Schlüssel ein.",
+    "buildErrorThreshold": "Erforderliche Signaturen müssen zwischen {{min}} und {{max}} liegen. Ein Tresor benötigt zum Ausgeben eine Mehrheit: Unterhalb von {{min}} könnte eine Minderheit der Schlüsselinhaber die Mittel allein bewegen.",
+    "buildErrorGeneric": "Aus diesen Schlüsseln konnte kein Deskriptor erstellt werden.",
+    "buildKeyImportFile": "Aus einer Schlüsseldatei importieren",
+    "keyFileErrorNetwork": "Dieser Schlüssel ist ein {{keyNetwork}}-Schlüssel, dieser Tresor wird aber auf {{formNetwork}} erstellt. Alle Schlüssel eines Tresors müssen im selben Netzwerk liegen.",
+    "keyFileError": {
+      "not_json": "Das ist keine SignBit-Schlüsseldatei — sie enthält kein gültiges JSON. Wählen Sie eine aus dem Schlüssel-Bildschirm exportierte Datei signbit-key-….json.",
+      "not_key_file": "Das ist keine SignBit-Schlüsseldatei. Wählen Sie eine aus dem Schlüssel-Bildschirm exportierte Datei signbit-key-….json.",
+      "private_material": "Abgelehnt: Diese Datei enthält privates Schlüsselmaterial. Eine Schlüsseldatei darf nur öffentliche Schlüssel enthalten — nichts hier benötigt Ihre Wiederherstellungsphrase. Löschen Sie diese Kopie und exportieren Sie den öffentlichen Schlüssel erneut.",
+      "missing_field": "Diese Schlüsseldatei enthält keinen erweiterten öffentlichen Schlüssel.",
+      "bad_fingerprint": "Diese Schlüsseldatei enthält einen fehlerhaften Master-Fingerabdruck — er muss aus 8 Hex-Zeichen bestehen.",
+      "bad_path": "Diese Schlüsseldatei gibt nicht an, welchen Ableitungspfad ihr Schlüssel verwendet — es lässt sich also nicht feststellen, zu welchem Netzwerk er gehört.",
+      "bad_xpub": "Der erweiterte öffentliche Schlüssel in dieser Datei ist ungültig — Prüfsumme oder Netzwerk stimmen nicht. Exportieren Sie ihn erneut, statt die Datei zu bearbeiten."
+    }
+  },
+  "sign": {
+    "title": "Signieren",
+    "subtitle": "Co-signieren Sie eine Tresor-Ausgabe (PSBT), oder unterschreiben Sie eine Nachricht: eine Richtlinienänderung genehmigen, einen Schlüssel nachweisen, einen Tresor übernehmen. Alles vollständig offline.",
+    "modePsbt": "PSBT (Ausgabe)",
+    "modeApproval": "Richtliniengenehmigung",
+    "signingKey": "Signaturschlüssel",
+    "noKeysOption": "Keine Schlüssel — erstellen Sie zuerst einen",
+    "psbtLabel": "Unsignierter PSBT (Base64)",
+    "approvalLabel": "Nutzlast der Richtlinienänderung",
+    "importFile": "Datei importieren",
+    "psbtPlaceholder": "cHNidP8B…",
+    "approvalPlaceholder": "SIGNBIT-POLICY-CHANGE\nvault:…\nchange:…\nversion:…\ndiff:…\nexpires:…",
+    "signPsbtButton": "PSBT signieren",
+    "signApprovalButton": "Genehmigung signieren",
+    "messageKind": {
+      "policyChange": "Genehmigung einer Richtlinienänderung. Dies bestätigt eine Änderung der Ausgaberegeln des Tresors.",
+      "healthCheck": "Schlüssel-Gesundheitsprüfung. Dies beweist, dass Sie mit diesem Schlüssel unterschreiben können. Es werden keine Mittel bewegt.",
+      "vaultImport": "Tresor-Import. Dies beweist, dass Sie einen Schlüssel im zu übernehmenden Tresor besitzen. Es werden keine Mittel bewegt.",
+      "ownerTransfer": "Wechsel des Tresor-Eigentümers. Dies bestätigt die Übertragung der Eigentümerposition des Tresors auf einen anderen Schlüsselinhaber. Es werden keine Mittel bewegt.",
+      "unknownSignbit": "Eine SignBit-Nachricht, die diese Version nicht erkennt, vermutlich neuer als diese App. Lesen Sie sie unten, bevor Sie unterschreiben.",
+      "unknown": "Dies ist keine erkannte SignBit-Nachricht. Lesen Sie sie sorgfältig, bevor Sie unterschreiben, und unterschreiben Sie nur Text, den Sie verstehen und erwartet haben.",
+      "inheritanceClaim": "Genehmigung einer Nachlassanfrage. DIESE BEWEGT GELD: Sie autorisiert die Übertragung des gesamten Vaults an die Adresse unten. Prüfen Sie diese Adresse, bevor Sie signieren."
+    },
+    "resultPsbt": "Mitsigniert. Sende dieses PSBT zurück an die Plattform, damit es auf den Schwellenwert angerechnet wird.",
+    "resultPsbtWithKey": "Mit „{{key}}“ mitsigniert. Senden Sie diese PSBT an die Plattform zurück, damit sie auf den Schwellenwert angerechnet wird.",
+    "resultApproval": "Signatur fertig — füge sie in das Richtlinien-Freigabefeld der Plattform ein.",
+    "resultApprovalWithKey": "Mit „{{key}}“ signiert. Senden Sie diese Signatur an die Plattform zurück.",
+    "outputPsbtLabel": "Co-signierter PSBT (Base64)",
+    "outputApprovalLabel": "Signatur (Base64)",
+    "exportFileSaving": "Wird gespeichert…",
+    "exportFile": "Datei exportieren",
+    "errorNoKey": "Erstellen oder importieren Sie zuerst einen Schlüssel.",
+    "errorSaveFile": "Datei konnte nicht gespeichert werden.",
+    "errorFileTooLarge": "Die Datei ist zu groß, um ein PSBT oder eine Genehmigung zu sein.",
+    "errorReadFile": "Diese Datei konnte nicht gelesen werden.",
+    "scanQr": "QR scannen",
+    "showQr": "QR anzeigen",
+    "decodeTitle": "Was dieses PSBT bewirkt",
+    "decodeFee": "Netzwerkgebühr",
+    "decodeChange": "Wechselgeld",
+    "decodeRecipient": "Empfänger",
+    "decodeUnknown": "Unbekannt",
+    "decodeNoChangeInfo": "Diese App hat den Deskriptor dieses Tresors nicht zwischengespeichert, kann also Empfänger und Wechselgeld nicht unterscheiden — es werden nur Beträge angezeigt.",
+    "decodeGoToVaults": "Deskriptor dieses Tresors speichern →",
+    "chooseKeyOption": "Schlüssel wählen…",
+    "keyOffNetwork": "Dieser Schlüssel ist ein {{keyNetwork}}-Schlüssel; die App ist auf {{appNetwork}} eingestellt. Er signiert als {{keyNetwork}}-Schlüssel.",
+    "decodeFeeAlarm": "Diese Gebühr ist ein unglaubwürdig großer Anteil des ausgegebenen Betrags. Wenn Sie das nicht beabsichtigt haben, signieren Sie nicht: Eine Transaktion kann ihre Gebühr aufblähen, indem sie einen Eingang zu niedrig angibt, und die Differenz geht an die Miner und ist unwiederbringlich.",
+    "decodeMultiVault": "Diese Transaktion gibt aus mehr als einem Ihrer Tresore aus. Die Wechselgeld-Kennzeichnungen unten beschreiben nur einen davon — prüfen Sie vor dem Signieren den Tresor jeder Eingabe.",
+    "messageKindUnknownStake": "Der Schlüssel, der dies signiert, kontrolliert auch Guthaben in Ihren Tresoren. Er kann auf diesem Weg nicht zur Freigabe einer Zahlung verleitet werden, aber die Signatur stammt dennoch von diesem Schlüssel — signieren Sie keinen Text, um den Sie jemand anderes gebeten hat, es sei denn, Sie wissen genau, wozu er dient.",
+    "inheritanceStake": "Mit Ihrer Signatur autorisieren Sie die Übertragung des gesamten Vaults an diese Adresse. Nach der Übertragung ist das nicht mehr rückgängig zu machen."
+  },
+  "qr": {
+    "displayTitle": "QR-Code anzeigen",
+    "scanTitle": "QR-Code scannen",
+    "prevFrame": "Zurück",
+    "nextFrame": "Weiter",
+    "frameOf": "Bild {{index}} von {{total}}",
+    "multiFrameHint": "Diese Daten brauchen mehrere QR-Codes. Scanne sie der Reihe nach auf dem anderen Gerät, tippe dann hier auf Weiter, um den nächsten anzuzeigen.",
+    "scanHint": "Richte die Kamera auf den QR-Code auf dem anderen Gerät. Erstreckt er sich über mehrere Codes, scanne weiter, bis jedes Bild erfasst ist.",
+    "scanProgress": "{{have}} von {{total}} Bildern erfasst",
+    "errorCamera": "Kein Zugriff auf die Kamera möglich. Überprüfen Sie die Kameraberechtigungen für diese App.",
+    "errorMismatch": "Dieser QR-Code gehört zu einer anderen Sequenz. Scannen Sie jeweils nur Codes aus einer Quelle.",
+    "errorIncomplete": "Es fehlen einige Bilder. Versuch es erneut zu scannen.",
+    "errorPermissionDenied": "Der Kamerazugriff ist für diese App gesperrt. Einmal gesperrt, kann die App nicht automatisch erneut fragen — du musst ihn in den Einstellungen deines Geräts wieder aktivieren.",
+    "retryCamera": "Erneut versuchen",
+    "permissionSteps": {
+      "windows": "Windows: Einstellungen → Datenschutz und Sicherheit → Kamera → diese App wieder aktivieren (oder den WebView2-Eintrag prüfen), dann erneut versuchen.",
+      "macos": "macOS: Systemeinstellungen → Datenschutz & Sicherheit → Kamera → diese App wieder aktivieren, dann erneut versuchen. Ein Neustart der App kann nötig sein.",
+      "linux": "Linux: Prüfen Sie die Datenschutz-/Kameraeinstellungen Ihrer Desktop-Umgebung (je nach Distribution unterschiedlich) oder die Website-Berechtigungen Ihres Browsers, falls Sie einen Browser-Tab verwenden.",
+      "ios": "iOS: Einstellungen → [diese App] → Kamera → aktivieren, dann hierher zurückkehren und erneut versuchen.",
+      "android": "Android: Einstellungen → Apps → [diese App] → Berechtigungen → Kamera → zulassen, dann hierher zurückkehren und erneut versuchen."
+    },
+    "scanStillNeed": "Noch benötigte Bilder: {{frames}}"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "subtitle": "App-Konfiguration für dieses Gerät.",
+    "network": {
+      "label": "Netzwerk",
+      "onMainnet": "Sie sind im Mainnet, dem echten Bitcoin-Netzwerk. Schlüssel, die Sie hier erstellen, funktionieren mit echten Bitcoin.",
+      "onTestnet": "Sie sind im Testnet, einem Übungsnetzwerk. Die Coins sind nichts wert, Sie können hier also in Ruhe alles ausprobieren.",
+      "keysUnaffected": "Ihre vorhandenen Schlüssel ändern sich nicht. Jeder bleibt in dem Netzwerk, für das er erstellt wurde.",
+      "corrupted": "Ihre gespeicherten Einstellungen konnten nicht gelesen werden, daher wurde das Netzwerk auf Testnet zurückgesetzt. Wählen Sie unten ein Netzwerk, um eine neue Einstellung zu speichern.",
+      "confirmTitle": "Zu Mainnet wechseln?",
+      "confirmReal": "Mainnet ist echtes Bitcoin. Mit Signaturen von hier lassen sich echte Guthaben bewegen, und eine gesendete Transaktion können Sie nicht zurückholen.",
+      "confirmKeystore": "Ihre Schlüssel liegen in einem Software-Keystore auf diesem Gerät, geschützt durch Ihre Passphrase, nicht auf dedizierter Signier-Hardware. Wer sowohl an die Datei als auch an die Passphrase käme, hätte die hier gespeicherten Schlüssel. In einem Multisig-Tresor reicht das allein nicht zum Ausgeben: Man bräuchte genug Schlüssel, um die Signaturschwelle des Tresors zu erreichen.",
+      "confirmStamp": "Sie können jederzeit zurück ins Testnet wechseln. Fest steht nur eines: Ein Schlüssel, den Sie im Mainnet erstellen, bleibt dauerhaft ein Mainnet-Schlüssel, auch wenn Sie die App später wieder umstellen. Ihre vorhandenen Schlüssel bleiben unverändert.",
+      "confirmAction": "Zu Mainnet wechseln"
+    },
+    "appearance": {
+      "label": "Erscheinungsbild",
+      "hint": "Design für dieses Gerät. „System“ folgt Ihrer Betriebssystemeinstellung.",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "autoLock": {
+      "label": "Auto-Sperre",
+      "hint": "Sperrt die App nach einer Zeit der Inaktivität. Empfohlen für ein Gerät mit Schlüsseln.",
+      "min1": "1 Min",
+      "min5": "5 Min",
+      "min15": "15 Min",
+      "min30": "30 Min",
+      "never": "Nie",
+      "offWarning": "Die Auto-Sperre ist deaktiviert. Die App bleibt entsperrt, bis Sie sie manuell sperren oder beenden."
+    },
+    "language": {
+      "label": "Sprache",
+      "hint": "Oberflächensprache für dieses Gerät."
+    },
+    "storage": {
+      "label": "Speicher",
+      "hint": "Wo dieses Gerät seinen verschlüsselten Keystore aufbewahrt. Eine portable Version speichert ihn direkt neben der App, sodass deine Schlüssel mit ihr mitwandern (z. B. auf einem USB-Stick).",
+      "unavailablePrefix": "Der Speicherort ist nur in der Desktop-App verfügbar (führen Sie",
+      "unavailableSuffix": " aus).",
+      "checking": "Wird geprüft…",
+      "portable": "Portabel",
+      "default": "Standard (pro Benutzer)",
+      "portableNote": "Schlüssel werden neben der App gespeichert.",
+      "defaultNote": "Schlüssel werden in Ihrem Betriebssystemprofil gespeichert.",
+      "portableWarningPrefix": "Schlüssel befinden sich in diesem Ordner. Das Löschen (oder der Verlust des Laufwerks) löscht diese Schlüsselspeicherkopie — Ihre",
+      "portableWarningStrong": "24-Wort-Seed-Phrase",
+      "portableWarningSuffix": "ist die eigentliche Sicherung."
+    },
+    "version": {
+      "publisher": "Mit ❤️ erstellt von SignBit",
+      "domain": "signbit.io"
+    },
+    "backup": {
+      "label": "Sicherung",
+      "hint": "Speichern Sie Ihren gesamten Signierer (Schlüssel, Tresor-Deskriptoren und Einstellungen) als eine verschlüsselte Datei, die Sie auf einem anderen Gerät wiederherstellen können.",
+      "action": "Sicherung exportieren",
+      "warning": "Die Datei wird mit Ihrer Passphrase verschlüsselt. Wer sowohl die Datei als auch Ihre Passphrase erlangt, erhält Ihre Schlüssel — bewahren Sie sie an einem vertrauenswürdigen Ort auf und verwenden Sie eine starke Passphrase.",
+      "noKeys": "Fügen Sie einen Schlüssel hinzu, bevor Sie eine Sicherung erstellen.",
+      "modalTitle": "Sicherung exportieren",
+      "modalBody": "Dies speichert eine verschlüsselte Kopie Ihrer Schlüssel, der gespeicherten Tresor-Deskriptoren und Ihrer Einstellungen. Stellen Sie sie auf jedem Gerät (Windows, macOS, Linux oder Android) über den Wiederherstellungsbildschirm wieder her.",
+      "filenameLabel": "Dateiname",
+      "filenameHint": "Behalten Sie das Datum bei, damit sich Sicherungen nicht gegenseitig überschreiben. Sie können sie beliebig umbenennen.",
+      "passphraseLabel": "Ihre Passphrase",
+      "passphraseHint": "Damit wird die Sicherung verschlüsselt. Es ist dieselbe Passphrase, mit der Sie die App entsperren.",
+      "confirm": "Sicherung speichern",
+      "saving": "Wird gespeichert…",
+      "wrongPassphrase": "Diese Passphrase ist falsch.",
+      "saved": "Sicherung gespeichert. {{count}} Schlüssel enthalten.",
+      "importAction": "Sicherung importieren",
+      "compareAction": "Sicherung vergleichen",
+      "transferHint": "Importieren ersetzt alles auf diesem Gerät durch eine Sicherungsdatei. Vergleichen zeigt nur die Unterschiede und ändert nichts.",
+      "tooLargeToRestore": "Diese Sicherung wäre {{mb}} MB groß — zu groß, um später wiederhergestellt zu werden, daher wurde sie nicht gespeichert. Entfernen Sie nicht mehr benötigte Tresore oder Schlüssel und versuchen Sie es erneut.",
+      "largeFileNote": "Diese Sicherung ist {{mb}} MB groß — ungewöhnlich groß, aber noch wiederherstellbar. Erwägen Sie, nicht mehr benötigte gespeicherte Tresore zu entfernen.",
+      "keyCount": "Schlüssel:",
+      "vaultCount": "Gespeicherte Tresore:",
+      "passphraseConfirmLabel": "Passphrase bestätigen",
+      "passphraseMismatch": "Die beiden Passphrasen stimmen nicht überein."
+    },
+    "changePass": {
+      "label": "Passphrase",
+      "hint": "Ändern Sie die Passphrase, die diese App entsperrt. Ihre Schlüssel sind nicht betroffen.",
+      "action": "Passphrase ändern",
+      "modalTitle": "Passphrase ändern",
+      "modalBody": "Ihre Schlüssel bleiben unverändert. Nur die Passphrase, die sie entsperrt, ändert sich.",
+      "backupWarning": "Bereits exportierte Sicherungsdateien benötigen weiterhin die ALTE Passphrase. Nur dieses Gerät ändert sich. Danach wird Ihnen eine frische Sicherung angeboten.",
+      "currentLabel": "Aktuelle Passphrase",
+      "newLabel": "Neue Passphrase",
+      "confirmLabel": "Neue Passphrase bestätigen",
+      "mismatch": "Die beiden Passphrasen stimmen nicht überein.",
+      "sameAsCurrent": "Das ist Ihre aktuelle Passphrase.",
+      "confirmAction": "Passphrase ändern",
+      "changing": "Wird geändert…",
+      "wrongCurrent": "Das ist nicht Ihre aktuelle Passphrase.",
+      "changed": "Passphrase geändert. Dieses Gerät wird jetzt mit der neuen entsperrt.",
+      "exportTitle": "Frische Sicherung speichern",
+      "exportBody": "Ihre vorhandenen Sicherungsdateien öffnen sich weiterhin mit der alten Passphrase. Speichern Sie jetzt eine neue Sicherung, damit Ihre Wiederherstellungsdatei und dieses Gerät dieselbe verwenden.",
+      "exportAction": "Sicherung jetzt speichern",
+      "exportLater": "Jetzt nicht",
+      "exportSaved": "Neue Sicherung gespeichert. Ihre älteren Sicherungsdateien öffnen sich weiterhin mit der vorherigen Passphrase.",
+      "exportSkipped": "Es wurde keine neue Sicherung gespeichert. Ihre vorhandenen Sicherungsdateien öffnen sich weiterhin mit Ihrer vorherigen Passphrase."
+    },
+    "offlineOk": "Offline bestätigt. Dieses Gerät hat keine Netzwerkverbindung und ist vollständig air-gapped."
+  },
+  "help": {
+    "title": "Hilfe",
+    "subtitle": "Wie diese App funktioniert, vollständig. Mitgeliefert und durchsuchbar — ohne Netzwerk lesbar.",
+    "searchPlaceholder": "Hilfethemen durchsuchen…",
+    "searchNoResults": "Keine Themen passen zu „{{query}}“.",
+    "searchResultsCount": "{{count}} Thema gefunden",
+    "crossRefLabel": "Siehe auch:",
+    "guideAction": "Anleitung zur Schlüsseleinrichtung öffnen",
+    "backToTopics": "Zurück zu den Themen",
+    "pickATopic": "Wähle links ein Thema, um es hier zu lesen.",
+    "topics": {
+      "gettingStarted": {
+        "title": "Erste Schritte"
+      },
+      "deviceSecurity": {
+        "title": "Deine Passphrase & Gerätesicherheit"
+      },
+      "keys": {
+        "title": "Schlüssel"
+      },
+      "vaults": {
+        "title": "Tresore & Multisig"
+      },
+      "signing": {
+        "title": "Signieren & Freigaben"
+      },
+      "trust": {
+        "title": "Vertrauen & Funktionsweise"
+      }
+    },
+    "gettingStarted": {
+      "whatIsThis": {
+        "title": "Was ist Fountain?",
+        "body": "Fountain ist diese App — die, die Sie gerade lesen. Sie ist ein Offline-Signierer: Sie verwahrt Ihren Schlüssel (oder Ihre Schlüssel) für einen Bitcoin-Tresor, hält sie auf diesem Gerät verschlüsselt und erzeugt Ihre Signatur, wenn eine benötigt wird.\n\nEin Tresor ist ein Konto, das durch mehrere unabhängige Schlüssel gesichert ist und bei dem kein einzelner Schlüsselinhaber allein Gelder bewegen kann. Fountain kümmert sich um Ihren Anteil daran und um nichts weiter.\n\nSie braucht nichts anderes, um nützlich zu sein. Sie können Schlüssel erstellen, einen Tresor-Deskriptor bauen, dessen Adressen ableiten und signieren — alles hier. Was auch immer eine Signatur von Ihnen verlangt, erreicht diese App nur als reiner Text oder QR-Code, von Hand herübergetragen."
+      },
+      "airGap": {
+        "title": "Die Air-Gap-Philosophie",
+        "body": "Diese App führt niemals einen Netzwerkaufruf durch, zu niemandem. Ihre privaten Schlüssel (die 24-Wort-Seed-Phrasen hinter jedem Ihrer Schlüssel) werden hier erzeugt, hier verschlüsselt und verlassen dieses Gerät nie. Das Einzige, was sie je exportiert, ist ein öffentlicher Schlüssel, ein erweiterter öffentlicher Schlüssel und ein Fingerabdruck, die zum Teilen gedacht sind; sie können keine Gelder bewegen und Ihren Seed nicht preisgeben.\n\nAlles, was diese App erreichen oder verlassen muss, wird daher von Hand herübergetragen — als reiner Text oder QR-Code: eine unsignierte Transaktion zum Signieren, das signierte Ergebnis, eine Freigabeanfrage. Siehe „Daten bewegen: Kopieren, Datei oder QR“ unter Signieren & Freigaben für einen Vergleich dieser Transportwege.\n\nWas Sie tatsächlich schützt, ist nicht der gewählte Transportweg. Es ist, dass Ihr Schlüssel dieses Gerät nie verlässt und dass Sie genau lesen können, was Sie signieren, bevor Sie es signieren."
+      },
+      "publicVsPrivate": {
+        "title": "Öffentlicher vs. privater Schlüssel, einfach erklärt",
+        "body": "Ein öffentlicher Schlüssel (ein tpub bzw. xpub im Mainnet) ist wie ein Adressbucheintrag: gefahrlos an denjenigen zu übergeben, der den Tresor zusammenstellt, damit der gemeinsame Tresor gebaut werden kann. Er selbst kann nichts ausgeben und nichts signieren.\n\nEin privater Schlüssel (Ihre 24-Wort-Phrase) ist der eigentliche Schlüssel. Geben Sie ihn nirgendwo außer hier ein, senden Sie ihn niemandem, fotografieren Sie ihn nicht und speichern Sie ihn nicht im Klartext außerhalb des verschlüsselten Speichers dieser App. Wer ihn hat, kann alles ausgeben, was er kontrolliert."
+      },
+      "testnetOnly": {
+        "title": "Mainnet oder Testnet",
+        "body": "Mainnet ist echtes Bitcoin, und dort startet eine frische Installation. Testnet-Münzen sind wertlos und existieren zum Üben — es ist also der sichere Ort, um diesen Ablauf zu proben, bevor echtes Geld im Spiel ist. Diese App signiert auf beiden; wählen Sie in den Einstellungen.\n\nDas Netzwerk ist eine Eigenschaft jedes SCHLÜSSELS, nicht der App: Ein Schlüssel trägt den Stempel des Netzwerks, auf dem er erstellt wurde, und leitet immer dort ab. Das Umschalten der Einstellung entscheidet, wofür neue Schlüssel erstellt werden und was der Bildschirm anzeigt; es ändert niemals einen Schlüssel, den Sie bereits halten."
+      },
+      "verifyingThisApp": {
+        "title": "Prüfen Sie, ob Sie die echte App haben",
+        "body": "Dieser App vertrauen Sie gleich Ihre Schlüssel an, also nehmen Sie sich eine Minute, um zu bestätigen, dass Ihre Kopie die von uns veröffentlichte ist. Tun Sie das, bevor Sie einen Schlüssel anlegen, solange es noch nichts zu verlieren gibt.\n\nZu jeder Version gehört eine SHA-256-Prüfsumme, veröffentlicht auf signbit.io. Berechnen Sie die Prüfsumme der heruntergeladenen Datei und vergleichen Sie sie Zeichen für Zeichen mit der dort veröffentlichten. Stimmen sie nicht überein, führen Sie die Datei nicht aus.\n\nAm wichtigsten ist das, wenn die App nicht direkt von uns kam. Eine Kopie, die auf einem USB-Stick weitergereicht oder von einem Kollegen geteilt wurde, war weder in unseren noch in Ihren Händen, und nur die Prüfsumme kann Ihnen sagen, dass sie unverändert angekommen ist.\n\nIn den Einstellungen steht, wer diese App veröffentlicht hat und wo sie zu finden ist. Verstehen Sie das als Hinweis darauf, wo die echten Prüfsummen liegen, nicht als Beweis: Eine manipulierte Kopie würde genau dieselben Worte anzeigen. Nur der Vergleich beweist etwas.\n\nEines sollten Sie unter Windows erwarten: Diese App ist noch nicht signiert, daher warnt SmartScreen beim Start. Diese Warnung betrifft ein Zertifikat, das wir noch nicht gekauft haben, nicht etwas, das in der Datei gefunden wurde, und sie erscheint weiter, bis sich das ändert."
+      }
+    },
+    "deviceSecurity": {
+      "createUnlock": {
+        "title": "Keystore anlegen vs. entsperren",
+        "body": "Beim ersten Öffnen dieser App legst du eine Passphrase fest, die alles verschlüsselt, was sie je speichern wird. Deine Schlüssel existieren nirgendwo sonst. Ab dann entsperrst du mit derselben Passphrase. Es gibt kein Passwort-Reset: Wenn du sie vergisst, kommst du nur über eine Wiederherstellung aus einer Sicherung der Keystore-Datei (siehe Einen Keystore wiederherstellen) oder durch erneutes Importieren jeder Schlüssel aus seiner eigenen 24-Wort-Seed-Phrase wieder rein."
+      },
+      "restore": {
+        "title": "Einen Keystore wiederherstellen",
+        "body": "Findet diese App einen Keystore an einem anderen Ort als dem gerade verwendeten (typischerweise gleich nach dem Wechsel auf eine portable/USB-Kopie), bietet sie an, ihn automatisch wiederherzustellen — ein Klick, dann Entsperren mit der Passphrase dieses Keystores.\n\nDu kannst auch manuell wiederherstellen, indem du selbst eine Keystore-Datei auswählst. So oder so wird die Passphrase gegen die Datei geprüft, bevor irgendetwas überschrieben wird — eine falsche Passphrase oder die falsche Datei zerstört nie deine aktuellen Schlüssel."
+      },
+      "threeBackupArtifacts": {
+        "title": "Ihre Seed-Wörter, der Keystore und die Sicherungsdatei",
+        "body": "Drei verschiedene Dinge heißen hier „meine Sicherung“, und sie stellen unterschiedlich viel von Ihrer Einrichtung wieder her. Zu wissen, welches Sie tatsächlich haben, entscheidet zwischen einem ärgerlichen Nachmittag und verlorenen Coins.\n\nIhre 24 Wörter auf Papier sind der Schlüssel selbst. Sie stellen einen Schlüssel wieder her, in dieser App oder in jeder anderen kompatiblen Wallet, und brauchen keine Passphrase, weil daran nichts verschlüsselt ist. Sie überstehen eine defekte Festplatte, ein verlorenes Telefon und eine vergessene Passphrase. Das ist die Sicherung, die immer existieren sollte.\n\nDer Keystore ist die Arbeitsdatei, in der diese App Ihre Schlüssel auf diesem Gerät hält. Er enthält jeden Schlüssel, der hier liegt, und öffnet sich mit der Passphrase, mit der Sie derzeit entsperren. Er wandert mit, wenn Sie den App-Ordner kopieren, weiß aber nichts von Ihren Tresoren.\n\nDie Sicherungsdatei, die Sie in den Einstellungen exportieren, ist das vollständigste Bild: Ihre Schlüssel, dazu die gespeicherten Tresor-Deskriptoren, die vergebenen Mitunterzeichner-Namen und Ihre Einstellungen. Sie ist die richtige Wahl für den Wechsel auf ein neues Gerät oder ein anderes Betriebssystem. Sie öffnet sich mit der Passphrase, die galt, als Sie sie gespeichert haben, und das ist nicht zwingend die von heute.\n\nDaraus folgen drei Dinge, die man leicht übersieht, bis sie zuschlagen:\n\nIst Ihre Passphrase weg, sind beide Dateien mit ihr weg. Sie sind verschlüsselt, und niemand kann sie für Sie öffnen. Nur die Wörter auf Papier holen Sie da heraus.\n\nNur die exportierte Sicherung erinnert sich an Ihre Tresore. Stellen Sie einen bloßen Keystore wieder her, kommen Ihre Schlüssel zurück, Ihre gespeicherten Deskriptoren aber nicht — weshalb der Signieren-Bildschirm dann Wechselgeld nicht mehr von einem echten Empfänger unterscheiden kann.\n\nEine exportierte Sicherung ist eine Fotografie, kein Spiegel. Sie enthält, was am Tag des Speicherns existierte. Fügen Sie danach einen Schlüssel hinzu, hat ihn keine ältere Datei — exportieren Sie also erneut, sobald Sie etwas hinzufügen, das Sie ungern verlören."
+      },
+      "changingYourPassphrase": {
+        "title": "Ihre Passphrase zu ändern ändert Ihre alten Sicherungen nicht",
+        "body": "Das Ändern Ihrer Passphrase verschlüsselt die Schlüssel auf diesem Gerät neu, sonst nichts. Ihre Schlüssel selbst bleiben unangetastet. Jede bereits exportierte Sicherungsdatei behält die Passphrase, mit der sie geschrieben wurde.\n\nDas erwischt Menschen in beide Richtungen.\n\nÄndern Sie sie und suchen später eine alte Sicherung heraus, öffnet die neue Passphrase diese Datei nicht. Sie ist nicht beschädigt. Sie verlangt die Passphrase, die am Tag des Speicherns galt — es lohnt sich also, auf der Datei zu vermerken, aus welcher Zeit sie stammt.\n\nHaben Sie sie geändert, weil Sie vermuteten, jemand kenne die alte, dann sehen Sie genau, was Sie behoben haben und was nicht. Dieses Gerät ist jetzt sicher. Jede Sicherungsdatei, die unter der alten Passphrase geschrieben wurde, liegt weiterhin dort draußen und öffnet sich weiterhin mit genau der Passphrase, die Ihnen Sorgen macht. Die Änderung hier widerruft dort draußen nichts.\n\nExportieren Sie deshalb direkt nach der Änderung eine frische Sicherung. Die App bietet Ihnen das im selben Moment an — nehmen Sie es an. Kümmern Sie sich danach bewusst um die alten Dateien: vernichten Sie sie, oder bewahren Sie sie im Wissen auf, dass sie nur so gut geschützt sind wie jene alte Passphrase."
+      },
+      "androidStorage": {
+        "title": "Auf einem Telefon ist Ihre Passphrase der gesamte Schutz",
+        "body": "Wenn Sie dies auf Android nutzen, sollten Sie eines wissen, denn es funktioniert anders, als Sie vernünftigerweise erwarten würden.\n\nDie meisten Telefon-Apps, die etwas Geheimes halten, stützen sich auf das Telefon selbst: Fingerabdruck oder Gesicht zum Entsperren und eigens verbaute Hardware zum Schutz von Schlüsseln. Diese App tut das noch nicht. Ihre Schlüssel sind mit der Passphrase verschlüsselt, die Sie hier eingegeben haben, und damit hat es sich. Die Bildschirmsperre Ihres Telefons schützt sie nicht.\n\nPraktisch heißt das: Ihre Passphrase trägt das volle Gewicht ausgerechnet auf dem Gerät, das Sie am ehesten im Taxi liegen lassen. Wer Ihr Telefon nimmt und an der Bildschirmsperre vorbeikommt, erreicht einen verschlüsselten Keystore, und das Einzige zwischen dieser Person und Ihren Schlüsseln ist, wie lang und ungewöhnlich diese Passphrase ist. Eine kurze, gewählt weil sie sich auf einer Telefontastatur schnell tippen ließ, erfüllt eine Aufgabe, für die sie nie gedacht war.\n\nWählen Sie hier also eine lange, auch wenn das Tippen lästig ist. Stellen Sie eine kurze automatische Sperre ein, damit die App nicht entsperrt in Ihrer Tasche liegt. Bewahren Sie Ihre Seed-Wörter woanders auf als auf dem Telefon.\n\nHardwaregestützte Speicherung und biometrisches Entsperren sind in Arbeit. Bis dahin behandeln Sie die Passphrase als das einzige Schloss an der Tür."
+      },
+      "autoLock": {
+        "title": "Automatische Sperre bei Inaktivität",
+        "body": "Die App kann sich nach einer gewählten Zeit ohne Maus-, Tastatur- oder Touch-Aktivität selbst sperren — das verkleinert das Zeitfenster, in dem ein kompromittiertes, unbeaufsichtigtes Gerät entsperrt bleibt. „Nie“ lässt sich einstellen, aber die App warnt dich dann."
+      },
+      "storageLocation": {
+        "title": "Wo deine Schlüssel wirklich gespeichert sind",
+        "body": "Eine portable Kopie dieser App (etwa von einem USB-Stick gestartet) hält ihren verschlüsselten Keystore in einem Ordner direkt daneben, sodass Ihre Schlüssel mit der App reisen. Eine installierte Kopie weicht stattdessen auf den Benutzerprofil-Ordner Ihres Systems aus.\n\nIn beiden Fällen verlieren Sie mit diesem Speicher diese Kopie Ihrer Schlüssel, ob es der USB-Stick ist oder der Ordner selbst. Halten Sie eine Sicherung bereit, die nicht auf diesem Gerät liegt: Ihre aufgeschriebenen Seed-Phrasen, einen verschlüsselten Export aus den Einstellungen, oder beides. Das erneute Importieren einer Seed-Phrase holt einen Schlüssel zurück, ganz gleich was mit der Keystore-Datei geschieht.\n\nHaben Sie diese App auf einem Computer auf beide Arten genutzt, besitzen Sie zwei getrennte Keystores, und das sind tatsächlich verschiedene Dateien. Sie können unterschiedliche Schlüssel enthalten und auf unterschiedlichen Passphrasen beruhen. Wenn diese App also anbietet, einen anderswo gefundenen Keystore wiederherzustellen, kann er durchaus Ihrer sein und die eingegebene Passphrase trotzdem verweigern: Meist heißt das, er wurde zu einer Zeit geschrieben, als Ihre Passphrase eine andere war, und nicht, dass die Datei beschädigt ist."
+      }
+    },
+    "keys": {
+      "whatIsAKey": {
+        "title": "Was ein Schlüssel ist",
+        "body": "Ein Schlüssel ist hier eine Mitunterzeichner-Identität in einem Tresor: eine einzelne 24-Wort-Phrase und alles, was daraus abgeleitet wird. Ein Tresor benötigt mehrere unabhängige Schlüssel — Ihren und die anderer Schlüsselinhaber —, bevor er irgendetwas tun kann. Siehe Tresore und Multisig dazu, wie sie zusammenwirken."
+      },
+      "creating": {
+        "title": "Einen neuen Schlüssel erstellen",
+        "body": "Erzeugt eine frische, zufällige 24-Wort-Seed-Phrase, die dir einmal, sofort, angezeigt wird. Notiere sie, bevor du irgendetwas anderes tust. Diese App kann sie dir später erneut anzeigen (siehe Seed-Phrase erneut anzeigen), aber der Moment der Erstellung bleibt deine einzige garantierte Gelegenheit, sie in Ruhe auf Papier zu bringen."
+      },
+      "importing": {
+        "title": "Einen vorhandenen Schlüssel importieren",
+        "body": "Hast du bereits eine 24-Wort-Seed-Phrase von woanders, füge sie ein oder tippe sie mit einer Bezeichnung ein. Diese App prüft, ob es eine gültige Liste von Standardwörtern (BIP-39) ist, und weist dich darauf hin, falls die Wörter in der falschen Reihenfolge zu stehen scheinen."
+      },
+      "seedBackup": {
+        "title": "Ihre Seed-Phrase sichern",
+        "body": "Die 24-Wörter-Seed-Phrase ist die einzige Möglichkeit, einen Schlüssel wiederherzustellen. Es gibt kein Konto, kein Zurücksetzen per E-Mail und kein Support-Ticket, das sie zurückholt. Sind die Wörter verloren und alle Sicherungen ebenfalls, ist verloren, was dieser Schlüssel kontrolliert.\n\nSchreiben Sie die Wörter auf Papier. Das ist die Sicherung, die eine defekte Festplatte, ein verlorenes Telefon und eine vergessene Passphrase übersteht, und sie sollte immer existieren.\n\nDiese App kann auch eine digitale Sicherung erstellen: einen verschlüsselten Export aus den Einstellungen, der Ihre Schlüssel und gespeicherten Tresore in einer einzigen Datei hält. Sie dürfen ihn auf einem USB-Stick oder in der Cloud aufbewahren, genau dafür ist er da — seien Sie sich nur im Klaren darüber, was ihn schützt. Wer diese Datei kopiert, kann auf dem eigenen Rechner Passwörter dagegen durchprobieren, so lange er will, ohne dass hier irgendetwas ihn bremst oder aussperrt. Ihre Passphrase ist das Einzige, was dem im Weg steht: Machen Sie sie lang und bewahren Sie sie niemals neben der Datei auf.\n\nEine Regel lohnt sich: Lassen Sie nicht eine einzige App oder eine einzige Sicherungsdatei sämtliche Schlüssel eines Tresors halten. Ein Tresor braucht mehrere unabhängige Schlüssel gerade deshalb, damit der Verlust oder die Preisgabe eines einzelnen zu verkraften ist; alle an einem Ort zu bündeln hebt das still wieder auf. Verteilen Sie sie über Geräte und Personen und sichern Sie jeden einzeln.\n\nWer die 24 Wörter in der richtigen Reihenfolge liest, kann ausgeben, was dieser Schlüssel kontrolliert. Machen Sie keine Screenshots, speichern Sie sie in keiner Notiz-App, schicken Sie sie sich nicht per E-Mail. Behandeln Sie sie genau wie Bargeld in der Hand."
+      },
+      "revealSeedAgain": {
+        "title": "Deine Seed-Phrase später erneut anzeigen",
+        "body": "Anders als eine Hardware-Wallet ist dies ein Software-Signierer, der Ihre Seed-Phrase weiterhin vorhalten muss, um damit signieren zu können. Dadurch ist „Seed anzeigen“ hier eine echte, wiederholbare Aktion und keine einmalige Zeremonie — nützlich, wenn Sie die Wörter erneut aufschreiben oder einen Schlüssel auf ein anderes Gerät bringen möchten.\n\nSie ist jedes Mal durch die erneute Eingabe Ihrer Passphrase geschützt, auch wenn die App bereits entsperrt ist, und erlaubt nur 3 Fehlversuche, bevor sich die gesamte App als Brute-Force-Schutz sperrt.\n\nZeigen Sie sie nur dort an, wo niemand auf den Bildschirm sehen kann, und bevorzugen Sie den verschlüsselten Export in den Einstellungen, wenn Sie eigentlich eine Sicherung möchten — dieser bringt die Wörter gar nicht erst auf den Bildschirm."
+      },
+      "exportPublicKey": {
+        "title": "Deinen öffentlichen Schlüssel exportieren",
+        "body": "Der öffentliche Export eines Schlüssels besteht aus seinem erweiterten öffentlichen Schlüssel (tpub im Testnet, xpub im Mainnet) und seinem Master-Fingerabdruck. Das ist, was Sie übergeben, damit der Schlüssel in einen Tresor aufgenommen wird — als kopierte Zeichenfolge oder als Schlüsseldatei, die Sie auf diesem Bildschirm speichern. Er darf gefahrlos kopiert, gespeichert oder vorgelesen werden: Er kann keine Mittel bewegen und lässt sich nicht in die private Wiederherstellungsphrase zurückverwandeln."
+      },
+      "removing": {
+        "title": "Einen Schlüssel entfernen",
+        "body": "Einen Schlüssel zu entfernen löscht ihn nur von diesem Gerät. Tresor-Zugehörigkeit und Guthaben liegen in der Blockchain und im Deskriptor des Tresors, nicht in dieser App — ein Schlüssel, den Sie wieder importieren können, ist kein verlorener Schlüssel.\n\nBevor Sie einen entfernen, machen Sie sich genau klar, wo er noch existiert. Aufgeschriebene Seed-Wörter holen ihn immer zurück. Ein verschlüsselter Export holt ihn nur dann zurück, wenn dieser Export nach dem Hinzufügen dieses Schlüssels erstellt wurde und Sie die Passphrase kennen, mit der er geschrieben wurde: Eine Sicherung vom letzten Monat enthält keinen Schlüssel, den Sie letzte Woche angelegt haben, und eine ältere Datei öffnet sich weiterhin mit der Passphrase, die beim Speichern galt.\n\nIst der Seed nirgends notiert und in keiner Sicherung enthalten, zerstört das Entfernen hier ihn endgültig."
+      },
+      "whereAreMyAddresses": {
+        "title": "Wo sind meine Adressen?",
+        "body": "Ein Schlüssel auf diesem Bildschirm hat keine eigene Empfangsadresse. Adressen gehören zum Tresor, nicht zu einem einzelnen Schlüssel: Eine Tresoradresse wird aus allen eingetragenen Schlüsseln zusammen mit dem Schwellenwert abgeleitet — deshalb kann sie nicht existieren, bevor der Tresor vollständig ist.\n\nSie brauchen also zuerst den Deskriptor des Tresors. Entweder bauen Sie ihn hier — der Tab „Tresore“ enthält einen Offline-Builder, in dem Sie den öffentlichen Schlüssel jedes Inhabers eintragen und den Schwellenwert wählen — oder Sie exportieren den öffentlichen Schlüssel dieses Schlüssels, lassen ihn in einen Tresor eintragen, den jemand anderes zusammenstellt, und speichern den fertigen Deskriptor hier.\n\nSobald ein Deskriptor gespeichert ist, leitet diese App die Adressen dieses Tresors für Sie ab: Öffnen Sie ihn unter „Tresore“ und wählen Sie einen beliebigen Empfangs- oder Wechselgeld-Index, vollständig offline. Genau so prüfen Sie auch, ob eine Ihnen genannte Adresse wirklich Ihre ist — leiten Sie hier denselben Index ab und vergleichen Sie."
+      }
+    },
+    "vaults": {
+      "whatIsAVault": {
+        "title": "Was ein Tresor ist",
+        "body": "Ein Tresor ist ein Bitcoin-Konto, das durch mehrere unabhängige Schlüssel gesichert ist (Multisig): eine „m-von-n“-Anordnung, bei der beliebige m der n aufgenommenen Schlüssel zustimmen müssen, um Mittel zu bewegen. Sie halten einen davon; die übrigen gehören anderen Schlüsselinhabern — anderen Personen, einem Wiederherstellungsschlüssel oder einem Mitsignierdienst. Keiner von ihnen kann allein ausgeben."
+      },
+      "whatIsADescriptor": {
+        "title": "Was ein Tresor-Deskriptor eigentlich ist",
+        "body": "Ein Deskriptor ist der gemeinsame Bauplan, der genau angibt, welche öffentlichen Schlüssel zu einem Tresor gehören und wie viele davon zum Ausgeben nötig sind. Es sind öffentliche Daten, kein Geheimnis, gedacht zum Teilen unter Mitunterzeichnern und sogar zum Speichern in einer Sicherungsdatei. Er ist zugleich das Einzige, was man braucht, um die Adressen des Tresors eigenständig zu rekonstruieren — ohne jemanden zu fragen."
+      },
+      "enrolling": {
+        "title": "Ihren Schlüssel in einen Tresor aufnehmen",
+        "body": "Einen Schlüsselplatz in einem Tresor zu füllen bedeutet, einen öffentlichen Schlüssel zu übergeben: den erweiterten öffentlichen Schlüssel und den Master-Fingerabdruck, die Sie im Schlüssel-Bildschirm exportieren. Mehr ist die Übergabe nicht — eine kopierte Zeichenfolge, eine gespeicherte Schlüsseldatei oder vorgelesen. Ihre Wiederherstellungsphrase muss dieses Gerät nie verlassen, damit Ihr Schlüssel Teil eines aktiven Tresors wird."
+      },
+      "rolesVsQuorum": {
+        "title": "Rollen vs. Quorum — was wirklich zählt",
+        "body": "Jeder aufgenommene Schlüssel kann eine Rollenbezeichnung tragen (Ihrer, Wiederherstellung, Mitunterzeichner und so weiter), doch der Schwellenwert eines Tresors zählt eigenständige SCHLÜSSEL, keine Rollen. Beliebige m der n aufgenommenen Schlüssel können signieren, ganz gleich, wie sie benannt sind. Eine Bezeichnung hilft nur dabei, Schlüssel auseinanderzuhalten; sie gewährt oder entzieht niemals die Fähigkeit zu signieren."
+      },
+      "savingADescriptor": {
+        "title": "Den Deskriptor eines Tresors hier speichern",
+        "body": "Bewahren Sie eine lokale, offline verfügbare Kopie des Tresor-Deskriptors auf: einfügen oder eine gespeicherte Sicherungsdatei importieren. Diese Kopie erlaubt es Ihnen später, eine Adresse zu prüfen oder eine Ausgabe in einem Drittanbieter-Werkzeug zu bauen — allein mit dem Deskriptor und Ihrem eigenen Schlüssel, ohne jemanden fragen zu müssen."
+      },
+      "buildingOffline": {
+        "title": "Einen Tresor-Deskriptor komplett offline erstellen",
+        "body": "Für das Szenario „alle im selben Raum“: Geben Sie den öffentlichen Schlüssel jedes Schlüsselinhabers ein, wählen Sie den Schwellenwert, und die App berechnet den Deskriptor des Tresors. Keine Netzwerkaufrufe, und niemand sonst ist an der Entstehung des Tresors beteiligt.\n\nImportieren Sie jeden Schlüssel möglichst aus einer exportierten Schlüsseldatei, statt ihn abzutippen. Einen erweiterten öffentlichen Schlüssel von Hand zu übertragen ist die fehleranfälligste Stelle im gesamten Ablauf — ein einziges falsches Zeichen erzeugt einen Tresor, der in Ordnung aussieht und den niemand jemals signieren kann."
+      },
+      "derivingAnAddress": {
+        "title": "Eine Adresse zur Überprüfung ableiten",
+        "body": "Aus einem gespeicherten Deskriptor kann die App die tatsächliche Empfangs- oder Wechselgeldadresse an beliebigem Index berechnen, vollständig offline. Nutzen Sie das, um eine Ihnen genannte Adresse unabhängig zu prüfen: an beiden Stellen denselben Index wählen und das Ergebnis vergleichen."
+      }
+    },
+    "signing": {
+      "whatIsAPsbt": {
+        "title": "Was ein PSBT ist",
+        "body": "Ein PSBT („teilweise signierte Bitcoin-Transaktion“) ist einfach eine unsignierte oder teilsignierte Transaktion in einem standardisierten, teilbaren Datei-/Textformat. Es ist das, was von Schlüsselinhaber zu Schlüsselinhaber weitergereicht wird, bis genügend Signaturen für die Übertragung vorliegen."
+      },
+      "signingATransaction": {
+        "title": "Eine Transaktion signieren",
+        "body": "Fügen Sie das erhaltene PSBT ein, importieren oder scannen Sie es, wählen Sie, welcher Ihrer Schlüssel signieren soll, prüfen Sie, was es tatsächlich bewirkt (siehe Prüfen, bevor Sie signieren), und signieren Sie dann. Das signierte Ergebnis geht denselben Weg zurück, den es kam: Kopie, Datei oder QR."
+      },
+      "verifyingBeforeYouSign": {
+        "title": "Vor dem Signieren prüfen",
+        "body": "Direkt über der Signieren-Aktion wird eine eingefügte Transaktion in klaren Worten entschlüsselt: wer bezahlt wird, wie viel, und die Netzwerkgebühr — jedes Mal direkt aus den Rohdaten der Transaktion berechnet, nie aus einer Angabe, die sie über sich selbst macht. Hast du den Deskriptor des Tresors gespeichert, wird auch Wechselgeld von einem echten Empfänger unterschieden; ohne ihn wird es einfach als „unbekannt“ angezeigt, statt geraten."
+      },
+      "policyApproval": {
+        "title": "Eine Richtlinienänderungs-Freigabe signieren",
+        "body": "Eine andere Aktion als das Signieren einer Transaktion. Manche Tresore tragen Ausgaberegeln: ein Tageslimit, einen Höchstbetrag pro Transaktion, eine Liste freigegebener Empfänger, eine Verzögerung, bevor eine Auszahlung durchgeht. Diese Regeln kommen zur Multisig-Anforderung hinzu; sie ersetzen niemals die Notwendigkeit ausreichend vieler Signaturen von Schlüsselinhabern.\n\nWird eine solche Regel gelockert, braucht es den Nachweis, dass ein echter Schlüsselinhaber zugestimmt hat — nicht nur derjenige, der darum bittet. Dieser Nachweis ist eine Signatur über genau die vorgeschlagene Änderung, hier mit demselben Kontoschlüssel erstellt, nur über eine andere Art von Nachricht.\n\nLesen Sie die Nachricht, bevor Sie sie signieren. Die Signatur bindet sich an genau diese Worte: Was auf dem Bildschirm steht, ist das, dem Sie zustimmen — und das Lockern einer Regel ist die Richtung, die Sie tatsächlich Sicherheit kostet, weshalb dafür Ihr Schlüssel nötig ist."
+      },
+      "transports": {
+        "title": "Daten bewegen: Kopieren, Datei oder QR",
+        "body": "Alle drei Transportwege tragen in beide Richtungen exakt denselben Text: Kopieren und Einfügen, eine gespeicherte Datei oder ein QR-Code (auf einem Gerät angezeigt, von einem anderen gescannt). Keiner ist „sicherer“ als die anderen — es sind drei Wege, dieselben Daten von Hand zu bewegen. Was Sie wirklich schützt, ist, dass Sie genau lesen können, was Sie signieren, bevor Sie es tun — unabhängig davon, welcher Weg es gebracht hat."
+      },
+      "qrFrameWontScan": {
+        "title": "Wenn ein QR-Bild sich nicht scannen lässt",
+        "body": "Nichts ist kaputt, und die bereits erfassten Bilder sind nicht verloren. Eine Transaktion ist meist zu groß für einen einzigen QR-Code, sie geht also in mehreren hinüber, und bei einem davon hängenzubleiben ist normal. Was tatsächlich passiert:\n\nDie Bilder sind unabhängig voneinander. Sie können sie in beliebiger Reihenfolge erfassen, und ein bereits erfasstes noch einmal zu scannen schadet nicht. Der Scanner führt Buch und nennt Ihnen genau, welche Nummern noch fehlen — verlassen Sie sich auf diese Liste, statt neu anzufangen, denn die bereits gelesenen Bilder sind gespeichert.\n\nGehen Sie auf dem anzeigenden Gerät zurück zum fehlenden Bild, holen Sie es wieder auf den Schirm und scannen Sie genau dieses. Die anderen müssen Sie nicht noch einmal durchgehen.\n\nWenn ein bestimmtes Bild sich hartnäckig weigert, liegt es fast immer an der Physik und nicht an einem Fehler in den Daten. Machen Sie den Code auf dem anzeigenden Bildschirm größer, das ist die mit Abstand wirksamste Maßnahme. Halten Sie dann die Kamera ruhig, geben Sie ihr einen Moment zum Scharfstellen, und bringen Sie mehr Licht auf den Bildschirm, ohne Spiegelungen zu erzeugen. Die Linse abzuwischen hilft öfter, als es sollte.\n\nWenn Sie schon eine Weile daran sitzen, brechen Sie ab und starten Sie die Übertragung von vorn. Der Inhalt wird neu erzeugt, und Sie verlieren nur die Zeit: Das signierte Ergebnis entsteht aus der Transaktion selbst, nicht aus einem teilweisen Scan."
+      }
+    },
+    "trust": {
+      "noSingleParty": {
+        "title": "Keine einzelne Partei kann allein Geld bewegen",
+        "body": "Das ist das Kernversprechen eines Multisig-Tresors: Weil zum Ausgeben Signaturen mehrerer unabhängiger Schlüssel nötig sind, kann kein einzelner Schlüsselinhaber — weder Sie allein noch irgendein einzelner Dienst — jemals Mittel im Alleingang bewegen. Es braucht jedes Mal ein echtes Quorum."
+      },
+      "neverConnects": {
+        "title": "Warum diese App sich nie mit dem Internet verbindet",
+        "body": "Diese App ist ohne jeglichen Netzwerkcode für alles gebaut, was mit deinen Schlüsseln zu tun hat — es gibt keinen Server, den sie anrufen könnte, selbst wenn sie wollte. Das schützt die Schlüssel selbst, sowohl im Ruhezustand als auch bei Gebrauch, schützt aber nicht ein Gerät, das bereits kompromittiert ist, während es entsperrt ist. Solide Gerätesicherheit (Passphrase, automatische Sperre, sorgfältiger physischer Umgang) bleibt weiterhin wichtig."
+      }
+    },
+    "searchMatch": "Treffer",
+    "searchResultsCountPlural": "{{count}} Themen gefunden"
+  },
+  "backupTransfer": {
+    "back": "Zurück zu den Einstellungen",
+    "importTitle": "Sicherung importieren",
+    "importSubtitle": "Alles auf diesem Gerät durch den Inhalt einer Sicherungsdatei ersetzen.",
+    "compareTitle": "Sicherung vergleichen",
+    "compareSubtitle": "Sehen Sie, wie sich eine Sicherungsdatei von diesem Gerät unterscheidet. Es wird nichts geändert.",
+    "importWarning": "Der Import überschreibt dieses Gerät: Ihre Schlüssel, gespeicherten Tresore und Einstellungen werden durch die aus der Datei ersetzt. Sie sehen genau, was sich ändert, bevor irgendetwas passiert.",
+    "step1": "1. Wählen Sie eine Sicherungsdatei",
+    "step2": "2. Geben Sie die Passphrase dieser Datei ein",
+    "chooseFile": "Datei wählen…",
+    "passphraseHint": "Dies ist die Passphrase, mit der diese Datei gespeichert wurde — nicht unbedingt die, mit der Sie gerade die App entsperrt haben.",
+    "openFile": "Datei öffnen",
+    "opening": "Wird geöffnet…",
+    "errorTooLarge": "Diese Datei ist größer als {{mb}} MB und kann daher keine SignBit-Sicherung sein.",
+    "errorRead": "Diese Datei konnte nicht gelesen werden.",
+    "identical": "Diese Sicherung stimmt exakt mit diesem Gerät überein. Es gibt nichts zu ändern.",
+    "destructiveWarning": "{{count}} Schlüssel auf diesem Gerät sind nicht in dieser Sicherung enthalten. Der Import löscht sie dauerhaft. Wenn ihre 24 Wörter nicht anderswo notiert sind, können sie nicht wiederhergestellt werden.",
+    "statKeysRemoved": "Verlorene Schlüssel",
+    "statKeysAdded": "Hinzugefügte Schlüssel",
+    "statVaultsChanged": "Tresor-Änderungen",
+    "statSettings": "Einstellungsänderungen",
+    "sectionKeys": "Schlüssel",
+    "sectionVaults": "Gespeicherte Tresore",
+    "sectionSettings": "Einstellungen",
+    "noKeys": "Auf keiner Seite Schlüssel.",
+    "noVaults": "Auf keiner Seite gespeicherte Tresore.",
+    "labelChange": "Umbenannt: „{{from}}“ → „{{to}}“",
+    "unreadableKey": "Die Seed-Phrase dieses Eintrags konnte nicht gelesen werden.",
+    "keyWillBeLost": "Dieser Schlüssel wird dauerhaft gelöscht. Notieren Sie zuerst seine 24 Wörter, falls Sie ihn noch brauchen.",
+    "status": {
+      "import": {
+        "removed": "Wird gelöscht",
+        "added": "Wird hinzugefügt",
+        "changed": "Wird geändert",
+        "unchanged": "Unverändert"
+      },
+      "compare": {
+        "removed": "Nur auf diesem Gerät",
+        "added": "Nur in der Sicherung",
+        "changed": "Unterschiedlich",
+        "unchanged": "Gleich"
+      }
+    },
+    "changeDescriptor": {
+      "onlyDevice": "Nur dieses Gerät hat einen Change-Deskriptor für diesen Tresor.",
+      "onlyBackup": "Nur die Sicherung hat einen Change-Deskriptor für diesen Tresor.",
+      "differs": "Die beiden Change-Deskriptoren stimmen nicht überein."
+    },
+    "keyLabels": {
+      "onlyDevice": "Nur dieses Gerät hat Mitunterzeichner-Namen für diesen Tresor. Beim Wiederherstellen werden sie gelöscht.",
+      "onlyBackup": "Die Sicherung fügt Mitunterzeichner-Namen für diesen Tresor hinzu.",
+      "differs": "Die Mitunterzeichner-Namen unterscheiden sich. Beim Wiederherstellen werden die dieses Geräts durch die der Sicherung ersetzt."
+    },
+    "setting": {
+      "autoLockMinutes": "Automatische Sperre (Minuten)",
+      "theme": "Erscheinungsbild",
+      "locale": "Sprache"
+    },
+    "applyTitle": "Diese Sicherung anwenden",
+    "applyBody": "Dieses Gerät wird durch genau das ersetzt, was oben angezeigt wird.",
+    "passphraseChangeWarning": "Nach dem Import entsperren Sie diese App mit der Passphrase der Sicherungsdatei, nicht mit Ihrer aktuellen.",
+    "applyPassphraseLabel": "Passphrase der Sicherungsdatei erneut eingeben",
+    "typeToConfirmLabel": "Tippen Sie {{word}} zur Bestätigung",
+    "applyAction": "Dieses Gerät überschreiben",
+    "applying": "Wird importiert…",
+    "compareReadOnly": "Es wurde nichts geändert. Das Vergleichen liest die Datei nur.",
+    "compareAnother": "Andere Datei vergleichen",
+    "doneTitle": "Sicherung importiert",
+    "doneBody": "Dieses Gerät enthält jetzt {{count}} Schlüssel aus der Sicherung. Denken Sie daran, dass das Entsperren nun die Passphrase der Sicherungsdatei verwendet.",
+    "comparingWith": "Sicherungsdatei:",
+    "finalConfirmTitle": "Dieses Gerät überschreiben?",
+    "finalConfirmSeedWarning": "ALLE SEED-PHRASEN AUF DIESEM GERÄT WERDEN ERSETZT. Jeder Schlüssel, der nicht in dieser Sicherung enthalten und nicht anderswo notiert ist, ist dauerhaft verloren — und damit auch der Zugang zu allem Guthaben, das er schützt. Es gibt kein Rückgängig und keine Wiederherstellung.",
+    "finalConfirmKeysHeading": "{{count}} Schlüssel werden dauerhaft gelöscht:",
+    "finalConfirmBody": "Fahren Sie nur fort, wenn Sie die Passphrase dieser Sicherung gespeichert haben und die 24 Wörter von allem, was Sie noch brauchen. Ihre Schlüssel, gespeicherten Tresore und Einstellungen werden durch die der Datei ersetzt.",
+    "finalConfirmAction": "Ja, alles überschreiben",
+    "overLimitNote": "Diese Sicherung enthält mehr Schlüssel oder Tresore, als dieser Signierer normalerweise zulässt. Sie wird dennoch vollständig wiederhergestellt, ohne dass etwas verworfen wird.",
+    "comparePassphraseNote": "Geöffnet mit der Passphrase, die Sie gerade eingegeben haben. Dieser Vergleich betrachtet die Schlüssel in den Dateien, nicht deren Verschlüsselung — zwei Dateien können also exakt dieselben Schlüssel unter verschiedenen Passphrasen enthalten.",
+    "identicalPassphraseNote": "Identischer Inhalt, aber nicht zwingend eine identische Passphrase. Falls Sie Ihre Passphrase geändert haben, seit eine dieser Dateien geschrieben wurde, öffnet sich die ältere nur mit der damals gültigen."
+  },
+  "reset": {
+    "title": "Dieses Gerät zurücksetzen",
+    "subtitle": "Diesen Signierer löschen und neu beginnen.",
+    "warning": "Dies löscht die auf diesem Gerät gespeicherten Schlüssel. Es kann nicht rückgängig gemacht und später auch nicht mit Ihrer Passphrase zurückgeholt werden. Da der Keystore verschlüsselt ist, kann diese App Ihnen nicht zeigen, welche Schlüssel er enthält. Nur Sie wissen, was darin ist.",
+    "tryRestoreTitle": "Haben Sie eine Sicherungsdatei?",
+    "tryRestoreBody": "Wenn Sie eine Sicherung exportiert haben, stellen Sie diese stattdessen wieder her. Sie benötigen die Passphrase, die galt, als diese Datei geschrieben wurde — möglicherweise nicht die, die Sie vergessen haben.",
+    "tryRestoreAction": "Stattdessen aus einer Sicherung wiederherstellen",
+    "typeToConfirm": "Tippen Sie {{word}}, um fortzufahren",
+    "action": "Dieses Gerät zurücksetzen",
+    "finalTitle": "Dieses Gerät löschen?",
+    "finalWarning": "Jede Seed-Phrase, die Sie nicht notiert haben, ist gleich verloren — und mit ihr das Guthaben, das sie kontrolliert.",
+    "finalBody": "Jeder Schlüssel auf diesem Gerät wird gelöscht, zusammen mit Ihren gespeicherten Tresor-Deskriptoren und Einstellungen. Ein Schlüssel lässt sich danach nur noch aus seiner eigenen 24-Wort-Seed-Phrase oder aus einer Sicherungsdatei wiederherstellen. Einen anderen Weg zurück gibt es nicht.",
+    "finalConfirm": "Alles löschen",
+    "resetting": "Wird gelöscht…",
+    "locationPortable": "Dies löscht den portablen Ordner neben der App:",
+    "locationAppData": "Dies löscht den App-Datenordner dieses Computers:",
+    "locationOtherNote": "Ein älterer Keystore im App-Datenordner dieses Computers bleibt unberührt. Falls einer existiert, wird er Ihnen danach möglicherweise angeboten. Es ist eine andere Datei und kann eine frühere Passphrase verwenden.",
+    "cooldownNote": "Nehmen Sie sich einen Moment. Diese Schaltfläche wird in Kürze freigegeben. Wenn Sie unsicher sind, brechen Sie jetzt ab.",
+    "finalConfirmWaiting": "Alles löschen ({{seconds}} s)"
+  }
+}
