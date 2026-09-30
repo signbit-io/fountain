@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme.
+
+         forceDarkAllowed=false: the WEB APP owns light/dark entirely (CSS tokens + the
+         `.dark` class + `color-scheme`). Android's WebView "algorithmic darkening" would
+         otherwise re-tint our already-themed pages, producing washed-out / inverted colors
+         on devices in dark mode. We opt out so our own theme is the only one applied. -->
+    <style name="Theme.Fountain" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+</resources>

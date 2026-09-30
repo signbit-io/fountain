@@ -1,0 +1,209 @@
+/* Self-hosted brand fonts (no external requests — this is an air-gapped signer). */
+@import '@fontsource-variable/epilogue';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+
+/* Wordmark display face — Sabre Shark (Iconian Fonts), bold italic cut. Matches the
+   SignBit platform wordmark. NON-COMMERCIAL LICENSE ONLY as shipped — a commercial
+   font license must be secured before any public/production deploy of this client. */
+@font-face {
+  font-family: 'Sabre Shark';
+  src: url('./assets/fonts/sabreshark-bold-italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Theme tokens mirrored from the SignBit platform. Light is the default; `.dark` on <html>
+  swaps the palette. Space-separated RGB channels so Tailwind's <alpha-value> works.
+*/
+@layer base {
+  :root {
+    --surface: 255 255 255;
+    --surface-2: 255 255 255;
+    --ink: 23 23 27;
+    --ink-muted: 90 92 102;
+    --line: 226 228 233;
+    color-scheme: light;
+  }
+
+  .dark {
+    --surface: 11 12 16;
+    --surface-2: 22 24 31;
+    --ink: 240 241 245;
+    --ink-muted: 156 160 173;
+    --line: 39 42 53;
+    /* NOTE: no `color-scheme: dark` here on purpose. Our tokens define the ENTIRE palette
+       explicitly, so we don't need the UA to pick dark defaults — and on the Android WebView
+       (Chromium) `color-scheme: dark` shifts how the page composites, making the dark theme
+       read darker / lower-contrast than the desktop WebView2. We drive dark styling ourselves
+       via the `.dark` class + tokens; native controls are already floored to 16px on coarse
+       pointers. Light theme keeps `color-scheme: light` on :root (it renders correctly). */
+  }
+
+  /* Android dark palette — the Chromium WebView renders the desktop dark tokens noticeably
+     darker / lower-contrast than desktop WebView2, so on Android we lift the surfaces and
+     brighten ink to compensate. `html.android` is set pre-paint in index.html by userAgent.
+     Light theme is shared (renders correctly on both), so only the dark palette diverges. */
+  html.android.dark {
+    --surface: 18 20 27;
+    --surface-2: 30 33 43;
+    --ink: 244 245 249;
+    --ink-muted: 172 177 190;
+    --line: 52 56 70;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans;
+    margin: 0;
+    min-height: 100vh;
+    /*
+      Mobile-dimensions floor. The signer is headed to mobile (Tauri Android/iOS), so we
+      design down to ~375px and hold a hard 320px minimum: squeezing the window narrower
+      than this scrolls horizontally instead of collapsing the layout.
+    */
+    min-width: 320px;
+  }
+
+  /* iOS Safari/WKWebView auto-zooms the page when a focused form control's font-size is
+     under 16px — jarring on every tap into a field. Floor control text at 16px on
+     touch-primary devices only (desktop keeps the designed 14px/12px sizes). Android
+     doesn't auto-zoom but the slightly larger text is a readability win there too. */
+  @media (pointer: coarse) {
+    input,
+    select,
+    textarea {
+      font-size: max(1rem, 1em);
+    }
+  }
+
+  /*
+    Suppress the BROWSER'S OWN password reveal control.
+
+    Chromium (WebView2 on Windows — what the desktop app runs in) injects `::-ms-reveal`, an
+    eye button, into every `input[type=password]`. It only appears once the field has content
+    and focus, which is why it showed up intermittently rather than always. The result was TWO
+    eye icons on the unlock screen: ours (components/ui.tsx PasswordInput) and the UA's, drawn
+    in the OS's own black regardless of theme.
+
+    Ours is the one to keep — it is themed, translated, has a 40px tap target, and its icon
+    reflects the current state. The UA's cannot be styled or labelled and sits on top of our
+    button's hit area.
+
+    ⚠️ NOT cosmetic on a signer: two reveal controls next to a passphrase field is ambiguous at
+    exactly the moment a user is deciding whether their passphrase is currently visible on
+    screen. The WebKit rule is here pre-emptively for the planned iOS/macOS targets, where the
+    decoration container serves the same purpose.
+  */
+  input[type='password']::-ms-reveal,
+  input[type='password']::-ms-clear {
+    display: none;
+  }
+  input[type='password']::-webkit-textfield-decoration-container {
+    visibility: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Widescreen: grow the cap and side padding at larger breakpoints so a wide monitor
+     doesn't leave content stranded in a narrow center column — the platform's same rule. */
+  /* ⚠️ The last step (1920px+, max 2400px) is for true widescreens (user, 2026-09-24): at 110rem
+     a 2560px monitor left ~40% of the window empty. Every tab inherits this; Settings adds a
+     third column at 2xl so it grows with it instead of sitting in its own narrower cap. */
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 xl:max-w-[96rem] xl:px-12 2xl:max-w-[110rem] 2xl:px-16 min-[1920px]:max-w-[150rem] min-[1920px]:px-20;
+  }
+
+  /* Brand glow — two soft color blooms (orange top-center + a faint cool bloom off to the
+     side) for a richer, less flat backdrop than a single gradient. Mirrors the platform's accent. */
+  .bg-glow {
+    background:
+      radial-gradient(ellipse 55% 45% at 50% 0%, rgb(247 147 26 / 0.16), transparent 70%),
+      radial-gradient(ellipse 40% 40% at 85% 8%, rgb(247 147 26 / 0.08), transparent 72%),
+      radial-gradient(ellipse 45% 45% at 12% 4%, rgb(120 140 255 / 0.06), transparent 72%);
+  }
+  .dark .bg-glow {
+    background:
+      radial-gradient(ellipse 55% 45% at 50% 0%, rgb(247 147 26 / 0.22), transparent 70%),
+      radial-gradient(ellipse 40% 40% at 85% 8%, rgb(247 147 26 / 0.12), transparent 72%),
+      radial-gradient(ellipse 45% 45% at 12% 4%, rgb(120 140 255 / 0.10), transparent 72%);
+  }
+
+  /* Grid texture — a crisp fine grid (blueprint feel) OVER a larger dot grid, so the backdrop
+     has depth at two scales. More present than a single faint layer, still masked to fade down
+     so it never fights the content. Theme-agnostic via the ink token.
+
+     ⚠️ Fade shape: a top-anchored VERTICAL LINEAR gradient (not a radial ellipse). A radial
+     ellipse's falloff is round/centered and needs a specific pixel size to land near a
+     specific point — wrong tool for "fade in near the top, stay solid through the middle,
+     fade out near the bottom" of an arbitrarily tall page. A linear gradient's stops are
+     percentages OF THE ELEMENT'S OWN HEIGHT, so they scale correctly however tall <main>
+     ends up being: solid by 15% down, fading out only in the last ~15% before the bottom. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--ink) / 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--ink) / 0.02) 1px, transparent 1px),
+      radial-gradient(rgb(var(--ink) / 0.04) 1.25px, transparent 1.25px);
+    background-size:
+      28px 28px,
+      28px 28px,
+      112px 112px;
+    background-position:
+      -1px -1px,
+      -1px -1px,
+      0 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  }
+  .dark .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--ink) / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--ink) / 0.04) 1px, transparent 1px),
+      radial-gradient(rgb(255 255 255 / 0.035) 1.25px, transparent 1.25px);
+  }
+
+  /* Shared card surface — white-on-white separated by border + soft shadow. */
+  .card {
+    @apply border border-line bg-surface-2 shadow-soft;
+  }
+
+  /* Hide the scrollbar on horizontally-scrollable strips (the mobile tab nav) — the strip
+     still scrolls by touch/wheel; a visible bar under a 1-row nav reads as broken layout. */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Active/selected treatment (tabs, toggles) — one source of truth. */
+  .is-active {
+    @apply bg-brand-500/10 text-brand-700 border-brand-500/30
+           dark:bg-brand-500/15 dark:text-brand-400 dark:border-brand-500/30;
+  }
+  .is-idle {
+    @apply bg-surface-2 border-transparent text-ink-muted hover:text-ink;
+  }
+}

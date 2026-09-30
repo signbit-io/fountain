@@ -1,0 +1,706 @@
+{
+  "common": {
+    "brand": "SignBit",
+    "brandTagline": "Fountain",
+    "close": "Close",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyFailed": "Copy failed",
+    "cancel": "Cancel",
+    "loading": "Loading…",
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "shell": {
+    "lock": "Lock",
+    "appearance": "Appearance: {{mode}}",
+    "moreControls": "More controls",
+    "tabs": {
+      "keys": "keys",
+      "sign": "sign",
+      "vaults": "vaults",
+      "settings": "settings",
+      "help": "help"
+    }
+  },
+  "unlock": {
+    "createTitle": "Create your passphrase",
+    "unlockTitle": "Unlock your keys",
+    "createSubtitle": "This encrypts your keys on this device. There's no recovery, so write it down.",
+    "unlockSubtitle": "Enter the passphrase for this device's keystore.",
+    "passphrase": "Passphrase",
+    "confirmPassphrase": "Confirm passphrase",
+    "working": "Working…",
+    "createKeystore": "Create keystore",
+    "unlockButton": "Unlock",
+    "alreadyHaveKeystore": "Already have a keystore?",
+    "restoreIt": "Restore it",
+    "forgotPassphrase": "Forgot your passphrase?",
+    "resetDevice": "Reset this device",
+    "errorMismatch": "Passphrases do not match.",
+    "errorTooShort": "Use at least 8 characters.",
+    "strength": {
+      "tooShort": "Too short",
+      "weak": "Weak",
+      "fair": "Fair",
+      "good": "Good",
+      "strong": "Strong"
+    },
+    "strengthHint": {
+      "longer": "Longer beats complicated. Try several words.",
+      "variety": "Add a capital, number or symbol.",
+      "avoidPattern": "Avoid common words, repeats and keyboard runs."
+    }
+  },
+  "restore": {
+    "title": "Restore your keys",
+    "subtitle": "Bring back an existing keystore from a backup or an earlier install, then unlock it with its passphrase.",
+    "autoTitle": "Restore your previous keystore",
+    "chooseFile": "Choose keystore file…",
+    "restoringFrom": "Restoring from",
+    "passphrase": "Passphrase",
+    "passphraseHint": "Enter the passphrase for this keystore (not a new one).",
+    "restoring": "Restoring…",
+    "restoreAndUnlock": "Restore & unlock",
+    "pickDifferentFile": "Pick a different file",
+    "backToCreate": "Back",
+    "errorReadFile": "Could not read that keystore file.",
+    "errorOpenPicker": "Could not open the file picker.",
+    "errorWrongPassphrase": "That passphrase does not unlock this keystore.",
+    "autoFromAppData": "Found an older keystore in this computer's app-data folder, from before this app ran as a portable copy.",
+    "autoFromPortable": "Found a keystore in the portable folder next to the app.",
+    "autoPassphraseNote": "This file is encrypted, so the app can't tell which keys are in it. It may need an earlier passphrase, not necessarily your most recent one.",
+    "searchHint": "Backup somewhere else? Every file this app writes starts with \"signbit-\". Search your computer and any USB stick for that to find backups it can't see from here."
+  },
+  "keys": {
+    "title": "Your keys",
+    "subtitle": "Each key is a cosigner. Export its public key ({{prefix}} + fingerprint) to enroll it in a vault.",
+    "emptyTitle": "No keys yet",
+    "emptySubtitle": "Create a key to get a public key you can enroll as a cosigner in a vault.",
+    "label": "Label",
+    "seedPhraseLabel": "Seed phrase (12–24 words)",
+    "labelPlaceholder": "e.g. My cosigner key",
+    "seedPlaceholder": "word word word…",
+    "seedWordCount": "{{count}} words",
+    "seedInvalidWord": "Not a BIP-39 word",
+    "seedValid": "Valid seed phrase",
+    "seedOrderSuspect": "All valid words, but the order looks wrong",
+    "seedDuplicate": "This seed phrase is already imported as \"{{label}}\".",
+    "newKeyLabelPlaceholder": "New key label",
+    "import": "Import",
+    "createKey": "Create key",
+    "showPublicKey": "Show public key ({{network}})",
+    "publicKeyModalTitle": "Public key · {{label}}",
+    "fingerprint": "Master fingerprint",
+    "accountTpub": "Account public key",
+    "guideTitle": "Key setup guide",
+    "guideIntro": "Every key you create or import here already uses these settings. Consider this a reference for what gets generated, and what to hand the platform when enrolling.",
+    "guideScript": "Script type: Native SegWit multisig (P2WSH)",
+    "guidePath": "Derivation path: m/{{path}}",
+    "guideNetwork": "Network: {{network}}, exports a {{prefix}}",
+    "guideExport": "Give the platform: your {{prefix}} and master fingerprint (Show public key on a key card)",
+    "exportFilePublicNote": "Public key only. Enroll this as your Fountain key when creating a vault.",
+    "exportFileSaving": "Saving…",
+    "exportFileJson": "Export file (.json)",
+    "addedOn": "Added {{date}}",
+    "revealSeed": "Reveal seed",
+    "rename": "Rename",
+    "renameSave": "Save",
+    "renameCancel": "Cancel",
+    "remove": "Remove",
+    "errorSaveFile": "Could not save the file.",
+    "backupTitle": "Back up “{{label}}”",
+    "backupWarningStrong": "Write this down now.",
+    "backupWarningRest": "This 24-word phrase is the only way to recover this key. Write it on paper, and make sure no one's watching your screen.",
+    "backedUp": "I’ve backed it up",
+    "revealModalTitle": "Seed phrase · {{label}}",
+    "revealWarningShown": "Anyone who sees these 24 words controls this key. Make sure no one's watching your screen.",
+    "revealWarningPrompt": "Re-enter your passphrase to reveal this key’s 24-word seed phrase.",
+    "done": "Done",
+    "checking": "Checking…",
+    "revealSeedButton": "Reveal seed",
+    "revealIncorrectPassphrase": "Incorrect passphrase. {{count}} attempt left before the app locks.",
+    "removeModalTitle": "Remove key",
+    "removeWarningPrefix": "This removes",
+    "removeWarningMiddle": "from this device only. If its 24-word seed is backed up, you can re-import it later;",
+    "removeWarningStrong": "if it isn’t, this is permanent.",
+    "removeWarningSuffix": "Back up the seed first if you haven’t.",
+    "removeConfirmLabelFingerprint": "Type the key’s fingerprint to confirm",
+    "removeConfirmLabelName": "Type the key’s name to confirm",
+    "removeKeyButton": "Remove key",
+    "removeKeyButtonCountdown": "Remove key ({{seconds}}s)",
+    "keyFallbackName": "Key",
+    "createOnMainnet": "New keys will be mainnet keys. This can't be changed later.",
+    "offNetwork": "not the app's current network",
+    "derivationPath": "Derivation path",
+    "revealIncorrectPassphrasePlural": "Incorrect passphrase. {{count}} attempts left before the app locks.",
+    "exportAllAction": "Export all public keys ({{count}})",
+    "exportAllTitle": "Export all public keys",
+    "exportAllBody": "Pick a folder and you'll get {{count}} files, one for each key. Each is named after the key's label and fingerprint, so you can tell them apart later.",
+    "exportAllConfirm": "Pick a folder",
+    "exportAllSaved": "Saved {{count}} keys to your folder.",
+    "exportAllSkipped": "Couldn't export these, so they've been left out: {{names}}.",
+    "exportAllPublicNote": "These are public keys only, no seed phrases. They're what you hand the platform when you add a cosigner to a vault.",
+    "accountSlip132": "Multisig key ({{prefix}}, P2WSH)",
+    "scriptType": "Script type",
+    "scriptTypeP2wsh": "Native SegWit multisig (P2WSH)",
+    "publicKeyNotAddress": "This is your key's public identity, not an address. Share it only to add this key to a vault. Never ask anyone to send bitcoin to it; to receive, use a receive address from your vault on SignBit."
+  },
+  "vaults": {
+    "title": "Vault backups",
+    "subtitle": "Add a vault's descriptor so you can still verify addresses or spend via a third-party tool (like Sparrow) if the platform's ever unreachable. Descriptors are public data, so there's nothing secret here.",
+    "addTitle": "Add a vault descriptor",
+    "importFile": "Import file",
+    "label": "Label",
+    "labelPlaceholder": "e.g. Family 3-of-5",
+    "descriptorLabel": "Receive descriptor",
+    "descriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/0/*,…))#checksum",
+    "changeDescriptorLabel": "Change descriptor (optional)",
+    "changeDescriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/1/*,…))#checksum",
+    "save": "Add backup",
+    "addChangeDescriptor": "+ Add change descriptor",
+    "addChangeDescriptorHint": "This backup is missing its change descriptor, which the Sign screen needs to tell change apart from a real recipient when decoding a spend. Copy it from the vault's descriptor view on the platform.",
+    "addChangeDescriptorSave": "Add",
+    "errorRequired": "Enter a descriptor to save.",
+    "importSaved": "Saved \"{{label}}\" to your vault backups.",
+    "importSavedCopy": "Saved as \"{{label}}\". You already had this same vault saved, so this is a second copy. Remove whichever you don't want.",
+    "errorFileTooLarge": "File is too large to be a vault backup.",
+    "errorReadFile": "Could not read that file.",
+    "emptyTitle": "No vault backups yet",
+    "emptySubtitle": "Paste a vault's descriptor from the platform's vault page to save an offline copy here.",
+    "savedOn": "Saved {{date}}",
+    "changeDescriptor": "Change descriptor",
+    "remove": "Remove",
+    "summaryQuorum": "{{threshold}}-of-{{total}} multisig",
+    "summarySigner": "Signer {{index}}",
+    "summaryThisDevice": "This device's key",
+    "summaryFingerprint": "Fingerprint",
+    "copyFingerprint": "Copy fingerprint",
+    "copyXpub": "Copy extended public key",
+    "rename": "Rename this vault",
+    "renameSave": "Save",
+    "renameCancel": "Cancel",
+    "nameSigner": "Name this cosigner",
+    "summaryReceiveBranch": "Receive addresses",
+    "summaryChangeBranch": "Change addresses",
+    "summaryChecksum": "Checksum",
+    "showRawDescriptor": "Show raw descriptor",
+    "hideRawDescriptor": "Hide raw descriptor",
+    "rawDescriptorNote": "The exact text needed to reconstruct this vault in a third-party tool. Keep this backup safe.",
+    "showDerive": "Derive an address",
+    "hideDerive": "Hide derive address",
+    "deriveSubtitle": "Compute the real Bitcoin address at any index, entirely offline. Compare it to what the platform shows to verify it independently.",
+    "deriveBranchReceive": "Receive",
+    "deriveBranchChange": "Change",
+    "deriveIndexLabel": "Index",
+    "derivePrevIndex": "Previous index",
+    "deriveNextIndex": "Next index",
+    "deriveResultLabel": "{{branch}} address #{{index}}",
+    "deriveCompareHint": "Compare this to what the vault page shows at the same index.",
+    "deriveErrorNoChangeDescriptor": "This backup has no change descriptor yet. Add one above first.",
+    "deriveErrorGeneric": "Could not derive an address from this descriptor.",
+    "removeModalTitle": "Remove vault backup",
+    "removeWarning": "This deletes the saved descriptor for {{label}} from this device. It doesn't affect the vault itself: you can always re-save it from the platform.",
+    "removeConfirmLabel": "Type the backup's name to confirm",
+    "removeConfirm": "Remove backup",
+    "removeConfirmCountdown": "Remove backup ({{seconds}}s)",
+    "cancel": "Cancel",
+    "modePaste": "Paste a descriptor",
+    "modeBuild": "Build one offline",
+    "buildTitle": "Build a vault descriptor offline",
+    "buildSubtitle": "Enter every keyholder's public key (extended public key + fingerprint, including the platform's if this vault will ever sync there) to construct the exact same descriptor the platform would build, with no platform involvement. Works standalone in any third-party multisig tool.",
+    "buildKeyN": "Key {{n}}",
+    "buildKeyLabelPlaceholder": "Label (optional, e.g. \"Alice\")",
+    "buildKeyXpubPlaceholder": "tpub… / xpub…",
+    "buildKeyFingerprintPlaceholder": "8-hex fingerprint (optional)",
+    "buildAddKey": "+ Add another key",
+    "buildThreshold": "Signatures required (m)",
+    "buildThresholdSummary": "{{m}} of {{n}} keyholders must sign to spend",
+    "buildThresholdNoRedundancy": "Every one of the {{n}} keys will be required. There is no spare: if a single key is ever lost, the funds cannot be recovered by anyone. Lower this number if you want the vault to survive losing a key.",
+    "buildAction": "Build and save vault",
+    "buildSavedCompare": "Saved to your vault backups. Every keyholder building this vault from the same keys should get exactly this descriptor, so it is worth a quick compare while you're all together.",
+    "buildSavedCopy": "Saved as \"{{label}}\". You already had this same vault saved, so this is a second copy. Remove whichever you don't want.",
+    "draftRestored": "Picked up where you left off. These keys were last edited {{date}} and are kept on this device until you save or discard them.",
+    "draftKept": "Your entries are saved on this device as you type, so you can leave this screen and come back. Nothing is added to your backups until you save.",
+    "draftDiscard": "Discard entries",
+    "buildErrorMinKeys": "Enter at least 2 keys.",
+    "buildErrorThreshold": "Signatures required must be between {{min}} and {{max}}. A vault needs a majority to spend, so fewer than {{min}} would let a minority of keyholders move the funds alone.",
+    "buildErrorGeneric": "Couldn't build a descriptor from these keys.",
+    "buildKeyImportFile": "Import from a key file instead",
+    "keyFileErrorNetwork": "That key is a {{keyNetwork}} key, but this vault is being built on {{formNetwork}}. All the keys in one vault must be on the same network.",
+    "keyFileError": {
+      "not_json": "That is not a SignBit key file — it is not valid JSON. Pick a signbit-key-….json file exported from the Keys screen.",
+      "not_key_file": "That is not a SignBit key file. Pick a signbit-key-….json file exported from the Keys screen.",
+      "private_material": "Refused: that file contains private key material. A key file should carry public keys only — nothing here needs your seed phrase. Delete that copy and export the public key again.",
+      "missing_field": "That key file has no extended public key in it.",
+      "bad_fingerprint": "That key file has a malformed master fingerprint — it must be 8 hex characters.",
+      "bad_path": "That key file does not say which derivation path its key uses, so there is no way to tell which network it belongs to.",
+      "bad_xpub": "The extended public key in that file is not valid — its checksum or network does not check out. Export it again rather than editing the file."
+    },
+    "collapse": "Collapse",
+    "expand": "Expand"
+  },
+  "sign": {
+    "title": "Sign",
+    "subtitle": "Co-sign a vault spend (PSBT), or sign a message: approving a policy change, proving a key, adopting a vault. All fully offline.",
+    "modePsbt": "PSBT (spend)",
+    "modeApproval": "Message",
+    "signingKey": "Signing key",
+    "noKeysOption": "No keys yet. Create one first.",
+    "psbtLabel": "Unsigned PSBT (base64)",
+    "approvalLabel": "Message to sign",
+    "importFile": "Import file",
+    "psbtPlaceholder": "cHNidP8B…",
+    "approvalPlaceholder": "Paste the message the platform gave you, e.g.\nSIGNBIT-VAULT-IMPORT\ndescriptor:…\n…",
+    "signPsbtButton": "Sign PSBT",
+    "signApprovalButton": "Sign message",
+    "messageKind": {
+      "policyChange": "Policy change approval. This endorses a change to the vault's spending rules.",
+      "healthCheck": "Key health check. This proves you can sign with this key. It moves no funds.",
+      "vaultImport": "Vault import. This proves you hold a key in the vault being adopted. It moves no funds.",
+      "ownerTransfer": "Vault owner change. This endorses moving the vault's owner slot to another keyholder. It moves no funds.",
+      "unknownSignbit": "A SignBit message this version doesn't recognise, probably newer than this app. Read it below before signing.",
+      "unknown": "This isn't a recognised SignBit message. Read it carefully before signing, and only sign text you understand and expected.",
+      "inheritanceClaim": "Inheritance claim approval. THIS ONE MOVES MONEY: it authorises sweeping the vault to the address below. Check that address before you sign."
+    },
+    "resultPsbt": "Co-signed. Send this PSBT back to the platform to count it toward the threshold.",
+    "resultPsbtWithKey": "Co-signed with \"{{key}}\". Send this PSBT back to the platform to count it toward the threshold.",
+    "resultApproval": "Signature ready. Paste it back into the platform where you copied this from.",
+    "resultApprovalWithKey": "Signed with \"{{key}}\". Send this signature back to the platform.",
+    "outputPsbtLabel": "Co-signed PSBT (base64)",
+    "outputApprovalLabel": "Signature (base64)",
+    "exportFileSaving": "Saving…",
+    "exportFile": "Export file",
+    "errorNoKey": "Create or import a key first.",
+    "errorSaveFile": "Could not save the file.",
+    "errorFileTooLarge": "File is too large to be a PSBT or approval.",
+    "errorReadFile": "Could not read that file.",
+    "scanQr": "Scan QR",
+    "showQr": "Show QR",
+    "decodeTitle": "What this PSBT does",
+    "decodeFee": "Network fee",
+    "decodeChange": "Change",
+    "decodeRecipient": "Recipient",
+    "decodeUnknown": "Unknown",
+    "decodeNoChangeInfo": "This app doesn't have this vault's descriptor cached, so it can't tell recipient and change apart. Only amounts are shown.",
+    "decodeGoToVaults": "Save this vault's descriptor →",
+    "chooseKeyOption": "Choose a key…",
+    "keyOffNetwork": "This key is a {{keyNetwork}} key; the app is set to {{appNetwork}}. It will sign as a {{keyNetwork}} key.",
+    "decodeFeeAlarm": "This fee is an implausibly large share of the amount being spent. If you did not intend it, do not sign — a transaction can overstate its fee by understating what an input is worth, and the difference goes to miners and cannot be recovered.",
+    "decodeMultiVault": "This transaction spends from more than one of your vaults. The change labels below describe only one of them, so check each input's vault before you sign.",
+    "messageKindUnknownStake": "The key signing this also controls funds in your vaults. It cannot be tricked into approving a payment this way, but the signature is still made by that key — do not sign text someone else asked you to sign unless you know exactly what it is for.",
+    "inheritanceStake": "Signing this authorises the vault to be swept to this address. It cannot be undone once the transfer is made."
+  },
+  "qr": {
+    "displayTitle": "Show QR code",
+    "scanTitle": "Scan QR code",
+    "prevFrame": "Previous",
+    "nextFrame": "Next",
+    "frameOf": "Frame {{index}} of {{total}}",
+    "multiFrameHint": "This data needs several QR codes. Scan each one in turn on the other device, then tap Next here to show the next one.",
+    "scanHint": "Point the camera at the QR code on the other device. If it spans several codes, keep scanning until you've captured every frame.",
+    "scanProgress": "Captured {{have}} of {{total}} frames",
+    "errorCamera": "Could not access the camera. Check camera permissions for this app.",
+    "errorMismatch": "That QR code belongs to a different sequence. Scan codes from only one source at a time.",
+    "errorIncomplete": "Some frames are missing. Try scanning again.",
+    "errorPermissionDenied": "Camera access is blocked for this app. It can't re-ask automatically once blocked, so you'll need to re-enable it in your device's settings.",
+    "retryCamera": "Try again",
+    "permissionSteps": {
+      "windows": "Windows: Settings → Privacy & security → Camera → turn this app back on (or check the WebView2 app entry), then try again.",
+      "macos": "macOS: System Settings → Privacy & Security → Camera → turn this app back on, then try again. You may need to restart the app.",
+      "linux": "Linux: check your desktop's privacy/camera settings (varies by distro), or your browser/webview's site permissions if running in a browser tab.",
+      "ios": "iOS: Settings → [this app] → Camera → turn it on, then return here and try again.",
+      "android": "Android: Settings → Apps → [this app] → Permissions → Camera → allow, then return here and try again."
+    },
+    "scanStillNeed": "Still need frame(s): {{frames}}"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "App configuration for this device.",
+    "network": {
+      "label": "Network",
+      "onMainnet": "You're on mainnet, the live Bitcoin network. Keys you create here work with real bitcoin.",
+      "onTestnet": "You're on testnet, a practice network. The coins aren't worth anything, so it's a good place to try things out.",
+      "keysUnaffected": "Your existing keys don't change. Each one stays on the network it was created for.",
+      "corrupted": "Your saved settings couldn't be read, so the network was reset to testnet. Pick a network below to save a fresh setting.",
+      "confirmTitle": "Switch to mainnet?",
+      "confirmReal": "Mainnet is real bitcoin. Signatures you make here can help move actual funds, and once a transaction is broadcast there's no taking it back.",
+      "confirmKeystore": "Your keys are kept in a software keystore on this device, protected by your passphrase, rather than on dedicated signing hardware. Someone who got hold of both the file and the passphrase would have the keys stored here. In a multisig vault that alone isn't enough to spend: they'd need enough keys to meet the vault's signing threshold.",
+      "confirmStamp": "You can switch back to testnet whenever you like. The one thing that sticks is the keys: a key you create while you're on mainnet is a mainnet key for good, and switching the app back later won't change it. Keys you already have stay exactly as they are.",
+      "confirmAction": "Switch to mainnet"
+    },
+    "appearance": {
+      "label": "Appearance",
+      "hint": "Theme for this device. “System” follows your OS setting.",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "autoLock": {
+      "label": "Auto-lock",
+      "hint": "Lock the app after a period of inactivity. Recommended for a device holding keys.",
+      "min1": "1 min",
+      "min5": "5 min",
+      "min15": "15 min",
+      "min30": "30 min",
+      "never": "Never",
+      "offWarning": "Auto-lock is off. The app stays unlocked until you lock it manually or quit."
+    },
+    "language": {
+      "label": "Language",
+      "hint": "Interface language for this device."
+    },
+    "storage": {
+      "label": "Storage",
+      "hint": "Where this device keeps its encrypted keystore. A portable build stores it next to the app, so your keys travel with it (e.g. on a USB drive).",
+      "unavailablePrefix": "Storage location is only available in the desktop app (run",
+      "unavailableSuffix": ").",
+      "checking": "Checking…",
+      "portable": "Portable",
+      "default": "Default (per-user)",
+      "portableNote": "Keys are stored next to the app.",
+      "defaultNote": "Keys are stored in your OS profile.",
+      "portableWarningPrefix": "Keys live in this folder. Deleting it (or losing the drive) deletes this keystore copy. Your",
+      "portableWarningStrong": "24-word seed phrase",
+      "portableWarningSuffix": "is the real backup."
+    },
+    "version": {
+      "publisher": "Made with ❤️ by SignBit",
+      "domain": "signbit.io"
+    },
+    "backup": {
+      "label": "Backup",
+      "hint": "Save your whole signer (keys, vault descriptors and preferences) as one encrypted file you can restore on another device.",
+      "action": "Export backup",
+      "warning": "The file is encrypted with your passphrase. Anyone who gets both the file and your passphrase gets your keys, so store it somewhere you trust and use a strong passphrase.",
+      "noKeys": "Add a key before creating a backup.",
+      "modalTitle": "Export backup",
+      "modalBody": "This saves an encrypted copy of your keys, saved vault descriptors and preferences. Restore it on any device (Windows, macOS, Linux or Android) from the Restore screen.",
+      "filenameLabel": "File name",
+      "filenameHint": "Keep the date so backups don't overwrite each other. You can rename it however you like.",
+      "passphraseLabel": "Your passphrase",
+      "passphraseHint": "This encrypts the backup. It's the same passphrase you use to unlock the app.",
+      "confirm": "Save backup",
+      "saving": "Saving…",
+      "wrongPassphrase": "That passphrase is wrong.",
+      "saved": "Backup saved. {{count}} key(s) included.",
+      "importAction": "Import backup",
+      "compareAction": "Compare backup",
+      "transferHint": "Import replaces everything on this device with a backup file. Compare only shows the differences and changes nothing.",
+      "tooLargeToRestore": "This backup would be {{mb}} MB, too large to be restored later, so it wasn't saved. Remove some saved vaults or keys you no longer need, then try again.",
+      "largeFileNote": "This backup is {{mb}} MB, unusually large but still restorable. Consider removing saved vaults you no longer need.",
+      "keyCount": "Keys:",
+      "vaultCount": "Saved vaults:",
+      "passphraseConfirmLabel": "Confirm passphrase",
+      "passphraseMismatch": "The two passphrases do not match."
+    },
+    "changePass": {
+      "label": "Passphrase",
+      "hint": "Change the passphrase that unlocks this app. Your keys are not affected.",
+      "action": "Change passphrase",
+      "modalTitle": "Change passphrase",
+      "modalBody": "Your keys stay exactly as they are. Only the passphrase that unlocks them changes.",
+      "backupWarning": "Backup files you have already exported will still need the OLD passphrase. Only this device changes. You will be offered a fresh backup afterwards.",
+      "currentLabel": "Current passphrase",
+      "newLabel": "New passphrase",
+      "confirmLabel": "Confirm new passphrase",
+      "mismatch": "The two passphrases do not match.",
+      "sameAsCurrent": "That is your current passphrase.",
+      "confirmAction": "Change passphrase",
+      "changing": "Changing…",
+      "wrongCurrent": "That is not your current passphrase.",
+      "changed": "Passphrase changed. This device now unlocks with the new one.",
+      "exportTitle": "Save a fresh backup",
+      "exportBody": "Your existing backup files still open with the old passphrase. Save a new backup now so your recovery file and this device use the same one.",
+      "exportAction": "Save backup now",
+      "exportLater": "Not now",
+      "exportSaved": "New backup saved. Your older backup files still open with the previous passphrase.",
+      "exportSkipped": "No new backup was saved. Your existing backup files still open with your previous passphrase."
+    },
+    "offlineOk": "Offline confirmed. This device has no network connection and is fully air-gapped."
+  },
+  "help": {
+    "title": "Help",
+    "subtitle": "How this app works, in full. Bundled and searchable, with no network needed to read any of it.",
+    "searchPlaceholder": "Search help topics…",
+    "searchNoResults": "No topics match \"{{query}}\".",
+    "searchResultsCount": "{{count}} topic found",
+    "crossRefLabel": "See also:",
+    "guideAction": "Open the key setup guide",
+    "backToTopics": "Back to topics",
+    "pickATopic": "Pick a topic on the left to read about it here.",
+    "topics": {
+      "gettingStarted": {
+        "title": "Getting Started"
+      },
+      "deviceSecurity": {
+        "title": "Your Passphrase & Device Security"
+      },
+      "keys": {
+        "title": "Keys"
+      },
+      "vaults": {
+        "title": "Vaults & Multisig"
+      },
+      "signing": {
+        "title": "Signing & Approvals"
+      },
+      "trust": {
+        "title": "Trust & How It Works"
+      }
+    },
+    "gettingStarted": {
+      "whatIsThis": {
+        "title": "What is Fountain?",
+        "body": "Fountain is this app — the one you are reading right now. It is an offline signer: it holds your own key (or keys) for a Bitcoin vault, keeps them encrypted on this device, and produces your signature when one is needed.\n\nA vault is an account secured by several independent keys, where no single keyholder can move funds alone. Fountain looks after your share of that, and nothing else.\n\nIt does not need anything else to be useful. You can create keys, build a vault descriptor, derive its addresses, and sign — all here. Whatever asks you for a signature reaches this app only as plain text or a QR code, carried across by hand."
+      },
+      "airGap": {
+        "title": "The air-gap philosophy",
+        "body": "This app never makes a network call, to anyone. Your private keys (the 24-word seed phrases behind each of your keys) are generated here, encrypted here, and never leave this device. The only thing it ever exports is a public key, an extended public key and a fingerprint, meant to be shared; it can't move funds or reveal your seed.\n\nSo anything that has to reach this app, or leave it, is carried across by hand as plain text or a QR code — an unsigned transaction to sign, the signed result, an approval request. See \"Moving data in and out: paste, file, or QR\" under Signing & Approvals for how those transports compare.\n\nWhat actually protects you is not which transport you pick. It is that your key never leaves this device, and that you can read exactly what you are signing before you sign it."
+      },
+      "publicVsPrivate": {
+        "title": "Public vs. private keys, in plain terms",
+        "body": "A public key (a tpub, or xpub on mainnet) is like an address book entry: safe to hand to whoever is assembling the vault, so the shared vault can be built. It can't spend or sign anything on its own.\n\nA private key (your 24-word seed phrase) is the actual key. Never type it anywhere but here, never send it to anyone, never photograph it or save it in plain text outside this app's encrypted keystore. Anyone who has it can spend whatever it controls."
+      },
+      "testnetOnly": {
+        "title": "Mainnet vs testnet",
+        "body": "Mainnet is real Bitcoin, and it is what a fresh install starts on. Testnet coins are worthless and exist for practice, so it's the safe place to rehearse this workflow before real money is involved. This app signs on either one — pick it in Settings.\n\nThe network is a property of each KEY, not of the app: a key is stamped with the network it was created on and always derives there. Switching the setting decides what new keys get stamped with and what the screen shows; it never changes a key you already hold."
+      },
+      "verifyingThisApp": {
+        "title": "Check you have the real app",
+        "body": "This is the app you are about to hand your keys to, so it is worth a minute to confirm the copy you have is the one we published. Do it before you create a key, while there is still nothing to lose.\n\nEvery release has a SHA-256 checksum published at signbit.io. Work out the checksum of the file you downloaded and compare it against the one published there, character by character. If they don't match, don't run it.\n\nThis matters most when the app didn't come from us directly. A copy passed along on a USB stick or shared by a colleague has been out of our hands and out of yours, and the checksum is the only thing that can tell you it came through unchanged.\n\nSettings shows who published this app and where to find it. Read that as a pointer to where the real checksums live, not as proof in itself — a tampered copy would display exactly the same words. Only the comparison proves anything.\n\nOne thing to expect on Windows: this app is not code-signed yet, so SmartScreen will warn you when you run it. That warning is about a missing certificate we haven't bought, not about anything detected in the file, and it will keep appearing until that changes."
+      }
+    },
+    "deviceSecurity": {
+      "createUnlock": {
+        "title": "Creating vs. unlocking your keystore",
+        "body": "The first time you open this app, you choose a passphrase that encrypts everything it will ever store. Your keys live nowhere else. From then on, you unlock with that same passphrase. There's no password reset: if you forget it, the only way back in is restoring from a backup of the keystore file (see Restoring a keystore) or re-importing each key from its own 24-word seed phrase."
+      },
+      "restore": {
+        "title": "Restoring a keystore",
+        "body": "If this app finds a keystore in a different location than the one it's currently using (typically right after switching to a portable/USB copy), it offers to restore it automatically: one click, then unlock with that keystore's passphrase.\n\nYou can also restore manually by picking a keystore file yourself. Either way, the passphrase gets verified against the file before anything is overwritten, so a wrong passphrase or the wrong file never destroys your current keys."
+      },
+      "threeBackupArtifacts": {
+        "title": "Your seed words, the keystore, and the backup file",
+        "body": "Three different things here get called \"my backup\", and they recover different amounts of your setup. Knowing which one you actually hold is the difference between an annoying afternoon and losing coins.\n\nYour 24 words on paper are the key itself. They recover one key, into this app or any other compatible wallet, and they need no passphrase because nothing about them is encrypted. They survive a dead disk, a lost phone and a forgotten passphrase. This is the backup that should always exist.\n\nThe keystore is the working file this app keeps your keys in on this device. It holds every key here, and it opens with the passphrase you currently unlock with. It travels if you copy the app folder, but it knows nothing about your vaults.\n\nThe backup file you export from Settings is the fullest picture: your keys, plus the vault descriptors you have saved, the cosigner names you have set, and your preferences. It is the one to use when moving to a new device or a different operating system. It opens with whatever passphrase was current at the moment you saved it, which is not necessarily the one you use today.\n\nThree things follow that are easy to miss until they bite:\n\nIf your passphrase is gone, both files are gone with it. They are encrypted, and nobody can open them for you. Only the paper words get you back from that.\n\nOnly the exported backup remembers your vaults. Restore a bare keystore and your keys come back while your saved descriptors don't, which is why the Sign screen then can't tell change apart from a real recipient.\n\nAn exported backup is a photograph, not a mirror. It contains what existed the day you saved it. Add a key afterwards and no older file has it, so export again whenever you add something you'd hate to lose."
+      },
+      "changingYourPassphrase": {
+        "title": "Changing your passphrase doesn't change your old backups",
+        "body": "Changing your passphrase re-encrypts the keys on this device and nothing else. Your keys themselves are untouched. Every backup file you have already exported keeps the passphrase it was written with.\n\nThat catches people going both ways.\n\nIf you change it and later go looking for an old backup, the new passphrase won't open that file. It isn't damaged. It wants the passphrase that was current on the day you saved it, so it's worth writing on the file which era it belongs to.\n\nIf you changed it because you thought someone had learned the old one, understand what you have and haven't fixed. This device is safe now. Any backup file written under the old passphrase is still sitting there, still opening with the passphrase you're worried about. Changing it here revokes nothing out there.\n\nSo export a fresh backup straight after you change it. The app offers this to you at the time; take it. Then deal with the old files deliberately, either destroying them or storing them knowing they're only as protected as that old passphrase was."
+      },
+      "androidStorage": {
+        "title": "On a phone, your passphrase is the whole defence",
+        "body": "If you are running this on Android, one thing is worth knowing because it works differently from what you would reasonably expect.\n\nMost phone apps that hold something secret lean on the phone itself: your fingerprint or face to unlock, and hardware inside the phone built to guard keys. This app does not do that yet. Your keys are encrypted with the passphrase you typed into this app, and that's it. Your phone's screen lock is not protecting them.\n\nThe practical consequence is that your passphrase carries the full weight on the device you are most likely to leave in a taxi. Someone who takes your phone and gets past the screen lock reaches an encrypted keystore, and the only thing between them and your keys is how long and unusual that passphrase is. A short one you picked because it was quick to thumb-type on a phone keyboard is doing a job it was never meant to do.\n\nSo pick a long one here, even though typing it is a nuisance. Use a short auto-lock so the app isn't sitting unlocked in your pocket. Keep your seed words somewhere that is not the phone.\n\nHardware-backed storage and biometric unlock are being worked on. Until they ship, treat the passphrase as the only lock on the door."
+      },
+      "autoLock": {
+        "title": "Auto-lock on inactivity",
+        "body": "The app can re-lock itself after a chosen period with no mouse, keyboard, or touch activity, shrinking the window where a compromised, unattended device sits unlocked. Setting it to \"Never\" is allowed, but the app warns you when you do."
+      },
+      "storageLocation": {
+        "title": "Where your keys are actually stored",
+        "body": "A portable copy of this app (say, run from a USB drive) keeps its encrypted keystore in a folder right next to itself, so your keys travel with the app. An installed copy falls back to your OS's per-user profile folder instead.\n\nEither way, losing that storage loses that copy of your keys, whether it's the USB drive or the folder itself. Keep a backup that does not live on this device: your written seed phrases, an encrypted export from Settings, or both. Re-importing a seed phrase gets a key back no matter what happens to the keystore file.\n\nIf you have used this app both ways on one computer, you have two separate keystores, and they are genuinely separate files. They can hold different keys and they can sit on different passphrases. So when this app offers to restore a keystore it found somewhere else, it may well be yours and still refuse the passphrase you are typing — that usually means it was written at a time when your passphrase was something else, not that the file is damaged."
+      }
+    },
+    "keys": {
+      "whatIsAKey": {
+        "title": "What a key is",
+        "body": "A key here is one cosigner identity in a vault: a single 24-word seed phrase and everything derived from it. A vault needs several independent keys — yours, and other keyholders' — before it can do anything. See Vaults & Multisig for how they combine."
+      },
+      "creating": {
+        "title": "Creating a new key",
+        "body": "Generates a fresh, random 24-word seed phrase, shown to you once, immediately. Write it down before you do anything else. This app can show it to you again later (see Reveal seed again), but the moment of creation is still your one guaranteed chance to get it onto paper calmly."
+      },
+      "importing": {
+        "title": "Importing an existing key",
+        "body": "If you already have a 24-word seed phrase from somewhere else, paste or type it in with a label. This app checks it's a valid list of standard (BIP-39) words and flags it if the words look like they might be in the wrong order."
+      },
+      "seedBackup": {
+        "title": "Backing up your seed phrase",
+        "body": "The 24-word seed phrase is the only way to recover a key. There's no account, no email reset, no support ticket that gets it back. If the words are lost and every backup is lost too, whatever that key controls is gone for good.\n\nWrite the words on paper. That is the backup that survives a dead disk, a lost phone and a forgotten passphrase, and it should always exist.\n\nThis app can also make a digital backup: an encrypted export from Settings, holding your keys and saved vaults in a single file. You can keep it on a USB stick or in cloud storage, and that is what it is for — but be clear about what is protecting it. Anyone who copies that file can try passwords against it on their own machine, for as long as they like, with nothing here to slow them down or lock them out. Your passphrase is the only thing standing in the way, so make it a long one and never store it beside the file.\n\nOne rule worth following: don't let one app or one backup file hold every key to a vault. A vault needs several independent keys precisely so that losing or exposing one is survivable — keeping them all in one place quietly undoes that. Spread them across devices and holders, and back each one up separately.\n\nAnyone who reads all 24 words in the right order can spend whatever that key controls. Don't screenshot them, don't save them in a notes app, don't email them to yourself. Treat them exactly like cash in hand."
+      },
+      "revealSeedAgain": {
+        "title": "Revealing your seed again later",
+        "body": "Unlike a hardware wallet, this is a software signer, so it has to keep holding your seed phrase to keep signing with it. That makes \"reveal seed\" a real, repeatable action here, not a one-time ceremony — useful if you need to write the words down again or move a key to another device.\n\nIt's gated behind re-entering your passphrase every time, even while the app is already unlocked, and allows only 3 wrong attempts before the whole app locks itself as a brute-force backstop.\n\nReveal it only where nobody can see the screen, and prefer the encrypted export in Settings if what you actually want is a backup — that never puts the words on screen at all."
+      },
+      "exportPublicKey": {
+        "title": "Exporting your public key",
+        "body": "A key's public export is its extended public key (a tpub on testnet, an xpub on mainnet) plus its master fingerprint. That's what you hand over for the key to be enrolled in a vault — as a copied string, or as a key file saved from this screen. It's safe to copy, save, or read aloud: it can't move funds, and it can't be turned back into the private seed phrase."
+      },
+      "removing": {
+        "title": "Removing a key",
+        "body": "Removing a key only deletes it from this device. Vault membership and funds live on the blockchain and in the vault's descriptor, not in this app, so a key you can re-import is a key you have not lost.\n\nBefore you remove one, be specific about where it still exists. Written-down seed words always bring it back. An encrypted export only brings it back if that export was made after this key was added and you know the passphrase it was written with — a backup taken last month does not contain a key you created last week, and an older file still opens with whatever passphrase was current when you saved it.\n\nIf the seed is written nowhere and no backup holds it, removing it here destroys it for good."
+      },
+      "whereAreMyAddresses": {
+        "title": "Where are my addresses?",
+        "body": "A key on this screen has no address of its own to receive with. Addresses belong to the vault, not to any single key: a vault address is derived from every enrolled key together with the threshold, which is why it can't exist until the vault is complete.\n\nSo you need the vault's descriptor first. Either build it here — the Vaults tab has an offline builder where you enter every keyholder's public key and pick the threshold — or export this key's public key, have it enrolled in a vault someone else is assembling, and save the finished descriptor back here.\n\nOnce a descriptor is saved, this app derives that vault's addresses for you: open it under Vaults and pick any receive or change index, entirely offline. That is also how you check an address you were given is really yours — derive the same index here and compare."
+      }
+    },
+    "vaults": {
+      "whatIsAVault": {
+        "title": "What is a vault",
+        "body": "A vault is a Bitcoin account secured by multiple independent keys (multisig): an \"m-of-n\" arrangement where any m of the n enrolled keys must agree to move funds. You hold one of them; the others belong to other keyholders — other people, a recovery key, or a co-signing service. No single one of them can spend alone."
+      },
+      "whatIsADescriptor": {
+        "title": "What a vault descriptor actually is",
+        "body": "A descriptor is the shared blueprint that says exactly which public keys are in a vault and how many of them are needed to spend. It's public data, not a secret, meant to be shared among cosigners and even saved in a backup file. It's also the only thing needed to reconstruct the vault's addresses independently, without asking anyone."
+      },
+      "enrolling": {
+        "title": "Enrolling your key in a vault",
+        "body": "Filling a key slot in a vault means handing over a public key: the extended public key and master fingerprint you export from the Keys screen here. That's the entire hand-off — a copied string, a saved key file, or read aloud. Your seed phrase never has to leave this device for your key to become part of a live vault."
+      },
+      "rolesVsQuorum": {
+        "title": "Roles vs. quorum",
+        "body": "Every enrolled key may carry a role label (yours, recovery, cosigner, and so on), but a vault's threshold counts distinct KEYS, not roles. Any m of the n enrolled keys can sign, whatever they're labelled. A label exists to help people tell keys apart; it never grants or withholds the ability to sign."
+      },
+      "savingADescriptor": {
+        "title": "Saving a vault's descriptor here",
+        "body": "Keep a local, offline copy of a vault's descriptor: paste it in, or import a saved backup file. That copy is what lets you verify an address or build a spend in a third-party tool later, using only the descriptor and your own key — with nothing and nobody else to ask."
+      },
+      "buildingOffline": {
+        "title": "Building a vault descriptor entirely offline",
+        "body": "For the \"everyone's in the same room\" scenario: enter every keyholder's public key, pick the threshold, and this app computes the vault's descriptor. Zero network calls, and nobody else involved in originating the vault.\n\nPrefer importing each key from an exported key file over typing it. Transcribing an extended public key by hand is the easiest place in this whole flow to make a mistake, and one wrong character produces a vault that looks fine and that nobody can ever sign for."
+      },
+      "derivingAnAddress": {
+        "title": "Deriving an address to verify it",
+        "body": "From a saved descriptor, this app can compute the real receive or change address at any index, entirely offline. Use it to independently check an address you've been given: pick the same index in both places and compare the result."
+      }
+    },
+    "signing": {
+      "whatIsAPsbt": {
+        "title": "What a PSBT is",
+        "body": "A PSBT (\"partially signed Bitcoin transaction\") is just an unsigned or partly-signed transaction in a standard, shareable file/text format. It's the thing passed from keyholder to keyholder until enough signatures exist to broadcast it."
+      },
+      "signingATransaction": {
+        "title": "Signing a transaction",
+        "body": "Paste, import, or scan the PSBT you were given, pick which of your keys should sign it, review what it actually does (see Verifying before you sign), then sign. The signed result leaves the same way it arrived: copy, file, or QR."
+      },
+      "verifyingBeforeYouSign": {
+        "title": "Verifying before you sign",
+        "body": "Right above the sign action, a pasted transaction gets decoded in plain terms: who's getting paid, how much, and the network fee, computed directly from the transaction's own bytes every time, never from any label it claims about itself. If you've saved the vault's descriptor, change is told apart from a real recipient too; without one, it just shows as \"unknown\" rather than guessing."
+      },
+      "policyApproval": {
+        "title": "Signing a policy-change approval",
+        "body": "A different action from signing a transaction. Some vaults carry spending rules — a daily limit, a maximum per transaction, a list of approved recipients, a delay before a withdrawal goes through. Those rules sit on top of the multisig requirement; they never replace needing enough keyholder signatures.\n\nWhen such a rule is being relaxed, proof is needed that a real keyholder agreed to it, not just whoever is asking. That proof is a signature over the exact change being proposed, made here with the same account key, just over a different kind of message.\n\nRead the message before you sign it. The signature commits to those exact words, so what's on screen is what you are agreeing to — and relaxing a rule is the direction that actually costs you safety, which is why it needs your key at all."
+      },
+      "transports": {
+        "title": "Moving data in and out: paste, file, or QR",
+        "body": "All three transports carry the exact same text either way: copy/paste, a saved file, or a QR code (displayed on one device, scanned by another). None of them is more \"secure\" than the others — they're just three ways to move the same data by hand. What actually protects you is that you can read exactly what you're signing before you sign it, no matter which transport brought it."
+      },
+      "qrFrameWontScan": {
+        "title": "When a QR frame won't scan",
+        "body": "Nothing is broken and you haven't lost the frames you already captured. A transaction is usually too big for one QR code, so it goes across as several, and getting stuck on one of them is normal. Here is what is actually happening.\n\nThe frames are independent. You can capture them in any order, and scanning one you already have does no harm. The scanner keeps a running tally and tells you exactly which numbers are still outstanding, so trust that list rather than starting again — the frames you have already read are held.\n\nGo back to the missing frame on the device showing the codes, put it back on screen, and scan that one. You do not need to walk through the others again.\n\nWhen a particular frame keeps refusing, it's nearly always physical rather than a fault in the data. Make the code bigger on the screen that's displaying it, which is the single most effective fix. Then steady the camera, give it a moment to focus, and get more light on the screen without throwing glare across it. Wiping the camera lens helps more often than it should.\n\nIf you have been at it a while, cancel and start the transfer again from the beginning. The payload is regenerated and you lose nothing but the time — the signed result is produced from the transaction itself, not from any partial scan."
+      }
+    },
+    "trust": {
+      "noSingleParty": {
+        "title": "No single party can move funds alone",
+        "body": "This is the core promise behind a multisig vault: because spending requires signatures from several independent keys, no single keyholder — not you alone, and not any one service alone — can ever move funds by themselves. It takes a real quorum, every time."
+      },
+      "neverConnects": {
+        "title": "Why this app never connects to the internet",
+        "body": "This app is built with no network code at all for anything involving your keys. There's no server it could call even if it wanted to. That protects the keys themselves at rest and in use, but it doesn't protect a device that's already compromised while unlocked. Strong device security (passphrase, auto-lock, careful physical handling) still matters."
+      }
+    },
+    "searchMatch": "match",
+    "searchResultsCountPlural": "{{count}} topics found"
+  },
+  "backupTransfer": {
+    "back": "Back to settings",
+    "importTitle": "Import backup",
+    "importSubtitle": "Replace everything on this device with the contents of a backup file.",
+    "compareTitle": "Compare backup",
+    "compareSubtitle": "See how a backup file differs from this device. Nothing is changed.",
+    "importWarning": "Importing overwrites this device: your keys, saved vaults and preferences are replaced by the ones in the file. You'll see exactly what changes before anything happens.",
+    "step1": "1. Choose a backup file",
+    "step2": "2. Enter that file's passphrase",
+    "chooseFile": "Choose file…",
+    "passphraseHint": "This is the passphrase that file was saved with, which may not be the one you just used to unlock this app.",
+    "openFile": "Open file",
+    "opening": "Opening…",
+    "errorTooLarge": "That file is larger than {{mb}} MB, so it can't be a SignBit backup.",
+    "errorRead": "Could not read that file.",
+    "identical": "This backup matches this device exactly. There is nothing to change.",
+    "destructiveWarning": "{{count}} key(s) on this device are not in this backup. Importing will permanently delete them. If you don't have their 24 words written down somewhere else, they cannot be recovered.",
+    "statKeysRemoved": "Keys lost",
+    "statKeysAdded": "Keys added",
+    "statVaultsChanged": "Vault changes",
+    "statSettings": "Setting changes",
+    "sectionKeys": "Keys",
+    "sectionVaults": "Saved vaults",
+    "sectionSettings": "Preferences",
+    "noKeys": "No keys on either side.",
+    "noVaults": "No saved vaults on either side.",
+    "labelChange": "Renamed: \"{{from}}\" → \"{{to}}\"",
+    "unreadableKey": "This entry's seed phrase could not be read.",
+    "keyWillBeLost": "This key will be permanently deleted. Write down its 24 words first if you still need it.",
+    "status": {
+      "import": {
+        "removed": "Will be deleted",
+        "added": "Will be added",
+        "changed": "Will change",
+        "unchanged": "Unchanged"
+      },
+      "compare": {
+        "removed": "Only on this device",
+        "added": "Only in the backup",
+        "changed": "Differs",
+        "unchanged": "Same"
+      }
+    },
+    "changeDescriptor": {
+      "onlyDevice": "Only this device has a change descriptor for this vault.",
+      "onlyBackup": "Only the backup has a change descriptor for this vault.",
+      "differs": "The two change descriptors do not match."
+    },
+    "keyLabels": {
+      "onlyDevice": "Only this device has cosigner names for this vault. Restoring will clear them.",
+      "onlyBackup": "The backup adds cosigner names for this vault.",
+      "differs": "The cosigner names differ. Restoring will replace this device's with the backup's."
+    },
+    "setting": {
+      "autoLockMinutes": "Auto-lock (minutes)",
+      "theme": "Appearance",
+      "locale": "Language"
+    },
+    "applyTitle": "Apply this backup",
+    "applyBody": "This device will be replaced by exactly what's shown above.",
+    "passphraseChangeWarning": "After importing, you unlock this app with the backup file's passphrase, not your current one.",
+    "applyPassphraseLabel": "Re-enter the backup file's passphrase",
+    "typeToConfirmLabel": "Type {{word}} to confirm",
+    "applyAction": "Overwrite this device",
+    "applying": "Importing…",
+    "compareReadOnly": "Nothing was changed. Comparing only reads the file.",
+    "compareAnother": "Compare another file",
+    "doneTitle": "Backup imported",
+    "doneBody": "This device now holds {{count}} key(s) from the backup. Remember that unlocking now uses the backup file's passphrase.",
+    "comparingWith": "Backup file:",
+    "finalConfirmTitle": "Overwrite this device?",
+    "finalConfirmSeedWarning": "ALL SEED PHRASES ON THIS DEVICE WILL BE REPLACED. Any key that is not in this backup and not written down elsewhere is gone permanently, and so is access to any funds it protects. There is no undo and no recovery.",
+    "finalConfirmKeysHeading": "{{count}} key(s) will be permanently deleted:",
+    "finalConfirmBody": "Only continue if you have this backup's passphrase saved and the 24 words of anything you still need. Your keys, saved vaults and preferences will be replaced by the file's.",
+    "finalConfirmAction": "Yes, overwrite everything",
+    "overLimitNote": "This backup holds more keys or vaults than this signer normally allows. It will still be restored in full, with nothing dropped.",
+    "comparePassphraseNote": "Opened with the passphrase you just entered. This comparison looks at the keys inside the files, not how they are locked, so two files can hold exactly the same keys under different passphrases.",
+    "identicalPassphraseNote": "Identical contents, but not necessarily an identical passphrase. If you have changed your passphrase since one of these was written, that older file still opens only with the passphrase that was current at the time."
+  },
+  "reset": {
+    "title": "Reset this device",
+    "subtitle": "Erase this signer and start over.",
+    "warning": "This deletes the keys stored on this device. It cannot be undone, and it cannot be reversed with your passphrase later. Because the keystore is encrypted, this app cannot show you which keys it holds. Only you know what is in it.",
+    "tryRestoreTitle": "Do you have a backup file?",
+    "tryRestoreBody": "If you exported a backup, restore it instead. You will need the passphrase that was current when that file was written, which may not be the one you have forgotten.",
+    "tryRestoreAction": "Restore from a backup instead",
+    "typeToConfirm": "Type {{word}} to continue",
+    "action": "Reset this device",
+    "finalTitle": "Erase this device?",
+    "finalWarning": "Any seed phrase you have not written down is about to be gone, and the funds it controls with it.",
+    "finalBody": "Every key on this device will be deleted, along with your saved vault descriptors and settings. A key can only be recovered afterwards from its own 24-word seed phrase or from a backup file. There is no other way back.",
+    "finalConfirm": "Erase everything",
+    "resetting": "Erasing…",
+    "locationPortable": "This will erase the portable folder next to the app:",
+    "locationAppData": "This will erase this computer's app-data folder:",
+    "locationOtherNote": "An older keystore in this computer's app-data folder is not touched. If one exists, you may be offered it afterwards. It is a different file, and may use an earlier passphrase.",
+    "cooldownNote": "Take a moment. This button unlocks shortly. If you are not certain, cancel now.",
+    "finalConfirmWaiting": "Erase everything ({{seconds}}s)"
+  }
+}
