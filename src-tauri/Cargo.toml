@@ -1,0 +1,76 @@
+[package]
+name = "signbit-client"
+version = "0.6.4"
+# ⚠️ `description` and `authors` are NOT cosmetic on Windows: Tauri stamps them into the
+# exe's version resource, so they are what Explorer shows under Properties → Details. This
+# app ships as a PORTABLE exe people are told to verify before running it with their keys —
+# the Tauri scaffold defaults ("A Tauri App", "you") read as unattributed and untrustworthy
+# in exactly that dialog. Keep them meaningful.
+#
+# 🚨 BUT `description` IS NOT THE FIELD EXPLORER SHOWS AS "Description" — `productName` in
+# tauri.conf.json is. Tauri maps productName → BOTH FileDescription AND ProductName in the
+# version resource, and this good description here was never what a user saw. Verified on the
+# 0.5.7 build: FileDescription read "SignBit" (the bare company name) while this line already
+# said "air-gapped Bitcoin multisig signer". Fixed 2026-08-19 by setting productName to
+# "SignBit Fountain" — every other surface (window title, index.html, short/longDescription)
+# had said that all along; productName was the one holdout.
+# ⚠️ `mainBinaryName = "fountain"` in tauri.conf.json is what DECIDES THE OUTPUT FILENAME —
+# productName alone would emit "SignBit Fountain.exe" (with a space), which breaks
+# dist-portable staging and every doc naming the exe. It was pinned to "signbit-client" from
+# 7ded7e8 until 2026-09-03, when it moved to "fountain" to match what the platform's
+# releases.json has always advertised as the download (`fountain.exe`) and the public repo
+# name. 🚨 The manifest's `file` field is rendered beside the SHA-256 on the download page, so
+# it is the name a user matches against the file they just downloaded — build output and
+# manifest MUST agree or the verification instructions name a file nobody has.
+#
+# ⚠️ ANDROID IS NOT AFFECTED AND MUST NOT BE "FIXED" TO MATCH. `gen/android/.../strings.xml`
+# is TRACKED and is NOT regenerated from productName (verified: a full android build left it
+# byte-identical). Its values are a deliberate decision from 7a5e44e — launcher `app_name` =
+# "SignBit", `main_activity_title` = "Fountain" — because "Fountain" alone is correct where
+# SignBit context is already established, which the icon supplies on a home screen, and the
+# full "SignBit Fountain" is too long for a launcher label. Leave both alone.
+#
+# ⚠️ The KEYSTORE PATH does not move: `keystore_dir()` uses `app_config_dir()`, which Tauri v2
+# resolves from the bundle IDENTIFIER (`io.signbit.fountain`), not productName.
+# A productName-derived path would have orphaned every existing user's keys on upgrade.
+# ⚠️ tauri.conf.json is `additionalProperties: false`, so this reasoning CANNOT live there as
+# a comment key — the config rejects it. That is why it is here.
+description = "SignBit Fountain — air-gapped Bitcoin multisig signer"
+authors = ["SignBit"]
+edition = "2021"
+license = "GPL-3.0-or-later"
+homepage = "https://signbit.io/download"
+repository = "https://github.com/signbit-io/fountain"
+# ✅ `repository` IS SET as of 2026-09-03 — the condition the old comment set has been met:
+# the code is published at `github.com/signbit-io/fountain`, so the URL resolves for anyone
+# who follows it out of a distributed binary. The bar was never "the org exists" (it has since
+# 2026-08-13) but "this code is actually there", because a 404 out of a shipped exe is the
+# same failure as no org at all.
+# ⚠️ `homepage` now points at the DOWNLOAD page, not the org — someone reading exe metadata
+# wants the binary and its checksum, and the repo is one click from there.
+# 🚨 GPL-3.0 makes this field load-bearing: it is the source offer a recipient of the binary
+# follows. It must stay valid for as long as any build carrying it is in circulation, which
+# outlives any repo rename or move.
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "signbit_client_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+# Native Save-As dialog + file write for exporting public keys / signed PSBTs / approvals.
+# The webview blob-download path no-ops under Tauri; these give a real "Save file" flow.
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+

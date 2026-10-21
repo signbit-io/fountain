@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- SB brand mark (stacked S over B, flat dark tile) — the SAME file as the platform favicon
+         (the platform favicon) and the Tauri app icons; PNG fallback for renderers without SVG favicons. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <!-- viewport-fit=cover: on notched/edge-to-edge phones (Android/iOS WebView) the page
+         extends into the safe-area insets instead of getting letterboxed; the app pads via
+         env(safe-area-inset-*) where it matters (sticky header). maximum-scale is NOT set —
+         pinch-zoom stays available (accessibility). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>SignBit Fountain</title>
+    <!--
+      Apply the saved theme BEFORE first paint to avoid a light-mode flash. Mirrors
+      lib/activity.ts applyTheme/resolveTheme; the React app reconciles on mount.
+    -->
+    <script>
+      (function () {
+        try {
+          var s = JSON.parse(localStorage.getItem('signbit.settings') || '{}')
+          var pref = s.theme === 'light' || s.theme === 'dark' ? s.theme : 'system'
+          var dark =
+            pref === 'dark' ||
+            (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+          // Mark Android so CSS can apply a dark palette tuned for the Chromium WebView
+          // (its dark rendering reads darker/lower-contrast than desktop WebView2 with the
+          // same tokens). See the `html.android.dark` overrides in index.css. Set here,
+          // pre-paint, so the correct palette lands on the first frame (no flash).
+          if (/Android/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('android')
+          }
+        } catch (e) {}
+      })()
+    </script>
+    <!--
+      Critical inline CSS + boot spinner. The webview shows a blank white page while the JS
+      bundle + fonts load (a visible flash on launch). We paint the themed background AND a
+      centered spinner immediately (no external assets), so the user sees a branded loading
+      state; React replaces #root on mount. Colors mirror the surface/ink tokens in index.css.
+    -->
+    <style>
+      html { background: #ffffff; }
+      html.dark { background: #0b0c10; }
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #boot .spinner {
+        width: 28px;
+        height: 28px;
+        border: 3px solid rgba(120, 120, 130, 0.25);
+        border-top-color: #f7931a; /* Bitcoin orange — brand.500 */
+        border-radius: 9999px;
+        animation: boot-spin 0.7s linear infinite;
+      }
+      @keyframes boot-spin { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        #boot .spinner { animation-duration: 2s; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Boot placeholder — replaced when React mounts. -->
+      <div id="boot"><div class="spinner" role="status" aria-label="Loading"></div></div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
