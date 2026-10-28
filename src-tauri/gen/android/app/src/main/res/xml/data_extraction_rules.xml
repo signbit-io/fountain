@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  🚨 NOTHING THIS APP STORES MAY BE EXTRACTED. Android 12+ (API 31) replaced `allowBackup` with
+  these rules for both destinations, and they must BOTH be refused:
+
+    cloud-backup       — Google Auto Backup to the user's Drive.
+    device-transfer    — the "copy your apps to your new phone" flow.
+
+  The app's private data dir holds `signbit-keystore.json`, the encrypted seed envelope. An
+  air-gapped signer that quietly uploads it to a cloud account has stopped being air-gapped,
+  and a device-transfer copy hands it to whatever the next phone's security posture is.
+  Setting `allowBackup="false"` in the manifest covers API ≤ 30 only, which is why this file
+  exists alongside it rather than instead of it.
+
+  ⚠️ `disableIfNoEncryptionCapabilities` is NOT used: it would allow the backup whenever the
+  device DOES support encryption, which is the opposite of the intent here. The exclusions are
+  unconditional.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="root" />
+        <exclude domain="file" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="external" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="root" />
+        <exclude domain="file" />
+        <exclude domain="database" />
+        <exclude domain="sharedpref" />
+        <exclude domain="external" />
+    </device-transfer>
+</data-extraction-rules>

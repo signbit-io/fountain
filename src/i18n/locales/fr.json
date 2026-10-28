@@ -1,0 +1,721 @@
+{
+  "common": {
+    "brand": "SignBit",
+    "brandTagline": "Fountain",
+    "close": "Fermer",
+    "copy": "Copier",
+    "copied": "Copié",
+    "copyFailed": "Échec de la copie",
+    "cancel": "Annuler",
+    "loading": "Chargement…",
+    "show": "Afficher",
+    "hide": "Masquer"
+  },
+  "shell": {
+    "lock": "Verrouiller",
+    "appearance": "Apparence : {{mode}}",
+    "moreControls": "Plus de commandes",
+    "tabs": {
+      "keys": "clés",
+      "sign": "signer",
+      "vaults": "coffres",
+      "settings": "paramètres",
+      "help": "aide"
+    }
+  },
+  "unlock": {
+    "createTitle": "Créez votre phrase secrète",
+    "unlockTitle": "Déverrouillez vos clés",
+    "createSubtitle": "Cela chiffre vos clés sur cet appareil. Il n'y a pas de récupération possible, alors notez-la.",
+    "unlockSubtitle": "Entrez la phrase secrète du keystore de cet appareil.",
+    "passphrase": "Phrase secrète",
+    "confirmPassphrase": "Confirmez la phrase secrète",
+    "working": "En cours…",
+    "createKeystore": "Créer le coffre",
+    "unlockButton": "Déverrouiller",
+    "alreadyHaveKeystore": "Vous avez déjà un coffre ?",
+    "restoreIt": "Le restaurer",
+    "forgotPassphrase": "Phrase secrète oubliée ?",
+    "resetDevice": "Réinitialiser cet appareil",
+    "errorMismatch": "Les phrases secrètes ne correspondent pas.",
+    "errorTooShort": "Utilisez au moins 8 caractères.",
+    "strength": {
+      "tooShort": "Trop court",
+      "weak": "Faible",
+      "fair": "Moyenne",
+      "good": "Bonne",
+      "strong": "Forte"
+    },
+    "strengthHint": {
+      "longer": "La longueur vaut mieux que la complexité. Essayez plusieurs mots.",
+      "variety": "Ajoutez une majuscule, un chiffre ou un symbole.",
+      "avoidPattern": "Évitez les mots courants, les répétitions et les suites de touches."
+    }
+  },
+  "restore": {
+    "title": "Restaurez vos clés",
+    "subtitle": "Récupérez un keystore existant depuis une sauvegarde ou une installation précédente, puis déverrouillez-le avec sa phrase secrète.",
+    "autoTitle": "Restaurer votre coffre précédent",
+    "chooseFile": "Choisir un fichier de sauvegarde…",
+    "restoringFrom": "Restauration depuis",
+    "passphrase": "Phrase secrète",
+    "passphraseHint": "La phrase secrète qui déverrouillait Fountain quand ce fichier a été enregistré, pas une nouvelle.",
+    "restoring": "Restauration…",
+    "restoreAndUnlock": "Restaurer et déverrouiller",
+    "pickDifferentFile": "Choisir un autre fichier",
+    "backToCreate": "Retour",
+    "errorReadFile": "Impossible de lire ce fichier.",
+    "errorOpenPicker": "Impossible d’ouvrir le sélecteur de fichier.",
+    "errorWrongPassphrase": "Cette phrase secrète ne déverrouille pas ce keystore.",
+    "autoFromAppData": "Un ancien keystore a été trouvé dans le dossier de données de cet ordinateur, datant d'avant l'utilisation de cette application en version portable.",
+    "autoFromPortable": "Un keystore a été trouvé dans le dossier portable à côté de l'application.",
+    "autoPassphraseNote": "Ce fichier est chiffré, donc l'application ne peut pas savoir quelles clés il contient. Il peut nécessiter une phrase secrète antérieure, pas forcément la plus récente.",
+    "searchHint": "Votre sauvegarde est ailleurs ? Cherchez .sbk sur votre ordinateur et sur toute clé USB. Les sauvegardes antérieures à la version 0.6.5 se terminent par .json, alors cherchez « signbit- » pour les retrouver.",
+    "errorNotSignbitFile": "Ce n'est pas un fichier de sauvegarde ou de keystore SignBit.",
+    "errorPublicKeyFile": "C'est un fichier de clé publique. Il sert seulement à partager une clé et ne peut rien restaurer. Choisissez plutôt votre fichier de sauvegarde (.sbk)."
+  },
+  "keys": {
+    "title": "Vos clés",
+    "subtitle": "Chaque clé est l’une des clés dont un coffre a besoin. Pour ajouter une clé à un coffre, partagez sa clé publique ({{prefix}}) et son empreinte.",
+    "emptyTitle": "Pas encore de clés",
+    "emptySubtitle": "Créez une clé pour obtenir une clé publique que vous pourrez inscrire comme cosignataire dans un coffre.",
+    "label": "Étiquette",
+    "seedPhraseLabel": "Phrase de récupération (12–24 mots)",
+    "labelPlaceholder": "p. ex. Ma clé de cosignataire",
+    "seedPlaceholder": "mot mot mot…",
+    "seedWordCount": "{{count}} mots",
+    "seedInvalidWord": "Pas un mot BIP-39",
+    "seedValid": "Phrase de récupération valide",
+    "seedOrderSuspect": "Tous les mots sont valides, mais l'ordre semble incorrect",
+    "seedDuplicate": "Cette phrase de récupération est déjà importée sous « {{label}} ».",
+    "newKeyLabelPlaceholder": "Nouvelle étiquette de clé",
+    "import": "Importer",
+    "createKey": "Créer une clé",
+    "showPublicKey": "Afficher la clé publique ({{network}})",
+    "publicKeyModalTitle": "Clé publique · {{label}}",
+    "fingerprint": "Empreinte de la clé",
+    "accountTpub": "Clé publique",
+    "guideTitle": "Guide de configuration des clés",
+    "guideIntro": "Chaque clé que vous créez ou importez ici utilise déjà ces réglages. Considérez ceci comme une référence pour ce qui est généré, et ce qu'il faut transmettre à la plateforme lors de l'inscription.",
+    "guideScript": "Type de script : Multisig SegWit natif (P2WSH)",
+    "guidePath": "Chemin de dérivation : m/{{path}}",
+    "guideNetwork": "Réseau : {{network}}, exporte un {{prefix}}",
+    "guideExport": "À fournir à la plateforme : votre {{prefix}} et l'empreinte principale (Afficher la clé publique sur une carte de clé)",
+    "exportFilePublicNote": "Clé publique uniquement. Enrôlez-la comme votre clé Fountain lors de la création d’un coffre.",
+    "exportFileSaving": "Enregistrement…",
+    "exportFileJson": "Exporter le fichier (.json)",
+    "addedOn": "Ajoutée le {{date}}",
+    "revealSeed": "Révéler la phrase secrète",
+    "rename": "Renommer",
+    "renameSave": "Enregistrer",
+    "renameCancel": "Annuler",
+    "remove": "Supprimer",
+    "errorSaveFile": "Impossible d’enregistrer le fichier.",
+    "backupTitle": "Sauvegarder « {{label}} »",
+    "backupWarningStrong": "Sauvegardez cette clé maintenant.",
+    "backupWarningRest": "Notez ces 24 mots sur papier, ou enregistrez un fichier de sauvegarde chiffré depuis Paramètres, Exporter la sauvegarde. L'un comme l'autre permet de récupérer la clé. Assurez-vous que personne ne regarde votre écran.",
+    "backedUp": "Je l’ai sauvegardée",
+    "revealModalTitle": "Phrase secrète · {{label}}",
+    "revealWarningShown": "Quiconque voit ces 24 mots contrôle cette clé. Assurez-vous que personne ne regarde votre écran.",
+    "revealWarningPrompt": "Ressaisissez votre phrase secrète pour révéler la phrase de 24 mots de cette clé.",
+    "done": "Terminé",
+    "checking": "Vérification…",
+    "revealSeedButton": "Révéler la phrase secrète",
+    "revealIncorrectPassphrase": "Phrase secrète incorrecte. {{count}} tentative restante avant le verrouillage de l'application.",
+    "removeModalTitle": "Supprimer la clé",
+    "removeWarningPrefix": "Ceci supprime",
+    "removeWarningMiddle": "de cet appareil uniquement. Si sa phrase de 24 mots est sauvegardée, vous pourrez la réimporter plus tard ;",
+    "removeWarningStrong": "si ce n’est pas le cas, c’est définitif.",
+    "removeWarningSuffix": "Sauvegardez d’abord la phrase secrète si vous ne l’avez pas fait.",
+    "removeConfirmLabelFingerprint": "Tapez l’empreinte de la clé pour confirmer",
+    "removeConfirmLabelName": "Tapez le nom de la clé pour confirmer",
+    "removeKeyButton": "Supprimer la clé",
+    "removeKeyButtonCountdown": "Supprimer la clé ({{seconds}}s)",
+    "keyFallbackName": "Clé",
+    "offNetwork": "pas le réseau actuel de l'application",
+    "derivationPath": "Chemin de dérivation",
+    "revealIncorrectPassphrasePlural": "Phrase secrète incorrecte. {{count}} tentatives restantes avant le verrouillage de l'application.",
+    "exportAllAction": "Exporter toutes les clés publiques ({{count}})",
+    "exportAllTitle": "Exporter toutes les clés publiques",
+    "exportAllBody": "Choisissez un dossier et vous obtiendrez {{count}} fichiers, un par clé. Chacun porte le libellé et l'empreinte de sa clé, pour les distinguer plus tard.",
+    "exportAllConfirm": "Choisir un dossier",
+    "exportAllSaved": "{{count}} clés enregistrées dans votre dossier.",
+    "exportAllSkipped": "Impossible d'exporter celles-ci, elles ont donc été omises : {{names}}.",
+    "exportAllPublicNote": "Ce sont uniquement des clés publiques, sans phrase de récupération. C'est ce que vous transmettez à la plateforme lorsque vous ajoutez un cosignataire à un coffre.",
+    "accountSlip132": "Clé multisig ({{prefix}}, P2WSH)",
+    "scriptType": "Type de script",
+    "scriptTypeP2wsh": "Multisig SegWit natif (P2WSH)",
+    "publicKeyNotAddress": "Ceci est l'identité publique de votre clé, pas une adresse. Ne la partagez que pour ajouter cette clé à un coffre. Ne demandez jamais à quelqu'un d'y envoyer des bitcoins ; pour recevoir, utilisez une adresse de réception de votre coffre sur SignBit.",
+    "otherWalletsToggle": "Pour d’autres portefeuilles (Sparrow, Electrum…)",
+    "seedAutoHide": "Pour votre sécurité, cette fenêtre se ferme d'elle-même dans {{time}}."
+  },
+  "vaults": {
+    "title": "Sauvegardes de coffres",
+    "subtitle": "Ajoutez le descripteur d’un coffre afin de pouvoir toujours vérifier des adresses ou dépenser via un outil tiers (p. ex. Sparrow) si la plateforme est un jour inaccessible. Les descripteurs sont des données publiques, donc il n'y a aucun secret ici.",
+    "addTitle": "Ajouter un descripteur de coffre",
+    "importFile": "Importer un fichier",
+    "label": "Étiquette",
+    "labelPlaceholder": "p. ex. Famille 3-sur-5",
+    "descriptorLabel": "Descripteur de réception",
+    "descriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/0/*,…))#checksum",
+    "changeDescriptorLabel": "Descripteur de monnaie (facultatif)",
+    "changeDescriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/1/*,…))#checksum",
+    "save": "Ajouter la sauvegarde",
+    "addChangeDescriptor": "+ Ajouter le descripteur de monnaie",
+    "addChangeDescriptorHint": "Il manque le descripteur de monnaie rendue à cette sauvegarde, nécessaire à l'écran Signer pour distinguer la monnaie rendue d'un vrai destinataire lors du décodage d'une dépense. Copiez-le depuis la vue du descripteur du coffre sur la plateforme.",
+    "addChangeDescriptorSave": "Ajouter",
+    "errorRequired": "Entrez un descripteur à enregistrer.",
+    "importSaved": "« {{label}} » a été enregistré dans vos sauvegardes de coffres.",
+    "importSavedCopy": "Enregistré sous « {{label}} ». Ce coffre était déjà enregistré, ceci en est donc une seconde copie. Supprimez celle dont vous ne voulez pas.",
+    "errorFileTooLarge": "Le fichier est trop volumineux pour être une sauvegarde de coffre.",
+    "errorReadFile": "Impossible de lire ce fichier.",
+    "emptyTitle": "Pas encore de sauvegarde de coffre",
+    "emptySubtitle": "Collez le descripteur d’un coffre depuis la page du coffre sur la plateforme pour en enregistrer une copie hors ligne ici.",
+    "savedOn": "Enregistré le {{date}}",
+    "changeDescriptor": "Descripteur de monnaie",
+    "remove": "Supprimer",
+    "summaryQuorum": "Multisig {{threshold}}-sur-{{total}}",
+    "summarySigner": "Signataire {{index}}",
+    "summaryThisDevice": "Clé de cet appareil",
+    "summaryFingerprint": "Empreinte",
+    "copyFingerprint": "Copier l'empreinte",
+    "copyXpub": "Copier la clé publique étendue",
+    "rename": "Renommer ce coffre",
+    "renameSave": "Enregistrer",
+    "renameCancel": "Annuler",
+    "nameSigner": "Nommer ce cosignataire",
+    "summaryReceiveBranch": "Adresses de réception",
+    "summaryChangeBranch": "Adresses de monnaie",
+    "summaryChecksum": "Somme de contrôle",
+    "showRawDescriptor": "Afficher le descripteur brut",
+    "hideRawDescriptor": "Masquer le descripteur brut",
+    "rawDescriptorNote": "Le texte exact nécessaire pour reconstruire ce coffre dans un outil tiers. Gardez cette sauvegarde en sécurité.",
+    "showDerive": "Dériver une adresse",
+    "hideDerive": "Masquer la dérivation d'adresse",
+    "deriveSubtitle": "Calcule la véritable adresse Bitcoin à n'importe quel index, entièrement hors ligne. Comparez-la à ce que montre la plateforme pour la vérifier indépendamment.",
+    "deriveBranchReceive": "Réception",
+    "deriveBranchChange": "Monnaie rendue",
+    "deriveIndexLabel": "Index",
+    "derivePrevIndex": "Index précédent",
+    "deriveNextIndex": "Index suivant",
+    "deriveResultLabel": "Adresse {{branch}} n° {{index}}",
+    "deriveCompareHint": "Comparez ceci à ce que montre la page du coffre au même index.",
+    "deriveErrorNoChangeDescriptor": "Cette sauvegarde n'a pas encore de descripteur de monnaie rendue. Ajoutez-en un ci-dessus d'abord.",
+    "deriveErrorGeneric": "Impossible de dériver une adresse à partir de ce descripteur.",
+    "removeModalTitle": "Supprimer la sauvegarde du coffre",
+    "removeWarning": "Ceci supprime le descripteur enregistré pour {{label}} de cet appareil. Cela n’affecte pas le coffre lui-même, et vous pouvez toujours le réenregistrer depuis la plateforme.",
+    "removeConfirmLabel": "Tapez le nom de la sauvegarde pour confirmer",
+    "removeConfirm": "Supprimer la sauvegarde",
+    "removeConfirmCountdown": "Supprimer la sauvegarde ({{seconds}}s)",
+    "cancel": "Annuler",
+    "modePaste": "Coller un descripteur",
+    "modeBuild": "En construire un hors ligne",
+    "buildTitle": "Construire un descripteur de coffre hors ligne",
+    "buildSubtitle": "Saisissez la clé publique de chaque détenteur (xpub + empreinte, y compris celle de la plateforme si ce coffre doit un jour s'y synchroniser) pour construire exactement le même descripteur que la plateforme construirait, sans aucune implication de la plateforme. Fonctionne de manière autonome dans n'importe quel outil multisig tiers.",
+    "buildKeyN": "Clé {{n}}",
+    "buildKeyLabelPlaceholder": "Étiquette (facultatif, ex. « Alice »)",
+    "buildKeyXpubPlaceholder": "tpub… / xpub…",
+    "buildKeyFingerprintPlaceholder": "Empreinte 8 caractères hex (facultatif)",
+    "buildAddKey": "+ Ajouter une autre clé",
+    "buildThreshold": "Signatures requises (m)",
+    "buildThresholdSummary": "{{m}} des {{n}} détenteurs de clé doivent signer pour dépenser",
+    "buildThresholdNoRedundancy": "Chacune des {{n}} clés sera nécessaire. Il n'y a pas de marge : si une seule clé est perdue, les fonds ne pourront être récupérés par personne. Réduisez ce nombre si vous voulez que le coffre survive à la perte d'une clé.",
+    "buildAction": "Créer et enregistrer le coffre",
+    "buildSavedCompare": "Enregistré dans vos sauvegardes de coffres. Chaque détenteur de clé qui construit ce coffre à partir des mêmes clés devrait obtenir exactement ce descripteur, ce qui vaut une comparaison rapide pendant que vous êtes tous réunis.",
+    "buildSavedCopy": "Enregistré sous « {{label}} ». Ce coffre était déjà enregistré, ceci en est donc une seconde copie. Supprimez celle dont vous ne voulez pas.",
+    "draftRestored": "Reprise là où vous vous étiez arrêté. Ces clés ont été modifiées pour la dernière fois le {{date}} et sont conservées sur cet appareil jusqu'à ce que vous les enregistriez ou les supprimiez.",
+    "draftKept": "Vos saisies sont enregistrées sur cet appareil au fur et à mesure, vous pouvez donc quitter cet écran et y revenir. Rien n'est ajouté à vos sauvegardes tant que vous n'enregistrez pas.",
+    "draftDiscard": "Supprimer les saisies",
+    "buildErrorMinKeys": "Entrez au moins 2 clés.",
+    "buildErrorThreshold": "Les signatures requises doivent être comprises entre {{min}} et {{max}}. Un coffre a besoin d'une majorité pour dépenser : en dessous de {{min}}, une minorité de détenteurs de clé pourrait déplacer les fonds à elle seule.",
+    "buildErrorGeneric": "Impossible de construire un descripteur à partir de ces clés.",
+    "buildKeyImportFile": "Importer depuis un fichier de clé",
+    "keyFileErrorNetwork": "Cette clé est une clé {{keyNetwork}}, mais ce coffre est construit sur {{formNetwork}}. Toutes les clés d'un même coffre doivent être sur le même réseau.",
+    "keyFileError": {
+      "not_json": "Ce n'est pas un fichier de clé SignBit, car ce n'est pas du JSON valide. Choisissez un fichier signbit-key-….json exporté depuis l'écran Clés.",
+      "not_key_file": "Ce n'est pas un fichier de clé SignBit. Choisissez un fichier signbit-key-….json exporté depuis l'écran Clés.",
+      "private_material": "Refusé : ce fichier contient du matériel de clé privée. Un fichier de clé ne doit contenir que des clés publiques. Rien ici n'a besoin de votre phrase de récupération. Supprimez cette copie et exportez à nouveau la clé publique.",
+      "missing_field": "Ce fichier de clé ne contient aucune clé publique étendue.",
+      "bad_fingerprint": "Ce fichier de clé contient une empreinte maîtresse mal formée. Elle doit comporter 8 caractères hexadécimaux.",
+      "bad_path": "Ce fichier de clé n'indique pas le chemin de dérivation de sa clé : impossible de savoir à quel réseau elle appartient.",
+      "bad_xpub": "La clé publique étendue de ce fichier n'est pas valide, car sa somme de contrôle ou son réseau ne correspond pas. Exportez-la à nouveau plutôt que de modifier le fichier."
+    },
+    "collapse": "Réduire",
+    "expand": "Développer",
+    "buildErrorDuplicateKey": "La même clé figure deux fois dans cette liste. Un coffre compte chaque clé une seule fois : une clé répétée permettrait à son détenteur de fournir seul deux des signatures.",
+    "buildErrorDuplicateFingerprint": "Deux clés de cette liste partagent la même empreinte principale : soit elles proviennent de la même phrase de récupération, soit une empreinte est erronée. Chaque clé doit appartenir à un détenteur différent."
+  },
+  "sign": {
+    "title": "Signer",
+    "subtitle": "Cosignez une dépense de coffre (PSBT), ou signez un message : approuver un changement de politique, prouver une clé, adopter un coffre. Entièrement hors ligne.",
+    "modePsbt": "Paiement (PSBT)",
+    "modeApproval": "Message",
+    "signingKey": "Clé de signature",
+    "noKeysOption": "Aucune clé. Créez-en une d’abord",
+    "psbtLabel": "Transaction non signée (PSBT, base64)",
+    "approvalLabel": "Message à signer",
+    "importFile": "Importer un fichier",
+    "psbtPlaceholder": "cHNidP8B…",
+    "approvalPlaceholder": "Collez le message que la plateforme vous a donné, par ex.\nSIGNBIT-VAULT-IMPORT\ndescriptor:…\n…",
+    "signPsbtButton": "Signer la transaction",
+    "signApprovalButton": "Signer le message",
+    "messageKind": {
+      "policyChange": "Approbation d'un changement de politique. Ceci endosse une modification des règles de dépense du coffre.",
+      "healthCheck": "Vérification de l'état de la clé. Ceci prouve que vous pouvez signer avec cette clé. Aucun fonds n'est déplacé.",
+      "vaultImport": "Importation de coffre. Ceci prouve que vous détenez une clé dans le coffre en cours d'adoption. Aucun fonds n'est déplacé.",
+      "ownerTransfer": "Changement de propriétaire du coffre. Ceci endosse le transfert de l'emplacement de propriétaire du coffre à un autre détenteur de clé. Aucun fonds n'est déplacé.",
+      "unknownSignbit": "Un message SignBit que cette version ne reconnaît pas, probablement plus récent que cette application. Lisez-le ci-dessous avant de signer.",
+      "unknown": "Ceci n'est pas un message SignBit reconnu. Lisez-le attentivement avant de signer, et ne signez que du texte que vous comprenez et attendiez.",
+      "inheritanceClaim": "Approbation d’une demande de succession. CELLE-CI DÉPLACE DE L’ARGENT : elle autorise le transfert de tout le coffre vers l’adresse ci-dessous. Vérifiez cette adresse avant de signer."
+    },
+    "resultPsbt": "Signée. Renvoyez cette transaction signée à SignBit pour qu’elle compte parmi les approbations dont le coffre a besoin.",
+    "resultPsbtWithKey": "Signée avec « {{key}} ». Renvoyez cette transaction signée à SignBit pour qu’elle compte parmi les approbations dont le coffre a besoin.",
+    "resultApproval": "Signature prête. Collez-la dans la plateforme, là où vous avez copié ce message.",
+    "resultApprovalWithKey": "Signé avec « {{key}} ». Renvoyez cette signature à la plateforme.",
+    "outputPsbtLabel": "Transaction signée (PSBT, base64)",
+    "outputApprovalLabel": "Signature (base64)",
+    "exportFileSaving": "Enregistrement…",
+    "exportFile": "Exporter le fichier",
+    "errorNoKey": "Créez ou importez d’abord une clé.",
+    "errorSaveFile": "Impossible d’enregistrer le fichier.",
+    "errorFileTooLarge": "Ce fichier est trop volumineux pour être une transaction (PSBT) ou une approbation.",
+    "errorReadFile": "Impossible de lire ce fichier.",
+    "scanQr": "Scanner le QR",
+    "showQr": "Afficher le QR",
+    "decodeTitle": "Ce que fait cette transaction",
+    "decodeFee": "Frais de réseau",
+    "decodeChange": "Monnaie",
+    "decodeRecipient": "Destinataire",
+    "decodeUnknown": "Inconnu",
+    "decodeNoChangeInfo": "Aucun des coffres enregistrés sur cet appareil ne correspond à cette transaction, donc le destinataire et la monnaie ne peuvent pas être distingués. Seuls les montants sont affichés.",
+    "decodeGoToVaults": "Enregistrer le descripteur de ce coffre →",
+    "chooseKeyOption": "Choisir une clé…",
+    "keyOffNetwork": "Cette clé est une clé {{keyNetwork}} ; l'application est réglée sur {{appNetwork}}. Elle signera en tant que clé {{keyNetwork}}.",
+    "decodeFeeAlarm": "Ces frais représentent une part anormalement élevée du montant dépensé. Si ce n'est pas votre intention, ne signez pas : une transaction peut gonfler ses frais en sous-évaluant un intrant, et la différence part aux mineurs sans retour possible.",
+    "decodeMultiVault": "Cette transaction dépense depuis plusieurs de vos coffres. Les étiquettes de monnaie ci-dessous n'en décrivent qu'un seul : vérifiez le coffre de chaque entrée avant de signer.",
+    "messageKindUnknownStake": "La clé qui signe ceci contrôle aussi des fonds dans vos coffres. Elle ne peut pas être détournée pour approuver un paiement de cette façon, mais la signature provient tout de même de cette clé. Ne signez pas un texte demandé par quelqu'un d'autre sans savoir exactement à quoi il sert.",
+    "inheritanceStake": "En signant, vous autorisez le transfert de tout le coffre vers cette adresse. Cela ne peut pas être annulé une fois le transfert effectué.",
+    "openAsMessage": "Ouvrir dans Message",
+    "decodeRefused": "Fountain ne peut pas afficher exactement ce que fait cette transaction, il ne la signera donc pas.",
+    "decodeNoChangeDescriptor": "Cette transaction dépense depuis un coffre enregistré sur cet appareil, mais ce coffre n'a pas de descripteur de monnaie utilisable, donc la monnaie ne peut pas être reconnue. Seuls les montants sont affichés.",
+    "decodeAddChangeDescriptor": "Ajouter son descripteur de monnaie →"
+  },
+  "qr": {
+    "displayTitle": "Afficher le code QR",
+    "scanTitle": "Scanner le code QR",
+    "prevFrame": "Précédent",
+    "nextFrame": "Suivant",
+    "frameOf": "Trame {{index}} sur {{total}}",
+    "multiFrameHint": "Ces données nécessitent plusieurs QR codes. Scannez-les un par un sur l'autre appareil, puis appuyez sur Suivant ici pour afficher le prochain.",
+    "scanHint": "Pointez la caméra vers le QR code affiché sur l'autre appareil. S'il couvre plusieurs codes, continuez à scanner jusqu'à avoir capturé chaque image.",
+    "scanProgress": "{{have}} trame(s) capturée(s) sur {{total}}",
+    "errorCamera": "Impossible d’accéder à la caméra. Vérifiez les autorisations de caméra pour cette application.",
+    "errorMismatch": "Ce code QR appartient à une autre séquence. Ne scannez qu’une seule source à la fois.",
+    "errorIncomplete": "Il manque des images. Réessayez de scanner.",
+    "errorPermissionDenied": "L'accès à la caméra est bloqué pour cette appli. Une fois bloqué, l'appli ne peut pas redemander automatiquement, donc vous devrez le réactiver dans les réglages de votre appareil.",
+    "retryCamera": "Réessayer",
+    "permissionSteps": {
+      "windows": "Windows : Paramètres → Confidentialité et sécurité → Caméra → réactivez cette application (ou vérifiez l’entrée WebView2), puis réessayez.",
+      "macos": "macOS : Réglages Système → Confidentialité et sécurité → Caméra → réactivez cette application, puis réessayez. Un redémarrage de l’application peut être nécessaire.",
+      "linux": "Linux : vérifiez les paramètres de confidentialité/caméra de votre environnement de bureau (varie selon la distribution), ou les permissions de site de votre navigateur si vous utilisez un onglet de navigateur.",
+      "ios": "iOS : Réglages → [cette application] → Caméra → activez-la, puis revenez ici et réessayez.",
+      "android": "Android : Paramètres → Applications → [cette application] → Autorisations → Caméra → autoriser, puis revenez ici et réessayez."
+    },
+    "scanStillNeed": "Images encore nécessaires : {{frames}}"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Configuration de l’application pour cet appareil.",
+    "network": {
+      "label": "Réseau",
+      "onMainnet": "Vous êtes sur le mainnet, le réseau Bitcoin réel. Les clés que vous créez ici fonctionnent avec de vrais bitcoins.",
+      "onTestnet": "Vous êtes sur le testnet, un réseau d'entraînement. Les pièces n'y valent rien, c'est donc un bon endroit pour faire des essais.",
+      "keysUnaffected": "Vos clés existantes ne changent pas. Chacune reste sur le réseau pour lequel elle a été créée.",
+      "corrupted": "Vos paramètres enregistrés n'ont pas pu être lus, le réseau a donc été réinitialisé sur testnet. Choisissez un réseau ci-dessous pour enregistrer un nouveau paramètre.",
+      "confirmTitle": "Passer au mainnet ?",
+      "confirmReal": "Le mainnet, ce sont de vrais bitcoins. Les signatures que vous y faites peuvent contribuer à déplacer des fonds réels, et une fois la transaction diffusée, impossible de revenir en arrière.",
+      "confirmKeystore": "Vos clés sont conservées dans un coffre logiciel sur cet appareil, protégé par votre phrase secrète, plutôt que sur un matériel de signature dédié. Quelqu'un qui obtiendrait à la fois le fichier et la phrase secrète disposerait des clés stockées ici. Dans un coffre multisig, cela ne suffit pas à dépenser : il lui faudrait assez de clés pour atteindre le seuil de signature du coffre.",
+      "confirmStamp": "Vous pouvez revenir au testnet quand vous le souhaitez. La seule chose définitive, ce sont les clés : une clé créée pendant que vous êtes sur le mainnet reste une clé mainnet, et rebasculer l'application plus tard n'y changera rien. Les clés que vous possédez déjà restent inchangées.",
+      "confirmAction": "Passer au mainnet"
+    },
+    "appearance": {
+      "label": "Apparence",
+      "hint": "Thème pour cet appareil. « Système » suit le réglage de votre OS.",
+      "light": "Clair",
+      "dark": "Sombre",
+      "system": "Système"
+    },
+    "autoLock": {
+      "label": "Verrouillage automatique",
+      "hint": "Verrouille l’application après une période d’inactivité. Recommandé pour un appareil contenant des clés.",
+      "min1": "1 min",
+      "min5": "5 min",
+      "min15": "15 min",
+      "min30": "30 min",
+      "never": "Jamais",
+      "offWarning": "Le verrouillage automatique est désactivé. L’application reste déverrouillée jusqu’à ce que vous la verrouilliez manuellement ou quittiez."
+    },
+    "language": {
+      "label": "Langue",
+      "hint": "Langue de l’interface pour cet appareil."
+    },
+    "storage": {
+      "label": "Stockage",
+      "hint": "Où cet appareil conserve son keystore chiffré. Une version portable le stocke à côté de l'appli, pour que vos clés voyagent avec elle (par exemple sur une clé USB).",
+      "unavailablePrefix": "L’emplacement de stockage n’est disponible que dans l’application de bureau (exécutez",
+      "unavailableSuffix": ").",
+      "checking": "Vérification…",
+      "portable": "Portable",
+      "default": "Par défaut (par utilisateur)",
+      "portableNote": "Les clés sont stockées à côté de l’application.",
+      "defaultNote": "Les clés sont stockées dans votre profil OS.",
+      "portableWarningPrefix": "Les clés se trouvent dans ce dossier. Le supprimer (ou perdre le lecteur) supprime cette copie du keystore, alors gardez",
+      "portableWarningStrong": "un fichier de sauvegarde ou les 24 mots de chaque clé",
+      "portableWarningSuffix": "ailleurs."
+    },
+    "version": {
+      "publisher": "Créé avec ❤️ par SignBit",
+      "domain": "signbit.io"
+    },
+    "backup": {
+      "label": "Sauvegarde",
+      "hint": "Enregistrez tout votre signataire (clés, descripteurs de coffres et préférences) dans un seul fichier chiffré que vous pourrez restaurer sur un autre appareil.",
+      "action": "Exporter la sauvegarde",
+      "warning": "Le fichier est chiffré avec votre phrase secrète. Quiconque obtient à la fois le fichier et votre phrase secrète obtient vos clés. Conservez-le donc dans un endroit de confiance et utilisez une phrase secrète forte.",
+      "noKeys": "Ajoutez une clé avant de créer une sauvegarde.",
+      "modalTitle": "Exporter la sauvegarde",
+      "modalBody": "Cela enregistre une copie chiffrée de vos clés, des descripteurs de coffres enregistrés et de vos préférences. Restaurez-la sur n'importe quel appareil (Windows, macOS, Linux ou Android) depuis l'écran de restauration.",
+      "filenameLabel": "Nom du fichier",
+      "filenameHint": "Modifiez le milieu comme vous le souhaitez, et les espaces deviennent des traits d'union. Le début et .sbk restent les mêmes, donc une recherche de .sbk sur votre appareil retrouve toujours vos sauvegardes, et garder la date évite qu'une sauvegarde en écrase une autre.",
+      "passphraseLabel": "Votre phrase secrète de déverrouillage",
+      "passphraseHint": "La phrase secrète avec laquelle vous déverrouillez Fountain, pas une nouvelle. Elle chiffre aussi cette sauvegarde.",
+      "confirm": "Enregistrer la sauvegarde",
+      "saving": "Enregistrement…",
+      "wrongPassphrase": "Ce n'est pas la phrase secrète qui déverrouille ce Fountain.",
+      "saved": "Sauvegarde enregistrée. {{count}} clé(s) incluse(s).",
+      "importAction": "Importer une sauvegarde",
+      "compareAction": "Comparer une sauvegarde",
+      "transferHint": "L'importation remplace tout ce qui se trouve sur cet appareil par un fichier de sauvegarde. La comparaison montre seulement les différences et ne change rien.",
+      "tooLargeToRestore": "Cette sauvegarde ferait {{mb}} Mo, trop volumineuse pour être restaurée ensuite, donc elle n'a pas été enregistrée. Supprimez des coffres ou des clés dont vous n'avez plus besoin, puis réessayez.",
+      "largeFileNote": "Cette sauvegarde fait {{mb}} Mo, inhabituellement volumineuse mais encore restaurable. Envisagez de supprimer des coffres enregistrés dont vous n'avez plus besoin.",
+      "keyCount": "Clés :",
+      "vaultCount": "Coffres enregistrés :",
+      "passphraseConfirmLabel": "Saisissez-la à nouveau",
+      "passphraseMismatch": "Les deux phrases secrètes ne correspondent pas."
+    },
+    "changePass": {
+      "label": "Phrase secrète",
+      "hint": "Changez la phrase secrète qui déverrouille cette application. Vos clés ne sont pas affectées.",
+      "action": "Changer la phrase secrète",
+      "modalTitle": "Changer la phrase secrète",
+      "modalBody": "Vos clés restent exactement telles quelles. Seule la phrase secrète qui les déverrouille change.",
+      "backupWarning": "Les fichiers de sauvegarde déjà exportés continueront d'exiger l'ANCIENNE phrase secrète. Seul cet appareil change. Une nouvelle sauvegarde vous sera proposée ensuite.",
+      "currentLabel": "Phrase secrète actuelle",
+      "newLabel": "Nouvelle phrase secrète",
+      "confirmLabel": "Confirmez la nouvelle phrase secrète",
+      "mismatch": "Les deux phrases secrètes ne correspondent pas.",
+      "sameAsCurrent": "C'est votre phrase secrète actuelle.",
+      "confirmAction": "Changer la phrase secrète",
+      "changing": "Modification…",
+      "wrongCurrent": "Ce n'est pas votre phrase secrète actuelle.",
+      "changed": "Phrase secrète modifiée. Cet appareil se déverrouille désormais avec la nouvelle.",
+      "exportTitle": "Enregistrer une nouvelle sauvegarde",
+      "exportBody": "Vos fichiers de sauvegarde existants s'ouvrent toujours avec l'ancienne phrase secrète. Enregistrez-en une nouvelle maintenant pour que votre fichier de récupération et cet appareil utilisent la même.",
+      "exportAction": "Enregistrer la sauvegarde maintenant",
+      "exportLater": "Pas maintenant",
+      "exportSaved": "Nouvelle sauvegarde enregistrée. Vos anciens fichiers de sauvegarde s'ouvrent toujours avec la phrase secrète précédente.",
+      "exportSkipped": "Aucune nouvelle sauvegarde n'a été enregistrée. Vos fichiers de sauvegarde existants s'ouvrent toujours avec votre phrase secrète précédente."
+    },
+    "offlineOk": "Hors ligne confirmé. Cet appareil n'a aucune connexion réseau et est totalement isolé.",
+    "motion": {
+      "label": "Animations",
+      "hint": "Les écrans et les fenêtres apparaissent en douceur. Désactivez-les et chaque changement est instantané.",
+      "on": "Activées",
+      "off": "Désactivées"
+    }
+  },
+  "help": {
+    "title": "Aide",
+    "subtitle": "Le fonctionnement complet de cette application. Intégrée et consultable, sans aucun réseau nécessaire pour la lire.",
+    "searchPlaceholder": "Rechercher dans l'aide…",
+    "searchNoResults": "Aucun sujet ne correspond à « {{query}} ».",
+    "searchResultsCount": "{{count}} sujet trouvé",
+    "crossRefLabel": "Voir aussi :",
+    "guideAction": "Ouvrir le guide de configuration des clés",
+    "backToTopics": "Retour aux sujets",
+    "pickATopic": "Choisissez un sujet à gauche pour le lire ici.",
+    "topics": {
+      "gettingStarted": {
+        "title": "Prise en main"
+      },
+      "deviceSecurity": {
+        "title": "Votre phrase secrète & la sécurité de l'appareil"
+      },
+      "keys": {
+        "title": "Clés"
+      },
+      "vaults": {
+        "title": "Coffres & multisig"
+      },
+      "signing": {
+        "title": "Signature & approbations"
+      },
+      "trust": {
+        "title": "Confiance & fonctionnement"
+      }
+    },
+    "gettingStarted": {
+      "whatIsThis": {
+        "title": "Qu'est-ce que Fountain ?",
+        "body": "Fountain, c'est cette application, celle que vous consultez en ce moment. C'est un signataire hors ligne : il détient votre clé (ou vos clés) pour un coffre Bitcoin, les conserve chiffrées sur cet appareil et produit votre signature lorsqu'elle est nécessaire.\n\nUn coffre est un compte protégé par plusieurs clés indépendantes, où aucun détenteur ne peut déplacer les fonds seul. Fountain s'occupe de votre part, et de rien d'autre.\n\nElle n'a besoin de rien d'autre pour être utile. Vous pouvez créer des clés, construire un descripteur de coffre, en dériver les adresses et signer, tout ici. Ce qui vous demande une signature n'atteint cette application que sous forme de texte brut ou de code QR, transporté à la main."
+      },
+      "airGap": {
+        "title": "La philosophie de l'air gap",
+        "body": "Cette application ne fait jamais d'appel réseau, à personne. Vos clés privées (les phrases secrètes de 24 mots derrière chacune de vos clés) sont générées ici, chiffrées ici, et ne quittent jamais cet appareil. La seule chose qu'elle exporte est une clé publique, une clé publique étendue et une empreinte, destinées à être partagées ; elles ne peuvent ni déplacer des fonds ni révéler votre phrase secrète.\n\nAinsi, tout ce qui doit atteindre cette application ou en sortir est transporté à la main, sous forme de texte brut ou de code QR. Cela vaut pour une transaction non signée à signer, le résultat signé et une demande d'approbation. Voyez « Faire circuler les données : copier-coller, fichier ou QR » dans Signature & approbations pour comparer ces modes de transport.\n\nCe qui vous protège réellement n'est pas le mode de transport choisi. C'est que votre clé ne quitte jamais cet appareil, et que vous pouvez lire exactement ce que vous signez avant de le signer."
+      },
+      "publicVsPrivate": {
+        "title": "Clé publique vs. clé privée, en clair",
+        "body": "Une clé publique (un tpub, ou xpub sur mainnet) est comme une entrée de carnet d'adresses : sans risque à remettre à qui assemble le coffre, pour que le coffre partagé puisse être construit. Elle ne peut ni dépenser ni signer quoi que ce soit par elle-même.\n\nUne clé privée (votre phrase de 24 mots) est la vraie clé. Ne la saisissez nulle part ailleurs qu'ici, ne l'envoyez à personne, ne la photographiez pas et ne l'enregistrez pas en clair hors du coffre chiffré de cette application. Quiconque la possède peut dépenser tout ce qu'elle contrôle."
+      },
+      "testnetOnly": {
+        "title": "Mainnet ou testnet",
+        "body": "Le mainnet, c'est du vrai Bitcoin, et c'est là qu'une installation neuve démarre. Les pièces de testnet n'ont aucune valeur et existent pour s'entraîner : c'est donc l'endroit sûr pour répéter ce déroulé avant que de l'argent réel n'entre en jeu. Cette application signe sur l'un comme sur l'autre. Choisissez dans les Réglages.\n\nLe réseau est une propriété de chaque CLÉ, pas de l'application : une clé porte l'empreinte du réseau sur lequel elle a été créée et dérive toujours là. Changer le réglage décide du réseau des nouvelles clés et de ce qu'affiche l'écran ; cela ne modifie jamais une clé que vous détenez déjà."
+      },
+      "verifyingThisApp": {
+        "title": "Vérifiez que vous avez la vraie application",
+        "body": "C'est à cette application que vous allez confier vos clés : prenez une minute pour confirmer que la copie que vous avez est bien celle que nous avons publiée. Faites-le avant de créer une clé, tant qu'il n'y a encore rien à perdre.\n\nChaque version est accompagnée d'une empreinte SHA-256 publiée sur signbit.io. Calculez l'empreinte du fichier que vous avez téléchargé et comparez-la à celle publiée là-bas, caractère par caractère. Si elles ne correspondent pas, ne l'exécutez pas.\n\nCela compte surtout quand l'application ne vient pas directement de nous. Une copie transmise sur une clé USB ou partagée par un collègue est passée hors de nos mains comme des vôtres, et l'empreinte est la seule chose capable de vous dire qu'elle est arrivée intacte.\n\nLes Réglages indiquent qui a publié cette application et où la trouver. Voyez-y un pointeur vers l'endroit où vivent les vraies empreintes, pas une preuve en soi : une copie falsifiée afficherait exactement les mêmes mots. Seule la comparaison prouve quelque chose.\n\nUne chose à prévoir sous Windows : depuis la version 0.6.4, cette application est signée par SignBit Ltd, donc Windows indique SignBit Ltd comme éditeur à son lancement. Si Windows indique un éditeur inconnu, vous avez une version plus ancienne ou une copie qui ne vient pas de nous. Vérifiez la somme de contrôle dans tous les cas."
+      }
+    },
+    "deviceSecurity": {
+      "createUnlock": {
+        "title": "Créer son keystore vs. le déverrouiller",
+        "body": "La première fois que vous ouvrez cette appli, vous choisissez une phrase secrète qui chiffre tout ce qu'elle stockera. Vos clés ne vivent nulle part ailleurs. Ensuite, vous déverrouillez avec cette même phrase secrète. Il n'y a pas de réinitialisation de mot de passe : si vous l'oubliez, la seule solution est de restaurer une sauvegarde du fichier keystore (voir Restaurer un keystore) ou de réimporter chaque clé à partir de sa phrase de récupération de 24 mots."
+      },
+      "restore": {
+        "title": "Restaurer un keystore",
+        "body": "Si cette appli trouve un keystore à un autre endroit que celui qu'elle utilise actuellement (typiquement juste après être passé sur une copie portable/clé USB), elle propose de le restaurer automatiquement. Il suffit d'un clic, puis de déverrouiller avec la phrase secrète de ce keystore.\n\nVous pouvez aussi restaurer manuellement en choisissant vous-même un fichier keystore. Dans les deux cas, la phrase secrète est vérifiée par rapport au fichier avant toute écriture, donc une mauvaise phrase secrète ou le mauvais fichier ne détruit jamais vos clés actuelles."
+      },
+      "threeBackupArtifacts": {
+        "title": "Vos mots de récupération, le keystore et le fichier de sauvegarde",
+        "body": "Trois choses différentes s'appellent ici « ma sauvegarde », et elles ne récupèrent pas la même part de votre installation. Savoir laquelle vous détenez fait la différence entre un après-midi pénible et des fonds perdus.\n\nVos 24 mots sur papier sont la clé elle-même. Ils récupèrent une clé, dans cette application ou dans n'importe quel portefeuille compatible, et ils n'ont besoin d'aucune phrase secrète puisque rien en eux n'est chiffré. Ils survivent à un disque mort, à un téléphone perdu et à une phrase secrète oubliée. C'est la sauvegarde qui devrait toujours exister.\n\nLe keystore est le fichier de travail dans lequel cette application garde vos clés sur cet appareil. Il contient toutes les clés présentes ici et s'ouvre avec la phrase secrète que vous utilisez actuellement. Il vous suit si vous copiez le dossier de l'application, mais il ne sait rien de vos coffres.\n\nLe fichier de sauvegarde que vous exportez depuis les Réglages est l'image la plus complète : vos clés, plus les descripteurs de coffre que vous avez enregistrés, les noms de cosignataires que vous avez définis et vos préférences. C'est celui à utiliser pour passer à un nouvel appareil ou à un autre système d'exploitation. Il s'ouvre avec la phrase secrète en vigueur au moment où vous l'avez enregistré, qui n'est pas forcément celle d'aujourd'hui.\n\nTrois conséquences faciles à manquer jusqu'à ce qu'elles vous rattrapent :\n\nSi votre phrase secrète est perdue, les deux fichiers le sont avec elle. Ils sont chiffrés et personne ne peut les ouvrir à votre place. Seuls les mots sur papier vous ramènent de là.\n\nSeule la sauvegarde exportée se souvient de vos coffres. Restaurez un keystore seul et vos clés reviennent sans vos descripteurs enregistrés, ce qui explique pourquoi l'écran de signature ne distingue alors plus la monnaie rendue d'un vrai destinataire.\n\nUne sauvegarde exportée est une photographie, pas un miroir. Elle contient ce qui existait le jour où vous l'avez enregistrée. Ajoutez une clé ensuite et aucun fichier plus ancien ne la contient : réexportez dès que vous ajoutez quelque chose que vous détesteriez perdre."
+      },
+      "changingYourPassphrase": {
+        "title": "Changer votre phrase secrète ne change pas vos anciennes sauvegardes",
+        "body": "Changer votre phrase secrète rechiffre les clés présentes sur cet appareil, et rien d'autre. Vos clés elles-mêmes ne sont pas touchées. Chaque fichier de sauvegarde que vous avez déjà exporté conserve la phrase secrète avec laquelle il a été écrit.\n\nCela prend les gens à revers dans les deux sens.\n\nSi vous la changez et allez plus tard chercher une ancienne sauvegarde, la nouvelle phrase secrète n'ouvrira pas ce fichier. Il n'est pas endommagé. Il réclame la phrase secrète en vigueur le jour où vous l'avez enregistré, d'où l'intérêt de noter sur le fichier à quelle époque il appartient.\n\nSi vous l'avez changée parce que vous pensiez que quelqu'un avait appris l'ancienne, mesurez ce que vous avez corrigé et ce que vous n'avez pas corrigé. Cet appareil est désormais sûr. Tout fichier de sauvegarde écrit sous l'ancienne phrase secrète est toujours là, et s'ouvre toujours avec celle qui vous inquiète. Le changement ici ne révoque rien au-dehors.\n\nExportez donc une nouvelle sauvegarde juste après le changement. L'application vous le propose sur le moment ; acceptez. Traitez ensuite les anciens fichiers délibérément : détruisez-les, ou conservez-les en sachant qu'ils ne sont protégés que par cette ancienne phrase secrète."
+      },
+      "androidStorage": {
+        "title": "Sur un téléphone, votre phrase secrète est la seule défense",
+        "body": "Si vous utilisez cette application sur Android, une chose mérite d'être connue, car elle fonctionne autrement que ce à quoi vous vous attendriez raisonnablement.\n\nLa plupart des applications de téléphone qui détiennent un secret s'appuient sur le téléphone lui-même : votre empreinte ou votre visage pour déverrouiller, et du matériel dédié à l'intérieur du téléphone conçu pour garder les clés. Cette application ne le fait pas encore. Vos clés sont chiffrées avec la phrase secrète que vous avez saisie ici, et c'est tout. Le verrouillage d'écran de votre téléphone ne les protège pas.\n\nEn pratique, votre phrase secrète porte donc tout le poids sur l'appareil que vous risquez le plus d'oublier dans un taxi. Quelqu'un qui prend votre téléphone et franchit le verrouillage d'écran atteint un keystore chiffré, et la seule chose entre lui et vos clés est la longueur et l'étrangeté de cette phrase secrète. Une phrase courte, choisie parce qu'elle se tape vite sur un clavier de téléphone, fait un travail pour lequel elle n'a jamais été prévue.\n\nChoisissez-en donc une longue ici, même si la saisie est pénible. Réglez un verrouillage automatique court pour que l'application ne reste pas déverrouillée dans votre poche. Gardez vos mots de récupération ailleurs que sur le téléphone.\n\nLe stockage matériel et le déverrouillage biométrique sont en cours de développement. En attendant, considérez la phrase secrète comme le seul verrou sur la porte."
+      },
+      "autoLock": {
+        "title": "Verrouillage automatique en cas d'inactivité",
+        "body": "L'appli peut se reverrouiller automatiquement après une période choisie sans activité souris, clavier ou tactile, réduisant la fenêtre pendant laquelle un appareil compromis et sans surveillance reste déverrouillé. Choisir « Jamais » est possible, mais l'appli vous avertit dans ce cas."
+      },
+      "storageLocation": {
+        "title": "Où vos clés sont réellement stockées",
+        "body": "Une copie portable de cette application (lancée depuis une clé USB, par exemple) garde son keystore chiffré dans un dossier juste à côté d'elle, de sorte que vos clés voyagent avec l'application. Une copie installée se rabat sur le dossier de profil utilisateur de votre système.\n\nDans les deux cas, perdre ce stockage perd cette copie de vos clés, qu'il s'agisse de la clé USB ou du dossier lui-même. Gardez une sauvegarde qui ne vit pas sur cet appareil : vos phrases de récupération écrites, un export chiffré depuis les Réglages, ou les deux. Réimporter une phrase de récupération ramène une clé quoi qu'il arrive au fichier keystore.\n\nSi vous avez utilisé cette application des deux façons sur un même ordinateur, vous avez deux keystores distincts, et ce sont réellement des fichiers séparés. Ils peuvent contenir des clés différentes et reposer sur des phrases secrètes différentes. Ainsi, quand cette application propose de restaurer un keystore trouvé ailleurs, il peut très bien être le vôtre et refuser malgré tout la phrase secrète que vous saisissez : cela signifie le plus souvent qu'il a été écrit à une époque où votre phrase secrète était autre, et non que le fichier est endommagé."
+      }
+    },
+    "keys": {
+      "whatIsAKey": {
+        "title": "Qu'est-ce qu'une clé",
+        "body": "Une clé, ici, est une identité de cosignataire dans un coffre : une seule phrase de 24 mots et tout ce qui en dérive. Un coffre a besoin de plusieurs clés indépendantes, la vôtre et celles des autres détenteurs, avant de pouvoir faire quoi que ce soit. Voir Coffres et multisig pour la façon dont elles se combinent."
+      },
+      "creating": {
+        "title": "Créer une nouvelle clé",
+        "body": "Génère une nouvelle phrase de récupération de 24 mots, aléatoire, affichée une seule fois, immédiatement. Notez-la avant de faire quoi que ce soit d'autre. Cette appli peut vous la réafficher plus tard (voir Revoir sa phrase de récupération), mais le moment de la création reste votre seule chance garantie de la noter calmement sur papier."
+      },
+      "importing": {
+        "title": "Importer une clé existante",
+        "body": "Si vous avez déjà une phrase de récupération de 24 mots venue d'ailleurs, collez-la ou saisissez-la avec une étiquette. Cette appli vérifie qu'il s'agit d'une liste valide de mots standards (BIP-39) et vous alerte si les mots semblent dans le mauvais ordre."
+      },
+      "seedBackup": {
+        "title": "Sauvegarder votre phrase de récupération",
+        "body": "Une clé se récupère de deux façons, avec ses 24 mots ou avec un fichier de sauvegarde chiffré. Il n'y a pas de compte, pas de réinitialisation par e-mail, pas de ticket d'assistance qui la ramène. Si les mots et tous les fichiers de sauvegarde sont perdus, ce que cette clé contrôle est perdu pour de bon.\n\nL'un comme l'autre est une bonne sauvegarde. Des mots sur papier survivent à un disque mort, à un téléphone perdu et à une phrase secrète oubliée. Un fichier est plus simple à tenir à jour, car un seul export couvre toutes vos clés et tous vos coffres.\n\nLe fichier de sauvegarde est un export chiffré depuis les Paramètres, qui contient vos clés et vos coffres enregistrés dans un seul fichier. Vous pouvez le garder sur une clé USB ou dans un stockage cloud, et c'est bien à cela qu'il sert, mais soyez au clair sur ce qui le protège. Quiconque copie ce fichier peut essayer des mots de passe dessus sur sa propre machine, aussi longtemps qu'il le veut, sans que rien ici ne le ralentisse ni ne le bloque. Votre phrase secrète est le seul obstacle sur son chemin, alors choisissez-la longue et ne la rangez jamais à côté du fichier.\n\nUne règle mérite d'être suivie. Ne laissez pas une seule application ni un seul fichier de sauvegarde détenir toutes les clés d'un coffre. Un coffre a besoin de plusieurs clés indépendantes précisément pour qu'en perdre ou en exposer une reste surmontable. Les garder toutes au même endroit défait discrètement cette protection. Répartissez-les entre appareils et détenteurs, et sauvegardez chacune séparément.\n\nQuiconque lit les 24 mots dans le bon ordre peut dépenser ce que cette clé contrôle. N'en faites pas de capture d'écran, ne les enregistrez pas dans une application de notes, ne vous les envoyez pas par e-mail. Traitez-les exactement comme des espèces en main."
+      },
+      "revealSeedAgain": {
+        "title": "Revoir sa phrase de récupération plus tard",
+        "body": "Contrairement à un portefeuille matériel, ceci est un signataire logiciel : il doit continuer à détenir votre phrase secrète pour pouvoir continuer à signer avec. « Révéler la phrase secrète » est donc ici une action réelle et répétable, pas une cérémonie unique, ce qui est utile s'il vous faut réécrire les mots ou déplacer une clé vers un autre appareil.\n\nElle est protégée par une nouvelle saisie de votre phrase de passe à chaque fois, même quand l'application est déjà déverrouillée, et n'autorise que 3 tentatives erronées avant que l'application entière ne se verrouille, en garde-fou contre la force brute.\n\nNe la révélez que là où personne ne peut voir l'écran, et préférez l'export chiffré des Réglages si ce que vous voulez est une sauvegarde, car il n'affiche jamais les mots à l'écran."
+      },
+      "exportPublicKey": {
+        "title": "Exporter votre clé publique",
+        "body": "L'export public d'une clé est sa clé publique étendue (un tpub sur testnet, un xpub sur mainnet) plus son empreinte maîtresse. C'est ce que vous transmettez pour que la clé soit enrôlée dans un coffre, sous forme de chaîne copiée ou de fichier de clé enregistré depuis cet écran. On peut la copier, l'enregistrer ou la lire à voix haute sans risque : elle ne peut pas déplacer de fonds ni être reconvertie en phrase de récupération."
+      },
+      "removing": {
+        "title": "Retirer une clé",
+        "body": "Supprimer une clé ne fait que l'effacer de cet appareil. L'appartenance à un coffre et les fonds vivent sur la blockchain et dans le descripteur du coffre, pas dans cette application : une clé que vous pouvez réimporter est une clé que vous n'avez pas perdue.\n\nAvant d'en supprimer une, soyez précis sur les endroits où elle existe encore. Des mots de récupération notés la ramènent toujours. Une sauvegarde chiffrée ne la ramène que si cette sauvegarde a été faite après l'ajout de cette clé et que vous connaissez la phrase secrète avec laquelle elle a été écrite : une sauvegarde du mois dernier ne contient pas une clé créée la semaine dernière, et un fichier plus ancien s'ouvre toujours avec la phrase secrète en vigueur au moment de l'enregistrement.\n\nSi la phrase de récupération n'est notée nulle part et qu'aucune sauvegarde ne la contient, la supprimer ici la détruit définitivement."
+      },
+      "whereAreMyAddresses": {
+        "title": "Où sont mes adresses ?",
+        "body": "Une clé sur cet écran n'a pas d'adresse propre pour recevoir. Les adresses appartiennent au coffre, pas à une clé isolée : une adresse de coffre est dérivée de toutes les clés enrôlées avec le seuil, ce qui explique qu'elle ne puisse pas exister avant que le coffre soit complet.\n\nIl vous faut donc d'abord le descripteur du coffre. Soit vous le construisez ici, avec le constructeur hors ligne de l'onglet Coffres où vous saisissez la clé publique de chaque détenteur et choisissez le seuil, soit vous exportez la clé publique de cette clé, la faites enrôler dans un coffre assemblé par quelqu'un d'autre, puis enregistrez ici le descripteur final.\n\nUne fois un descripteur enregistré, cette application dérive pour vous les adresses de ce coffre : ouvrez-le dans Coffres et choisissez n'importe quel indice de réception ou de change, entièrement hors ligne. C'est aussi ainsi que l'on vérifie qu'une adresse reçue est bien la vôtre. Dérivez le même indice ici et comparez."
+      }
+    },
+    "vaults": {
+      "whatIsAVault": {
+        "title": "Qu'est-ce qu'un coffre",
+        "body": "Un coffre est un compte Bitcoin sécurisé par plusieurs clés indépendantes (multisig) : un arrangement « m parmi n » où m quelconques des n clés enrôlées doivent s'accorder pour déplacer les fonds. Vous en détenez une ; les autres appartiennent à d'autres détenteurs, comme d'autres personnes, une clé de secours, ou un service de cosignature. Aucune d'elles ne peut dépenser seule."
+      },
+      "whatIsADescriptor": {
+        "title": "Ce qu'est réellement un descripteur de coffre",
+        "body": "Un descripteur est le plan partagé qui indique exactement quelles clés publiques composent un coffre et combien sont nécessaires pour dépenser. Ce sont des données publiques, pas un secret, destinées à être partagées entre cosignataires et même enregistrées dans un fichier de sauvegarde. C'est aussi la seule chose nécessaire pour reconstruire les adresses du coffre de façon indépendante, sans rien demander à personne."
+      },
+      "enrolling": {
+        "title": "Enrôler votre clé dans un coffre",
+        "body": "Remplir un emplacement de clé dans un coffre consiste à transmettre une clé publique : la clé publique étendue et l'empreinte maîtresse que vous exportez depuis l'écran Clés. C'est tout le transfert, que ce soit par une chaîne copiée, un fichier de clé enregistré ou une lecture à voix haute. Votre phrase de récupération n'a jamais besoin de quitter cet appareil pour que votre clé fasse partie d'un coffre actif."
+      },
+      "rolesVsQuorum": {
+        "title": "Ce qui compte vraiment entre rôles et quorum",
+        "body": "Chaque clé enrôlée peut porter une étiquette de rôle (la vôtre, secours, cosignataire, etc.), mais le seuil d'un coffre compte des CLÉS distinctes, pas des rôles. N'importe quelles m des n clés enrôlées peuvent signer, quelle que soit leur étiquette. Une étiquette sert à distinguer les clés entre elles ; elle n'accorde ni ne retire jamais la capacité de signer."
+      },
+      "savingADescriptor": {
+        "title": "Sauvegarder le descripteur d'un coffre ici",
+        "body": "Conservez une copie locale et hors ligne du descripteur d'un coffre : collez-le, ou importez un fichier de sauvegarde enregistré. C'est cette copie qui vous permettra plus tard de vérifier une adresse ou de construire une dépense dans un outil tiers, avec seulement le descripteur et votre propre clé, sans rien ni personne d'autre à solliciter."
+      },
+      "buildingOffline": {
+        "title": "Construire un descripteur de coffre entièrement hors ligne",
+        "body": "Pour le scénario « tout le monde dans la même pièce » : saisissez la clé publique de chaque détenteur, choisissez le seuil, et l'application calcule le descripteur du coffre. Aucun appel réseau, et personne d'autre impliqué dans la création du coffre.\n\nPréférez importer chaque clé depuis un fichier de clé exporté plutôt que de la taper. Transcrire une clé publique étendue à la main est l'endroit le plus propice à l'erreur dans tout ce flux, et un seul caractère erroné produit un coffre qui paraît correct et que personne ne pourra jamais signer."
+      },
+      "derivingAnAddress": {
+        "title": "Dériver une adresse pour la vérifier",
+        "body": "À partir d'un descripteur enregistré, l'application peut calculer la véritable adresse de réception ou de change à n'importe quel index, entièrement hors ligne. Utilisez-la pour vérifier de façon indépendante une adresse qu'on vous a donnée : choisissez le même index des deux côtés et comparez le résultat."
+      }
+    },
+    "signing": {
+      "whatIsAPsbt": {
+        "title": "Qu'est-ce qu'un PSBT",
+        "body": "Un PSBT (« transaction Bitcoin partiellement signée ») est simplement une transaction non signée ou partiellement signée, dans un format de fichier/texte standard et partageable. C'est ce qui circule d'un détenteur de clé à l'autre jusqu'à ce qu'il y ait assez de signatures pour la diffuser."
+      },
+      "signingATransaction": {
+        "title": "Signer une transaction",
+        "body": "Collez, importez ou scannez le PSBT qu'on vous a remis, choisissez laquelle de vos clés doit le signer, examinez ce qu'il fait réellement (voir Vérifier avant de signer), puis signez. Le résultat signé repart comme il est arrivé : copie, fichier ou QR."
+      },
+      "verifyingBeforeYouSign": {
+        "title": "Vérifier avant de signer",
+        "body": "Juste au-dessus du bouton de signature, une transaction collée est décodée en termes clairs : qui est payé, combien, et les frais réseau, calculés directement à partir des octets de la transaction à chaque fois, jamais d'après une étiquette qu'elle prétendrait porter. Si vous avez sauvegardé le descripteur du coffre, la monnaie rendue est aussi distinguée d'un vrai destinataire ; sans cela, elle s'affiche simplement comme « inconnue » plutôt que d'être devinée."
+      },
+      "policyApproval": {
+        "title": "Signer une approbation de changement de politique",
+        "body": "Une action différente de la signature d'une transaction. Certains coffres portent des règles de dépense : une limite quotidienne, un maximum par transaction, une liste de destinataires approuvés, un délai avant qu'un retrait n'aboutisse. Ces règles s'ajoutent à l'exigence multisig ; elles ne remplacent jamais le besoin d'un nombre suffisant de signatures.\n\nQuand une telle règle est assouplie, il faut prouver qu'un véritable détenteur de clé l'a acceptée, et pas seulement celui qui le demande. Cette preuve est une signature portant sur le changement exact proposé, faite ici avec la même clé de compte, simplement sur un autre type de message.\n\nLisez le message avant de le signer. La signature engage ces mots exacts : ce qui est à l'écran est ce que vous acceptez, et assouplir une règle est la direction qui vous coûte réellement en sécurité, d'où la nécessité de votre clé."
+      },
+      "transports": {
+        "title": "Faire circuler les données : copier-coller, fichier ou QR",
+        "body": "Les trois transports véhiculent exactement le même texte dans les deux sens : copier-coller, un fichier enregistré, ou un code QR (affiché sur un appareil, scanné par un autre). Aucun n'est plus « sûr » que les autres. Ce sont juste trois façons de déplacer les mêmes données à la main. Ce qui vous protège réellement, c'est de pouvoir lire exactement ce que vous signez avant de le signer, quel que soit le transport utilisé."
+      },
+      "qrFrameWontScan": {
+        "title": "Quand une image QR refuse d'être lue",
+        "body": "Rien n'est cassé et vous n'avez pas perdu les images déjà capturées. Une transaction est le plus souvent trop grande pour un seul QR code, elle traverse donc en plusieurs, et rester bloqué sur l'une d'elles est normal. Voici ce qui se passe réellement.\n\nLes images sont indépendantes. Vous pouvez les capturer dans n'importe quel ordre, et relire une image déjà obtenue ne fait aucun mal. Le lecteur tient le compte et vous dit exactement quels numéros manquent encore : fiez-vous à cette liste plutôt que de tout recommencer, car les images déjà lues sont conservées.\n\nRevenez à l'image manquante sur l'appareil qui affiche les codes, remettez-la à l'écran, et lisez celle-là. Vous n'avez pas besoin de repasser par les autres.\n\nQuand une image précise s'obstine, la cause est presque toujours physique plutôt qu'un défaut dans les données. Agrandissez le code sur l'écran qui l'affiche, c'est de loin la correction la plus efficace. Ensuite, stabilisez l'appareil photo, laissez-lui un instant pour faire la mise au point, et éclairez davantage l'écran sans y jeter de reflet. Essuyer l'objectif aide plus souvent qu'on ne le croit.\n\nSi vous y êtes depuis un moment, annulez et reprenez le transfert depuis le début. Le contenu est régénéré et vous ne perdez que du temps : le résultat signé est produit à partir de la transaction elle-même, jamais d'une lecture partielle."
+      }
+    },
+    "trust": {
+      "noSingleParty": {
+        "title": "Aucune partie seule ne peut déplacer les fonds",
+        "body": "C'est la promesse fondamentale d'un coffre multisig : puisque dépenser exige les signatures de plusieurs clés indépendantes, aucun détenteur seul, ni vous seul ni un service quelconque à lui seul, ne peut jamais déplacer les fonds par lui-même. Il faut un véritable quorum, à chaque fois."
+      },
+      "neverConnects": {
+        "title": "Pourquoi cette appli ne se connecte jamais à internet",
+        "body": "Cette appli est construite sans aucun code réseau pour tout ce qui touche à vos clés. Il n'y a aucun serveur qu'elle pourrait appeler même si elle le voulait. Cela protège les clés elles-mêmes, au repos comme à l'usage, mais cela ne protège pas un appareil déjà compromis pendant qu'il est déverrouillé. Une bonne sécurité de l'appareil (phrase secrète, verrouillage automatique, manipulation physique prudente) reste importante."
+      }
+    },
+    "searchMatch": "résultat",
+    "searchResultsCountPlural": "{{count}} sujets trouvés"
+  },
+  "backupTransfer": {
+    "back": "Retour aux paramètres",
+    "importTitle": "Importer une sauvegarde",
+    "importSubtitle": "Remplacer tout ce qui se trouve sur cet appareil par le contenu d'un fichier de sauvegarde.",
+    "compareTitle": "Comparer une sauvegarde",
+    "compareSubtitle": "Voyez en quoi un fichier de sauvegarde diffère de cet appareil. Rien n'est modifié.",
+    "importWarning": "L'importation écrase cet appareil : vos clés, coffres enregistrés et préférences sont remplacés par ceux du fichier. Vous verrez exactement ce qui change avant que quoi que ce soit ne se produise.",
+    "step1": "1. Choisissez un fichier de sauvegarde",
+    "step2": "2. Saisissez la phrase secrète de ce fichier",
+    "chooseFile": "Choisir un fichier…",
+    "passphraseHint": "Il s'agit de la phrase secrète avec laquelle ce fichier a été enregistré, qui n'est pas forcément celle que vous venez d'utiliser pour déverrouiller l'application.",
+    "openFile": "Ouvrir le fichier",
+    "opening": "Ouverture…",
+    "errorTooLarge": "Ce fichier dépasse {{mb}} Mo, il ne peut donc pas être une sauvegarde SignBit.",
+    "errorRead": "Impossible de lire ce fichier.",
+    "identical": "Cette sauvegarde correspond exactement à cet appareil. Il n'y a rien à changer.",
+    "destructiveWarning": "{{count}} clé(s) de cet appareil ne figurent pas dans cette sauvegarde. L'importation les supprimera définitivement. Si leurs 24 mots ne sont pas notés ailleurs, elles seront irrécupérables.",
+    "statKeysRemoved": "Clés perdues",
+    "statKeysAdded": "Clés ajoutées",
+    "statVaultsChanged": "Modifications de coffres",
+    "statSettings": "Modifications de réglages",
+    "sectionKeys": "Clés",
+    "sectionVaults": "Coffres enregistrés",
+    "sectionSettings": "Préférences",
+    "noKeys": "Aucune clé d'un côté comme de l'autre.",
+    "noVaults": "Aucun coffre enregistré d'un côté comme de l'autre.",
+    "labelChange": "Renommé : « {{from}} » → « {{to}} »",
+    "unreadableKey": "La phrase secrète de cette entrée n'a pas pu être lue.",
+    "keyWillBeLost": "Cette clé sera définitivement supprimée. Notez d'abord ses 24 mots si vous en avez encore besoin.",
+    "status": {
+      "import": {
+        "removed": "Sera supprimé",
+        "added": "Sera ajouté",
+        "changed": "Sera modifié",
+        "unchanged": "Inchangé"
+      },
+      "compare": {
+        "removed": "Seulement sur cet appareil",
+        "added": "Seulement dans la sauvegarde",
+        "changed": "Diffère",
+        "unchanged": "Identique"
+      }
+    },
+    "changeDescriptor": {
+      "onlyDevice": "Seul cet appareil possède un descripteur de monnaie pour ce coffre.",
+      "onlyBackup": "Seule la sauvegarde possède un descripteur de monnaie pour ce coffre.",
+      "differs": "Les deux descripteurs de monnaie ne correspondent pas."
+    },
+    "keyLabels": {
+      "onlyDevice": "Seul cet appareil possède des noms de cosignataires pour ce coffre. La restauration les effacera.",
+      "onlyBackup": "La sauvegarde ajoute des noms de cosignataires pour ce coffre.",
+      "differs": "Les noms de cosignataires diffèrent. La restauration remplacera ceux de cet appareil par ceux de la sauvegarde."
+    },
+    "setting": {
+      "autoLockMinutes": "Verrouillage auto (minutes)",
+      "theme": "Apparence",
+      "locale": "Langue"
+    },
+    "applyTitle": "Appliquer cette sauvegarde",
+    "applyBody": "Cet appareil sera remplacé par exactement ce qui est affiché ci-dessus.",
+    "passphraseChangeWarning": "Après l'importation, vous déverrouillerez cette application avec la phrase secrète du fichier de sauvegarde, pas avec l'actuelle.",
+    "applyPassphraseLabel": "Saisissez à nouveau la phrase secrète du fichier de sauvegarde",
+    "typeToConfirmLabel": "Tapez {{word}} pour confirmer",
+    "applyAction": "Écraser cet appareil",
+    "applying": "Importation…",
+    "compareReadOnly": "Rien n'a été modifié. La comparaison se contente de lire le fichier.",
+    "compareAnother": "Comparer un autre fichier",
+    "doneTitle": "Sauvegarde importée",
+    "doneBody": "Cet appareil contient désormais {{count}} clé(s) issues de la sauvegarde. N'oubliez pas que le déverrouillage utilise maintenant la phrase secrète du fichier de sauvegarde.",
+    "comparingWith": "Fichier de sauvegarde :",
+    "finalConfirmTitle": "Écraser cet appareil ?",
+    "finalConfirmSeedWarning": "TOUTES LES PHRASES SECRÈTES DE CET APPAREIL SERONT REMPLACÉES. Toute clé absente de cette sauvegarde et non notée ailleurs sera définitivement perdue, ainsi que l'accès aux fonds qu'elle protège. Il n'y a ni annulation ni récupération.",
+    "finalConfirmKeysHeading": "{{count}} clé(s) seront définitivement supprimées :",
+    "finalConfirmBody": "Ne continuez que si vous avez conservé la phrase secrète de cette sauvegarde et les 24 mots de tout ce dont vous avez encore besoin. Vos clés, coffres enregistrés et préférences seront remplacés par ceux du fichier.",
+    "finalConfirmAction": "Oui, tout écraser",
+    "overLimitNote": "Cette sauvegarde contient plus de clés ou de coffres que ce signataire n'en autorise normalement. Elle sera tout de même restaurée intégralement, sans rien omettre.",
+    "comparePassphraseNote": "Ouvert avec la phrase secrète que vous venez de saisir. Cette comparaison porte sur les clés contenues dans les fichiers, pas sur la façon dont ils sont verrouillés : deux fichiers peuvent donc contenir exactement les mêmes clés sous des phrases secrètes différentes.",
+    "identicalPassphraseNote": "Contenu identique, mais pas nécessairement une phrase secrète identique. Si vous avez changé de phrase secrète depuis l'écriture de l'un de ces fichiers, le plus ancien ne s'ouvre qu'avec celle qui était en vigueur à l'époque."
+  },
+  "reset": {
+    "title": "Réinitialiser cet appareil",
+    "subtitle": "Effacer ce signataire et repartir de zéro.",
+    "warning": "Cela supprime les clés stockées sur cet appareil. L'opération est irréversible et ne pourra pas être annulée plus tard avec votre phrase secrète. Le keystore étant chiffré, cette application ne peut pas vous montrer quelles clés il contient. Vous seul savez ce qui s'y trouve.",
+    "tryRestoreTitle": "Avez-vous un fichier de sauvegarde ?",
+    "tryRestoreBody": "Si vous avez exporté une sauvegarde, restaurez-la plutôt. Il vous faudra la phrase secrète en vigueur lors de l'écriture de ce fichier, qui n'est peut-être pas celle que vous avez oubliée.",
+    "tryRestoreAction": "Restaurer une sauvegarde à la place",
+    "typeToConfirm": "Tapez {{word}} pour continuer",
+    "action": "Réinitialiser cet appareil",
+    "finalTitle": "Effacer cet appareil ?",
+    "finalWarning": "Toute phrase secrète que vous n'avez pas notée est sur le point de disparaître, ainsi que les fonds qu'elle contrôle.",
+    "finalBody": "Toutes les clés de cet appareil seront supprimées, ainsi que vos descripteurs de coffres enregistrés et vos réglages. Une clé ne pourra ensuite être récupérée qu'à partir de sa propre phrase de 24 mots ou d'un fichier de sauvegarde. Il n'y a pas d'autre solution.",
+    "finalConfirm": "Tout effacer",
+    "resetting": "Effacement…",
+    "locationPortable": "Cela effacera le dossier portable situé à côté de l'application :",
+    "locationAppData": "Cela effacera le dossier de données de cet ordinateur :",
+    "locationOtherNote": "Un keystore plus ancien situé dans le dossier de données de cet ordinateur n'est pas touché. S'il en existe un, il pourra vous être proposé ensuite. C'est un fichier différent, qui peut utiliser une phrase secrète antérieure.",
+    "cooldownNote": "Prenez un instant. Ce bouton se débloque dans quelques secondes. Si vous avez le moindre doute, annulez maintenant.",
+    "finalConfirmWaiting": "Tout effacer ({{seconds}} s)"
+  }
+}

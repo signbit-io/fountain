@@ -1,0 +1,68 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Secrets / key material — NEVER commit. The encrypted keystore lives in the OS
+# app-data dir at runtime, but ignore any stray local copies + env.
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+keystore.json
+# Android release signing: the .jks lives OUTSIDE any git tree
+# (~/.signbit-keys/), and these point at it. Losing the keystore orphans every
+# install permanently, so it is backed up in 1Password + offline, never here.
+keystore.properties
+play-upload.properties
+key.properties
+# Portable-mode keystore folder (next to the exe at runtime; may appear under target/ in dev).
+data/
+
+# Internal planning docs / notes — internal-eyes-only, NOT for the public repo.
+# Only code + files devs need to compile go public; our own planning/notes stay local.
+#
+# 🚨 LLM_CONTEXT.md and docs/android-port.md are DEV-ONLY (user, 2026-09-03).
+# They are TRACKED HERE ON PURPOSE — this repo is private and they are worth keeping — but they
+# must NEVER reach the public repo. `scripts/build-public-branch.sh` deletes them when it builds
+# the orphan commit; that script is the enforcement, not this file.
+# ⚠️ They DID reach the public repo in the first push (2026-09-03) and the repo was deleted and
+# recreated to remove them. The earlier reasoning ("an auditor should be able to read it") was
+# wrong for these two specifically: the context doc carries §11 Roadmap and an adversarial
+# analysis that together say what is NOT built and where the author thinks the soft spots are,
+# and android-port.md is a plan for unbuilt work. Neither is an audit artifact.
+# ✅ Public and should stay so: README, DEVELOPING.md, SECURITY.md, docs/vault-cache.md (written
+# for publication, names nothing internal). The keystore/KDF reasoning is still a trust asset —
+# it lives in SECURITY.md, which is written for outside readers.
+# ⚠️ Before any public push, re-grep for the platform codename, the platform signer repo name,
+# and internal doc names — new comments reintroduce them (this has now happened three times).
+docs/*-plan.md
+docs/*-notes.md
+docs/internal/
+
+# Local machine-specific Android dev overrides (AVD/Gradle paths off a full C:, etc.)
+scripts/android-dev.local.ps1
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Staged portable builds (raw release exe copied out of target/) — never commit binaries.
+dist-portable/
