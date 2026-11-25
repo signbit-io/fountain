@@ -1,0 +1,2 @@
+/* The camera prompt, per language. English also lives in src-tauri/Info.ios.plist (merged into Info.plist); keep the two the same. */
+"NSCameraUsageDescription" = "Fountain utilise l’appareil photo uniquement pour scanner des codes QR, par exemple un paiement à signer. Rien de ce qu’il voit n’est enregistré ni envoyé.";

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ⚠️ The background is @drawable (the dark app-surface gradient + orange bloom), NOT the
+  @color resource Tauri generates, which is a flat #fff. White showed at the icon's edges once
+  the foreground was shrunk into Android's safe zone, because the foreground is transparent
+  outside the mark. Keep this pointing at @drawable when regenerating icons.
+-->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+  <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+  <background android:drawable="@drawable/ic_launcher_background"/>
+</adaptive-icon>

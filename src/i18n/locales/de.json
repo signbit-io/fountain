@@ -1,0 +1,877 @@
+{
+  "common": {
+    "brand": "SignBit",
+    "brandTagline": "Fountain",
+    "close": "Schließen",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "copyFailed": "Kopieren fehlgeschlagen",
+    "cancel": "Abbrechen",
+    "loading": "Wird geladen…",
+    "show": "Anzeigen",
+    "hide": "Verbergen"
+  },
+  "shell": {
+    "lock": "Sperren",
+    "appearance": "Erscheinungsbild: {{mode}}",
+    "moreControls": "Weitere Steuerelemente",
+    "tabs": {
+      "keys": "Schlüssel",
+      "sign": "signieren",
+      "vaults": "Tresore",
+      "settings": "Einstellungen",
+      "help": "hilfe"
+    }
+  },
+  "unlock": {
+    "createTitle": "Passphrase erstellen",
+    "unlockTitle": "Schlüssel entsperren",
+    "createSubtitle": "Das verschlüsselt Ihre Schlüssel auf diesem Gerät. Es gibt keine Wiederherstellung, schreiben Sie sie also auf.",
+    "unlockSubtitle": "Geben Sie die Passphrase für den Keystore dieses Geräts ein.",
+    "passphrase": "Passphrase",
+    "confirmPassphrase": "Passphrase bestätigen",
+    "working": "Wird verarbeitet…",
+    "createKeystore": "Schlüsselspeicher erstellen",
+    "unlockButton": "Entsperren",
+    "alreadyHaveKeystore": "Haben Sie bereits einen Schlüsselspeicher?",
+    "restoreIt": "Wiederherstellen",
+    "forgotPassphrase": "Passphrase vergessen?",
+    "resetDevice": "Gerät zurücksetzen",
+    "errorMismatch": "Die Passphrasen stimmen nicht überein.",
+    "errorTooShort": "Verwenden Sie mindestens 8 Zeichen.",
+    "strength": {
+      "tooShort": "Zu kurz",
+      "weak": "Schwach",
+      "fair": "Mittel",
+      "good": "Gut",
+      "strong": "Stark"
+    },
+    "strengthHint": {
+      "longer": "Länge schlägt Komplexität. Versuchen Sie mehrere Wörter.",
+      "variety": "Fügen Sie einen Großbuchstaben, eine Zahl oder ein Symbol hinzu.",
+      "avoidPattern": "Vermeiden Sie gängige Wörter, Wiederholungen und Tastaturfolgen."
+    }
+  },
+  "restore": {
+    "title": "Schlüssel wiederherstellen",
+    "subtitle": "Stellen Sie einen vorhandenen Schlüsselspeicher aus einer Sicherung oder früheren Installation wieder her und entsperren Sie ihn dann mit seiner Passphrase.",
+    "autoTitle": "Vorherigen Schlüsselspeicher wiederherstellen",
+    "chooseFile": "Sicherungsdatei wählen…",
+    "restoringFrom": "Wiederherstellung von",
+    "passphrase": "Passphrase",
+    "passphraseHint": "Die Passphrase, mit der sich Fountain entsperren ließ, als diese Datei gespeichert wurde, keine neue.",
+    "restoring": "Wird wiederhergestellt…",
+    "restoreAndUnlock": "Wiederherstellen und entsperren",
+    "pickDifferentFile": "Andere Datei wählen",
+    "backToCreate": "Zurück",
+    "errorReadFile": "Diese Datei konnte nicht gelesen werden.",
+    "errorOpenPicker": "Der Dateiauswahldialog konnte nicht geöffnet werden.",
+    "errorWrongPassphrase": "Diese Passphrase entsperrt diesen Schlüsselspeicher nicht.",
+    "autoFromAppData": "Ein älterer Keystore wurde im App-Datenordner dieses Computers gefunden, aus der Zeit vor der portablen Nutzung dieser App.",
+    "autoFromPortable": "Ein Keystore wurde im portablen Ordner neben der App gefunden.",
+    "autoPassphraseNote": "Diese Datei ist verschlüsselt, daher kann die App nicht wissen, welche Schlüssel sie enthält. Sie benötigt möglicherweise eine frühere Passphrase, nicht unbedingt Ihre neueste.",
+    "searchHint": "Liegt Ihre Sicherung woanders? Suchen Sie auf Ihrem Computer und auf jedem USB-Stick nach .sbk. Sicherungen aus der Zeit vor Version 0.6.5 enden auf .json. Suchen Sie daher nach „signbit-“, um diese zu finden.",
+    "errorNotSignbitFile": "Das ist keine SignBit-Sicherungs- oder Keystore-Datei.",
+    "errorPublicKeyFile": "Das ist eine Datei mit einem öffentlichen Schlüssel. Sie dient nur zum Teilen eines Schlüssels und kann nichts wiederherstellen. Wählen Sie stattdessen Ihre Sicherungsdatei (.sbk)."
+  },
+  "keys": {
+    "title": "Ihre Schlüssel",
+    "subtitle": "Jeder Schlüssel ist einer der Schlüssel, die ein Tresor braucht. Um einen Schlüssel einem Tresor hinzuzufügen, teilen Sie seinen öffentlichen Schlüssel ({{prefix}}) und seinen Fingerabdruck.",
+    "emptyTitle": "Noch keine Schlüssel",
+    "emptySubtitle": "Erstellen Sie einen Schlüssel, um einen öffentlichen Schlüssel zu erhalten, den Sie als Cosigner in einem Tresor registrieren können.",
+    "label": "Bezeichnung",
+    "seedPhraseLabel": "Seed-Phrase (12–24 Wörter)",
+    "labelPlaceholder": "z. B. Mein Mitunterzeichner-Schlüssel",
+    "seedPlaceholder": "Wort Wort Wort…",
+    "seedWordCount": "{{count}} Wörter",
+    "seedInvalidWord": "Kein BIP-39-Wort",
+    "seedValid": "Gültige Seed-Phrase",
+    "seedOrderSuspect": "Alle Wörter sind gültig, aber die Reihenfolge scheint falsch zu sein",
+    "seedDuplicate": "Diese Seed-Phrase wurde bereits als „{{label}}“ importiert.",
+    "newKeyLabelPlaceholder": "Neue Schlüsselbezeichnung",
+    "import": "Importieren",
+    "createKey": "Schlüssel erstellen",
+    "showPublicKey": "Öffentlichen Schlüssel anzeigen ({{network}})",
+    "publicKeyModalTitle": "Öffentlicher Schlüssel · {{label}}",
+    "fingerprint": "Schlüssel-Fingerabdruck",
+    "accountTpub": "Öffentlicher Schlüssel",
+    "guideTitle": "Schlüssel-Einrichtungsleitfaden",
+    "guideIntro": "Jeder Schlüssel, den Sie hier erstellen oder importieren, nutzt diese Einstellungen bereits. Betrachten Sie dies als Referenz dafür, was erzeugt wird und was Sie der Plattform beim Eintragen geben.",
+    "guideScript": "Skripttyp: Natives SegWit-Multisig (P2WSH)",
+    "guidePath": "Ableitungspfad: m/{{path}}",
+    "guideNetwork": "Netzwerk: {{network}}, exportiert einen {{prefix}}",
+    "guideExport": "Geben Sie der Plattform: Ihren {{prefix}} und Master-Fingerabdruck (Öffentlichen Schlüssel anzeigen auf einer Schlüsselkarte)",
+    "exportFilePublicNote": "Nur öffentlicher Schlüssel. Registrieren Sie ihn als Ihren Fountain-Schlüssel beim Erstellen eines Tresors.",
+    "exportFileSaving": "Wird gespeichert…",
+    "exportFileJson": "Datei exportieren (.json)",
+    "addedOn": "Hinzugefügt am {{date}}",
+    "revealSeed": "Seed anzeigen",
+    "rename": "Umbenennen",
+    "renameSave": "Speichern",
+    "renameCancel": "Abbrechen",
+    "remove": "Entfernen",
+    "errorSaveFile": "Datei konnte nicht gespeichert werden.",
+    "backupTitle": "„{{label}}“ sichern",
+    "backupWarningStrong": "Sichern Sie diesen Schlüssel jetzt.",
+    "backupWarningRest": "Schreiben Sie diese 24 Wörter auf Papier, oder speichern Sie eine verschlüsselte Sicherungsdatei über Einstellungen, Sicherung exportieren. Jede der beiden Möglichkeiten stellt den Schlüssel wieder her. Achten Sie darauf, dass niemand auf Ihren Bildschirm schaut.",
+    "backedUp": "Ich habe sie gesichert",
+    "revealModalTitle": "Seed-Phrase · {{label}}",
+    "revealWarningShown": "Wer diese 24 Wörter sieht, kontrolliert diesen Schlüssel. Achten Sie darauf, dass niemand auf Ihren Bildschirm schaut.",
+    "revealWarningPrompt": "Geben Sie Ihre Passphrase erneut ein, um die 24-Wort-Seed-Phrase dieses Schlüssels anzuzeigen.",
+    "done": "Fertig",
+    "checking": "Wird geprüft…",
+    "revealSeedButton": "Seed anzeigen",
+    "revealIncorrectPassphrase": "Falsche Passphrase. {{count}} Versuch übrig, bevor die App gesperrt wird.",
+    "removeModalTitle": "Schlüssel entfernen",
+    "removeWarningPrefix": "Dies entfernt",
+    "removeWarningMiddle": "nur von diesem Gerät. Wenn seine 24-Wort-Phrase gesichert ist, können Sie ihn später wieder importieren;",
+    "removeWarningStrong": "wenn nicht, ist dies endgültig.",
+    "removeWarningSuffix": "Sichern Sie zuerst die Seed-Phrase, falls noch nicht geschehen.",
+    "removeConfirmLabelFingerprint": "Geben Sie den Fingerabdruck des Schlüssels zur Bestätigung ein",
+    "removeConfirmLabelName": "Geben Sie den Namen des Schlüssels zur Bestätigung ein",
+    "removeKeyButton": "Schlüssel entfernen",
+    "removeKeyButtonCountdown": "Schlüssel entfernen ({{seconds}}s)",
+    "keyFallbackName": "Schlüssel",
+    "offNetwork": "nicht das aktuelle Netzwerk der App",
+    "derivationPath": "Ableitungspfad",
+    "revealIncorrectPassphrasePlural": "Falsche Passphrase. {{count}} Versuche übrig, bevor die App gesperrt wird.",
+    "exportAllAction": "Alle öffentlichen Schlüssel exportieren ({{count}})",
+    "exportAllTitle": "Alle öffentlichen Schlüssel exportieren",
+    "exportAllBody": "Wählen Sie einen Ordner, und Sie erhalten {{count}} Dateien, eine je Schlüssel. Jede trägt Bezeichnung und Fingerabdruck ihres Schlüssels, damit Sie sie später auseinanderhalten können.",
+    "exportAllConfirm": "Ordner wählen",
+    "exportAllSaved": "{{count}} Schlüssel in Ihrem Ordner gespeichert.",
+    "exportAllSkipped": "Diese ließen sich nicht exportieren und wurden ausgelassen: {{names}}.",
+    "exportAllPublicNote": "Das sind ausschließlich öffentliche Schlüssel, keine Seed-Phrasen. Genau das geben Sie der Plattform, wenn Sie einem Tresor einen Mitunterzeichner hinzufügen.",
+    "accountSlip132": "Multisig-Schlüssel ({{prefix}}, P2WSH)",
+    "scriptType": "Skripttyp",
+    "scriptTypeP2wsh": "Native-SegWit-Multisig (P2WSH)",
+    "publicKeyNotAddress": "Das ist die öffentliche Kennung Ihres Schlüssels, keine Adresse. Teilen Sie sie nur, um diesen Schlüssel einem Tresor hinzuzufügen. Bitten Sie niemanden, Bitcoin daran zu senden; zum Empfangen nutzen Sie eine Empfangsadresse Ihres Tresors auf SignBit.",
+    "otherWalletsToggle": "Für andere Wallets (Sparrow, Electrum…)",
+    "seedAutoHide": "Zu Ihrer Sicherheit schließt sich dieses Fenster in {{time}} von selbst.",
+    "added": "Hinzugefügt"
+  },
+  "vaults": {
+    "title": "Tresor-Backups",
+    "subtitle": "Bewahren Sie hier eine Kopie des Deskriptors jedes Tresors auf. Damit können Sie Adressen prüfen und, falls Sie uns nicht erreichen, mit Ihren Schlüsseln in einer anderen Wallet wie Sparrow ausgeben. Ein Deskriptor kann keine Bitcoin bewegen, zeigt aber alle Adressen des Tresors, behandeln Sie ihn also vertraulich.",
+    "addTitle": "Einen bestehenden Tresor speichern",
+    "importFile": "Datei importieren",
+    "label": "Bezeichnung",
+    "labelPlaceholder": "z. B. Familie 3-von-5",
+    "descriptorLabel": "Empfangsdeskriptor",
+    "descriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/0/*,…))#checksum",
+    "changeDescriptorLabel": "Wechselgeld-Deskriptor (optional)",
+    "changeDescriptorPlaceholder": "wsh(sortedmulti(3,[…]xpub…/1/*,…))#checksum",
+    "save": "Tresor speichern",
+    "addChangeDescriptor": "+ Wechselgeld-Deskriptor hinzufügen",
+    "addChangeDescriptorHint": "Diese Sicherung hat noch keinen Wechselgeld-Deskriptor. Der Signieren-Bildschirm braucht ihn, um Wechselgeld von einem echten Empfänger zu unterscheiden, und Fountain kann ihn aus dem Empfangs-Deskriptor ableiten.",
+    "addChangeDescriptorSave": "Hinzufügen",
+    "errorRequired": "Geben Sie einen Deskriptor zum Speichern ein.",
+    "importSaved": "„{{label}}“ wurde in Ihren Tresor-Sicherungen gespeichert.",
+    "importSavedCopy": "Als „{{label}}“ gespeichert. Sie hatten denselben Tresor bereits gespeichert, dies ist also eine zweite Kopie. Entfernen Sie die, die Sie nicht möchten.",
+    "errorFileTooLarge": "Die Datei ist zu groß für ein Tresor-Backup.",
+    "errorReadFile": "Diese Datei konnte nicht gelesen werden.",
+    "emptyTitle": "Noch keine Tresor-Backups",
+    "emptySubtitle": "Fügen Sie den Deskriptor oder die Sicherungsdatei eines Tresors ein oder erstellen Sie einen Tresor offline, um hier eine Kopie aufzubewahren.",
+    "savedOn": "Gespeichert am {{date}}",
+    "changeDescriptor": "Wechselgeld-Deskriptor",
+    "remove": "Entfernen",
+    "summaryQuorum": "{{threshold}}-von-{{total}} Multisig",
+    "summarySigner": "Unterzeichner {{index}}",
+    "summaryThisDevice": "Schlüssel dieses Geräts",
+    "summaryFingerprint": "Fingerabdruck",
+    "copyFingerprint": "Fingerabdruck kopieren",
+    "copyXpub": "Erweiterten öffentlichen Schlüssel kopieren",
+    "rename": "Diesen Tresor umbenennen",
+    "renameSave": "Speichern",
+    "renameCancel": "Abbrechen",
+    "nameSigner": "Diesen Mitunterzeichner benennen",
+    "summaryReceiveBranch": "Empfangsadressen",
+    "summaryChangeBranch": "Wechselgeldadressen",
+    "summaryChecksum": "Prüfsumme",
+    "showRawDescriptor": "Rohen Deskriptor anzeigen",
+    "hideRawDescriptor": "Rohen Deskriptor ausblenden",
+    "rawDescriptorNote": "Der genaue Text, der nötig ist, um diesen Tresor in einem Drittanbieter-Tool wiederherzustellen. Bewahren Sie diese Sicherung gut auf.",
+    "deriveSubtitle": "Berechnen Sie die echte Bitcoin-Adresse an jedem beliebigen Index, komplett offline. Vergleichen Sie sie mit dem, was die Plattform anzeigt, um sie unabhängig zu prüfen.",
+    "deriveBranchReceive": "Empfang",
+    "deriveBranchChange": "Wechselgeld",
+    "deriveIndexLabel": "Index",
+    "derivePrevIndex": "Vorheriger Index",
+    "deriveNextIndex": "Nächster Index",
+    "deriveResultLabel": "{{branch}}-Adresse Nr. {{index}}",
+    "deriveCompareHint": "Vergleichen Sie das mit dem, was die Tresorseite beim selben Index anzeigt.",
+    "deriveErrorNoChangeDescriptor": "Dieser Sicherung fehlt noch ein Wechselgeld-Deskriptor. Fügen Sie zuerst oben einen hinzu.",
+    "deriveErrorGeneric": "Aus diesem Deskriptor konnte keine Adresse abgeleitet werden.",
+    "removeModalTitle": "Tresor-Backup entfernen",
+    "removeWarning": "Dies löscht den gespeicherten Deskriptor für {{label}} von diesem Gerät. Der Tresor selbst ist davon nicht betroffen, und Sie können ihn jederzeit erneut von der Plattform speichern.",
+    "removeConfirmLabel": "Geben Sie den Namen der Sicherung ein, um zu bestätigen",
+    "removeConfirm": "Backup entfernen",
+    "removeConfirmCountdown": "Sicherung entfernen ({{seconds}}s)",
+    "cancel": "Abbrechen",
+    "modePaste": "Deskriptor einfügen",
+    "modeBuild": "Einen offline erstellen",
+    "buildTitle": "Einen Tresor offline erstellen",
+    "buildSubtitle": "Wählen Sie eine Größe, fügen Sie den öffentlichen Schlüssel jedes Schlüsselinhabers hinzu, und Fountain erstellt den Deskriptor des Tresors ganz ohne Verbindung. Fügen Sie auch den Schlüssel von SignBit hinzu, wenn SignBit einer der Schlüsselinhaber ist.",
+    "buildKeyN": "Schlüssel {{n}}",
+    "buildKeyLabelPlaceholder": "z. B. Alice",
+    "buildKeyXpubPlaceholder": "tpub… / xpub…",
+    "buildKeyFingerprintPlaceholder": "8 Zeichen, z. B. 73c5da0a",
+    "buildAction": "Tresor erstellen und speichern",
+    "buildSavedCompare": "In Ihren Tresor-Sicherungen gespeichert. Vergleichen Sie die Prüfsumme unten mit allen, die diesen Tresor haben.",
+    "buildSavedCopy": "Als „{{label}}“ gespeichert. Sie hatten denselben Tresor bereits gespeichert, dies ist also eine zweite Kopie. Entfernen Sie die, die Sie nicht möchten.",
+    "draftRestored": "Dort fortgesetzt, wo Sie aufgehört haben. Diese Schlüssel wurden zuletzt am {{date}} bearbeitet und bleiben auf diesem Gerät, bis Sie sie speichern oder verwerfen.",
+    "draftKept": "Ihre Eingaben werden während des Tippens auf diesem Gerät gespeichert, Sie können diesen Bildschirm also verlassen und zurückkehren. Nichts wird Ihren Sicherungen hinzugefügt, bis Sie speichern.",
+    "draftDiscard": "Eingaben verwerfen",
+    "buildErrorGeneric": "Aus diesen Schlüsseln konnte kein Deskriptor erstellt werden.",
+    "buildKeyImportFile": "Schlüsseldatei importieren",
+    "keyFileErrorNetwork": "Dieser Schlüssel ist ein {{keyNetwork}}-Schlüssel, dieser Tresor wird aber auf {{formNetwork}} erstellt. Alle Schlüssel eines Tresors müssen im selben Netzwerk liegen.",
+    "keyFileError": {
+      "not_json": "Das ist keine SignBit-Schlüsseldatei, denn sie enthält kein gültiges JSON. Wählen Sie eine aus dem Schlüssel-Bildschirm exportierte Datei signbit-key-….json.",
+      "not_key_file": "Das ist keine SignBit-Schlüsseldatei. Wählen Sie eine aus dem Schlüssel-Bildschirm exportierte Datei signbit-key-….json.",
+      "private_material": "Abgelehnt: Diese Datei enthält privates Schlüsselmaterial. Eine Schlüsseldatei darf nur öffentliche Schlüssel enthalten. Nichts hier benötigt Ihre Wiederherstellungsphrase. Löschen Sie diese Kopie und exportieren Sie den öffentlichen Schlüssel erneut.",
+      "missing_field": "Diese Schlüsseldatei enthält keinen erweiterten öffentlichen Schlüssel.",
+      "bad_fingerprint": "Diese Schlüsseldatei enthält einen fehlerhaften Master-Fingerabdruck. Er muss aus 8 Hex-Zeichen bestehen.",
+      "bad_path": "Diese Schlüsseldatei gibt nicht an, welchen Ableitungspfad ihr Schlüssel verwendet, es lässt sich also nicht feststellen, zu welchem Netzwerk er gehört.",
+      "bad_xpub": "Der erweiterte öffentliche Schlüssel in dieser Datei ist ungültig, weil Prüfsumme oder Netzwerk nicht stimmen. Exportieren Sie ihn erneut, statt die Datei zu bearbeiten."
+    },
+    "buildErrorDuplicateKey": "Derselbe Schlüssel steht zweimal in dieser Liste. Ein Tresor zählt jeden Schlüssel nur einmal: Ein doppelter Schlüssel ließe seinen Inhaber zwei der Signaturen allein liefern.",
+    "buildErrorDuplicateFingerprint": "Zwei Schlüssel in dieser Liste haben denselben Master-Fingerabdruck: Entweder stammen sie aus derselben Seed-Phrase oder ein Fingerabdruck ist falsch. Jeder Schlüssel muss einem anderen Schlüsselinhaber gehören.",
+    "summaryRequired": "Erforderliche Signaturen",
+    "pasteIntro": "Fügen Sie den Deskriptor oder die ganze Sicherungsdatei von der Tresorseite ein. Fountain prüft ihn und zeigt Ihnen, was es gefunden hat, bevor etwas gespeichert wird.",
+    "pasteLabel": "Deskriptor oder Sicherungsdatei",
+    "changeToggleShow": "Wechselgeld-Deskriptor selbst hinzufügen",
+    "changeToggleHide": "Wechselgeld-Deskriptor ausblenden",
+    "preview": {
+      "title": "Was Fountain gefunden hat",
+      "ready": "Dieser Deskriptor ist in Ordnung und kann gespeichert werden.",
+      "firstAddress": "Erste Empfangsadresse",
+      "firstAddressHint": "Prüfen Sie, dass Ihre andere Wallet dieselbe Adresse an erster Stelle zeigt.",
+      "changeDerived": "Der Wechselgeld-Deskriptor wurde aus diesem abgeleitet, Sie müssen ihn also nicht hinzufügen.",
+      "changeGiven": "Der Wechselgeld-Deskriptor ist enthalten und passt zu diesem Tresor.",
+      "changeNone": "Für diese Art von Deskriptor gibt es keinen Wechselgeld-Deskriptor, daher kann der Signieren-Bildschirm nicht erkennen, welche Ausgaben zu diesem Tresor zurückgehen.",
+      "checksumAdded": "Der Deskriptor hatte keine Prüfsumme, deshalb hat Fountain eine ergänzt. Vergleichen Sie die erste Adresse mit Ihrer anderen Wallet, bevor Sie sich darauf verlassen.",
+      "otherNetwork": "Dieser Tresor ist im {{vaultNetwork}}, Fountain ist auf {{appNetwork}} eingestellt. Sie können ihn trotzdem speichern.",
+      "alreadySaved": "Sie haben diesen Tresor bereits als „{{label}}“ gespeichert. Erneutes Speichern legt eine zweite Kopie an.",
+      "unknownShape": "Fountain kann die Schlüssel dieser Art von Deskriptor nicht auflisten, kann ihn aber trotzdem speichern und seine Adressen berechnen."
+    },
+    "inputProblem": {
+      "private_key": "Dies enthält einen privaten Schlüssel. Fountain speichert nie einen in dieser Liste, denn sie ist nicht verschlüsselt und ein Deskriptor braucht ihn nicht. Verwenden Sie die Version mit ausschließlich öffentlichen Schlüsseln (xpub, tpub, Zpub oder Vpub).",
+      "bad_checksum": "Die Prüfsumme am Ende passt nicht zum Text, irgendwo hat sich also ein Zeichen geändert. Kopieren Sie ihn erneut aus dem Original, statt ihn von Hand zu korrigieren.",
+      "not_a_descriptor": "Fountain kann dies nicht als Tresor-Deskriptor lesen. Ein Deskriptor beginnt meist mit wsh( und endet mit # und 8 Zeichen.",
+      "change_invalid": "Der Wechselgeld-Deskriptor ist nicht lesbar oder seine Prüfsumme passt nicht. Kopieren Sie ihn erneut aus dem Original.",
+      "change_mismatch": "Der Wechselgeld-Deskriptor gehört zu einem anderen Tresor. Seine Schlüssel oder die Zahl der nötigen Signaturen passen nicht zum Empfangs-Deskriptor."
+    },
+    "sizeShort": "{{m}} von {{n}}",
+    "sizeHint": "{{m}} von {{n}} Schlüsseln genügen",
+    "sizeRecommended": "Am häufigsten",
+    "sizeTooSmall": "Es sind bereits {{count}} Schlüssel eingegeben, mehr als diese Größe fasst.",
+    "buildNetwork": "Im {{network}}",
+    "buildStepSize": "Tresorgröße",
+    "buildStepKeys": "Schlüssel",
+    "buildStepName": "Name und Erstellen",
+    "buildKeysProgress": "{{done}} von {{total}} Schlüsseln bereit",
+    "slotReady": "Bereit",
+    "slotCheck": "Schlüssel prüfen",
+    "slotNoFingerprint": "Noch kein Fingerabdruck. Ohne ihn erkennen Signier-Tools diesen Schlüssel womöglich nicht, ergänzen Sie ihn also, wenn möglich.",
+    "buildKeyName": "Name (optional)",
+    "buildKeyXpub": "Erweiterter öffentlicher Schlüssel",
+    "useDeviceKey": "Schlüssel dieses Geräts verwenden",
+    "slotClear": "Leeren",
+    "slotProblem": {
+      "private_key": "Das ist ein privater Schlüssel. Fügen Sie hier nie einen ein. Verwenden Sie stattdessen den erweiterten öffentlichen Schlüssel.",
+      "wrapped": "Dieser Schlüssel ist für verpacktes SegWit. Diese Tresore nutzen natives SegWit, exportieren Sie den Schlüssel also erneut als {{expected}}.",
+      "single_sig": "Dieser Schlüssel stammt aus einer Single-Signature-Wallet. Ein Tresor braucht den Schlüssel eines Multisig-Kontos, exportiert als {{expected}}.",
+      "other_network": "Dieser Schlüssel gehört zu einem anderen Netzwerk. Dieser Tresor wird im {{network}} erstellt, wo Schlüssel mit {{expected}} beginnen.",
+      "invalid": "Dieser Schlüssel ist nicht gültig. Vielleicht fehlt ein Zeichen oder eines ist falsch, kopieren Sie ihn also erneut.",
+      "bad_fingerprint": "Ein Fingerabdruck hat 8 Zeichen, aus 0 bis 9 und a bis f."
+    },
+    "slotDuplicate": "Das ist derselbe Schlüssel wie Schlüssel {{n}}. Jeder Schlüssel kommt nur einmal vor.",
+    "slotDuplicateFingerprint": "Gleicher Fingerabdruck wie Schlüssel {{n}}. Jeder Schlüssel muss aus einem anderen Seed stammen.",
+    "buildSummary": "Beliebige {{m}} dieser {{n}} Schlüssel können die Bitcoin bewegen.",
+    "buildMissingOne": "Fügen Sie noch 1 Schlüssel hinzu, um zu erstellen.",
+    "buildMissingMany": "Fügen Sie noch {{count}} Schlüssel hinzu, um zu erstellen.",
+    "buildFixKeys": "Korrigieren Sie die oben markierten Schlüssel, um zu erstellen.",
+    "buildChecksumLabel": "Prüfsumme zum Vergleichen",
+    "buildChecksumHint": "Lesen Sie sie vor. Wer diesen Tresor aus denselben Schlüsseln erstellt, erhält dieselben 8 Zeichen.",
+    "draftResized": "Ihre Eingaben wurden in einen {{m}}-von-{{n}}-Tresor übernommen, eine der angebotenen Größen, und alle Schlüssel blieben erhalten.",
+    "saveFile": "Sicherungsdatei speichern",
+    "fileSaved": "Sicherungsdatei gespeichert.",
+    "fileSaveError": "Die Datei konnte nicht gespeichert werden. Versuchen Sie einen anderen Ordner.",
+    "changeAutoFill": "Aus dem Empfangs-Deskriptor ableiten",
+    "addChangeDescriptorPasteHint": "Fügen Sie den Wechselgeld-Deskriptor aus der Sicherungsdatei des Tresors ein.",
+    "backToList": "Alle Tresore",
+    "tabKeys": "Schlüssel",
+    "tabAddresses": "Adressen",
+    "tabDescriptor": "Deskriptor",
+    "buildBack": "Zurück",
+    "buildNext": "Weiter",
+    "openSaved": "Gespeicherten Tresor öffnen"
+  },
+  "sign": {
+    "title": "Signieren",
+    "subtitle": "Co-signieren Sie eine Tresor-Ausgabe (PSBT), oder unterschreiben Sie eine Nachricht: eine Richtlinienänderung genehmigen, einen Schlüssel nachweisen, einen Tresor übernehmen. Alles vollständig offline.",
+    "modePsbt": "Zahlung (PSBT)",
+    "modeApproval": "Nachricht",
+    "signingKey": "Signaturschlüssel",
+    "noKeysOption": "Keine Schlüssel. Erstellen Sie zuerst einen",
+    "psbtLabel": "Unsignierte Transaktion (PSBT, Base64)",
+    "approvalLabel": "Zu signierende Nachricht",
+    "importFile": "Datei importieren",
+    "psbtPlaceholder": "cHNidP8B…",
+    "approvalPlaceholder": "Fügen Sie die Nachricht ein, die Ihnen die Plattform gegeben hat, z. B.\nSIGNBIT-VAULT-IMPORT\ndescriptor:…\n…",
+    "signPsbtButton": "Transaktion signieren",
+    "signApprovalButton": "Nachricht signieren",
+    "messageKind": {
+      "policyChange": "Genehmigung einer Richtlinienänderung. Dies bestätigt eine Änderung der Ausgaberegeln des Tresors.",
+      "healthCheck": "Schlüssel-Gesundheitsprüfung. Dies beweist, dass Sie mit diesem Schlüssel unterschreiben können. Es werden keine Mittel bewegt.",
+      "vaultImport": "Tresor-Import. Dies beweist, dass Sie einen Schlüssel im zu übernehmenden Tresor besitzen. Es werden keine Mittel bewegt.",
+      "ownerTransfer": "Wechsel des Tresor-Eigentümers. Dies bestätigt die Übertragung der Eigentümerposition des Tresors auf einen anderen Schlüsselinhaber. Es werden keine Mittel bewegt.",
+      "unknownSignbit": "Eine SignBit-Nachricht, die diese Version nicht erkennt, vermutlich neuer als diese App. Lesen Sie sie unten, bevor Sie unterschreiben.",
+      "unknown": "Dies ist keine erkannte SignBit-Nachricht. Lesen Sie sie sorgfältig, bevor Sie unterschreiben, und unterschreiben Sie nur Text, den Sie verstehen und erwartet haben.",
+      "inheritanceClaim": "Genehmigung einer Nachlassanfrage. DIESE BEWEGT GELD: Sie autorisiert die Übertragung des gesamten Vaults an die Adresse unten. Prüfen Sie diese Adresse, bevor Sie signieren."
+    },
+    "resultPsbt": "Signiert. Senden Sie diese signierte Transaktion an SignBit zurück, damit sie zu den Freigaben zählt, die der Tresor braucht.",
+    "resultPsbtWithKey": "Mit „{{key}}“ signiert. Senden Sie diese signierte Transaktion an SignBit zurück, damit sie zu den Freigaben zählt, die der Tresor braucht.",
+    "resultApproval": "Signatur fertig. Fügen Sie sie dort in die Plattform ein, wo Sie diese Nachricht kopiert haben.",
+    "resultApprovalWithKey": "Mit „{{key}}“ signiert. Senden Sie diese Signatur an die Plattform zurück.",
+    "outputPsbtLabel": "Signierte Transaktion (PSBT, Base64)",
+    "outputApprovalLabel": "Signatur (Base64)",
+    "exportFileSaving": "Wird gespeichert…",
+    "exportFile": "Datei exportieren",
+    "errorNoKey": "Erstellen oder importieren Sie zuerst einen Schlüssel.",
+    "errorSaveFile": "Datei konnte nicht gespeichert werden.",
+    "errorFileTooLarge": "Diese Datei ist zu groß für eine Transaktion (PSBT) oder eine Freigabe.",
+    "errorReadFile": "Diese Datei konnte nicht gelesen werden.",
+    "scanQr": "QR scannen",
+    "showQr": "QR anzeigen",
+    "decodeTitle": "Was diese Transaktion bewirkt",
+    "decodeFee": "Netzwerkgebühr",
+    "decodeChange": "Wechselgeld",
+    "decodeRecipient": "Empfänger",
+    "decodeUnknown": "Unbekannt",
+    "decodeNoChangeInfo": "Keiner der auf diesem Gerät gespeicherten Tresore passt zu dieser Transaktion, daher lassen sich Empfänger und Wechselgeld nicht unterscheiden. Es werden nur Beträge angezeigt.",
+    "decodeGoToVaults": "Deskriptor dieses Tresors speichern →",
+    "chooseKeyOption": "Schlüssel wählen…",
+    "keyOffNetwork": "Dieser Schlüssel ist ein {{keyNetwork}}-Schlüssel; die App ist auf {{appNetwork}} eingestellt. Er signiert als {{keyNetwork}}-Schlüssel.",
+    "decodeFeeAlarm": "Diese Gebühr ist ein unglaubwürdig großer Anteil des ausgegebenen Betrags. Wenn Sie das nicht beabsichtigt haben, signieren Sie nicht: Eine Transaktion kann ihre Gebühr aufblähen, indem sie einen Eingang zu niedrig angibt, und die Differenz geht an die Miner und ist unwiederbringlich.",
+    "decodeMultiVault": "Diese Transaktion gibt aus mehr als einem Ihrer Tresore aus. Die Wechselgeld-Kennzeichnungen unten beschreiben nur einen davon. Prüfen Sie vor dem Signieren den Tresor jeder Eingabe.",
+    "messageKindUnknownStake": "Der Schlüssel, der dies signiert, kontrolliert auch Guthaben in Ihren Tresoren. Er kann auf diesem Weg nicht zur Freigabe einer Zahlung verleitet werden, aber die Signatur stammt dennoch von diesem Schlüssel. Signieren Sie keinen Text, um den Sie jemand anderes gebeten hat, es sei denn, Sie wissen genau, wozu er dient.",
+    "inheritanceStake": "Mit Ihrer Signatur autorisieren Sie die Übertragung des gesamten Vaults an diese Adresse. Nach der Übertragung ist das nicht mehr rückgängig zu machen.",
+    "openAsMessage": "In „Nachricht“ öffnen",
+    "decodeRefused": "Fountain kann nicht genau anzeigen, was diese Transaktion bewirkt, und signiert sie deshalb nicht.",
+    "decodeNoChangeDescriptor": "Diese Transaktion gibt aus einem auf diesem Gerät gespeicherten Tresor aus, aber diesem Tresor fehlt ein verwendbarer Wechselgeld-Deskriptor, daher lässt sich Wechselgeld nicht erkennen. Es werden nur Beträge angezeigt.",
+    "decodeAddChangeDescriptor": "Wechselgeld-Deskriptor hinzufügen →",
+    "messageTidied": "Wir haben die Nachricht vor dem Signieren wieder in ihr genaues Format gebracht, eine Zeile pro Feld. Nur die Abstände haben sich geändert.",
+    "claimNoDestination": "Dieser Erbschaftsantrag zeigt keine Zieladresse und wurde deshalb nicht signiert. Ein echter SignBit-Antrag nennt immer eine. Kopieren Sie den Antrag erneut aus SignBit und fügen Sie ihn unverändert ein."
+  },
+  "qr": {
+    "displayTitle": "QR-Code anzeigen",
+    "scanTitle": "QR-Code scannen",
+    "prevFrame": "Zurück",
+    "nextFrame": "Weiter",
+    "frameOf": "Bild {{index}} von {{total}}",
+    "multiFrameHint": "Diese Daten brauchen mehrere QR-Codes. Scannen Sie sie der Reihe nach auf dem anderen Gerät und tippen Sie dann hier auf Weiter, um den nächsten anzuzeigen.",
+    "scanHint": "Richten Sie die Kamera auf den QR-Code auf dem anderen Gerät. Erstreckt er sich über mehrere Codes, scannen Sie weiter, bis jedes Bild erfasst ist.",
+    "scanProgress": "{{have}} von {{total}} Bildern erfasst",
+    "errorCamera": "Kein Zugriff auf die Kamera möglich. Überprüfen Sie die Kameraberechtigungen für diese App.",
+    "errorMismatch": "Dieser QR-Code gehört zu einer anderen Sequenz. Scannen Sie jeweils nur Codes aus einer Quelle.",
+    "errorIncomplete": "Es fehlen einige Bilder. Versuch es erneut zu scannen.",
+    "errorPermissionDenied": "Der Kamerazugriff ist für diese App gesperrt. Einmal gesperrt, kann die App nicht automatisch erneut fragen, daher müssen Sie ihn in den Einstellungen Ihres Geräts wieder aktivieren.",
+    "retryCamera": "Erneut versuchen",
+    "permissionSteps": {
+      "windows": "Windows: Einstellungen → Datenschutz und Sicherheit → Kamera → diese App wieder aktivieren (oder den WebView2-Eintrag prüfen), dann erneut versuchen.",
+      "macos": "macOS: Systemeinstellungen → Datenschutz & Sicherheit → Kamera → diese App wieder aktivieren, dann erneut versuchen. Ein Neustart der App kann nötig sein.",
+      "linux": "Linux: Prüfen Sie die Datenschutz-/Kameraeinstellungen Ihrer Desktop-Umgebung (je nach Distribution unterschiedlich) oder die Website-Berechtigungen Ihres Browsers, falls Sie einen Browser-Tab verwenden.",
+      "ios": "iOS: Einstellungen → [diese App] → Kamera → aktivieren, dann hierher zurückkehren und erneut versuchen.",
+      "android": "Android: Einstellungen → Apps → [diese App] → Berechtigungen → Kamera → zulassen, dann hierher zurückkehren und erneut versuchen."
+    },
+    "scanStillNeed": "Noch benötigte Bilder: {{frames}}"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "subtitle": "App-Konfiguration für dieses Gerät.",
+    "network": {
+      "label": "Netzwerk",
+      "onMainnet": "Sie sind im Mainnet, dem echten Bitcoin-Netzwerk. Schlüssel, die Sie hier erstellen, funktionieren mit echten Bitcoin.",
+      "onTestnet": "Sie sind im Testnet, einem Übungsnetzwerk. Die Coins sind nichts wert, Sie können hier also in Ruhe alles ausprobieren.",
+      "keysUnaffected": "Ihre vorhandenen Schlüssel ändern sich nicht. Jeder bleibt in dem Netzwerk, für das er erstellt wurde.",
+      "corrupted": "Ihre gespeicherten Einstellungen konnten nicht gelesen werden, daher wurde das Netzwerk auf Testnet zurückgesetzt. Wählen Sie unten ein Netzwerk, um eine neue Einstellung zu speichern.",
+      "confirmTitle": "Zu Mainnet wechseln?",
+      "confirmReal": "Mainnet ist echtes Bitcoin. Mit Signaturen von hier lassen sich echte Guthaben bewegen, und eine gesendete Transaktion können Sie nicht zurückholen.",
+      "confirmKeystore": "Ihre Schlüssel liegen in einem Software-Keystore auf diesem Gerät, geschützt durch Ihre Passphrase, nicht auf dedizierter Signier-Hardware. Wer sowohl an die Datei als auch an die Passphrase käme, hätte die hier gespeicherten Schlüssel. In einem Multisig-Tresor reicht das allein nicht zum Ausgeben: Man bräuchte genug Schlüssel, um die Signaturschwelle des Tresors zu erreichen.",
+      "confirmStamp": "Sie können jederzeit zurück ins Testnet wechseln. Fest steht nur eines: Ein Schlüssel, den Sie im Mainnet erstellen, bleibt dauerhaft ein Mainnet-Schlüssel, auch wenn Sie die App später wieder umstellen. Ihre vorhandenen Schlüssel bleiben unverändert.",
+      "confirmAction": "Zu Mainnet wechseln"
+    },
+    "appearance": {
+      "label": "Erscheinungsbild",
+      "hint": "Design für dieses Gerät. „System“ folgt Ihrer Betriebssystemeinstellung.",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "autoLock": {
+      "label": "Auto-Sperre",
+      "hint": "Sperrt die App nach einer Zeit der Inaktivität. Empfohlen für ein Gerät mit Schlüsseln.",
+      "min1": "1 Min",
+      "min5": "5 Min",
+      "min15": "15 Min",
+      "min30": "30 Min",
+      "never": "Nie",
+      "offWarning": "Die Auto-Sperre ist deaktiviert. Die App bleibt entsperrt, bis Sie sie manuell sperren oder beenden."
+    },
+    "language": {
+      "label": "Sprache",
+      "hint": "Oberflächensprache für dieses Gerät."
+    },
+    "storage": {
+      "label": "Speicher",
+      "hint": "Wo dieses Gerät seinen verschlüsselten Keystore aufbewahrt. Eine portable Version speichert ihn direkt neben der App, sodass Ihre Schlüssel mit ihr mitwandern (z. B. auf einem USB-Stick).",
+      "unavailablePrefix": "Der Speicherort ist nur in der Desktop-App verfügbar (führen Sie",
+      "unavailableSuffix": " aus).",
+      "checking": "Wird geprüft…",
+      "portable": "Portabel",
+      "default": "Standard (pro Benutzer)",
+      "portableNote": "Schlüssel werden neben der App gespeichert.",
+      "defaultNote": "Schlüssel werden in Ihrem Betriebssystemprofil gespeichert.",
+      "portableWarningPrefix": "Die Schlüssel liegen in diesem Ordner. Ihn zu löschen (oder das Laufwerk zu verlieren) löscht diese Keystore-Kopie. Bewahren Sie daher",
+      "portableWarningStrong": "eine Sicherungsdatei oder die 24 Wörter jedes Schlüssels",
+      "portableWarningSuffix": "an einem anderen Ort auf."
+    },
+    "version": {
+      "publisher": "Mit ❤️ erstellt von SignBit",
+      "domain": "signbit.io"
+    },
+    "backup": {
+      "label": "Sicherung",
+      "hint": "Speichern Sie Ihren gesamten Signierer (Schlüssel, Tresor-Deskriptoren und Einstellungen) als eine verschlüsselte Datei, die Sie auf einem anderen Gerät wiederherstellen können.",
+      "action": "Sicherung exportieren",
+      "warning": "Die Datei wird mit Ihrer Passphrase verschlüsselt. Wer sowohl die Datei als auch Ihre Passphrase erlangt, erhält Ihre Schlüssel. Bewahren Sie sie an einem vertrauenswürdigen Ort auf und verwenden Sie eine starke Passphrase.",
+      "noKeys": "Fügen Sie einen Schlüssel hinzu, bevor Sie eine Sicherung erstellen.",
+      "modalTitle": "Sicherung exportieren",
+      "modalBody": "Dies speichert eine verschlüsselte Kopie Ihrer Schlüssel, der gespeicherten Tresor-Deskriptoren und Ihrer Einstellungen. Stellen Sie sie auf jedem Gerät (Windows, macOS, Linux, Android oder iPhone) über den Wiederherstellungsbildschirm wieder her.",
+      "filenameLabel": "Dateiname",
+      "filenameHint": "Ändern Sie den mittleren Teil nach Belieben, und Leerzeichen werden zu Bindestrichen. Anfang und .sbk bleiben gleich, sodass eine Suche nach .sbk auf Ihrem Gerät Ihre Sicherungen immer findet, und wenn Sie das Datum behalten, überschreibt keine Sicherung eine andere.",
+      "passphraseLabel": "Ihre Entsperr-Passphrase",
+      "passphraseHint": "Die Passphrase, mit der Sie Fountain entsperren, keine neue. Sie verschlüsselt auch diese Sicherung.",
+      "confirm": "Sicherung speichern",
+      "saving": "Wird gespeichert…",
+      "wrongPassphrase": "Das ist nicht die Passphrase, mit der sich dieses Fountain entsperren lässt.",
+      "saved": "Sicherung gespeichert. {{count}} Schlüssel enthalten.",
+      "importAction": "Sicherung importieren",
+      "compareAction": "Sicherung vergleichen",
+      "transferHint": "Importieren ersetzt alles auf diesem Gerät durch eine Sicherungsdatei. Vergleichen zeigt nur die Unterschiede und ändert nichts.",
+      "tooLargeToRestore": "Diese Sicherung wäre {{mb}} MB groß, zu groß, um später wiederhergestellt zu werden, daher wurde sie nicht gespeichert. Entfernen Sie nicht mehr benötigte Tresore oder Schlüssel und versuchen Sie es erneut.",
+      "largeFileNote": "Diese Sicherung ist {{mb}} MB groß, ungewöhnlich groß, aber noch wiederherstellbar. Erwägen Sie, nicht mehr benötigte gespeicherte Tresore zu entfernen.",
+      "keyCount": "Schlüssel:",
+      "vaultCount": "Gespeicherte Tresore:",
+      "passphraseConfirmLabel": "Noch einmal eingeben",
+      "passphraseMismatch": "Die beiden Passphrasen stimmen nicht überein."
+    },
+    "changePass": {
+      "label": "Passphrase",
+      "hint": "Ändern Sie die Passphrase, die diese App entsperrt. Ihre Schlüssel sind nicht betroffen.",
+      "action": "Passphrase ändern",
+      "modalTitle": "Passphrase ändern",
+      "modalBody": "Ihre Schlüssel bleiben unverändert. Nur die Passphrase, die sie entsperrt, ändert sich.",
+      "backupWarning": "Bereits exportierte Sicherungsdateien benötigen weiterhin die ALTE Passphrase. Nur dieses Gerät ändert sich. Danach wird Ihnen eine frische Sicherung angeboten.",
+      "currentLabel": "Aktuelle Passphrase",
+      "newLabel": "Neue Passphrase",
+      "confirmLabel": "Neue Passphrase bestätigen",
+      "mismatch": "Die beiden Passphrasen stimmen nicht überein.",
+      "sameAsCurrent": "Das ist Ihre aktuelle Passphrase.",
+      "confirmAction": "Passphrase ändern",
+      "changing": "Wird geändert…",
+      "wrongCurrent": "Das ist nicht Ihre aktuelle Passphrase.",
+      "changed": "Passphrase geändert. Dieses Gerät wird jetzt mit der neuen entsperrt.",
+      "exportTitle": "Frische Sicherung speichern",
+      "exportBody": "Ihre vorhandenen Sicherungsdateien öffnen sich weiterhin mit der alten Passphrase. Speichern Sie jetzt eine neue Sicherung, damit Ihre Wiederherstellungsdatei und dieses Gerät dieselbe verwenden.",
+      "exportAction": "Sicherung jetzt speichern",
+      "exportLater": "Jetzt nicht",
+      "exportSaved": "Neue Sicherung gespeichert. Ihre älteren Sicherungsdateien öffnen sich weiterhin mit der vorherigen Passphrase.",
+      "exportSkipped": "Es wurde keine neue Sicherung gespeichert. Ihre vorhandenen Sicherungsdateien öffnen sich weiterhin mit Ihrer vorherigen Passphrase."
+    },
+    "offlineOk": "Offline bestätigt. Dieses Gerät hat keine Netzwerkverbindung und ist vollständig air-gapped.",
+    "motion": {
+      "label": "Animationen",
+      "hint": "Bildschirme und Dialoge blenden sanft ein. Schalten Sie sie aus, und jede Änderung erscheint sofort.",
+      "on": "An",
+      "off": "Aus"
+    }
+  },
+  "help": {
+    "title": "Hilfe",
+    "subtitle": "Wie diese App funktioniert, vollständig. Mitgeliefert und durchsuchbar, ohne Netzwerk lesbar.",
+    "searchPlaceholder": "Hilfethemen durchsuchen…",
+    "searchNoResults": "Keine Themen passen zu „{{query}}“.",
+    "searchResultsCount": "{{count}} Thema gefunden",
+    "crossRefLabel": "Siehe auch:",
+    "guideAction": "Anleitung zur Schlüsseleinrichtung öffnen",
+    "backToTopics": "Zurück zu den Themen",
+    "topics": {
+      "gettingStarted": {
+        "title": "Erste Schritte"
+      },
+      "deviceSecurity": {
+        "title": "Ihre Passphrase & Gerätesicherheit"
+      },
+      "keys": {
+        "title": "Schlüssel"
+      },
+      "vaults": {
+        "title": "Tresore & Multisig"
+      },
+      "signing": {
+        "title": "Signieren & Freigaben"
+      },
+      "trust": {
+        "title": "Vertrauen & Funktionsweise"
+      },
+      "recovery": {
+        "title": "Offline-Wiederherstellung"
+      },
+      "otherWallets": {
+        "title": "Andere Wallets"
+      },
+      "troubleshooting": {
+        "title": "Fehlerbehebung"
+      }
+    },
+    "gettingStarted": {
+      "whatIsThis": {
+        "title": "Was ist Fountain?",
+        "body": "Fountain ist diese App, die Sie gerade lesen. Sie ist ein Offline-Signierer. Sie verwahrt Ihren Schlüssel oder Ihre Schlüssel für einen Bitcoin-Tresor, hält sie auf diesem Gerät verschlüsselt und erzeugt Ihre Signatur, wenn eine gebraucht wird.\n\nEin Tresor ist ein Konto, das durch mehrere unabhängige Schlüssel gesichert ist und bei dem kein einzelner Schlüsselinhaber allein Geld bewegen kann. Fountain kümmert sich um Ihren Teil davon.\n\nSie funktioniert eigenständig. Sie können Schlüssel erstellen, einen Tresor bauen, seine Adressen prüfen und signieren, alles hier, ohne Konto und ohne Verbindung. Was eine Signatur von Ihnen verlangt, erreicht diese App nur als Text, Datei oder QR-Code, von Hand herübergetragen."
+      },
+      "airGap": {
+        "title": "Die Air-Gap-Philosophie",
+        "body": "Diese App stellt nie eine Netzwerkverbindung her, zu niemandem. Ihre privaten Schlüssel, die 24-Wort-Phrasen hinter jedem Schlüssel, werden hier erzeugt, hier verschlüsselt und verlassen dieses Gerät nie.\n\nNur drei Arten von Dingen verlassen es. Ein öffentlicher Schlüssel und sein Fingerabdruck, die zum Teilen gedacht sind und kein Geld bewegen können. Eine signierte Transaktion oder Nachricht, die Ihre Signatur trägt, aber nie Ihren Schlüssel. Und die Sicherungsdatei, die Sie exportieren, verschlüsselt mit Ihrer Passphrase.\n\nAlles wird von Hand herübergetragen, als Text, Datei oder QR-Code. Wie sich diese Wege unterscheiden, steht unter Signieren & Freigaben in Daten bewegen.\n\nWas Sie wirklich schützt, ist nicht der Weg, auf dem Sie es tragen. Es ist, dass Ihr Schlüssel auf diesem Gerät bleibt und dass Sie genau lesen können, was Sie signieren, bevor Sie es signieren."
+      },
+      "publicVsPrivate": {
+        "title": "Öffentlicher vs. privater Schlüssel, einfach erklärt",
+        "body": "Ein öffentlicher Schlüssel, ein tpub im Testnet oder ein xpub im Mainnet, ist wie ein Adressbucheintrag. Sie können ihn gefahrlos an die Person geben, die den Tresor zusammenstellt, damit der Tresor gebaut werden kann. Allein kann er nichts ausgeben und nichts signieren.\n\nEin privater Schlüssel, Ihre 24-Wort-Phrase, ist der eigentliche Schlüssel. Geben Sie ihn nur im Import-Bildschirm von Fountain ein. Senden Sie ihn niemandem, fotografieren Sie ihn nicht und speichern Sie ihn nie im Klartext außerhalb des verschlüsselten Keystores dieser App. Wer ihn hat, kann alles ausgeben, was er kontrolliert."
+      },
+      "testnetOnly": {
+        "title": "Mainnet oder Testnet",
+        "body": "Mainnet ist echtes Bitcoin, und dort startet eine frische Installation. Testnet-Münzen sind wertlos und dienen zum Üben, also ist das Testnet der sichere Ort für eine Probe, bevor echtes Geld im Spiel ist. Diese App signiert auf beiden. Wählen Sie das Netzwerk in den Einstellungen.\n\nDas Netzwerk gehört zu jedem Schlüssel, nicht zur App. Ein Schlüssel trägt den Stempel des Netzwerks, auf dem er erstellt wurde, und funktioniert immer dort. Das Umschalten der Einstellung entscheidet, womit neue Schlüssel gestempelt werden und was der Bildschirm zeigt. Einen Schlüssel, den Sie schon haben, ändert es nie."
+      },
+      "verifyingThisApp": {
+        "title": "Prüfen Sie, ob Sie die echte App haben",
+        "body": "Dieser App vertrauen Sie gleich Ihre Schlüssel an, also nehmen Sie sich eine Minute, um zu bestätigen, dass Ihre Kopie die von uns veröffentlichte ist. Tun Sie das, bevor Sie einen Schlüssel anlegen, solange es noch nichts zu verlieren gibt.\n\nZu jeder Version gehört eine SHA-256-Prüfsumme, veröffentlicht auf signbit.io. Berechnen Sie die Prüfsumme der heruntergeladenen Datei und vergleichen Sie sie Zeichen für Zeichen mit der veröffentlichten. Stimmen sie nicht überein, führen Sie die Datei nicht aus.\n\nAm wichtigsten ist das, wenn die App nicht direkt von uns kam. Eine Kopie, die auf einem USB-Stick weitergereicht oder von einem Kollegen geteilt wurde, war weder in unseren noch in Ihren Händen, und nur die Prüfsumme kann Ihnen sagen, dass sie unverändert angekommen ist.\n\nIn den Einstellungen steht, wer diese App veröffentlicht hat und wo sie zu finden ist. Verstehen Sie das als Hinweis darauf, wo die echten Prüfsummen liegen, nicht als Beweis, denn eine manipulierte Kopie würde genau dieselben Worte anzeigen. Nur der Vergleich beweist etwas.\n\nUnter Windows ist diese App ab Version 0.6.4 von SignBit Ltd signiert, daher nennt Windows beim Start SignBit Ltd als Herausgeber. Meldet Windows einen unbekannten Herausgeber, haben Sie eine ältere Version oder eine Kopie, die nicht von uns stammt. Prüfen Sie die Prüfsumme in jedem Fall."
+      },
+      "firstSteps": {
+        "title": "Fountain in sechs Schritten einrichten",
+        "body": "Wenn Fountain neu für Sie ist, schützt Sie diese Reihenfolge. Sie dauert etwa zehn Minuten.\n\n1. Prüfen Sie den Download. Vergleichen Sie die SHA-256-Prüfsumme der Datei mit der von uns veröffentlichten, bevor Sie irgendetwas anlegen.\n2. Wählen Sie eine Passphrase. Sie sperrt Ihre Schlüssel auf diesem Gerät, und niemand kann sie für Sie zurücksetzen. Wählen Sie eine lange und notieren Sie sie an einem sicheren Ort.\n3. Erstellen Sie einen Schlüssel. Geben Sie ihm einen Namen, den Sie wiedererkennen, etwa den des Geräts, auf dem er liegt.\n4. Sichern Sie den Schlüssel. Schreiben Sie die 24 Wörter auf Papier oder speichern Sie in den Einstellungen mit Sicherung exportieren eine verschlüsselte Sicherungsdatei. Beides bringt den Schlüssel zurück.\n5. Bewahren Sie diese Sicherung getrennt von diesem Gerät auf, damit ein einziger Verlust nicht beides mitnimmt.\n6. Geben Sie nur den öffentlichen Schlüssel weiter. Öffentlichen Schlüssel anzeigen liefert den erweiterten öffentlichen Schlüssel und den Fingerabdruck, die in einen Tresor gehören. Ihre 24 Wörter verlassen Fountain nie.\n\nSobald der Tresor existiert, prüfen Sie, dass er unter Tresore gespeichert ist. Ein hier gebauter Tresor wird automatisch gespeichert. Exportieren Sie danach eine neue Sicherung, damit die Datei auch den Tresor enthält, und prüfen Sie vor der ersten Einzahlung eine Empfangsadresse.\n\nSchritt-für-Schritt-Anleitungen mit Bildern finden Sie unter signbit.io/guides."
+      }
+    },
+    "deviceSecurity": {
+      "createUnlock": {
+        "title": "Keystore anlegen vs. entsperren",
+        "body": "Beim ersten Öffnen dieser App legen Sie eine Passphrase fest. Sie verschlüsselt alles, was die App speichert, und Ihre Schlüssel liegen sonst nirgends auf diesem Gerät. Ab dann entsperren Sie mit derselben Passphrase.\n\nNiemand kann sie für Sie zurücksetzen, auch wir nicht. Schreiben Sie sie auf und bewahren Sie sie getrennt von Ihrer Sicherungsdatei auf. Falls Sie sie vergessen, lesen Sie Wenn Sie Ihre Passphrase vergessen."
+      },
+      "restore": {
+        "title": "Einen Keystore wiederherstellen",
+        "body": "Findet diese App einen Keystore an einem anderen Ort als dem, den sie gerade nutzt, meist direkt nach dem Wechsel zu einer portablen oder USB-Kopie, bietet sie an, ihn wiederherzustellen. Nehmen Sie an und entsperren Sie mit der Passphrase dieses Keystores.\n\nSie können auch wiederherstellen, indem Sie selbst eine Datei wählen. Das kann eine exportierte Sicherungsdatei sein, die auf .sbk endet (bzw. .json bei Sicherungen vor Version 0.6.5), oder eine Keystore-Datei. So oder so wird die Passphrase an der Datei geprüft, bevor irgendetwas überschrieben wird. Eine falsche Passphrase oder die falsche Datei zerstört Ihre aktuellen Schlüssel also nie."
+      },
+      "threeBackupArtifacts": {
+        "title": "Ihre Seed-Wörter, der Keystore und die Sicherungsdatei",
+        "body": "Drei verschiedene Dinge heißen hier „meine Sicherung“, und sie stellen unterschiedlich viel Ihrer Einrichtung wieder her. Zu wissen, welches Sie haben, ist der Unterschied zwischen einem lästigen Nachmittag und verlorenen Coins.\n\nIhre 24 Wörter auf Papier sind der Schlüssel selbst. Sie stellen einen Schlüssel wieder her, in dieser App oder einer anderen kompatiblen Wallet, und brauchen keine Passphrase, weil an ihnen nichts verschlüsselt ist. Sie überstehen eine kaputte Festplatte, ein verlorenes Handy und eine vergessene Passphrase.\n\nDer Keystore ist die Arbeitsdatei, in der diese App Ihre Schlüssel auf diesem Gerät aufbewahrt. Er enthält alle Schlüssel hier und öffnet sich mit der Passphrase, mit der Sie heute entsperren. Er reist mit, wenn Sie den App-Ordner kopieren, weiß aber nichts über Ihre Tresore.\n\nDie Sicherungsdatei, die Sie in den Einstellungen exportieren, ist das vollständigste Bild. Sie enthält Ihre Schlüssel, die gespeicherten Tresore, die vergebenen Mitunterzeichner-Namen und Ihre Einstellungen. Nutzen Sie sie für den Umzug auf ein neues Gerät oder ein anderes System. Sie öffnet sich mit der Passphrase, die beim Speichern galt, und das ist nicht immer die von heute.\n\nDrei Dinge übersieht man leicht.\n\nIst Ihre Passphrase verloren, sind beide Dateien mit ihr verloren. Sie sind verschlüsselt, und niemand kann sie für Sie öffnen. Nur die Wörter auf Papier holen Sie da heraus.\n\nNur die exportierte Sicherung kennt Ihre Tresore. Stellen Sie einen bloßen Keystore wieder her, kommen Ihre Schlüssel zurück, Ihre gespeicherten Tresore aber nicht. Der Signieren-Bildschirm kann Wechselgeld dann nicht von einem echten Empfänger unterscheiden, bis Sie sie erneut speichern.\n\nEine exportierte Sicherung enthält, was am Tag des Speicherns existierte. Fügen Sie danach einen Schlüssel hinzu oder speichern einen Tresor, hat ihn keine ältere Datei. Exportieren Sie also erneut, wann immer Sie etwas hinzufügen, das Sie ungern verlieren würden."
+      },
+      "changingYourPassphrase": {
+        "title": "Ihre Passphrase zu ändern ändert Ihre alten Sicherungen nicht",
+        "body": "Das Ändern Ihrer Passphrase verschlüsselt die Schlüssel auf diesem Gerät neu, sonst nichts. Ihre Schlüssel selbst bleiben unangetastet. Jede bereits exportierte Sicherungsdatei behält die Passphrase, mit der sie geschrieben wurde.\n\nDas erwischt Menschen in beide Richtungen.\n\nÄndern Sie sie und suchen später eine alte Sicherung heraus, öffnet die neue Passphrase diese Datei nicht. Sie ist nicht beschädigt. Sie verlangt die Passphrase, die am Tag des Speicherns galt. Es lohnt sich also, auf der Datei zu vermerken, aus welcher Zeit sie stammt.\n\nHaben Sie sie geändert, weil Sie vermuteten, jemand kenne die alte, dann sehen Sie genau, was Sie behoben haben und was nicht. Dieses Gerät ist jetzt sicher. Jede Sicherungsdatei, die unter der alten Passphrase geschrieben wurde, liegt weiterhin dort draußen und öffnet sich weiterhin mit genau der Passphrase, die Ihnen Sorgen macht. Die Änderung hier widerruft dort draußen nichts.\n\nExportieren Sie deshalb direkt nach der Änderung eine frische Sicherung. Die App bietet Ihnen das im selben Moment an. Nehmen Sie es an. Kümmern Sie sich danach bewusst um die alten Dateien. Vernichten Sie sie, oder bewahren Sie sie im Wissen auf, dass sie nur so gut geschützt sind wie jene alte Passphrase."
+      },
+      "androidStorage": {
+        "title": "Auf einem Telefon ist Ihre Passphrase der gesamte Schutz",
+        "body": "Wenn Sie dies auf einem Smartphone nutzen, sollten Sie eines wissen, denn es funktioniert anders, als Sie vernünftigerweise erwarten würden.\n\nDie meisten Telefon-Apps, die etwas Geheimes halten, stützen sich auf das Telefon selbst. Sie nutzen Fingerabdruck oder Gesicht zum Entsperren und eigens verbaute Hardware zum Schutz von Schlüsseln. Diese App tut das noch nicht. Ihre Schlüssel sind mit der Passphrase verschlüsselt, die Sie hier eingegeben haben, und damit hat es sich. Die Bildschirmsperre Ihres Telefons schützt sie nicht.\n\nPraktisch trägt Ihre Passphrase das volle Gewicht ausgerechnet auf dem Gerät, das Sie am ehesten im Taxi liegen lassen. Wer Ihr Telefon nimmt und an der Bildschirmsperre vorbeikommt, erreicht einen verschlüsselten Keystore, und das Einzige zwischen dieser Person und Ihren Schlüsseln ist, wie lang und ungewöhnlich diese Passphrase ist. Eine kurze, gewählt weil sie sich auf einer Telefontastatur schnell tippen ließ, erfüllt eine Aufgabe, für die sie nie gedacht war.\n\nWählen Sie hier also eine lange, auch wenn das Tippen lästig ist. Stellen Sie eine kurze automatische Sperre ein, damit die App nicht entsperrt in Ihrer Tasche liegt. Bewahren Sie Ihre Seed-Wörter woanders auf als auf dem Telefon.\n\nHardwaregestützte Speicherung und biometrisches Entsperren sind in Arbeit. Bis dahin behandeln Sie die Passphrase als das einzige Schloss an der Tür."
+      },
+      "autoLock": {
+        "title": "Automatische Sperre bei Inaktivität",
+        "body": "Die App kann sich nach einer gewählten Zeit ohne Maus-, Tastatur- oder Touch-Aktivität selbst sperren. Das verkleinert das Zeitfenster, in dem ein kompromittiertes, unbeaufsichtigtes Gerät entsperrt bleibt. „Nie“ lässt sich einstellen, aber die App warnt Sie dann."
+      },
+      "storageLocation": {
+        "title": "Wo Ihre Schlüssel wirklich gespeichert sind",
+        "body": "Eine portable Kopie dieser App (etwa von einem USB-Stick gestartet) hält ihren verschlüsselten Keystore in einem Ordner direkt daneben, sodass Ihre Schlüssel mit der App reisen. Eine installierte Kopie weicht stattdessen auf den Benutzerprofil-Ordner Ihres Systems aus.\n\nIn beiden Fällen verlieren Sie mit diesem Speicher diese Kopie Ihrer Schlüssel, ob es der USB-Stick ist oder der Ordner selbst. Halten Sie eine Sicherung bereit, die nicht auf diesem Gerät liegt, etwa Ihre aufgeschriebenen Seed-Phrasen, einen verschlüsselten Export aus den Einstellungen, oder beides. Das erneute Importieren einer Seed-Phrase holt einen Schlüssel zurück, ganz gleich was mit der Keystore-Datei geschieht.\n\nHaben Sie diese App auf einem Computer auf beide Arten genutzt, besitzen Sie zwei getrennte Keystores, und das sind tatsächlich verschiedene Dateien. Sie können unterschiedliche Schlüssel enthalten und auf unterschiedlichen Passphrasen beruhen. Wenn diese App also anbietet, einen anderswo gefundenen Keystore wiederherzustellen, kann er durchaus Ihrer sein und die eingegebene Passphrase trotzdem verweigern. Meist heißt das, er wurde zu einer Zeit geschrieben, als Ihre Passphrase eine andere war, und nicht, dass die Datei beschädigt ist."
+      },
+      "forgotPassphrase": {
+        "title": "Wenn Sie Ihre Passphrase vergessen",
+        "body": "Die Passphrase lässt sich weder zurücksetzen noch umgehen. Ihre Schlüssel kommen stattdessen aus einer Sicherung zurück.\n\n1. Wenn Sie eine Sicherungsdatei haben, wählen Sie auf dem Sperrbildschirm Wiederherstellen und dann die Datei. Sie öffnet sich mit der Passphrase, die beim Speichern galt. Das kann eine ältere sein, an die Sie sich noch erinnern.\n2. Wenn Sie die 24 Wörter jedes Schlüssels haben, können Sie neu anfangen. Wählen Sie Passphrase vergessen? und dann Gerät zurücksetzen, legen Sie eine neue Passphrase fest und importieren Sie jeden Schlüssel aus seinen Wörtern.\n3. Das Zurücksetzen löscht auch die hier gespeicherten Tresore. Speichern Sie jeden erneut aus seinem Deskriptor.\n\nDas Zurücksetzen löscht alle Schlüssel auf diesem Gerät und lässt sich nicht rückgängig machen. Tun Sie es erst, wenn Sie sicher sind, dass jeder Schlüssel aufgeschrieben ist oder in einer Sicherungsdatei liegt, die Sie öffnen können."
+      },
+      "keepingItOffline": {
+        "title": "Dieses Gerät offline halten",
+        "body": "Fountain stellt von sich aus keine Netzwerkverbindung her. Das Gerät, auf dem es läuft, ist eine andere Sache, also halten Sie auch das offline. Je weniger Wege hinein, desto weniger Wege zu Ihren Schlüsseln.\n\n- Nutzen Sie für Fountain wenn möglich ein Ersatzhandy oder einen Ersatz-Laptop, auf dem wenig anderes installiert ist.\n- Schalten Sie WLAN, mobile Daten und Bluetooth aus oder aktivieren Sie den Flugmodus, und lassen Sie alles ausgeschaltet.\n- Bewegen Sie Transaktionen wo möglich per QR-Code. Kamera und Bildschirm tragen keine Dateien.\n- Wenn Sie einen USB-Stick nutzen, verwenden Sie einen nur dafür.\n- Für ein Update laden Sie die neue Version auf einem anderen Gerät herunter, prüfen ihre SHA-256-Prüfsumme mit der von uns veröffentlichten und tragen sie dann herüber.\n- Sperren Sie die App, wenn Sie weggehen, und halten Sie die Auto-Sperre kurz.\n\nAuch ein Offline-Gerät braucht Aufmerksamkeit. Wer es an sich nehmen, entsperren und Ihre Passphrase herausfinden kann, erreicht die darauf gespeicherten Schlüssel."
+      }
+    },
+    "keys": {
+      "whatIsAKey": {
+        "title": "Was ein Schlüssel ist",
+        "body": "Ein Schlüssel ist hier einer der Schlüssel, die ein Tresor braucht. Er besteht aus einer Seed-Phrase, 24 Wörter bei einem hier erstellten Schlüssel, und allem, was daraus abgeleitet wird. Ein Tresor wird aus mehreren unabhängigen Schlüsseln zusammen gebaut, Ihrem und denen anderer Schlüsselinhaber. Wie sie zusammenwirken, steht unter Tresore & Multisig."
+      },
+      "creating": {
+        "title": "Einen neuen Schlüssel erstellen",
+        "body": "Schlüssel erstellen erzeugt eine neue, zufällige 24-Wort-Phrase und zeigt sie Ihnen sofort. Sichern Sie sie, bevor Sie irgendetwas anderes tun, entweder indem Sie die 24 Wörter auf Papier schreiben oder indem Sie in den Einstellungen mit Sicherung exportieren eine verschlüsselte Sicherungsdatei speichern. Beides bringt den Schlüssel zurück.\n\nGeben Sie dem Schlüssel einen Namen, den Sie später wiedererkennen, etwa den des Geräts, auf dem er liegt. Diese App kann die Wörter erneut anzeigen, aber direkt nach dem Erstellen ist der ruhigste Moment, sie festzuhalten."
+      },
+      "importing": {
+        "title": "Einen vorhandenen Schlüssel importieren",
+        "body": "Haben Sie bereits eine 24-Wort-Seed-Phrase von woanders, fügen Sie sie ein oder tippen Sie sie mit einer Bezeichnung ein. Diese App prüft, ob es eine gültige Liste von Standardwörtern (BIP-39) ist, und weist Sie darauf hin, falls die Wörter in der falschen Reihenfolge zu stehen scheinen."
+      },
+      "seedBackup": {
+        "title": "Ihre Seed-Phrase sichern",
+        "body": "Ein Schlüssel kommt auf zwei Wegen zurück, aus seinen 24 Wörtern oder aus einer verschlüsselten Sicherungsdatei. Kein Konto, kein Zurücksetzen per E-Mail und kein Support-Ticket holt ihn zurück. Sind die Wörter und alle Sicherungsdateien verloren, ist der Schlüssel endgültig weg.\n\nBeides ist eine gute Sicherung. Wörter auf Papier überstehen eine kaputte Festplatte, ein verlorenes Handy und eine vergessene Passphrase. Eine Datei lässt sich leichter aktuell halten, denn ein Export umfasst alle Schlüssel und Tresore dieser App.\n\nDie Sicherungsdatei ist mit Ihrer Passphrase verschlüsselt. Sie können sie auf einem USB-Stick oder in einem Cloud-Speicher aufbewahren, dafür ist sie da, aber seien Sie sich im Klaren, was sie schützt. Wer die Datei kopiert, kann auf dem eigenen Rechner beliebig lange Passwörter ausprobieren, ohne dass ihn etwas bremst. Ihre Passphrase ist das Einzige, was im Weg steht. Wählen Sie also eine lange und bewahren Sie sie nie neben der Datei auf.\n\nWer alle 24 Wörter in der richtigen Reihenfolge liest, kann alles ausgeben, was dieser Schlüssel kontrolliert. Machen Sie keine Bildschirmfotos, speichern Sie sie nicht in einer Notiz-App und schicken Sie sie sich nicht per E-Mail. Behandeln Sie sie wie Bargeld.\n\nNotieren Sie auf jeder Papiersicherung auch den Fingerabdruck des Schlüssels, den Sie unter Öffentlichen Schlüssel anzeigen finden. Dann wissen Sie oder Ihre Familie, welcher Schlüssel welcher ist."
+      },
+      "revealSeedAgain": {
+        "title": "Ihre Seed-Phrase später erneut anzeigen",
+        "body": "Anders als eine Hardware-Wallet ist dies ein Software-Signierer, der Ihre Seed-Phrase weiterhin vorhalten muss, um damit signieren zu können. Dadurch ist „Seed anzeigen“ hier eine echte, wiederholbare Aktion und keine einmalige Zeremonie. Das ist nützlich, wenn Sie die Wörter erneut aufschreiben oder einen Schlüssel auf ein anderes Gerät bringen möchten.\n\nSie ist jedes Mal durch die erneute Eingabe Ihrer Passphrase geschützt, auch wenn die App bereits entsperrt ist, und erlaubt nur 3 Fehlversuche, bevor sich die gesamte App als Brute-Force-Schutz sperrt.\n\nZeigen Sie sie nur dort an, wo niemand auf den Bildschirm sehen kann, und bevorzugen Sie den verschlüsselten Export in den Einstellungen, wenn Sie eigentlich eine Sicherung möchten. Dieser bringt die Wörter gar nicht erst auf den Bildschirm."
+      },
+      "exportPublicKey": {
+        "title": "Ihren öffentlichen Schlüssel exportieren",
+        "body": "Der öffentliche Export eines Schlüssels ist sein erweiterter öffentlicher Schlüssel, ein tpub im Testnet oder ein xpub im Mainnet, und sein Master-Fingerabdruck. Das geben Sie weiter, damit der Schlüssel einem Tresor hinzugefügt wird, als kopierte Zeichenfolge oder als Schlüsseldatei, gespeichert über Öffentlichen Schlüssel anzeigen.\n\nSie können ihn gefahrlos kopieren, speichern oder vorlesen. Er kann kein Geld bewegen und lässt sich nicht in Ihre Seed-Phrase zurückverwandeln. Eine Adresse ist er auch nicht, bitten Sie also niemanden, Bitcoin an ihn zu senden.\n\nEine andere Wallet möchte denselben Schlüssel vielleicht in anderer Form. Siehe Ihr Schlüssel in Sparrow, Electrum oder BlueWallet."
+      },
+      "removing": {
+        "title": "Einen Schlüssel entfernen",
+        "body": "Einen Schlüssel zu entfernen löscht ihn nur von diesem Gerät. Tresor-Zugehörigkeit und Guthaben liegen in der Blockchain und im Deskriptor des Tresors, nicht in dieser App. Ein Schlüssel, den Sie wieder importieren können, ist kein verlorener Schlüssel.\n\nBevor Sie einen entfernen, machen Sie sich genau klar, wo er noch existiert. Aufgeschriebene Seed-Wörter holen ihn immer zurück. Ein verschlüsselter Export holt ihn nur dann zurück, wenn dieser Export nach dem Hinzufügen dieses Schlüssels erstellt wurde und Sie die Passphrase kennen, mit der er geschrieben wurde. Eine Sicherung vom letzten Monat enthält keinen Schlüssel, den Sie letzte Woche angelegt haben, und eine ältere Datei öffnet sich weiterhin mit der Passphrase, die beim Speichern galt.\n\nIst der Seed nirgends notiert und in keiner Sicherung enthalten, zerstört das Entfernen hier ihn endgültig."
+      },
+      "whereAreMyAddresses": {
+        "title": "Wo sind meine Adressen?",
+        "body": "Ein Schlüssel auf diesem Bildschirm hat keine eigene Adresse zum Empfangen. Adressen gehören zum Tresor, nicht zu einem einzelnen Schlüssel. Jede Tresor-Adresse wird aus allen Schlüsseln des Tresors zusammen berechnet, deshalb kann es sie erst geben, wenn der Tresor vollständig ist.\n\nSie brauchen also zuerst den Tresor. Entweder bauen Sie ihn hier unter Tresore aus dem öffentlichen Schlüssel jedes Schlüsselinhabers, oder Sie exportieren den öffentlichen Schlüssel dieses Schlüssels, lassen ihn in einen Tresor aufnehmen, den jemand anderes zusammenstellt, und speichern den fertigen Deskriptor hier.\n\nIst ein Tresor gespeichert, öffnen Sie ihn unter Tresore und leiten Sie eine beliebige Empfangsadresse ab, komplett offline. So prüfen Sie auch, ob eine Adresse, die Sie bekommen haben, wirklich zu Ihrem Tresor gehört. Leiten Sie hier dieselbe Nummer ab und vergleichen Sie."
+      },
+      "keepKeysApart": {
+        "title": "Jeden Schlüssel an einem anderen Ort aufbewahren",
+        "body": "Ein Tresor braucht mehrere Schlüssel, damit der Verlust oder Diebstahl eines einzigen Sie nicht alles kostet. Das funktioniert nur, wenn die Schlüssel wirklich getrennt sind.\n\n- Bewahren Sie nie zwei Schlüssel desselben Tresors in einem Fountain oder auf einem Handy oder Computer auf.\n- Bewahren Sie nie die 24 Wörter zweier Schlüssel oder zwei Sicherungsdateien am selben Ort auf.\n- Geben Sie jedem Schlüssel ein eigenes Gerät und eine eigene Sicherung, etwa Ihr Handy, einen Offline-Laptop und einen versiegelten Umschlag an einer anderen Adresse.\n\nHält ein Gerät zwei Schlüssel eines 2-von-3-Tresors, kostet sein Verlust zwei Schlüssel auf einmal, und wer es stiehlt und die Passphrase herausfindet, hat genug Schlüssel zum Ausgeben.\n\nEine Sicherungsdatei enthält alle Schlüssel des Fountain, der sie erstellt hat. Ein Grund mehr, pro Fountain nur einen Schlüssel eines Tresors zu halten."
+      }
+    },
+    "vaults": {
+      "whatIsAVault": {
+        "title": "Was ein Tresor ist",
+        "body": "Ein Tresor ist ein Bitcoin-Konto, das durch mehrere unabhängige Schlüssel gesichert ist, oft Multisig genannt. Er ist als „m von n“ eingerichtet. Es gibt n Schlüssel, und beliebige m davon können zusammen Geld bewegen. Bei einem 2-von-3-Tresor können zwei beliebige der drei Schlüssel signieren, ein einzelner nie.\n\nSie halten einen oder mehrere der Schlüssel. Die übrigen gehören anderen Schlüsselinhabern, etwa Familienmitgliedern, einem sicher verwahrten Wiederherstellungsschlüssel oder einem Mitsignierdienst. Keiner von ihnen kann allein ausgeben, und ein verlorener Schlüssel lässt sich verschmerzen, solange genug der anderen übrig sind."
+      },
+      "whatIsADescriptor": {
+        "title": "Was ein Tresor-Deskriptor eigentlich ist",
+        "body": "Ein Deskriptor ist der Bauplan des Tresors. Er ist eine Textzeile, die jeden öffentlichen Schlüssel des Tresors mit Fingerabdruck und Pfad auflistet und angibt, wie viele davon signieren müssen. Er endet mit # und einer 8-stelligen Prüfsumme, die sich ändert, sobald sich irgendetwas in der Zeile ändert.\n\nEr enthält keine privaten Schlüssel und kann daher nichts bewegen. Er ist zugleich alles, was jeder braucht, um jede Adresse des Tresors zu berechnen, ohne fremde Hilfe.\n\nDas wirkt in beide Richtungen. Wer den Deskriptor hat, sieht jede Adresse und den ganzen Kontostand, halten Sie ihn also privat wie einen Kontoauszug. Und ohne ihn bräuchten Sie den öffentlichen Schlüssel jedes anderen Schlüsselinhabers, um den Tresor wiederzufinden. Deshalb gehört eine Kopie zur Sicherung jedes Schlüssels."
+      },
+      "enrolling": {
+        "title": "Ihren Schlüssel in einen Tresor aufnehmen",
+        "body": "Ihren Schlüssel einem Tresor hinzuzufügen heißt, seinen öffentlichen Schlüssel zu übergeben, also den erweiterten öffentlichen Schlüssel und den Master-Fingerabdruck aus Öffentlichen Schlüssel anzeigen im Schlüssel-Bildschirm. Mehr ist die Übergabe nicht, ob als kopierte Zeichenfolge, als gespeicherte Schlüsseldatei oder vorgelesen. Ihre Seed-Phrase verlässt dieses Gerät nie, damit Ihr Schlüssel Teil eines Tresors wird."
+      },
+      "rolesVsQuorum": {
+        "title": "Was bei Rollen und Quorum wirklich zählt",
+        "body": "Jeder aufgenommene Schlüssel kann eine Rollenbezeichnung tragen (Ihrer, Wiederherstellung, Mitunterzeichner und so weiter), doch der Schwellenwert eines Tresors zählt eigenständige SCHLÜSSEL, keine Rollen. Beliebige m der n aufgenommenen Schlüssel können signieren, ganz gleich, wie sie benannt sind. Eine Bezeichnung hilft nur dabei, Schlüssel auseinanderzuhalten; sie gewährt oder entzieht niemals die Fähigkeit zu signieren."
+      },
+      "savingADescriptor": {
+        "title": "Einen bestehenden Tresor speichern",
+        "body": "Fügen Sie unter Tresore den Deskriptor des Tresors oder die ganze Sicherungsdatei von der Tresorseite ein, oder importieren Sie die Datei. Fountain liest ihn, bevor etwas gespeichert wird, und zeigt die Tresorgröße, jeden Schlüssel (Ihrer ist markiert), das Netzwerk, die Prüfsumme und die erste Empfangsadresse.\n\nVergleichen Sie diese erste Adresse mit demselben Tresor in Ihrer anderen Wallet. Stimmen sie überein, haben Sie den richtigen Tresor. Fountain lehnt Text mit einem veränderten Zeichen oder einem privaten Schlüssel ab und leitet den Wechselgeld-Deskriptor für Sie ab, wenn nur der Empfangs-Deskriptor vorhanden ist.\n\nMit dieser gespeicherten Kopie können Sie Adressen prüfen oder eine Ausgabe in einer anderen Wallet vorbereiten, nur mit dem Deskriptor und Ihren eigenen Schlüsseln, ohne jemanden fragen zu müssen. Sicherungsdatei speichern schreibt sie in eine Datei, die Sie bei Ihren Schlüsseln aufbewahren."
+      },
+      "buildingOffline": {
+        "title": "Einen Tresor offline erstellen",
+        "body": "Wenn alle im selben Raum sind, kann Fountain den Tresor ganz ohne Verbindung erstellen. Öffnen Sie Tresore, wählen Sie Einen offline erstellen und legen Sie zuerst die Tresorgröße fest. Die Größen sind 2 von 3, 3 von 5, 4 von 7, 5 von 9, 7 von 11 und 8 von 15, dieselben, die SignBit anbietet, und die Größe bestimmt, wie viele Schlüsselfelder Sie ausfüllen.\n\nFüllen Sie jedes Feld mit dem erweiterten öffentlichen Schlüssel und dem Fingerabdruck eines Schlüsselinhabers. Ein Schlüssel, der schon auf diesem Gerät ist, lässt sich aus der Liste wählen, und die Schlüssel der anderen können aus ihrer exportierten Schlüsseldatei kommen. Beides ist sicherer als Abtippen, denn ein einziges falsches Zeichen ergibt einen Tresor, der richtig aussieht, für den aber niemand signieren kann. Jedes Feld zeigt Ihnen sofort, ob ein Schlüssel falsch ist, doppelt vorkommt oder aus einem anderen Netzwerk stammt.\n\nWenn alle Felder bereit sind, geben Sie dem Tresor einen Namen und erstellen ihn. Fountain speichert ihn und zeigt groß eine Prüfsumme aus 8 Zeichen. Lesen Sie sie laut vor. Wer denselben Tresor aus denselben Schlüsseln erstellt, erhält dieselbe Prüfsumme. Speichern Sie danach die Sicherungsdatei und bewahren Sie bei jedem Schlüssel eine Kopie auf."
+      },
+      "derivingAnAddress": {
+        "title": "Eine Adresse zur Überprüfung ableiten",
+        "body": "Aus einem gespeicherten Tresor berechnet diese App die echte Empfangs- oder Wechselgeldadresse zu jeder Nummer, komplett offline. Nutzen Sie das, um eine Adresse zu prüfen, bevor jemand Geld an sie sendet.\n\n1. Suchen Sie die Adresse, die Sie prüfen möchten, und ihre Nummer. Die erste Empfangsadresse hat die Nummer 0.\n2. Öffnen Sie den Tresor unter Tresore und leiten Sie eine Adresse ab, mit Empfang ausgewählt und derselben Nummer.\n3. Vergleichen Sie beide Adressen vollständig, jeweils vier Zeichen auf einmal. Eine nachgemachte Adresse kann denselben Anfang und dasselbe Ende haben.\n\nStimmen sie nicht überein, verwenden Sie diese Adresse nicht. Prüfen Sie, ob die Nummer dieselbe ist, ob Sie Empfang und nicht Wechselgeld gewählt haben, ob es der richtige Tresor ist und ob das Netzwerk passt. Mainnet-Adressen beginnen mit bc1, Testnet-Adressen mit tb1."
+      }
+    },
+    "signing": {
+      "whatIsAPsbt": {
+        "title": "Was ein PSBT ist",
+        "body": "Ein PSBT, kurz für Partially Signed Bitcoin Transaction, also eine teilweise signierte Bitcoin-Transaktion, ist eine Zahlung in einem Standardformat, das Multisig-Wallets verstehen. Es legt genau fest, welche Coins ausgegeben werden, wohin das Geld geht und welche Gebühr anfällt, und sammelt unterwegs Signaturen.\n\nEine Wallet, die den Tresor sieht, erstellt es. Jeder Schlüsselinhaber fügt eine Signatur hinzu, in beliebiger Reihenfolge, und gibt es weiter. Sobald genug Signaturen für die Schwelle des Tresors vorliegen, kann die Wallet, die es erstellt hat, es ins Bitcoin-Netzwerk senden.\n\nFountain liest und schreibt PSBTs als Base64-Text, die Form, die mit cHNidP8 beginnt."
+      },
+      "signingATransaction": {
+        "title": "Eine Transaktion signieren",
+        "body": "1. Öffnen Sie Signieren und lassen Sie Zahlung (PSBT) ausgewählt.\n2. Holen Sie die Transaktion herein. Fügen Sie sie ein, wählen Sie Datei importieren oder QR scannen.\n3. Wählen Sie unter Signaturschlüssel den Schlüssel, der zu diesem Tresor gehört.\n4. Lesen Sie, was die Transaktion bewirkt. Siehe Vor dem Signieren prüfen.\n5. Wählen Sie Transaktion signieren.\n6. Geben Sie das signierte Ergebnis auf dem Weg zurück, der Ihnen passt, mit Kopieren, Datei exportieren oder QR anzeigen.\n\nIhre Seed-Wörter bleiben in Fountain. Nur die Signatur verlässt es. Braucht der Tresor weitere Signaturen, signieren die anderen Schlüsselinhaber dieselbe Transaktion ebenfalls, vor oder nach Ihnen."
+      },
+      "verifyingBeforeYouSign": {
+        "title": "Vor dem Signieren prüfen",
+        "body": "Direkt über Transaktion signieren zeigt Fountain, was die Transaktion bewirkt, berechnet aus ihren eigenen Bytes und nie aus einer Beschriftung, die sie mitbringt.\n\n- Empfänger ist eine Adresse, die bezahlt wird, und der Betrag, den sie erhält. Vergleichen Sie die Adresse mit der, die Ihnen die Person gegeben hat, die Sie bezahlen, in ihrer eigenen Nachricht oder Rechnung. Prüfen Sie wenn möglich jedes Zeichen.\n- Wechselgeld ist Geld, das in Ihren Tresor zurückfließt. Es wird nur so bezeichnet, wenn der Tresor auf diesem Gerät gespeichert ist. Sonst erscheinen die Ausgaben als Unbekannt, statt geraten zu werden.\n- Netzwerkgebühr ist, was die Miner bekommen. Fountain warnt Sie, wenn die Gebühr einen sehr großen Teil des Betrags ausmacht.\n\nWeicht irgendetwas von dem ab, was Sie wollten, signieren Sie nicht. Eine gesendete Zahlung lässt sich nicht zurückholen.\n\nFountain weigert sich außerdem, etwas zu signieren, das es nicht vollständig lesen kann. Was Sie sehen, ist also, was Sie signieren."
+      },
+      "policyApproval": {
+        "title": "Eine Richtlinienänderungs-Freigabe signieren",
+        "body": "Eine andere Aktion als das Signieren einer Transaktion. Manche Tresore tragen Ausgaberegeln, etwa ein Tageslimit, einen Höchstbetrag pro Transaktion, eine Liste freigegebener Empfänger, eine Verzögerung, bevor eine Auszahlung durchgeht. Diese Regeln kommen zur Multisig-Anforderung hinzu; sie ersetzen niemals die Notwendigkeit ausreichend vieler Signaturen von Schlüsselinhabern.\n\nWird eine solche Regel gelockert, braucht es den Nachweis, dass ein echter Schlüsselinhaber zugestimmt hat, nicht nur derjenige, der darum bittet. Dieser Nachweis ist eine Signatur über genau die vorgeschlagene Änderung, hier mit demselben Kontoschlüssel erstellt, nur über eine andere Art von Nachricht.\n\nLesen Sie die Nachricht, bevor Sie sie signieren. Die Signatur bindet sich an genau diese Worte. Was auf dem Bildschirm steht, ist das, dem Sie zustimmen, und das Lockern einer Regel ist die Richtung, die Sie tatsächlich Sicherheit kostet, weshalb dafür Ihr Schlüssel nötig ist."
+      },
+      "transports": {
+        "title": "Daten bewegen per Kopieren, Datei oder QR",
+        "body": "Es gibt drei Wege, eine Transaktion oder Signatur herein- und hinauszubringen, und alle drei tragen genau denselben Text.\n\n- Kopieren und Einfügen, wenn Fountain auf demselben Gerät läuft wie die andere App.\n- Eine Datei, auf einem USB-Stick oder einer Speicherkarte.\n- Ein QR-Code, auf einem Bildschirm angezeigt und mit der Kamera des anderen Geräts gescannt.\n\nKeiner davon ist sicherer als die anderen. Was Sie schützt, ist, dass Sie lesen, was Sie signieren, bevor Sie es signieren, egal auf welchem Weg es kam.\n\nDie QR-Codes von Fountain nutzen ein eigenes Format, das Fountain und SignBit lesen. Andere Wallets nutzen andere QR-Formate, verwenden Sie mit ihnen also eine Datei oder Kopieren und Einfügen."
+      },
+      "qrFrameWontScan": {
+        "title": "Wenn ein QR-Bild sich nicht scannen lässt",
+        "body": "Nichts ist kaputt, und die bereits erfassten Bilder bleiben erhalten. Eine Transaktion ist oft zu groß für einen einzigen QR-Code, also wird sie in mehreren übertragen, und bei einem davon hängen zu bleiben ist normal.\n\nDie Bilder lassen sich in beliebiger Reihenfolge erfassen, und ein schon erfasstes erneut zu scannen schadet nicht. Der Scanner hakt jedes Bild ab und sagt Ihnen, welche Nummern noch fehlen. Gehen Sie auf dem anderen Bildschirm zu diesem Bild und scannen Sie nur dieses.\n\nWenn sich ein Bild hartnäckig weigert, liegt es fast immer an etwas Physischem. Vergrößern Sie den Code auf dem Bildschirm, der ihn zeigt, das hilft am meisten. Halten Sie dann die Kamera ruhig, lassen Sie ihr einen Moment zum Scharfstellen und sorgen Sie für Licht ohne Blendung. Das Objektiv abzuwischen hilft öfter, als man denkt.\n\nWenn die Kamera einen Code sieht und nichts passiert, stammt er wahrscheinlich aus einer anderen App. Fountain liest nur seine eigenen Codes und die von SignBit, nehmen Sie also stattdessen eine Datei oder Kopieren und Einfügen.\n\nWenn Sie schon eine Weile dabei sind, brechen Sie ab und starten Sie die Übertragung neu. Sie verlieren nur die Zeit."
+      }
+    },
+    "trust": {
+      "noSingleParty": {
+        "title": "Keine einzelne Partei kann allein Geld bewegen",
+        "body": "Das ist das Kernversprechen eines Multisig-Tresors. Zum Ausgeben braucht es Signaturen mehrerer unabhängiger Schlüssel, also kann kein einzelner Schlüsselinhaber allein Geld bewegen. Weder Sie allein noch ein einzelner Dienst. Es braucht jedes Mal genug Schlüssel."
+      },
+      "neverConnects": {
+        "title": "Warum diese App sich nie mit dem Internet verbindet",
+        "body": "Diese App ist ohne jeglichen Netzwerkcode für alles gebaut, was mit Ihren Schlüsseln zu tun hat. Es gibt keinen Server, den sie anrufen könnte, selbst wenn sie wollte. Das schützt die Schlüssel selbst, sowohl im Ruhezustand als auch bei Gebrauch, schützt aber kein Gerät, das bereits kompromittiert ist, während es entsperrt ist. Solide Gerätesicherheit (Passphrase, automatische Sperre, sorgfältiger physischer Umgang) bleibt weiterhin wichtig."
+      }
+    },
+    "searchResultsCountPlural": "{{count}} Themen gefunden",
+    "recovery": {
+      "cantReachUs": {
+        "title": "Was, wenn Sie uns nicht erreichen?",
+        "body": "Ihr Tresor ist Standard-Bitcoin-Multisig. Wenn Sie uns nicht erreichen, lässt sich Ihr Bitcoin trotzdem bewegen, ohne Konto und ohne unsere Erlaubnis. Sie brauchen zwei Dinge.\n\n- Genug Schlüssel, um die Schwelle des Tresors zu erreichen, ohne einen Schlüssel, den wir halten. Bei einem 2-von-3-Tresor, in dem wir einen Schlüssel halten, sind das Ihre beiden anderen. Bei 3 von 5 drei beliebige, die nicht unsere sind.\n- Den Deskriptor des Tresors, aus Ihrer Tresor-Sicherungsdatei oder in Fountain unter Tresore gespeichert. Er sagt einer Wallet, aus welchen Schlüsseln der Tresor besteht.\n\nIhre Schlüssel können in Fountain bleiben, das genauso signiert wie jetzt. Eine andere Wallet wie Sparrow erstellt die Zahlung aus dem Deskriptor und sendet sie, und Fountain signiert sie offline. Siehe Mit Sparrow und Fountain ausgeben.\n\nHalten Sie weniger Schlüssel als die Schwelle, ist unsere Signatur weiterhin nötig. Deshalb zählen Ersatzschlüssel, und deshalb lohnt es sich, jetzt zu prüfen, dass Sie sie erreichen."
+      },
+      "prepareNow": {
+        "title": "Jetzt vorsorgen, in wenigen Minuten",
+        "body": "Die Wiederherstellung ist einfach, wenn Sie vorgesorgt haben. Diese Schritte dauern wenige Minuten.\n\n1. Stellen Sie sicher, dass der Tresor in Fountain unter Tresore gespeichert ist.\n2. Exportieren Sie in den Einstellungen eine neue Sicherung, damit die Datei den Tresor zusätzlich zu Ihren Schlüsseln enthält.\n3. Legen Sie zu jeder Schlüsselsicherung eine Kopie des Deskriptors, damit er da ist, egal welche Schlüssel Sie erreichen.\n4. Notieren Sie auf jeder Papiersicherung den Fingerabdruck des Schlüssels und halten Sie fest, wo jeder Schlüssel des Tresors liegt.\n5. Üben Sie einmal. Laden Sie den Deskriptor als reine Beobachtungs-Wallet in Sparrow und prüfen Sie, ob deren erste Empfangsadresse mit der übereinstimmt, die Fountain für Nummer 0 ableitet. Dafür braucht es keine Seed-Wörter.\n\nHalten Sie den Deskriptor privat wie einen Kontoauszug. Er kann nichts bewegen, zeigt aber jede Adresse und jeden Kontostand."
+      },
+      "withSparrow": {
+        "title": "Mit Sparrow und Fountain ausgeben",
+        "body": "Sparrow ist eine kostenlose Desktop-Wallet, die eine Zahlung aus Ihrem Tresor erstellen und senden kann, während Ihre Schlüssel in Fountain bleiben. Sparrow läuft auf einem Computer mit Internet, Fountain bleibt offline.\n\n1. Wählen Sie in Sparrow File, Import Wallet und dann Output Descriptor, und importieren Sie den Deskriptor des Tresors, entweder die Tresor-Sicherungsdatei oder eine Textdatei mit dem aus Fountain kopierten Deskriptor. Die Wallet kann den Tresor beobachten, hält aber keine Schlüssel.\n2. Prüfen Sie, ob ihre erste Empfangsadresse mit der übereinstimmt, die Fountain für Nummer 0 ableitet. Wenn nicht, hören Sie auf.\n3. Geben Sie unter Send das Ziel, den Betrag und die Gebühr ein, erstellen Sie dann die Transaktion und finalisieren Sie sie zum Signieren.\n4. Kopieren Sie sie als Base64, mit File, Save PSBT, To Clipboard, As Base64. Fügen Sie sie in eine einfache Textdatei ein und tragen Sie diese hinüber. Fountain liest Base64-Text, nicht die Binärdatei von Sparrow.\n5. Öffnen Sie in Fountain Signieren, importieren Sie die Datei, wählen Sie Ihren Schlüssel, prüfen Sie Empfänger, Betrag und Gebühr und wählen Sie Transaktion signieren.\n6. Wählen Sie Datei exportieren und tragen Sie die signierte Transaktion zurück. Wählen Sie in Sparrow File, Open Transaction und dann die Datei, oder fügen Sie ihren Text mit From Text ein.\n7. Wiederholen Sie die Schritte 5 und 6 mit einem weiteren Ihrer Schlüssel, bis genug Signaturen vorliegen, und wählen Sie dann in Sparrow Broadcast Transaction.\n\nNutzen Sie zwischen beiden eine Datei oder Kopieren und Einfügen. Sparrow und Fountain verwenden unterschiedliche QR-Formate."
+      },
+      "lostAKey": {
+        "title": "Wenn Sie einen Schlüssel verlieren",
+        "body": "Der Verlust eines Schlüssels kostet nicht den Tresor, solange genug andere Schlüssel übrig sind, um seine Schwelle zu erreichen. Aber der Tresor hat nun einen Ersatz weniger, also handeln Sie.\n\n1. Gibt es die 24 Wörter des Schlüssels oder eine Sicherungsdatei mit ihm noch, ist der Schlüssel nicht verloren. Importieren Sie die Wörter oder stellen Sie die Datei in Fountain auf einem vertrauenswürdigen Gerät wieder her.\n2. Ist der Schlüssel wirklich weg, bauen Sie einen neuen Tresor mit neuen Schlüsseln und senden Sie alles vom alten Tresor in den neuen, signiert mit genug der Schlüssel, die Sie noch haben.\n3. Glauben Sie, dass jemand anderes den Schlüssel hat, tun Sie dasselbe, und zwar zuerst. Bei einem 2-von-3-Tresor reichen ein gestohlener Schlüssel und ein weiterer zum Ausgeben.\n\nSichern Sie die neuen Schlüssel und speichern Sie den Deskriptor des neuen Tresors, bevor Sie Geld hineinbewegen."
+      },
+      "forYourFamily": {
+        "title": "Was Ihre Familie braucht",
+        "body": "Wenn Ihnen etwas zustößt, muss Ihre Familie wissen, dass der Tresor existiert, genug seiner Schlüssel erreichen und wissen, was als Nächstes zu tun ist. Fountain kann es ihr nicht sagen, ein wenig Vorbereitung aber schon.\n\n- Notieren Sie auf jeder Papiersicherung den Fingerabdruck des Schlüssels, damit sich jede Sicherung dem Tresor zuordnen lässt.\n- Bewahren Sie eine Kopie des Deskriptors bei Ihren wichtigen Unterlagen auf, privat wie einen Kontoauszug.\n- Sagen Sie mindestens einer Person, der Sie vertrauen, dass der Tresor existiert und wo die Sicherungen und der Deskriptor liegen.\n- Bewahren Sie die Sicherungen zweier Schlüssel nie am selben Ort auf. Wer beide findet, könnte ohne alle anderen ausgeben.\n\nMit genug Schlüsseln und dem Deskriptor kann jemand Fountain installieren, die Wörter jedes Schlüssels im Schlüssel-Bildschirm importieren und signieren, wie unter Mit Sparrow und Fountain ausgeben beschrieben. Eine Fountain-Sicherungsdatei funktioniert auch, aber nur mit der Passphrase, mit der sie gespeichert wurde. Diese Passphrase braucht man dann ebenfalls."
+      }
+    },
+    "otherWallets": {
+      "keyFormats": {
+        "title": "Ihr Schlüssel in Sparrow, Electrum oder BlueWallet",
+        "body": "Eine andere Wallet kann einen Fountain-Schlüssel nutzen, wenn sie vier Dinge kennt. Sie finden alle im Schlüssel-Bildschirm unter Öffentlichen Schlüssel anzeigen.\n\n- Den erweiterten öffentlichen Schlüssel. Fountain zeigt ihn im Mainnet als xpub und im Testnet als tpub. Unter Für andere Wallets finden Sie denselben Schlüssel als Zpub, im Testnet als Vpub, in der Form, die Electrum verlangt. Beide Formen sind derselbe Schlüssel, und Fountain akzeptiert beim Bauen eines Tresors beide.\n- Den Master-Fingerabdruck, 8 Zeichen, die den Seed des Schlüssels kennzeichnen.\n- Den Ableitungspfad, m/48'/0'/0'/2' im Mainnet und m/48'/1'/0'/2' im Testnet. Manche Wallets schreiben m/48h/0h/0h/2h, das ist derselbe Pfad.\n- Den Skripttyp, Native-SegWit-Multisig, auch P2WSH genannt.\n\nBerechnet eine andere Wallet für denselben Tresor andere Adressen, ist dort eines dieser vier Dinge anders eingestellt."
+      },
+      "watchOnly": {
+        "title": "Eine andere Wallet den Tresor beobachten lassen",
+        "body": "Eine andere Wallet kann den Kontostand des Tresors verfolgen und Zahlungen erstellen, ohne einen Schlüssel zu halten. Sie braucht nur den Deskriptor des Tresors, und Ihre Schlüssel bleiben in Fountain.\n\n- Sparrow liest den Deskriptor direkt. Wählen Sie File, Import Wallet, Output Descriptor.\n- BlueWallet kann ihn als Multisig-Tresor importieren. Wählen Sie Import wallet und fügen Sie den Deskriptor ein.\n- Electrum liest den Deskriptor nicht. Es baut die Wallet stattdessen aus jedem Schlüssel in Zpub-Form, was länger dauert, daher ist Sparrow die einfachere Wahl.\n\nPrüfen Sie dann, ob die erste Empfangsadresse der Wallet mit der übereinstimmt, die Fountain für Nummer 0 ableitet. Wenn ja, beobachtet sie den richtigen Tresor. Eine reine Beobachtungs-Wallet sieht jede Adresse und jeden Kontostand, kann aber nicht ausgeben und braucht daher weiterhin die Signaturen von Fountain."
+      },
+      "exchangingTransactions": {
+        "title": "Transaktionen zwischen Fountain und einer anderen Wallet austauschen",
+        "body": "Fountain liest und schreibt eine Transaktion als Base64-Text, die Form, die mit cHNidP8 beginnt. Die meisten Wallets können sie Ihnen in dieser Form geben.\n\n- Kopieren Sie die Transaktion aus der anderen Wallet als Base64 oder speichern Sie sie als Base64-Text statt als Binärdatei. In Sparrow ist das File, Save PSBT, To Clipboard, As Base64.\n- Für den Rückweg nutzen Sie in Fountain Kopieren oder Datei exportieren. Die Datei endet auf .psbt und enthält Base64-Text. Öffnet eine Wallet sie nicht, fügen Sie stattdessen den Text ein.\n\nQR-Codes sind die Ausnahme. Die Codes von Fountain nutzen ein eigenes Format, das Fountain und SignBit lesen, und Fountain liest die Codes anderer Wallets nicht. Nehmen Sie zwischen Fountain und einer anderen Wallet eine Datei oder Kopieren und Einfügen.\n\nDie Transaktion muss außerdem die vorherigen Transaktionen enthalten, aus denen ihre Coins stammen, damit Fountain die Beträge und die Gebühr nachweisen kann. Sparrow und Electrum fügen sie bei. Lehnt Fountain eine Transaktion ab, siehe Fountain signiert eine Transaktion nicht."
+      }
+    },
+    "troubleshooting": {
+      "keyDoesNotSign": {
+        "title": "Der Schlüssel signiert keinen Teil der Transaktion",
+        "body": "Fountain meldet „This key does not sign any part of this transaction“, wenn der unter Signaturschlüssel gewählte Schlüssel nicht zu den Schlüsseln gehört, mit denen die Transaktion ausgibt.\n\n- Probieren Sie nacheinander die anderen Schlüssel auf diesem Gerät. Der richtige ist der, der diesem Tresor hinzugefügt wurde.\n- Vergleichen Sie den Fingerabdruck des Schlüssels unter Öffentlichen Schlüssel anzeigen mit den Fingerabdrücken im Deskriptor des Tresors. Passt keiner, gehört dieser Schlüssel nicht zum Tresor.\n- Liegt der richtige Schlüssel auf einem anderen Gerät, signieren Sie dort.\n\nPasst der Fingerabdruck und Fountain meldet es trotzdem, hat die Wallet, die die Transaktion erstellt hat, vielleicht weggelassen, welcher Schlüssel welchen Teil signiert. Erstellen Sie sie neu in einer Wallet, die den vollständigen Deskriptor des Tresors hat."
+      },
+      "wrongNetwork": {
+        "title": "Die Transaktion gehört zu einem anderen Netzwerk",
+        "body": "Jeder Schlüssel trägt den Stempel des Netzwerks, auf dem er erstellt wurde, Mainnet oder Testnet, und signiert nur dort. Meldet Fountain „This PSBT is for mainnet“ und dann „but this key is a testnet key“ oder umgekehrt, gehört der gewählte Schlüssel zum anderen Netzwerk.\n\nWählen Sie einen Schlüssel, der auf demselben Netzwerk wie der Tresor erstellt wurde. Das Netzwerk in den Einstellungen umzuschalten hilft nicht, denn es ändert nie einen bestehenden Schlüssel. Ist der richtige Schlüssel nicht auf diesem Gerät, importieren Sie seine 24 Wörter, während Fountain auf das Netzwerk des Tresors eingestellt ist.\n\nDieselbe Regel gilt beim Bauen eines Tresors. Alle seine Schlüssel müssen auf einem Netzwerk sein, und Fountain lehnt eine Schlüsseldatei vom anderen ab."
+      },
+      "notAValidPsbt": {
+        "title": "Fountain kann die Transaktion nicht lesen",
+        "body": "Kann Fountain eine Transaktion gar nicht lesen, meldet es „Not a valid PSBT“. Die üblichen Ursachen sind einfach.\n\n- Der Text wurde beim Kopieren abgeschnitten. Kopieren Sie ihn erneut, vollständig.\n- Die Datei wurde binär gespeichert. Fountain liest Base64-Text, speichern oder kopieren Sie die Transaktion in der anderen Wallet also als Base64.\n- Es ist keine Transaktion. Eine zu signierende Nachricht gehört in den Tab Nachricht, und Fountain sagt Ihnen Bescheid, wenn es eine am falschen Ort sieht."
+      },
+      "refusedToSign": {
+        "title": "Fountain signiert eine Transaktion nicht",
+        "body": "Fountain weigert sich, etwas zu signieren, das es nicht vollständig lesen kann, und das mit Absicht. Kann es Ihnen nicht genau zeigen, was eine Transaktion bewirkt, können Sie sie nicht prüfen, also signiert es sie nicht. Das sind die üblichen Ursachen.\n\n- Der Transaktion fehlen die vorherigen Transaktionen, aus denen ihre Coins stammen, daher lassen sich Beträge und Gebühr nicht nachweisen. Erstellen Sie sie neu in einer Wallet, die sie beifügt, etwa Sparrow oder Electrum.\n- Zwei Teile der Transaktion widersprechen sich bei einem Betrag oder einem Skript. Signieren Sie sie nicht. Erstellen Sie eine neue.\n- Sie verlangt eine Signaturart, die Fountain nicht erzeugt, etwa Taproot. Fountain signiert nur Native-SegWit-Multisig-Tresore.\n\nWird auch eine frisch erstellte Transaktion abgelehnt, halten Sie inne und finden Sie den Grund heraus, bevor Sie sie mit etwas anderem signieren."
+      },
+      "keyFileRefused": {
+        "title": "Eine Schlüsseldatei wird abgelehnt",
+        "body": "Wenn Sie einem Tresor einen Schlüssel aus einer Datei hinzufügen, prüft Fountain die Datei zuerst und sagt Ihnen, warum es sie ablehnt.\n\n- Es ist keine Schlüsseldatei. Sie haben etwas anderes gewählt, etwa eine Sicherungsdatei oder eine Transaktion. Wählen Sie die signbit-key-Datei, gespeichert über Öffentlichen Schlüssel anzeigen.\n- Sie enthält privates Schlüsselmaterial, etwa Seed-Wörter. Fountain lehnt sie sofort ab. Löschen Sie diese Kopie und exportieren Sie den öffentlichen Schlüssel erneut.\n- Sie gehört zum anderen Netzwerk. Jeder Schlüssel eines Tresors muss auf dem Netzwerk des Tresors sein.\n- Sie ist beschädigt. Schlüssel oder Fingerabdruck darin stimmen nicht. Exportieren Sie sie erneut, statt die Datei zu bearbeiten.\n\nSchlüsseldateien aus Fountain enthalten nur öffentliche Schlüssel, Sie können sie also gefahrlos weitergeben. Eine Schlüsseldatei braucht nie Ihre 24 Wörter."
+      },
+      "checksumDiffers": {
+        "title": "Die Prüfsumme weicht zwischen Schlüsselinhabern ab",
+        "body": "Wenn ein Tresor gebaut wird, sollte jeder Schlüsselinhaber dieselbe 8-stellige Prüfsumme sehen. Weicht eine Kopie ab, sind die Tresore nicht dieselben. Senden Sie also an keinen der beiden Geld, bis sie übereinstimmen.\n\nFountain sortiert die Schlüssel selbst, die Reihenfolge der Eingabe spielt also keine Rolle, und es behandelt einen Zpub oder Vpub als denselben Schlüssel wie seinen xpub oder tpub. Eine andere Prüfsumme bedeutet, dass sich wirklich etwas unterscheidet.\n\n- Ein Schlüssel oder ein Fingerabdruck wurde anders eingegeben. Vergleichen Sie nebeneinander den Fingerabdruck jedes Schlüssels sowie Anfang und Ende jedes öffentlichen Schlüssels.\n- Die Tresorgröße unterscheidet sich, etwa 2 von 3 auf einem Gerät und 3 von 5 auf einem anderen.\n- Eine Kopie wurde im Testnet gebaut, eine andere im Mainnet.\n- Jemand hat einen anderen seiner Schlüssel verwendet als den gemeinten.\n\nKorrigieren Sie die abweichende Kopie, bauen Sie sie neu und vergleichen Sie noch einmal.\n\nEine andere Wallet schreibt denselben Tresor vielleicht etwas anders und zeigt eine andere Prüfsumme. Vergleichen Sie mit einer anderen Wallet stattdessen die erste Empfangsadresse."
+      },
+      "backupWontOpen": {
+        "title": "Eine Sicherungsdatei lässt sich nicht öffnen",
+        "body": "Wird eine Sicherungsdatei beim Wiederherstellen abgelehnt, liegt es meist an einem dieser Punkte.\n\n- Die Passphrase stammt aus einer anderen Zeit. Eine Sicherung öffnet sich mit der Passphrase, die beim Speichern galt. Haben Sie Ihre Passphrase seitdem geändert, versuchen Sie die ältere.\n- Es ist eine Datei mit einem öffentlichen Schlüssel. Eine signbit-key-Datei teilt nur einen Schlüssel und kann nichts wiederherstellen. Wählen Sie die Sicherungsdatei, die auf .sbk endet.\n- Sie stammt aus einer älteren Version. Sicherungen vor Version 0.6.5 enden auf .json und lassen sich genauso wiederherstellen.\n- Es ist gar keine SignBit-Datei, oder sie ist beschädigt. Versuchen Sie eine andere Kopie.\n\nEine falsche Passphrase ändert auf diesem Gerät nichts, Sie können es also gefahrlos erneut versuchen. Finden Sie die Datei nicht, suchen Sie auf Ihren Geräten und USB-Sticks nach .sbk, oder nach signbit- für ältere."
+      }
+    },
+    "backToResults": "Zurück zu den Ergebnissen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "inThisSection": "In diesem Abschnitt"
+  },
+  "backupTransfer": {
+    "back": "Zurück zu den Einstellungen",
+    "importTitle": "Sicherung importieren",
+    "importSubtitle": "Alles auf diesem Gerät durch den Inhalt einer Sicherungsdatei ersetzen.",
+    "compareTitle": "Sicherung vergleichen",
+    "compareSubtitle": "Sehen Sie, wie sich eine Sicherungsdatei von diesem Gerät unterscheidet. Es wird nichts geändert.",
+    "importWarning": "Der Import überschreibt dieses Gerät: Ihre Schlüssel, gespeicherten Tresore und Einstellungen werden durch die aus der Datei ersetzt. Sie sehen genau, was sich ändert, bevor irgendetwas passiert.",
+    "step1": "1. Wählen Sie eine Sicherungsdatei",
+    "step2": "2. Geben Sie die Passphrase dieser Datei ein",
+    "chooseFile": "Datei wählen…",
+    "passphraseHint": "Dies ist die Passphrase, mit der diese Datei gespeichert wurde, nicht unbedingt die, mit der Sie gerade die App entsperrt haben.",
+    "openFile": "Datei öffnen",
+    "opening": "Wird geöffnet…",
+    "errorTooLarge": "Diese Datei ist größer als {{mb}} MB und kann daher keine SignBit-Sicherung sein.",
+    "errorRead": "Diese Datei konnte nicht gelesen werden.",
+    "identical": "Diese Sicherung stimmt exakt mit diesem Gerät überein. Es gibt nichts zu ändern.",
+    "destructiveWarning": "{{count}} Schlüssel auf diesem Gerät sind nicht in dieser Sicherung enthalten. Der Import löscht sie dauerhaft. Wenn ihre 24 Wörter nicht anderswo notiert sind, können sie nicht wiederhergestellt werden.",
+    "statKeysRemoved": "Verlorene Schlüssel",
+    "statKeysAdded": "Hinzugefügte Schlüssel",
+    "statVaultsChanged": "Tresor-Änderungen",
+    "statSettings": "Einstellungsänderungen",
+    "sectionKeys": "Schlüssel",
+    "sectionVaults": "Gespeicherte Tresore",
+    "sectionSettings": "Einstellungen",
+    "noKeys": "Auf keiner Seite Schlüssel.",
+    "noVaults": "Auf keiner Seite gespeicherte Tresore.",
+    "labelChange": "Umbenannt: „{{from}}“ → „{{to}}“",
+    "unreadableKey": "Die Seed-Phrase dieses Eintrags konnte nicht gelesen werden.",
+    "keyWillBeLost": "Dieser Schlüssel wird dauerhaft gelöscht. Notieren Sie zuerst seine 24 Wörter, falls Sie ihn noch brauchen.",
+    "status": {
+      "import": {
+        "removed": "Wird gelöscht",
+        "added": "Wird hinzugefügt",
+        "changed": "Wird geändert",
+        "unchanged": "Unverändert"
+      },
+      "compare": {
+        "removed": "Nur auf diesem Gerät",
+        "added": "Nur in der Sicherung",
+        "changed": "Unterschiedlich",
+        "unchanged": "Gleich"
+      }
+    },
+    "changeDescriptor": {
+      "onlyDevice": "Nur dieses Gerät hat einen Change-Deskriptor für diesen Tresor.",
+      "onlyBackup": "Nur die Sicherung hat einen Change-Deskriptor für diesen Tresor.",
+      "differs": "Die beiden Change-Deskriptoren stimmen nicht überein."
+    },
+    "keyLabels": {
+      "onlyDevice": "Nur dieses Gerät hat Mitunterzeichner-Namen für diesen Tresor. Beim Wiederherstellen werden sie gelöscht.",
+      "onlyBackup": "Die Sicherung fügt Mitunterzeichner-Namen für diesen Tresor hinzu.",
+      "differs": "Die Mitunterzeichner-Namen unterscheiden sich. Beim Wiederherstellen werden die dieses Geräts durch die der Sicherung ersetzt."
+    },
+    "setting": {
+      "autoLockMinutes": "Automatische Sperre (Minuten)",
+      "theme": "Erscheinungsbild",
+      "locale": "Sprache"
+    },
+    "applyTitle": "Diese Sicherung anwenden",
+    "applyBody": "Dieses Gerät wird durch genau das ersetzt, was oben angezeigt wird.",
+    "passphraseChangeWarning": "Nach dem Import entsperren Sie diese App mit der Passphrase der Sicherungsdatei, nicht mit Ihrer aktuellen.",
+    "applyPassphraseLabel": "Passphrase der Sicherungsdatei erneut eingeben",
+    "typeToConfirmLabel": "Tippen Sie {{word}} zur Bestätigung",
+    "applyAction": "Dieses Gerät überschreiben",
+    "applying": "Wird importiert…",
+    "compareReadOnly": "Es wurde nichts geändert. Das Vergleichen liest die Datei nur.",
+    "compareAnother": "Andere Datei vergleichen",
+    "doneTitle": "Sicherung importiert",
+    "doneBody": "Dieses Gerät enthält jetzt {{count}} Schlüssel aus der Sicherung. Denken Sie daran, dass das Entsperren nun die Passphrase der Sicherungsdatei verwendet.",
+    "comparingWith": "Sicherungsdatei:",
+    "finalConfirmTitle": "Dieses Gerät überschreiben?",
+    "finalConfirmSeedWarning": "ALLE SEED-PHRASEN AUF DIESEM GERÄT WERDEN ERSETZT. Jeder Schlüssel, der nicht in dieser Sicherung enthalten und nicht anderswo notiert ist, ist dauerhaft verloren, und damit auch der Zugang zu allem Guthaben, das er schützt. Es gibt kein Rückgängig und keine Wiederherstellung.",
+    "finalConfirmKeysHeading": "{{count}} Schlüssel werden dauerhaft gelöscht:",
+    "finalConfirmBody": "Fahren Sie nur fort, wenn Sie die Passphrase dieser Sicherung gespeichert haben und die 24 Wörter von allem, was Sie noch brauchen. Ihre Schlüssel, gespeicherten Tresore und Einstellungen werden durch die der Datei ersetzt.",
+    "finalConfirmAction": "Ja, alles überschreiben",
+    "overLimitNote": "Diese Sicherung enthält mehr Schlüssel oder Tresore, als dieser Signierer normalerweise zulässt. Sie wird dennoch vollständig wiederhergestellt, ohne dass etwas verworfen wird.",
+    "comparePassphraseNote": "Geöffnet mit der Passphrase, die Sie gerade eingegeben haben. Dieser Vergleich betrachtet die Schlüssel in den Dateien, nicht deren Verschlüsselung. Zwei Dateien können also exakt dieselben Schlüssel unter verschiedenen Passphrasen enthalten.",
+    "identicalPassphraseNote": "Identischer Inhalt, aber nicht zwingend eine identische Passphrase. Falls Sie Ihre Passphrase geändert haben, seit eine dieser Dateien geschrieben wurde, öffnet sich die ältere nur mit der damals gültigen."
+  },
+  "reset": {
+    "title": "Dieses Gerät zurücksetzen",
+    "subtitle": "Diesen Signierer löschen und neu beginnen.",
+    "warning": "Dies löscht die auf diesem Gerät gespeicherten Schlüssel. Es kann nicht rückgängig gemacht und später auch nicht mit Ihrer Passphrase zurückgeholt werden. Da der Keystore verschlüsselt ist, kann diese App Ihnen nicht zeigen, welche Schlüssel er enthält. Nur Sie wissen, was darin ist.",
+    "tryRestoreTitle": "Haben Sie eine Sicherungsdatei?",
+    "tryRestoreBody": "Wenn Sie eine Sicherung exportiert haben, stellen Sie diese stattdessen wieder her. Sie benötigen die Passphrase, die galt, als diese Datei geschrieben wurde, möglicherweise nicht die, die Sie vergessen haben.",
+    "tryRestoreAction": "Stattdessen aus einer Sicherung wiederherstellen",
+    "typeToConfirm": "Tippen Sie {{word}}, um fortzufahren",
+    "action": "Dieses Gerät zurücksetzen",
+    "finalTitle": "Dieses Gerät löschen?",
+    "finalWarning": "Jede Seed-Phrase, die Sie nicht notiert haben, ist gleich verloren, und mit ihr das Guthaben, das sie kontrolliert.",
+    "finalBody": "Jeder Schlüssel auf diesem Gerät wird gelöscht, zusammen mit Ihren gespeicherten Tresor-Deskriptoren und Einstellungen. Ein Schlüssel lässt sich danach nur noch aus seiner eigenen 24-Wort-Seed-Phrase oder aus einer Sicherungsdatei wiederherstellen. Einen anderen Weg zurück gibt es nicht.",
+    "finalConfirm": "Alles löschen",
+    "resetting": "Wird gelöscht…",
+    "locationPortable": "Dies löscht den portablen Ordner neben der App:",
+    "locationAppData": "Dies löscht den App-Datenordner dieses Computers:",
+    "locationOtherNote": "Ein älterer Keystore im App-Datenordner dieses Computers bleibt unberührt. Falls einer existiert, wird er Ihnen danach möglicherweise angeboten. Es ist eine andere Datei und kann eine frühere Passphrase verwenden.",
+    "cooldownNote": "Nehmen Sie sich einen Moment. Diese Schaltfläche wird in Kürze freigegeben. Wenn Sie unsicher sind, brechen Sie jetzt ab.",
+    "finalConfirmWaiting": "Alles löschen ({{seconds}} s)"
+  }
+}

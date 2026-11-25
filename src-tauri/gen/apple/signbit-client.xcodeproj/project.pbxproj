@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28D76E69ADBBF6647D37619B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B036B0D96EEDEA4775B9FE /* Assets.xcassets */; };
+		405FE29CD4A19B0A72B9D33E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 557F79E946A8199C41981405 /* CoreGraphics.framework */; };
+		44CB644C81169D54EA025A15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B897D77BCFA3854D3C85CD9 /* LaunchScreen.storyboard */; };
+		4AAE55CA210CCE280D77BF77 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17820AF3D6D1CBECD6E08376 /* QuartzCore.framework */; };
+		5F0D143485695DB3733389FA /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = D89229EFF5B587B61DC6685A /* libapp.a */; };
+		7C71D1047E2AA2D55F5AB02F /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0A59A1CF11C77FD014059B /* libapp.a */; };
+		7EFB80E8ED78164CBD9B527F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08369C5F11051FCB9EFDF867 /* WebKit.framework */; };
+		801A4659F8F7C5C8D0E973DB /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 69C9BB3DF332EE1CD0EBEFB7 /* assets */; };
+		9ECA270F411BE5821296A3BA /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A821C5950B6325BC6FACE99B /* Metal.framework */; };
+		A8C32A0DF28F175B9CD89B63 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8F4236315571AE58B3FA81F5 /* main.mm */; };
+		AF40A5C511CC836CB29B6A75 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CD095D37A436A5416EB4C /* MetalKit.framework */; };
+		B7A3BC9ED97CAD33D878B5F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B5A060FD7FA8B6D859ADFF /* UIKit.framework */; };
+		C29D0275758D6FF339E3FC87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 175CD2B948339C0F77D4FA00 /* InfoPlist.strings */; };
+		CE15CFA75FAC921FF3D5424E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F82C0088413B23C940FE99 /* Security.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0647F407E1D26191603E684E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0787F11D259A6A0B6A499451 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08369C5F11051FCB9EFDF867 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		17820AF3D6D1CBECD6E08376 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17F627864632E568FD8849BA /* lib.rs */ = {isa = PBXFileReference; path = lib.rs; sourceTree = "<group>"; };
+		557F79E946A8199C41981405 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		56D57694E5048975FE1E9E39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5B897D77BCFA3854D3C85CD9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69C9BB3DF332EE1CD0EBEFB7 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		719E7DD0783D8A39261ADCB1 /* signbit-client_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "signbit-client_iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7663BC7A7A11AE21921AB473 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
+		7F8CD095D37A436A5416EB4C /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		8F4236315571AE58B3FA81F5 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		97F82C0088413B23C940FE99 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A821C5950B6325BC6FACE99B /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		BE60FF6A66766214F1184ED9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3128046983AE89D854A63C0 /* main.rs */ = {isa = PBXFileReference; path = main.rs; sourceTree = "<group>"; };
+		C6B5A060FD7FA8B6D859ADFF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D89229EFF5B587B61DC6685A /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+		E1B036B0D96EEDEA4775B9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E69F50F3E943ACA3CFDD5542 /* signbit-client_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "signbit-client_iOS.entitlements"; sourceTree = "<group>"; };
+		F0347E107EE096B38AA61759 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE0A59A1CF11C77FD014059B /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		723D5541A483C43A0E11D77A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C71D1047E2AA2D55F5AB02F /* libapp.a in Frameworks */,
+				405FE29CD4A19B0A72B9D33E /* CoreGraphics.framework in Frameworks */,
+				9ECA270F411BE5821296A3BA /* Metal.framework in Frameworks */,
+				AF40A5C511CC836CB29B6A75 /* MetalKit.framework in Frameworks */,
+				4AAE55CA210CCE280D77BF77 /* QuartzCore.framework in Frameworks */,
+				CE15CFA75FAC921FF3D5424E /* Security.framework in Frameworks */,
+				B7A3BC9ED97CAD33D878B5F3 /* UIKit.framework in Frameworks */,
+				7EFB80E8ED78164CBD9B527F /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D83C7A4DAD51A695015C154 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				D89229EFF5B587B61DC6685A /* libapp.a */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		2523B4D7E0A9CD3AAAF3F4BC /* signbit-client */ = {
+			isa = PBXGroup;
+			children = (
+				8F4236315571AE58B3FA81F5 /* main.mm */,
+				B5396FDAE01BB8C016AAF70E /* bindings */,
+			);
+			path = "signbit-client";
+			sourceTree = "<group>";
+		};
+		51F386A7B868D2ABFF92CE89 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2523B4D7E0A9CD3AAAF3F4BC /* signbit-client */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		66866E5E48E1CD64A09C2AFD /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				B6157D778110D133980489DA /* arm64 */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		66AA6AB41F7A1CBFA38E4D57 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				17F627864632E568FD8849BA /* lib.rs */,
+				C3128046983AE89D854A63C0 /* main.rs */,
+			);
+			name = src;
+			path = ../../src;
+			sourceTree = "<group>";
+		};
+		70BD837640DB521E1DB2E5F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				557F79E946A8199C41981405 /* CoreGraphics.framework */,
+				FE0A59A1CF11C77FD014059B /* libapp.a */,
+				A821C5950B6325BC6FACE99B /* Metal.framework */,
+				7F8CD095D37A436A5416EB4C /* MetalKit.framework */,
+				17820AF3D6D1CBECD6E08376 /* QuartzCore.framework */,
+				97F82C0088413B23C940FE99 /* Security.framework */,
+				C6B5A060FD7FA8B6D859ADFF /* UIKit.framework */,
+				08369C5F11051FCB9EFDF867 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B19DC6902CFCB39DF5BFBED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				719E7DD0783D8A39261ADCB1 /* signbit-client_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E2DA4520A3971B32906F5C4 /* signbit-client_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				56D57694E5048975FE1E9E39 /* Info.plist */,
+				E69F50F3E943ACA3CFDD5542 /* signbit-client_iOS.entitlements */,
+				175CD2B948339C0F77D4FA00 /* InfoPlist.strings */,
+			);
+			path = "signbit-client_iOS";
+			sourceTree = "<group>";
+		};
+		B5396FDAE01BB8C016AAF70E /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				7663BC7A7A11AE21921AB473 /* bindings.h */,
+			);
+			path = bindings;
+			sourceTree = "<group>";
+		};
+		B6157D778110D133980489DA /* arm64 */ = {
+			isa = PBXGroup;
+			children = (
+				1D83C7A4DAD51A695015C154 /* debug */,
+			);
+			path = arm64;
+			sourceTree = "<group>";
+		};
+		FED30AC117614B0D1B2AC446 = {
+			isa = PBXGroup;
+			children = (
+				69C9BB3DF332EE1CD0EBEFB7 /* assets */,
+				E1B036B0D96EEDEA4775B9FE /* Assets.xcassets */,
+				5B897D77BCFA3854D3C85CD9 /* LaunchScreen.storyboard */,
+				66866E5E48E1CD64A09C2AFD /* Externals */,
+				9E2DA4520A3971B32906F5C4 /* signbit-client_iOS */,
+				51F386A7B868D2ABFF92CE89 /* Sources */,
+				66AA6AB41F7A1CBFA38E4D57 /* src */,
+				70BD837640DB521E1DB2E5F6 /* Frameworks */,
+				8B19DC6902CFCB39DF5BFBED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		"TEMP_4271DD4A-A843-4A7A-A043-036328274658" /* x86_64 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = x86_64;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E116D0FF05E0F97ADE4F05C /* signbit-client_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A288B73B188D38A00089C245 /* Build configuration list for PBXNativeTarget "signbit-client_iOS" */;
+			buildPhases = (
+				91AAC2F6DE942B7F27C4534F /* Build Rust Code */,
+				B27BFC3355398C75947EF83D /* Sources */,
+				CC778A9AC85E4B8E44ABE573 /* Resources */,
+				723D5541A483C43A0E11D77A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "signbit-client_iOS";
+			packageProductDependencies = (
+			);
+			productName = "signbit-client_iOS";
+			productReference = 719E7DD0783D8A39261ADCB1 /* signbit-client_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00F2FD2B08AD5DF1A86D8A81 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 248A5238FA0BDDEADB1CB8CA /* Build configuration list for PBXProject "signbit-client" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				de,
+				en,
+				es,
+				fr,
+			);
+			mainGroup = FED30AC117614B0D1B2AC446;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8B19DC6902CFCB39DF5BFBED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E116D0FF05E0F97ADE4F05C /* signbit-client_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC778A9AC85E4B8E44ABE573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D76E69ADBBF6647D37619B /* Assets.xcassets in Resources */,
+				C29D0275758D6FF339E3FC87 /* InfoPlist.strings in Resources */,
+				44CB644C81169D54EA025A15 /* LaunchScreen.storyboard in Resources */,
+				801A4659F8F7C5C8D0E973DB /* assets in Resources */,
+				5F0D143485695DB3733389FA /* libapp.a in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		91AAC2F6DE942B7F27C4534F /* Build Rust Code */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Rust Code";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Externals/x86_64/${CONFIGURATION}/libapp.a",
+				"$(SRCROOT)/Externals/arm64/${CONFIGURATION}/libapp.a",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "npm run -- tauri ios xcode-script -v --platform ${PLATFORM_DISPLAY_NAME:?} --sdk-root ${SDKROOT:?} --framework-search-paths \"${FRAMEWORK_SEARCH_PATHS:?}\" --header-search-paths \"${HEADER_SEARCH_PATHS:?}\" --gcc-preprocessor-definitions \"${GCC_PREPROCESSOR_DEFINITIONS:-}\" --configuration ${CONFIGURATION:?} ${FORCE_COLOR} ${ARCHS:?}";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B27BFC3355398C75947EF83D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8C32A0DF28F175B9CD89B63 /* main.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		175CD2B948339C0F77D4FA00 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0647F407E1D26191603E684E /* de */,
+				0787F11D259A6A0B6A499451 /* en */,
+				BE60FF6A66766214F1184ED9 /* es */,
+				F0347E107EE096B38AA61759 /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E5A46BB690B3DF79B9E7542 /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "signbit-client_iOS/signbit-client_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "signbit-client_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.signbit.fountain;
+				PRODUCT_NAME = "SignBit Fountain";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = release;
+		};
+		A07691E070E0748458BD614C /* release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = release;
+		};
+		A2FF53AAC6277C58ABAD82A3 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = debug;
+		};
+		D98A14D52A77CFAA71533BE4 /* debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = (
+					arm64,
+				);
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "signbit-client_iOS/signbit-client_iOS.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = x86_64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\".\"",
+				);
+				INFOPLIST_FILE = "signbit-client_iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/$(PLATFORM_NAME) $(DEVELOPER_DIR)/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = io.signbit.fountain;
+				PRODUCT_NAME = "SignBit Fountain";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = arm64;
+			};
+			name = debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		248A5238FA0BDDEADB1CB8CA /* Build configuration list for PBXProject "signbit-client" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2FF53AAC6277C58ABAD82A3 /* debug */,
+				A07691E070E0748458BD614C /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+		A288B73B188D38A00089C245 /* Build configuration list for PBXNativeTarget "signbit-client_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D98A14D52A77CFAA71533BE4 /* debug */,
+				4E5A46BB690B3DF79B9E7542 /* release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00F2FD2B08AD5DF1A86D8A81 /* Project object */;
+}

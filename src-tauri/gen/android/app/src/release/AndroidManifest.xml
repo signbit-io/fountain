@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  RELEASE-ONLY MANIFEST OVERLAY. Gradle merges this over src/main/AndroidManifest.xml for the
+  `release` build type only; debug builds are untouched.
+
+  🚨 **A RELEASE BUILD OF AN OFFLINE SIGNER MUST NOT HOLD THE INTERNET PERMISSION.**
+  `android.permission.INTERNET` is granted silently at install — no prompt, no user choice — and
+  it is the single switch that decides whether this process can open a socket at all. The CSP in
+  tauri.conf.json already refuses outbound requests, but that is the APP enforcing a rule on
+  ITSELF: code running inside the webview (a compromised bundled dependency, say) is the thing
+  deciding whether to honour it. Removing the permission moves the same rule down to the kernel,
+  where nothing running in this app gets a vote. Defence in depth, and the outer layer is the one
+  an attacker cannot reach.
+
+  ⚠️ **DEBUG BUILDS KEEP IT, DELIBERATELY.** `tauri dev` loads the UI from a dev server over
+  http://localhost:1420 (via `adb reverse`), which genuinely needs the permission. A release
+  build serves the UI from inside the APK through Tauri's own asset handler, so no socket is
+  involved. That asymmetry is exactly why this file is scoped to `release` rather than the line
+  being deleted from the main manifest.
+
+  ⚠️ **THIS IS THE ONE CHANGE IN THE 2026-09-18 ADVERSARIAL PASS THAT A BUILD CAN DISPROVE.**
+  Everything else there was verified by tests; this rests on "a release build needs no socket",
+  which only a real release APK can confirm. If that is ever wrong the app opens to a BLANK
+  SCREEN, and it fails only in release, so nothing in `tauri dev` would show it. Smoke-test a
+  release APK on a device or emulator after touching this: launch it, and open the QR scanner
+  once (CAMERA is a separate permission and should be unaffected, but it is the one feature that
+  touches hardware). A broken release is fixable by publishing the next version, but sideloaded
+  installs do not auto-update, so whoever downloaded it stays broken until they notice.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+</manifest>

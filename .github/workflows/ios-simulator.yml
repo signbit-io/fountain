@@ -1,0 +1,131 @@
+# iOS Simulator build on a GitHub-hosted Mac.
+#
+# Builds Fountain for the iOS Simulator with no Apple signing, installs it on a simulated
+# iPhone, launches it and checks it is still running a little later, so the iOS target is proven
+# to compile and start before there is a Mac or an Apple developer team. The zipped .app is kept
+# as an artifact (an Appetize-style simulator upload).
+#
+# Manual only (Actions tab → "iOS Simulator build" → Run workflow, or `gh workflow run
+# ios-simulator.yml`). macOS runner minutes are billed at ten times the Linux rate on a private
+# repository, so it never runs on its own.
+#
+# The Xcode project (src-tauri/gen/apple) is committed since 2026-11-18 (made on a Mac with Xcode
+# 27.2). `tauri ios init` still runs here: it recreates the folders git does not keep (the empty
+# `assets`, `Externals`) and regenerates the project from the same template, keeping the files
+# added by hand (the InfoPlist.strings). src-tauri/Info.ios.plist is merged in by the Tauri CLI.
+
+name: iOS Simulator build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-simulator
+  cancel-in-progress: true
+
+jobs:
+  ios-simulator:
+    runs-on: macos-15
+    timeout-minutes: 60
+    env:
+      # Same pins as the Windows, Android and Linux builds.
+      NODE_VERSION: 22.15.0
+      RUST_VERSION: 1.96.1
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Rust ${{ env.RUST_VERSION }} with the iOS targets
+        run: |
+          rustup toolchain install "$RUST_VERSION" --profile minimal \
+            --target aarch64-apple-ios --target aarch64-apple-ios-sim --target x86_64-apple-ios
+          rustup default "$RUST_VERSION"
+          rustc --version
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+
+      - name: Tools
+        run: |
+          brew list xcodegen >/dev/null 2>&1 || brew install xcodegen
+          xcodebuild -version
+
+      - name: npm ci
+        run: npm ci
+
+      - name: tauri ios init
+        run: npx tauri ios init --ci
+
+      - name: Build for the Simulator (Apple silicon)
+        run: npx tauri ios build --target aarch64-sim --debug --ci
+
+      - name: Find the .app
+        id: app
+        run: |
+          APP="$(find src-tauri/gen/apple/build -type d -name '*.app' -path '*sim*' | head -n 1)"
+          if [ -z "$APP" ]; then
+            APP="$(find src-tauri/gen/apple -type d -name '*.app' | grep -v '\.xcarchive' | head -n 1)"
+          fi
+          if [ -z "$APP" ]; then
+            echo "No .app was produced." >&2
+            find src-tauri/gen/apple -maxdepth 4 -type d | head -50
+            exit 1
+          fi
+          echo "Built: $APP"
+          echo "path=$APP" >> "$GITHUB_OUTPUT"
+          /usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$APP/Info.plist"
+          /usr/libexec/PlistBuddy -c 'Print :CFBundleDisplayName' "$APP/Info.plist" || true
+          # The camera string must be in the built app: iOS ends an app that asks for the
+          # camera without it.
+          /usr/libexec/PlistBuddy -c 'Print :NSCameraUsageDescription' "$APP/Info.plist"
+
+      - name: Launch on a simulated iPhone
+        run: |
+          UDID="$(xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          devices = json.load(sys.stdin)["devices"]
+          for runtime in sorted(devices, reverse=True):
+              if "iOS" not in runtime:
+                  continue
+              for d in devices[runtime]:
+                  if d["name"].startswith("iPhone"):
+                      print(d["udid"]); raise SystemExit
+          ')"
+          echo "Simulator: $UDID"
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl install "$UDID" "${{ steps.app.outputs.path }}"
+          BUNDLE_ID="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "${{ steps.app.outputs.path }}/Info.plist")"
+          xcrun simctl launch "$UDID" "$BUNDLE_ID"
+          sleep 25
+          # Still running 25 seconds later = it got past startup (webview, keystore folder).
+          xcrun simctl spawn "$UDID" launchctl list | grep "$BUNDLE_ID" | tee running.txt || true
+          if ! grep -Eq '^[0-9]+' running.txt; then
+            echo "The app is not running 25 seconds after launch." >&2
+            STATUS=1
+          fi
+          xcrun simctl spawn "$UDID" log show --last 3m --style compact \
+            --predicate "process CONTAINS[c] 'fountain' OR subsystem CONTAINS[c] 'signbit'" > simulator.log || true
+          exit "${STATUS:-0}"
+
+      - name: Zip the .app
+        if: always() && steps.app.outputs.path != ''
+        run: ditto -c -k --sequesterRsrc --keepParent "${{ steps.app.outputs.path }}" fountain-ios-simulator.zip
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fountain-ios-simulator
+          retention-days: 14
+          if-no-files-found: ignore
+          path: |
+            fountain-ios-simulator.zip
+            simulator.log

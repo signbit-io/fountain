@@ -1,0 +1,63 @@
+{
+  "note": "Keys whose ENGLISH was rewritten by #9 (2026-08-18). Their fr/es/de values are STALE and must be retranslated from the CURRENT English. i18n:report will NOT list these - it only reports keys with no translation at all.",
+  "repo": "signbit-client",
+  "generated": "2026-08-18",
+  "count": 11,
+  "keys": [
+    {
+      "key": "vaults.importSavedCopy",
+      "was": "Saved as \"{{label}}\". You already had this same vault saved, so this is a second copy — remove whichever you don't want.",
+      "now": "Saved as \"{{label}}\". You already had this same vault saved, so this is a second copy. Remove whichever you don't want."
+    },
+    {
+      "key": "vaults.buildThresholdNoRedundancy",
+      "was": "Every one of the {{n}} keys will be required. There is no spare — if a single key is ever lost, the funds cannot be recovered by anyone. Lower this number if you want the vault to survive losing a key.",
+      "now": "Every one of the {{n}} keys will be required. There is no spare: if a single key is ever lost, the funds cannot be recovered by anyone. Lower this number if you want the vault to survive losing a key."
+    },
+    {
+      "key": "vaults.buildSavedCompare",
+      "was": "Saved to your vault backups. Every keyholder building this vault from the same keys should get exactly this descriptor — worth a quick compare while you're all together.",
+      "now": "Saved to your vault backups. Every keyholder building this vault from the same keys should get exactly this descriptor, so it is worth a quick compare while you're all together."
+    },
+    {
+      "key": "vaults.buildSavedCopy",
+      "was": "Saved as \"{{label}}\". You already had this same vault saved, so this is a second copy — remove whichever you don't want.",
+      "now": "Saved as \"{{label}}\". You already had this same vault saved, so this is a second copy. Remove whichever you don't want."
+    },
+    {
+      "key": "sign.subtitle",
+      "was": "Co-sign a vault spend (PSBT), or sign a message — approving a policy change, proving a key, adopting a vault — fully offline.",
+      "now": "Co-sign a vault spend (PSBT), or sign a message: approving a policy change, proving a key, adopting a vault. All fully offline."
+    },
+    {
+      "key": "sign.messageKind.policyChange",
+      "was": "Policy change approval — this endorses a change to the vault's spending rules.",
+      "now": "Policy change approval. This endorses a change to the vault's spending rules."
+    },
+    {
+      "key": "sign.messageKind.healthCheck",
+      "was": "Key health check — this proves you can sign with this key. It moves no funds.",
+      "now": "Key health check. This proves you can sign with this key. It moves no funds."
+    },
+    {
+      "key": "sign.messageKind.vaultImport",
+      "was": "Vault import — this proves you hold a key in the vault being adopted. It moves no funds.",
+      "now": "Vault import. This proves you hold a key in the vault being adopted. It moves no funds."
+    },
+    {
+      "key": "sign.messageKind.ownerTransfer",
+      "was": "Vault owner change — this endorses moving the vault's owner slot to another keyholder. It moves no funds.",
+      "now": "Vault owner change. This endorses moving the vault's owner slot to another keyholder. It moves no funds."
+    },
+    {
+      "key": "sign.messageKind.unknownSignbit",
+      "was": "A SignBit message this version doesn't recognise — probably newer than this app. Read it below before signing.",
+      "now": "A SignBit message this version doesn't recognise, probably newer than this app. Read it below before signing."
+    },
+    {
+      "key": "sign.messageKind.unknown",
+      "was": "This isn't a recognised SignBit message. Read it carefully before signing — only sign text you understand and expected.",
+      "now": "This isn't a recognised SignBit message. Read it carefully before signing, and only sign text you understand and expected."
+    }
+  ]
+}

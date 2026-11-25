@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Merged by the Tauri CLI into the iOS app's Info.plist (it looks for Info.ios.plist next to
+  tauri.conf.json). iOS readiness, 2026-11-12.
+
+  - NSCameraUsageDescription: REQUIRED. The QR scanner uses the camera through the webview
+    (getUserMedia); without this string iOS ends the app the first time the camera is asked for,
+    and App Review rejects a camera app without one. English only for now; translations go in
+    the Xcode project's InfoPlist.strings once `tauri ios init` has made it.
+  - CFBundleDisplayName: the name under the home-screen icon. "SignBit", the same as the Android
+    launcher label (gen/android strings.xml app_name), since "SignBit Fountain" is cut off
+    there; the icon and the App Store page carry the rest (confirmed by the founder, 2026-11-12).
+  - ITSAppUsesNonExemptEncryption = NO: the founder's answer to App Store Connect's export
+    compliance question (2026-11-12: "id say no ... its the users that are encrypting their own
+    data"). Fountain's encryption only protects the user's own keys and backup on their device
+    with their own passphrase, and its signatures are signatures; it sends nothing. Set here so
+    every upload stops asking. Revisit only if Fountain ever encrypts data it SENDS.
+-->
+<plist version="1.0">
+<dict>
+  <key>NSCameraUsageDescription</key>
+  <string>Fountain uses the camera only to scan QR codes, such as a payment to sign. Nothing it sees is saved or sent anywhere.</string>
+  <key>CFBundleDisplayName</key>
+  <string>SignBit</string>
+  <key>ITSAppUsesNonExemptEncryption</key>
+  <false/>
+</dict>
+</plist>
